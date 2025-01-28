@@ -12,7 +12,7 @@ const NewsList: React.FC = () => {
                     <img
                         src={news.imageUrl}
                         alt={news.title}
-                        className="featured-image"
+                        className="list-image"
                     />
                     <h3>{news.title}</h3>
                     <span>{news.author} | {new Date(news.publishedDate).toLocaleDateString()}</span>
