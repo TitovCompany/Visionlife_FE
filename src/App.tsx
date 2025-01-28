@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Navigation from "./components/Navigation.tsx";
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <Navigation/>
       <div className="bg-black">
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
