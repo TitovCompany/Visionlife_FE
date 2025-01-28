@@ -13,7 +13,6 @@ export interface NewsList {
     imageUrl: string | undefined;
     id: string;
     title: string;
-    subtitle: string;
     content: string;
     author: string;
     publishedDate: string;
