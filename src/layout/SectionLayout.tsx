@@ -1,9 +1,9 @@
-import {Outlet} from "react-router-dom";
+import * as React from "react";
 
-const SectionLayout = () => {
+const SectionLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-      <section>
-        <Outlet/>
+      <section className="h-screen">
+        {children}
       </section>
   );
 };

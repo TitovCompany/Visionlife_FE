@@ -6,7 +6,7 @@ const navigation = [
 
 const Navigation = () => {
   return (
-      <nav className="p-4">
+      <nav className="p-4 sticky">
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
           <h1 className="text-xl font-bold">Logo</h1>
