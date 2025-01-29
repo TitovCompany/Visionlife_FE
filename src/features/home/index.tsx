@@ -3,7 +3,7 @@ import SectionLayout from "../../layout/SectionLayout.tsx";
 
 const Home = () => {
   return (
-      <main className="w-full h-[500vh]">
+      <main className="w-full h-[430vh]">
         <h1 className="hidden">서비스 페이지 본문</h1>
         {/* 메인 이미지 */}
         <section className="h-screen">
@@ -31,13 +31,35 @@ const Home = () => {
         </SectionLayout>
 
         {/* Vision */}
-        <SectionLayout title="Vision Life We Do">test</SectionLayout>
+        <SectionLayout title="Vision Life We Do" className="flex flex-col justify-center items-center">
+          <p className="text-center text-lg">
+            열악한 환경에 처한 나라나 개발이 필요한 도상국들의 경제활동에 도움을 주는<br/>
+            친환경 기술의 보급을 통하여 균형적인 경제력으로
+          </p>
+          <p className="my-10 text-center text-lg">
+            더불어 함께 행복한 인간 삶을 누릴수 있도록<br/>
+            공헌하는데 그 사명이 있는 회사입니다.
+          </p>
+          <ul className="flex justify-between">
+            <li>친환경 기술</li>
+            <li>경제력 상승</li>
+            <li>함께사는 사회</li>
+          </ul>
+        </SectionLayout>
 
         {/* News */}
-        <section>News</section>
+        <section>
+          <header className="flex justify-between">
+            <h3>Vision Life News</h3>
+            <span>더보기</span>
+          </header>
+        </section>
 
         {/* Contact Us */}
-        <SectionLayout title="Contact Us">test</SectionLayout>
+        <SectionLayout title="Contact Us">
+          <p className="text-center">Text</p>
+          <div className="h-[600px] m-20 border-2"></div>
+        </SectionLayout>
       </main>
   );
 };
