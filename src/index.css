@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+html, body, #root {
+    width: 100vw;
+    height: 100%;
+}
+
+body, button, input, select, td, textarea, th {
+    font-size: 14px;
+    line-height: 1.5;
+    /*font-family: KakaoSmall,Apple SD Gothic Neo,Malgun Gothic,맑은 고딕,sans-serif;*/
+    font-weight: 400;
+    color: #333;
+}
+
+blockquote, body, button, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, select, table:not([cellpadding]) td, table:not([cellpadding]) th, textarea, ul {
+    margin: 0;
+    padding: 0;
+}
