@@ -1,9 +1,9 @@
     import React from "react";
-    import { getNewsData } from "../service/newsService";
+    import useNewsData from "../hooks/useNewData";
     import type {News} from "../types/NewsDetail";
 
     const FeaturedNews: React.FC = () => {
-        const { news } = getNewsData();
+        const { news } = useNewsData();
 
         const truncateText = (text: string, maxLength: number) => {
             if (text.length > maxLength) {
