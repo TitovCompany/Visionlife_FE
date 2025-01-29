@@ -1,9 +1,11 @@
 import useScrollDirection from "../hooks/useScrollDirection.tsx";
+import {NavLink} from "react-router-dom";
 
 const navigation = [
-  { label: 'menu1', link: '/' },
-  { label: 'menu2', link: '/' },
-  { label: 'menu3', link: '/' },
+  { label: '기업 뉴스', link: '/company/news' },
+  { label: '기업 소개', link: '/company/profile' },
+  { label: '사업 개요', link: '/business/overview' },
+  { label: '자료실', link: '/' },
 ];
 
 const Navigation = () => {
@@ -19,7 +21,7 @@ const Navigation = () => {
           <ul className="hidden md:flex space-x-6">
             {navigation.map((item, idx) => (
                 <li key={idx} className="hover:text-gray-300 cursor-pointer">
-                  {item.label}
+                  <NavLink to={item.link}>{item.label}</NavLink>
                 </li>
             ))}
           </ul>
