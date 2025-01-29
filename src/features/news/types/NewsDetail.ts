@@ -5,9 +5,11 @@ export interface News {
     content: string;
     author: string;
     publishedDate: string;
+    views: number;
+    type: string;
 }
 
 export interface NewsData {
-    featured: News[];
+    news: News[];
     newsList: News[];
 }
