@@ -1,9 +1,9 @@
 import useScrollDirection from "../hooks/useScrollDirection.tsx";
 
 const navigation = [
-  { label: 'menu1', link: '/' },
-  { label: 'menu2', link: '/' },
-  { label: 'menu3', link: '/' },
+  { label: '기업 소개', link: '/' },
+  { label: '사업 개요', link: '/' },
+  { label: '자료실', link: '/' },
 ];
 
 const Navigation = () => {
