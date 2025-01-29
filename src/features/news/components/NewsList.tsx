@@ -1,13 +1,13 @@
 // src/features/news/components/NewsList.tsx
 import React from "react";
 import { getNewsData } from "../service/newsService";
-import type { NewsList } from "../types/NewsDetail";
+import type { News } from "../types/NewsDetail";
 
 const NewsList: React.FC = () => {
     const { newsList } = getNewsData();
     return (
         <div className="news-list">
-            {newsList.map((news: NewsList) => (
+            {newsList.map((news: News) => (
                 <div key={news.id} className="news-item">
                     <img
                         src={news.imageUrl}

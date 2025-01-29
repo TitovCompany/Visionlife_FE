@@ -1,7 +1,6 @@
-// src/features/news/components/FeaturedNews.tsx
 import React from "react";
 import { getNewsData } from "../service/newsService";
-import type {FeaturedNews} from "../types/NewsDetail";
+import type {News} from "../types/NewsDetail";
 
 const FeaturedNews: React.FC = () => {
     const { featured } = getNewsData();
@@ -15,7 +14,7 @@ const FeaturedNews: React.FC = () => {
 
     return (
         <div className="featured-news">
-            {featured.map((news: FeaturedNews) => (
+            {featured.map((news: News) => (
                 <div key={news.id} className="featured-item">
                     <img
                         src={news.imageUrl}
