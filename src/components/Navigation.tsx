@@ -2,6 +2,7 @@ import useScrollDirection from "../hooks/useScrollDirection.tsx";
 import {NavLink} from "react-router-dom";
 
 const navigation = [
+  { label: '기업 뉴스', link: '/company/news' },
   { label: '기업 소개', link: '/company/profile' },
   { label: '사업 개요', link: '/business/overview' },
   { label: '자료실', link: '/' },
