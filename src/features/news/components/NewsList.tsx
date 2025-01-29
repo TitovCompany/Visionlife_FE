@@ -14,7 +14,7 @@ const NewsList: React.FC = () => {
                         alt={news.title}
                         className="list-image"
                     />
-                    <h3>{news.title}</h3>
+                    <h2>{news.title}</h2>
                     <span>{news.author} | {new Date(news.publishedDate).toLocaleDateString()}</span>
                     <p>{news.content}</p>
                 </div>
