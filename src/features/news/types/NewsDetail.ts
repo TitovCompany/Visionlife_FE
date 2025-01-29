@@ -1,15 +1,4 @@
-
-
-export interface FeaturedNews {
-    imageUrl: string | undefined;
-    id: string;
-    title: string;
-    content: string;
-    author: string;
-    publishedDate: string;
-}
-
-export interface NewsList {
+export interface News {
     imageUrl: string | undefined;
     id: string;
     title: string;
@@ -19,6 +8,6 @@ export interface NewsList {
 }
 
 export interface NewsData {
-    featured: FeaturedNews[];
-    newsList: NewsList[];
+    featured: News[];
+    newsList: News[];
 }
