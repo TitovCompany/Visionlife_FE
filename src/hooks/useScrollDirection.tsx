@@ -1,24 +1,33 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const useScrollDirection = () => {
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+    let lastScrollY = window.scrollY;
 
-      // 스크롤을 아래로 내리면 숨김
-      if (currentScrollY > lastScrollY) setIsVisible(false);
-      // 스크롤을 위로 올리면 표시
-      else setIsVisible(true);
+    ScrollTrigger.create({
+      start: "top+=10 top", // 스크롤이 시작되는 위치
+      onUpdate: (self) => {
+        const currentScrollY = self.scroll();
 
-      setLastScrollY(currentScrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
+        if (currentScrollY > lastScrollY) {
+          setIsVisible(false); // 스크롤을 아래로 내리면 숨김
+        } else {
+          setIsVisible(true); // 스크롤을 위로 올리면 보이게 함
+        }
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+        lastScrollY = currentScrollY;
+      },
+    });
+
+    // 컴포넌트 언마운트 시 정리
+    return () => ScrollTrigger.killAll();
+  }, []);
 
   return isVisible;
 };
