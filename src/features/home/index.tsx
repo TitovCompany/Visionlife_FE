@@ -7,7 +7,7 @@ import CompanyVisionSection from "../../components/CompanyVisionSection.tsx";
 
 const Home = () => {
   return (
-      <PageLayout title="서비스 페이지 본문" className="h-[510vh]">
+      <PageLayout title="서비스 페이지 본문">
         <HeroSection/>
 
         {/* About */}
