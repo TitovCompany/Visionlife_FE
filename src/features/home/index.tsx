@@ -44,7 +44,7 @@ const Home = () => {
         {/* Contact Us */}
         <SectionLayout title="Contact Us">
           <p className="text-center">Text</p>
-          <div className="h-[600px] m-20 border-2"></div>
+          <div className="h-[500px] m-20 border-2"></div>
         </SectionLayout>
       </PageLayout>
   );
