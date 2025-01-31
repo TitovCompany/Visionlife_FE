@@ -21,9 +21,9 @@ const NewsList: React.FC = () => {
                         {/* 이미지 섹션 */}
                         <div className="w-48 h-36 flex-shrink-0">
                             <img
-                                src={news.imageUrl ? news.imageUrl : "/img/news/news-image.jpg"}
+                                src={news.imageUrl || `/img/news/default-image-${news.id}.jpg`}
                                 alt={news.title}
-                                className="w-full h-full object-cover" // 둥근 모서리 제거
+                                className="w-full h-full object-cover"
                             />
                         </div>
                         {/* 텍스트 섹션 */}
