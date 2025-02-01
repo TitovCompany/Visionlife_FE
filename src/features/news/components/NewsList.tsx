@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Pagination from "../../../components/Pagination";
 import newsData from "../../../data/newsData.json";
 
@@ -7,8 +8,9 @@ const truncateText = (text: string, maxLength: number) => {
 };
 
 const NewsList: React.FC = () => {
+    const navigate = useNavigate();
     const newsList = newsData?.newsList ?? [];
-    const itemsPerPage = 5; // 한 페이지당 표시할 뉴스 개수
+    const itemsPerPage = 5;
     const [currentPage, setCurrentPage] = useState(1);
 
     const totalPages = Math.ceil(newsList.length / itemsPerPage);
@@ -23,7 +25,11 @@ const NewsList: React.FC = () => {
         <section className="max-w-screen-lg mx-auto px-4 py-6 space-y-6">
             {currentNews.map((news, index) => (
                 <React.Fragment key={news.id}>
-                    <article className="flex items-start gap-6">
+                    <article
+                        className="flex items-start gap-6 cursor-pointer hover:opacity-80 transition duration-300"
+                        onClick={() => navigate(`/company/news/${news.id}`)}
+
+                    >
                         <div className="w-48 h-36 flex-shrink-0">
                             <img
                                 src={news.imageUrl || `/img/news/default-image-${news.id}.jpg`}
