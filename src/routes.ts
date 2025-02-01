@@ -5,6 +5,7 @@ import Profile from "./features/profile/index";
 import OverView from "./features/business-overview/index.tsx";
 import App from "./App.tsx";
 import DetailNews from "./features/news/components/DetailNews";
+import Catalog from "./features/catalog";
 
 
 export const router = createBrowserRouter([
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: "/business/overview",
         Component: OverView,
+      },
+      {
+        path: "/company/catalogs",
+        Component: Catalog,
       }
     ],
   },

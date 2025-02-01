@@ -40,7 +40,11 @@ const Profile = () => {
           </section>
 
           {/* Vision */}
-          <SectionLayout title="(주)비젼 라이프 홀딩스의 비젼은" titleClassName="text-2xl">
+          <SectionLayout
+              title="(주)비젼 라이프 홀딩스의 비젼은"
+              className="flex flex-col items-center justify-center"
+              titleClassName="text-2xl"
+          >
             <CompanyVisionSection/>
           </SectionLayout>
 
