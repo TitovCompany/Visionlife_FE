@@ -2,6 +2,7 @@ import CompanyVisionSection from "../../components/CompanyVisionSection.tsx";
 import PageLayout from "../../layout/PageLayout.tsx";
 import SectionLayout from "../../layout/SectionLayout.tsx";
 import profile from "../../data/profile.json";
+import History from "./components/History.tsx";
 
 const Profile = () => {
   return (
@@ -44,9 +45,7 @@ const Profile = () => {
           </SectionLayout>
 
           {/* History */}
-          <section className="w-full h-screen max-w-7xl mx-auto">
-            <h2 className="hidden">기업 히스토리</h2>
-          </section>
+          <History/>
         </div>
       </PageLayout>
   );
