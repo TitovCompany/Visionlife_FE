@@ -1,8 +1,6 @@
 import SectionLayout from "../../layout/SectionLayout.tsx";
 import PageLayout from "../../layout/PageLayout.tsx";
 import HeroSection from "./components/HeroSection.tsx";
-import {Link} from "react-router-dom";
-import NewsCarousel from "./components/NewsCarousel.tsx";
 import CompanyVisionSection from "../../components/CompanyVisionSection.tsx";
 
 const Home = () => {
@@ -29,17 +27,6 @@ const Home = () => {
         <SectionLayout title="Vision Life We Do" className="flex flex-col justify-center items-center">
           <CompanyVisionSection/>
         </SectionLayout>
-
-        {/* News */}
-        <section className="h-screen flex flex-col justify-center items-center">
-          <header className="w-full">
-            <div className="mx-32 flex justify-between items-center">
-              <h3 className="text-xl">Vision Life News</h3>
-              <Link to={"/"}>더보기</Link>
-            </div>
-          </header>
-          <NewsCarousel/>
-        </section>
 
         {/* Contact Us */}
         <SectionLayout title="Contact Us">
