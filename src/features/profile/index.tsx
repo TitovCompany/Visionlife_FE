@@ -8,7 +8,7 @@ const Profile = () => {
   return (
       <PageLayout title="서비스 페이지 본문">
           {/* About */}
-        <div className="mt-20 mx-20">
+        <div className="mx-20">
           <h3 className="hidden">회사 소개</h3>
           <section className="w-full h-screen max-w-7xl mx-auto">
             <div className="mt-16 relative">

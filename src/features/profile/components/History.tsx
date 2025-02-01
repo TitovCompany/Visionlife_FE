@@ -28,7 +28,7 @@ const History = () => {
   }, []);
 
   return (
-      <section ref={sectionRef} className="w-full h-screen max-w-7xl mx-auto">
+      <section ref={sectionRef} className="w-full min-h-screen max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-10">기업 연혁</h2>
         <ul className="flex flex-col space-y-12">
           {history.map((item, idx) => (
