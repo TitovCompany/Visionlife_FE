@@ -4,6 +4,8 @@ import News from "./features/news/index";
 import Profile from "./features/profile/index";
 import OverView from "./features/business-overview/index.tsx";
 import App from "./App.tsx";
+import DetailNews from "./features/news/components/DetailNews";
+
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +19,12 @@ export const router = createBrowserRouter([
       {
         path: "/company/news",
         Component: News,
+        children: [
+          {
+            path: ":id",
+            Component: DetailNews,
+          },
+        ],
       },
       {
         path: "/company/profile",

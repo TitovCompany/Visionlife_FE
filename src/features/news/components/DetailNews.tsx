@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import newsData from "../../../data/newsData.json";
 
 const DetailNews: React.FC = () => {
-    const newsItem = newsData.news.find((news) => news.id === "1");
+    const { id } = useParams();
+    const newsItem = newsData.news.find((news) => news.id === id) || newsData.newsList.find((news) => news.id === id);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     if (!newsItem) {
         return (
@@ -11,29 +17,26 @@ const DetailNews: React.FC = () => {
             </div>
         );
     }
-
     return (
-        <section className="max-w-screen-lg mx-auto px-6 py-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
+        <section className="max-w-screen-lg mx-auto px-6 py-12"> {/* ✅ 전체 여백 추가 */}
+            <h1 className="text-4xl font-bold text-gray-900 mb-8">
                 {newsItem.title}
             </h1>
-
             <div className="text-gray-500 text-sm mb-6">
                 <span>{newsItem.author}</span> |
                 <span className="ml-2">{new Date(newsItem.publishedDate).toLocaleDateString()}</span>
             </div>
-
+            <hr className="border-b-2 border-gray-300 mb-10" />
             <img
-                src={newsItem.imageUrl ? newsItem.imageUrl : "/img/news/news-image.jpg"}
+                src={newsItem.imageUrl}
                 alt={newsItem.title}
-                className="w-full h-100 object-cover rounded-lg mb-6"
+                className="w-full h-100 object-cover mt-8 mb-10"
             />
-
-            <article className="text-gray-700 text-base leading-snug whitespace-pre-line">
+            <article className="text-gray-700 text-lg leading-relaxed whitespace-pre-line mt-10">
                 {newsItem.content}
             </article>
 
-            <hr className="mt-8 border-gray-300" />
+            <hr className="mt-12 border-b-2 border-gray-300" />
         </section>
     );
 };
