@@ -11,7 +11,7 @@ const CompanyVisionSection = () => {
           더불어 함께 행복한 인간 삶을 누릴수 있도록<br/>
           공헌하는데 그 사명이 있는 회사입니다.
         </p>
-        <ul className="flex justify-between gap-10">
+        <ul className="mx-20 flex justify-between gap-5">
           <VisionItem title="친환경 기술"/>
           <VisionItem title="경제력 상승"/>
           <VisionItem title="함께사는 사회"/>

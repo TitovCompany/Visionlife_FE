@@ -1,13 +1,11 @@
 import SectionLayout from "../../layout/SectionLayout.tsx";
 import PageLayout from "../../layout/PageLayout.tsx";
 import HeroSection from "./components/HeroSection.tsx";
-import {Link} from "react-router-dom";
-import NewsCarousel from "./components/NewsCarousel.tsx";
 import CompanyVisionSection from "../../components/CompanyVisionSection.tsx";
 
 const Home = () => {
   return (
-      <PageLayout title="서비스 페이지 본문" className="h-[510vh]">
+      <PageLayout title="서비스 페이지 본문">
         <HeroSection/>
 
         {/* About */}
@@ -30,21 +28,10 @@ const Home = () => {
           <CompanyVisionSection/>
         </SectionLayout>
 
-        {/* News */}
-        <section className="h-screen flex flex-col justify-center items-center">
-          <header className="w-full">
-            <div className="mx-32 flex justify-between items-center">
-              <h3 className="text-xl">Vision Life News</h3>
-              <Link to={"/"}>더보기</Link>
-            </div>
-          </header>
-          <NewsCarousel/>
-        </section>
-
         {/* Contact Us */}
         <SectionLayout title="Contact Us">
           <p className="text-center">Text</p>
-          <div className="h-[600px] m-20 border-2"></div>
+          <div className="h-[500px] m-20 border-2"></div>
         </SectionLayout>
       </PageLayout>
   );

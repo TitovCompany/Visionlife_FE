@@ -15,8 +15,14 @@ const VisionItem: React.FC<Props> = ({title}) => {
     "함께사는 사회": <FaHandsHelping className="text-orange-500 text-3xl" />,
   }[title] || null;
 
+  const bgColor = {
+    "친환경 기술": "bg-green-100",
+    "경제력 상승": "bg-blue-100",
+    "함께사는 사회": "bg-orange-100",
+  }[title] || "bg-gray-200";
+
   return (
-      <li className="w-40 h-40 flex flex-col items-center justify-center space-y-2 border border-gray-300 rounded-full bg-gray-200 shadow-md">
+      <li className={`w-40 h-40 flex flex-col items-center justify-center space-y-2 rounded-full shadow-md ${bgColor}`}>
         {icon}
         <span className="text-lg font-semibold">{title}</span>
       </li>
