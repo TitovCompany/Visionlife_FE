@@ -7,7 +7,7 @@ import App from "./App.tsx";
 import Home from "./features/home/index";
 import News from "./features/news/index";
 import Profile from "./features/profile/index";
-import OverView from "./features/business-overview/index.tsx";
+import Business from "./features/business-overview/index.tsx";
 import Catalog from "./features/catalog";
 
 // 상세 페이지
@@ -41,11 +41,11 @@ export const router = createBrowserRouter([
         Component: Profile,
       },
       {
-        path: "/business/overview",
-        Component: OverView,
+        path: "/business",
+        Component: Business,
         children: [
-          { path: ":slug", Component: Overview },
-          { path: ":slug", Component: Utex },
+          { path: "overview/:slug", Component: Overview },
+          { path: "utex/:slug", Component: Utex },
         ]
       },
       {
