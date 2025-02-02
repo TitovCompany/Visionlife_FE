@@ -1,9 +1,9 @@
 import utex from "../../../data/businessUtex.json";
+import SectionLayout from "../../../layout/SectionLayout.tsx";
 
 const Utex = () => {
   return (
-      <section>
-        <h3>{utex.title}</h3>
+      <SectionLayout title={utex.title} titleClassName="text-4xl">
         {utex.sections.map(section => (
             <article key={section.id}>
               {section.items.map(({id, content}) => (
@@ -11,7 +11,7 @@ const Utex = () => {
               ))}
             </article>
         ))}
-      </section>
+      </SectionLayout>
   );
 };
 

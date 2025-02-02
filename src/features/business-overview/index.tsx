@@ -3,8 +3,8 @@ import {Link, Outlet, useParams} from "react-router-dom";
 
 const Business = () => {
   const param = useParams();
-  console.log(param)
   const isBusinessDetail = param.slug === undefined;
+
   return (
       <PageLayout title="사업개요 페이지 본문">
         <div className="mx-20">
