@@ -1,11 +1,19 @@
 import { createBrowserRouter } from "react-router";
+
+// Root
+import App from "./App.tsx";
+
+// 페이지
 import Home from "./features/home/index";
 import News from "./features/news/index";
 import Profile from "./features/profile/index";
 import OverView from "./features/business-overview/index.tsx";
-import App from "./App.tsx";
-import NewsDetail from "./features/news/pages/NewsDetail.tsx";
 import Catalog from "./features/catalog";
+
+// 상세 페이지
+import NewsDetail from "./features/news/pages/NewsDetail.tsx";
+import Overview from "./features/business-overview/pages/Overview.tsx";
+import Utex from "./features/business-overview/pages/Utex.tsx";
 
 
 export const router = createBrowserRouter([
@@ -35,6 +43,10 @@ export const router = createBrowserRouter([
       {
         path: "/business/overview",
         Component: OverView,
+        children: [
+          { path: "slug", Component: Overview },
+          { path: "slug", Component: Utex },
+        ]
       },
       {
         path: "/company/catalogs",
