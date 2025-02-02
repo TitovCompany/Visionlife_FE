@@ -11,35 +11,41 @@ const Catalog: React.FC = () => {
     const currentData = catalogData.slice(startIndex, startIndex + itemsPerPage);
 
     return (
-        <div className="max-w-3xl md:max-w-4xl mx-auto py-12 px-4">
-            {/* 제목 */}
-            <h1 className="text-4xl font-bold text-center mb-6">카탈로그</h1>
-            <hr className="border-gray-300 mb-6" />
+        <div className="max-w-4xl mx-auto py-8 px-6">
 
-            {/* 리스트 */}
-            <ul className="space-y-4">
+            <h1 className="text-3xl font-semibold text-gray-900 text-center mb-4">카탈로그</h1>
+            <hr className="border-gray-300 mb-6 mx-auto w-4/5" />
+
+            <table className="w-full border-collapse border border-gray-300">
+                <thead>
+                <tr className="bg-gray-200">
+                    <th className="border border-gray-300 px-4 py-3 text-left">파일명</th>
+                    <th className="border border-gray-300 px-4 py-3 text-center">다운로드</th>
+                </tr>
+                </thead>
+                <tbody>
                 {currentData.map((item) => (
-                    <li
-                        key={item.id}
-                        className="flex items-center justify-between p-4 border rounded-lg border-gray-300 bg-white shadow-sm hover:shadow-md transition"
-                    >
-                        {/* 파일 제목 */}
-                        <span className="text-gray-800 font-medium flex-1">{item.title}</span>
-
-                        {/* 다운로드 버튼 */}
-                        <a
-                            href={item.downloadUrl}
-                            className="min-w-[100px] px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition text-center"
-                            download
-                        >
-                            다운로드
-                        </a>
-                    </li>
+                    <tr key={item.id} className="border border-gray-300">
+                        <td className="border border-gray-300 px-4 py-3 text-left">{item.title}.{item.fileType}</td>
+                        <td className="border border-gray-300 px-4 py-3 text-center">
+                            <a
+                                href={item.downloadUrl}
+                                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-blue-600"
+                                download
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="white">
+                                    <path d="M9.878,18.122a3,3,0,0,0,4.244,0l3.211-3.211A1,1,0,0,0,15.919,13.5l-2.926,2.927L13,1a1,1,0,0,0-1-1h0a1,1,0,0,0-1,1l-.009,15.408L8.081,13.5a1,1,0,0,0-1.414,1.415Z"/>
+                                    <path d="M23,16h0a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H3a1,1,0,0,1-1-1V17a1,1,0,0,0-1-1H1a1,1,0,0,0-1,1v4a3,3,0,0,0,3,3H21a3,3,0,0,0,3-3V17A1,1,0,0,0,23,16Z"/>
+                                </svg>
+                                다운로드
+                            </a>
+                        </td>
+                    </tr>
                 ))}
-            </ul>
+                </tbody>
+            </table>
 
-            {/* 페이지네이션 */}
-            <div className="mt-8 flex justify-center">
+            <div className="mt-6 flex justify-center">
                 <Pagination
                     currentPage={currentPage}
                     totalPages={totalPages}
