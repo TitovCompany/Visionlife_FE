@@ -20,9 +20,7 @@ const Utex = () => {
                   {/* Content List */}
                   {section.items.map(item => (
                       <div key={item.id} className="pl-4 border-l-4 border-gray-300">
-                        {item.category === "feature" ? (
-                            <h4 className="font-medium text-lg">{item.title}</h4>
-                        ) : null}
+                        {"title" in item && <h4 className="font-medium text-lg">{item.title}</h4>}
                         <p className="text-gray-700">{item.content}</p>
                       </div>
                   ))}

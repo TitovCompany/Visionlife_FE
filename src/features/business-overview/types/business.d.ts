@@ -25,6 +25,7 @@ interface UtexSections {
 
 interface UtexItems {
   id: string;
-  category: string;
+  type: string;
+  title?: string;
   content: string;
 }
