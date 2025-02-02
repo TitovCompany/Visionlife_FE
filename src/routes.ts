@@ -4,7 +4,7 @@ import News from "./features/news/index";
 import Profile from "./features/profile/index";
 import OverView from "./features/business-overview/index.tsx";
 import App from "./App.tsx";
-import DetailNews from "./features/news/components/DetailNews";
+import NewsDetail from "./features/news/pages/NewsDetail.tsx";
 import Catalog from "./features/catalog";
 
 
@@ -22,8 +22,9 @@ export const router = createBrowserRouter([
         Component: News,
         children: [
           {
+            // slug 사용 예정
             path: ":id",
-            Component: DetailNews,
+            Component: NewsDetail,
           },
         ],
       },
