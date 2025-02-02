@@ -1,19 +1,19 @@
 import utex from "../../../data/businessUtex.json";
 import SectionLayout from "../../../layout/SectionLayout.tsx";
+import DummyImgBox from "../../../components/DummyImgBox.tsx";
 
 const Utex = () => {
   return (
       <>
-        {/* 제품 개요, 제품 구성 */}
         <SectionLayout
             title={utex.title}
             className="grid place-items-center"
             titleClassName="max-w-[330px] pt-16 text-4xl leading-tight"
             titlePadding="p-0"
         >
-          <div className="max-w-4xl w-full px-6 space-y-12">
-            {utex.sections.map(section => (
-                <article key={section.id} className="space-y-6">
+          {utex.sections.map(section => (
+              <div key={section.id} className="max-w-4xl w-full px-6 space-y-12">
+                <article className="space-y-6">
                   {/* Section Title */}
                   <h3 className="text-2xl font-semibold border-b pb-2">{section.title}</h3>
 
@@ -25,23 +25,33 @@ const Utex = () => {
                       </div>
                   ))}
                 </article>
-            ))}
-          </div>
+              </div>
+          ))}
         </SectionLayout>
+
         <SectionLayout
             title={"잉크"}
             className="grid place-items-center"
             titleClassName="max-w-[330px] pt-16 text-4xl leading-tight"
             titlePadding="p-0"
         >
-          <div className="max-w-4xl w-full px-6 space-y-12">
-            <h2>단일 잉크 시스템</h2>
-            <p>하나의 잉크로 다양한 원단의 염색이 가능하며, 실사 품질을 유지합니다.</p>
-            <h2>친환경 기술</h2>
-            <p>공정 과정에서 오폐수가 발생하지 않으며, 친환경 기준을 충족하는 잉크를 사용합니다.</p>
-            <h2>4색 잉크 시스템</h2>
-            <p>C, M, Y, K 4색 잉크를 통해 모든 색상을 구현할 수 있으며, 자연스러운 그라데이션 표현이 가능합니다.</p>
-          </div>
+          <ul className="max-w-4xl w-full px-6 flex justify-between items-center">
+            <li>
+              <DummyImgBox width="w-[140px]" height="h-[140px]" isCircle={true}/>
+              <h2>단일 잉크 시스템</h2>
+              <p>하나의 잉크로 다양한 원단의 염색이 가능하며, 실사 품질을 유지합니다.</p>
+            </li>
+            <li>
+              <DummyImgBox width="w-[140px]" height="h-[140px]" isCircle={true}/>
+              <h2>친환경 기술</h2>
+              <p>공정 과정에서 오폐수가 발생하지 않으며, 친환경 기준을 충족하는 잉크를 사용합니다.</p>
+            </li>
+            <li>
+              <DummyImgBox width="w-[140px]" height="h-[140px]" isCircle={true}/>
+              <h2>4색 잉크 시스템</h2>
+              <p>C, M, Y, K 4색 잉크를 통해 모든 색상을 구현할 수 있으며, 자연스러운 그라데이션 표현이 가능합니다.</p>
+            </li>
+          </ul>
         </SectionLayout>
         <SectionLayout
             title={"섬유 염색 공정 비교"}
@@ -50,12 +60,29 @@ const Utex = () => {
             titlePadding="p-0"
         >
           <div className="max-w-4xl w-full px-6 space-y-12">
-            <h2>단일 잉크 시스템</h2>
-            <p>전·후처리 공정이 필요하며 염색 과정에서 폐수가 발생합니다.</p>
-            <p>"전처리(원단코팅)", "프린팅", "후처리(증열·수세)"</p>
-            <h2>단일 잉크 시스템</h2>
-            <p>전·후처리 공정이 필요 없으며, 폐수가 전혀 발생하지 않습니다.</p>
-            <p>"출력과 동시에 염색 완료"</p>
+            <h4>전·후처리 공정이 필요하며 염색 과정에서 폐수가 발생합니다.</h4>
+            <ul className="flex justify-between items-center">
+              <li>
+                <DummyImgBox width="w-[140px]" height="h-[140px]" isCircle={true}/>
+                <p>전처리(원단코팅)</p>
+              </li>
+              <li>
+                <DummyImgBox width="w-[140px]" height="h-[140px]" isCircle={true}/>
+                <p>프린팅</p>
+              </li>
+              <li>
+                <DummyImgBox width="w-[140px]" height="h-[140px]" isCircle={true}/>
+                <p>후처리(증열 · 수세)</p>
+              </li>
+            </ul>
+
+            <h4>전 · 후처리 공정이 필요 없으며, 폐수가 전혀 발생하지 않습니다.</h4>
+            <ul className="flex justify-center items-center">
+              <li>
+                <DummyImgBox width="w-[140px]" height="h-[140px]" isCircle={true}/>
+                <p>출력과 동시에 염색 완료</p>
+              </li>
+            </ul>
           </div>
         </SectionLayout>
         <SectionLayout
