@@ -44,8 +44,8 @@ export const router = createBrowserRouter([
         path: "/business/overview",
         Component: OverView,
         children: [
-          { path: "slug", Component: Overview },
-          { path: "slug", Component: Utex },
+          { path: ":slug", Component: Overview },
+          { path: ":slug", Component: Utex },
         ]
       },
       {
