@@ -1,0 +1,148 @@
+{
+  "title": "비젼라이프의 특허 기기 유텍스를 소개합니다.",
+  "sections": [
+    {
+      "id": "utex_overview",
+      "title": "제품 개요",
+      "items": [
+        {
+          "id": "utex_desc_1",
+          "category": "description",
+          "content": "UTEX 무폐수 섬유 염색 시스템은 기존 염색 공정에서 발생하는 복합적인 문제점을 해결하며, 초고속 염색 속도와 낮은 비용으로 뛰어난 경제성을 제공합니다."
+        },
+        {
+          "id": "utex_desc_2",
+          "category": "description",
+          "content": "전처리 및 후처리 과정이 필요하지 않아 생산 공정을 간소화하며, 다양한 산업 분야에 적용할 수 있는 확장성을 갖춘 혁신적인 솔루션입니다."
+        },
+        {
+          "id": "utex_desc_3",
+          "category": "description",
+          "content": "친환경 공정을 적용하여 폐수를 발생시키지 않으며, 높은 품질의 염색 결과를 보장합니다."
+        },
+        {
+          "id": "utex_desc_4",
+          "category": "description",
+          "content": "염색 불량을 최소화하여 재고 부담을 줄이고, 트렌드 변화에 빠르게 대응할 수 있습니다."
+        }
+      ]
+    },
+    {
+      "id": "utex_structure",
+      "title": "제품 구성",
+      "items": [
+        {
+          "id": "utex_structure_1",
+          "category": "description",
+          "content": "UTEX 시스템은 원단에 직접 잉크를 출력하고 열처리를 수행하는 통합형 출력 및 열처리 장치로 구성됩니다."
+        },
+        {
+          "id": "utex_structure_2",
+          "category": "note",
+          "content": "※ 본 이미지는 이해를 돕기 위해 제공된 것으로, 실제 제품과 다를 수 있습니다."
+        }
+      ]
+    },
+    {
+      "id": "utex_comparison",
+      "title": "섬유 염색 공정 비교",
+      "items": [
+        {
+          "id": "utex_comparison_1",
+          "category": "comparison",
+          "type": "DTP(디지털 나염)",
+          "description": "전·후처리 공정이 필요하며 염색 과정에서 폐수가 발생합니다.",
+          "steps": ["전처리(원단코팅)", "프린팅", "후처리(증열·수세)"]
+        },
+        {
+          "id": "utex_comparison_2",
+          "category": "comparison",
+          "type": "UTEX",
+          "description": "전·후처리 공정이 필요 없으며, 폐수가 전혀 발생하지 않습니다.",
+          "steps": ["출력과 동시에 염색 완료"]
+        }
+      ]
+    },
+    {
+      "id": "utex_features",
+      "title": "UTEX 특장점",
+      "items": [
+        {
+          "id": "utex_feature_1",
+          "category": "feature",
+          "title": "전사지 불필요",
+          "description": "기존 공정에서 높은 비용을 차지하는 전사지를 사용하지 않아 생산 원가를 절감할 수 있습니다."
+        },
+        {
+          "id": "utex_feature_2",
+          "category": "feature",
+          "title": "초고속 염색",
+          "description": "시간당 최대 출력 속도를 통해 대량 생산이 가능합니다."
+        },
+        {
+          "id": "utex_feature_3",
+          "category": "feature",
+          "title": "선처리 및 후처리 공정 불필요",
+          "description": "독자적인 잉크 제조 기술을 바탕으로 원단 표면에 직접 잉크를 분사하여 흡착되므로 추가적인 가공 없이 즉시 염색이 가능합니다."
+        },
+        {
+          "id": "utex_feature_4",
+          "category": "feature",
+          "title": "다양한 원단 대응",
+          "description": "일반적인 디지털 프린팅(DTP) 방식으로 염색이 어려운 나일론까지 염색 가능하며, 견뢰도 4.0 이상의 품질을 보장합니다."
+        }
+      ]
+    },
+    {
+      "id": "utex_ink_features",
+      "title": "잉크 특장점",
+      "items": [
+        {
+          "id": "utex_ink_feature_1",
+          "category": "feature",
+          "title": "단일 잉크 시스템",
+          "description": "하나의 잉크로 다양한 원단의 염색이 가능하며, 실사 품질을 유지합니다."
+        },
+        {
+          "id": "utex_ink_feature_2",
+          "category": "feature",
+          "title": "친환경 기술",
+          "description": "공정 과정에서 오폐수가 발생하지 않으며, 친환경 기준을 충족하는 잉크를 사용합니다."
+        },
+        {
+          "id": "utex_ink_feature_3",
+          "category": "feature",
+          "title": "4색 잉크 시스템",
+          "description": "C, M, Y, K 4색 잉크를 통해 모든 색상을 구현할 수 있으며, 자연스러운 그라데이션 표현이 가능합니다."
+        }
+      ]
+    },
+    {
+      "id": "utex_economy",
+      "title": "속도 및 경제성",
+      "subtitle": "염색 속도 기준: 220 yd²/h",
+      "items": [
+        {
+          "id": "utex_economy_1",
+          "category": "description",
+          "content": "핵심 부품(출력 헤드)을 제외한 나머지 부품을 조립하여 기계를 제작하며, 필요 시 튜닝 작업을 별도로 진행합니다."
+        },
+        {
+          "id": "utex_economy_2",
+          "category": "description",
+          "content": "세계적으로 가장 큰 시장 점유율을 차지하는 중국의 나염 생산 공장을 현지화하여 설립할 계획입니다."
+        },
+        {
+          "id": "utex_economy_3",
+          "category": "description",
+          "content": "1대당 기계 제작 및 튜닝 비용은 약 8억 5천만 원 (VAT 별도)이며, 다수의 중국 수출 계약(MOU)을 체결한 상태입니다."
+        },
+        {
+          "id": "utex_summary",
+          "category": "summary",
+          "content": "유텍스는 친환경 섬유 염색 시장에서 선·후처리 공정 없이 단일 공정으로 염색을 완료하는 혁신적인 솔루션으로 자리 잡을 것입니다."
+        }
+      ]
+    }
+  ]
+}
