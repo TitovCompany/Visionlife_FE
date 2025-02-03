@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "Visionlife_FE",
+  base: "",
   plugins: [
     react(),
     tailwindcss(),
