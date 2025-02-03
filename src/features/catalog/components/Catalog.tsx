@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import Pagination from "../../../components/Pagination";
 import catalogData from "../../../data/catalogData.json";
+import { CatalogItem } from "../types/CatalogDetail";
+
 
 const Catalog: React.FC = () => {
     const itemsPerPage = 10;
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState<number>(1);
 
     const totalPages = Math.ceil(catalogData.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
-    const currentData = catalogData.slice(startIndex, startIndex + itemsPerPage);
+    const currentData: CatalogItem[] = catalogData.slice(startIndex, startIndex + itemsPerPage);
 
     return (
         <div className="max-w-4xl mx-auto py-8 px-6">
-
             <h1 className="text-3xl font-semibold text-gray-900 text-center mb-4">카탈로그</h1>
             <hr className="border-gray-300 mb-6 mx-auto w-4/5" />
 
@@ -24,7 +25,7 @@ const Catalog: React.FC = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {currentData.map((item) => (
+                {currentData.map((item: CatalogItem) => (
                     <tr key={item.id} className="border border-gray-300">
                         <td className="border border-gray-300 px-4 py-3 text-left">{item.title}.{item.fileType}</td>
                         <td className="border border-gray-300 px-4 py-3 text-center">
