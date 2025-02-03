@@ -3,7 +3,6 @@ import Pagination from "../../../components/Pagination";
 import catalogData from "../../../data/catalogData.json";
 import { CatalogItem } from "../types/CatalogDetail";
 
-
 const Catalog: React.FC = () => {
     const itemsPerPage = 10;
     const [currentPage, setCurrentPage] = useState<number>(1);
@@ -17,21 +16,21 @@ const Catalog: React.FC = () => {
             <h1 className="text-3xl font-semibold text-gray-900 text-center mb-4">카탈로그</h1>
             <hr className="border-gray-300 mb-6 mx-auto w-4/5" />
 
-            <table className="w-full border-collapse border border-gray-300">
-                <thead>
-                <tr className="bg-gray-200">
-                    <th className="border border-gray-300 px-4 py-3 text-left">파일명</th>
-                    <th className="border border-gray-300 px-4 py-3 text-center">다운로드</th>
-                </tr>
-                </thead>
-                <tbody>
+            <ul className="space-y-4">
                 {currentData.map((item: CatalogItem) => (
-                    <tr key={item.id} className="border border-gray-300">
-                        <td className="border border-gray-300 px-4 py-3 text-left">{item.title}.{item.fileType}</td>
-                        <td className="border border-gray-300 px-4 py-3 text-center">
+                    <li
+                        key={item.id}
+                        className="flex flex-col md:flex-row items-center justify-between border-b border-gray-300 p-4"
+                    >
+                        <div className="mb-2 md:mb-0">
+                            <p className="text-gray-600 text-base sm:text-lg">
+                                {item.title}.{item.fileType}
+                            </p>
+                        </div>
+                        <div>
                             <a
                                 href={item.downloadUrl}
-                                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-blue-600"
+                                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition"
                                 download
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="white">
@@ -40,11 +39,10 @@ const Catalog: React.FC = () => {
                                 </svg>
                                 다운로드
                             </a>
-                        </td>
-                    </tr>
+                        </div>
+                    </li>
                 ))}
-                </tbody>
-            </table>
+            </ul>
 
             <div className="mt-6 flex justify-center">
                 <Pagination
