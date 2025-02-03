@@ -3,7 +3,7 @@ import {NavLink, Link} from "react-router-dom";
 
 const navigation = [
   { label: '기업 소개', link: '/company/profile' },
-  { label: '사업 개요', link: '/business/overview' },
+  { label: '사업 개요', link: '/business' },
   { label: '언론 보도', link: '/company/news' },
   { label: '카탈로그', link: '/company/catalogs' },
 ];

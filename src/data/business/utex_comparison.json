@@ -1,0 +1,37 @@
+{
+  "id": "utex_comparison",
+  "category": "comparison",
+  "title": "섬유 염색 공정 비교",
+  "items": [
+    {
+      "id": "utex_comparison_1",
+      "type": "comparison",
+      "title": "전·후처리 공정이 필요하며 염색 과정에서 폐수가 발생합니다.",
+      "steps": [
+        {
+          "id": "utex_step_1",
+          "content": "전처리(원단코팅)"
+        },
+        {
+          "id": "utex_step_2",
+          "content": "프린팅"
+        },
+        {
+          "id": "utex_step_3",
+          "content": "후처리(증열 · 수세)"
+        }
+      ]
+    },
+    {
+      "id": "utex_comparison_2",
+      "type": "comparison",
+      "title": "전·후처리 공정이 필요 없으며, 폐수가 전혀 발생하지 않습니다.",
+      "steps": [
+        {
+          "id": "utex_step_4",
+          "content": "출력과 동시에 염색 완료"
+        }
+      ]
+    }
+  ]
+}

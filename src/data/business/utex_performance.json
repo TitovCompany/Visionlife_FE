@@ -1,0 +1,32 @@
+{
+  "id": "utex_performance",
+  "category": "performance",
+  "title": "속도 및 경제성",
+  "items": [
+    {
+      "id": "utex_performance_1",
+      "type": "performance",
+      "content": "염색 속도 기준: 220 yd²/h"
+    },
+    {
+      "id": "utex_performance_2",
+      "type": "performance",
+      "content": "핵심 부품(출력 헤드)을 제외한 나머지 부품을 조립하여 기계를 제작하며, 필요 시 튜닝 작업을 별도로 진행합니다."
+    },
+    {
+      "id": "utex_performance_3",
+      "type": "performance",
+      "content": "세계적으로 가장 큰 시장 점유율을 차지하는 중국의 나염 생산 공장을 현지화하여 설립할 계획입니다."
+    },
+    {
+      "id": "utex_performance_4",
+      "type": "performance",
+      "content": "1대당 기계 제작 및 튜닝 비용은 약 8억 5천만 원 (VAT 별도)이며, 다수의 중국 수출 계약(MOU)을 체결한 상태입니다."
+    },
+    {
+      "id": "utex_performance_summary",
+      "type": "performance",
+      "content": "유텍스는 친환경 섬유 염색 시장에서 선·후처리 공정 없이 단일 공정으로 염색을 완료하는 혁신적인 솔루션으로 자리 잡을 것입니다."
+    }
+  ]
+}
