@@ -4,17 +4,18 @@ const SectionLayout = ({
   children,
   title,
   className,
-  titleClassName,
+  titleClassName = "text-6xl",
+  titlePadding = "p-18",
 }: {
   children: React.ReactNode;
   title: string;
   className?: string;
   titleClassName?: string;
+  titlePadding?: string;
 }) => {
-  const textSize = titleClassName ? `${titleClassName}` : 'text-6xl';
   return (
       <section className={`w-full h-screen ${className}`}>
-        <h2 className={`w-full p-18 text-center font-extrabold ${textSize}`}>{title}</h2>
+        <h2 className={`w-full ${titlePadding} text-center font-extrabold ${titleClassName}`}>{title}</h2>
         {children}
       </section>
   );

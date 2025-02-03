@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import newsData from "../../../data/newsData.json";
 
-const DetailNews: React.FC = () => {
+const NewsDetail: React.FC = () => {
     const { id } = useParams();
     const newsItem = newsData.news.find((news) => news.id === id) || newsData.newsList.find((news) => news.id === id);
 
@@ -41,4 +41,4 @@ const DetailNews: React.FC = () => {
     );
 };
 
-export default DetailNews;
+export default NewsDetail;
