@@ -17,7 +17,7 @@ const Navigation = () => {
           {/* Logo */}
           <h1 className="text-xl font-bold">
             <Link to={"/"}>
-              <img src="/logo.png" alt="(주)비젼라이프 홈페이지 로고" className="max-w-30"/>
+              <img src="/img/logo.png" alt="(주)비젼라이프 홈페이지 로고" className="max-w-30"/>
             </Link>
           </h1>
           <nav className="flex">
