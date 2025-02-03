@@ -11,21 +11,34 @@ export interface Overview {
 }
 
 /* UTEX (제품) */
-export interface Utex {
-  title: string;
-  sections: UtexSections[];
+interface UtexDescription {
+  id: string;
+  type: "description";
+  content: string;
 }
 
-interface UtexSections {
+interface UtexFeature {
   id: string;
-  category: string;
-  title: string;
-  items: UtexItems[];
-}
-
-interface UtexItems {
-  id: string;
-  type: string;
+  type: "feature";
   title?: string;
+  content: string;
+}
+
+interface UtexInk {
+  id: string;
+  type: "ink";
+  title: string;
+  content: string;
+}
+
+export interface UtexComparison {
+  id: string;
+  type: "comparison";
+  title: string;
+  steps: UtexStep[];
+}
+
+interface UtexStep {
+  id: string;
   content: string;
 }
