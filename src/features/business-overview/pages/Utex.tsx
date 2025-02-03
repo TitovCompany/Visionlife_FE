@@ -7,11 +7,11 @@ const Utex = () => {
       <>
         <SectionLayout
             title={utex.title}
-            className="grid place-items-center"
+            className="flex flex-col justify-center items-center"
             titleClassName="max-w-[330px] pt-16 text-4xl leading-tight"
             titlePadding="p-0"
         >
-          {utex.sections.map(section => (
+          {utex.sections.slice(0, 2).map(section => (
               <div key={section.id} className="max-w-4xl w-full px-6 space-y-12">
                 <article className="space-y-6">
                   {/* Section Title */}
@@ -31,7 +31,7 @@ const Utex = () => {
 
         <SectionLayout
             title={"잉크"}
-            className="grid place-items-center"
+            className="flex flex-col justify-center items-center"
             titleClassName="max-w-[330px] pt-16 text-4xl leading-tight"
             titlePadding="p-0"
         >
@@ -55,7 +55,7 @@ const Utex = () => {
         </SectionLayout>
         <SectionLayout
             title={"섬유 염색 공정 비교"}
-            className="grid place-items-center"
+            className="flex flex-col justify-center items-center"
             titleClassName="max-w-[330px] pt-16 text-4xl leading-tight"
             titlePadding="p-0"
         >
@@ -87,7 +87,7 @@ const Utex = () => {
         </SectionLayout>
         <SectionLayout
             title={"속도 및 경제성"}
-            className="grid place-items-center"
+            className="flex flex-col justify-center items-center"
             titleClassName="max-w-[330px] pt-16 text-4xl leading-tight"
             titlePadding="p-0"
         >

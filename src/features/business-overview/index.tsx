@@ -13,7 +13,7 @@ const Business = () => {
           {isBusinessDetail && (
               <SectionLayout
                   title="비젼라이프의 사업을 소개합니다."
-                  className="grid place-items-center"
+                  className="flex flex-col justify-center items-center gap-20"
                   titleClassName="max-w-xl text-4xl leading-tight"
                   titlePadding="p-0"
               >
