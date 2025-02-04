@@ -27,7 +27,7 @@ const Navigation = () => {
               {/* Navigation Menu */}
               <ul className="sm:hidden md:flex space-x-6 gap-10">
                 {navigation.map((item, idx) => (
-                    <li key={idx} className="mx-0 text-xl hover:text-black cursor-pointer">
+                    <li key={idx} className="mx-0 text-base hover:text-black cursor-pointer">
                       <NavLink to={item.link}>{item.label}</NavLink>
                     </li>
                 ))}
