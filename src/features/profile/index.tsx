@@ -58,9 +58,14 @@ const Profile = () => {
           </SectionLayout>
 
           {/* Contact Us */}
-          <SectionLayout title="CONTACT US" fullHeight={true}>
+          <SectionLayout
+              title="CONTACT US"
+              className="flex flex-col items-center justify-center"
+              titleClassName="text-2xl"
+              fullHeight={true}
+          >
             <p className="text-center">Text</p>
-            <div className="h-[500px] grid grid-rows-3 grid-cols-5">
+            <div className="w-full h-[500px] grid grid-rows-3 grid-cols-5">
               <div className="grid-cols-1 col-span-2">
                 <DummyImgBox width="w-full" height="h-full" isCircle={false}/>
                 <DummyImgBox width="w-full" height="h-full" isCircle={false}/>
