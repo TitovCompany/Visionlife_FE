@@ -1,5 +1,5 @@
-import useScrollDirection from "../hooks/useScrollDirection.tsx";
 import {NavLink, Link} from "react-router-dom";
+import useScrollDirection from "../hooks/useScrollDirection.tsx";
 
 const navigation = [
   { label: '기업 소개', link: '/company/profile' },
@@ -9,10 +9,12 @@ const navigation = [
 ];
 
 const Navigation = () => {
+  // 네비게이션 숨김 처리
   const isVisible = useScrollDirection();
+  const visible = isVisible ? "translate-y-0" : "-translate-y-full";
 
   return (
-      <header className={`w-full fixed top-0 left-0 bg-white shadow-md z-50 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
+      <header className={`w-full fixed top-0 left-0 bg-white border-b border-b-[#dceee8] z-50 transition-transform duration-300 ${visible}`}>
         <div className="max-w-[1440px] lg:mx-auto md:mx-20 sm:mx-20 py-2 flex justify-between items-center">
           {/* Logo */}
           <h1 className="text-xl font-bold">
@@ -28,7 +30,9 @@ const Navigation = () => {
               <ul className="sm:hidden md:flex space-x-6 gap-10">
                 {navigation.map((item, idx) => (
                     <li key={idx} className="mx-0 text-base hover:text-black cursor-pointer">
-                      <NavLink to={item.link}>{item.label}</NavLink>
+                      <NavLink to={item.link} className={({isActive}) => isActive ? "text-blue-600 border-b" : ""}>
+                        {item.label}
+                      </NavLink>
                     </li>
                 ))}
               </ul>
