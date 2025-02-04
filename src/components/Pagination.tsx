@@ -29,7 +29,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
                         key={pageNumber}
                         className={`px-6 text-lg transition-colors ${
                             currentPage === pageNumber
-                                ? "font-bold !text-green-500" // ✅ 강제 적용
+                                ? "font-bold !text-green-500" 
                                 : "text-gray-700 hover:text-green-500"
                         }`}
                         onClick={() => onPageChange(pageNumber)}
