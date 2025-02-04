@@ -13,7 +13,7 @@ const Navigation = () => {
 
   return (
       <header className={`w-full fixed top-0 left-0 bg-white shadow-md z-50 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
-        <div className="max-w-[1440px] mx-auto py-2 flex justify-between items-center">
+        <div className="max-w-[1440px] lg:mx-auto md:mx-20 sm:mx-20 py-2 flex justify-between items-center">
           {/* Logo */}
           <h1 className="text-xl font-bold">
             <Link to={"/"}>
