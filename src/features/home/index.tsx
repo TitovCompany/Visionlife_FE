@@ -1,7 +1,6 @@
 import SectionLayout from "../../layout/SectionLayout.tsx";
 import PageLayout from "../../layout/PageLayout.tsx";
 import HeroSection from "./components/HeroSection.tsx";
-import CompanyVisionSection from "../../components/CompanyVisionSection.tsx";
 
 const Home = () => {
   return (
@@ -9,7 +8,7 @@ const Home = () => {
         <HeroSection/>
 
         {/* About */}
-        <SectionLayout title="ABOUT COMPANY">
+        <SectionLayout title="ABOUT COMPANY" fullHeight={true}>
           <article className="mt-40">
             <h3 className="p-10 text-center text-3xl font-semibold">ECO FRIENDLY</h3>
             <h4 className="mt-10 text-center text-2xl font-semibold">
@@ -22,18 +21,7 @@ const Home = () => {
             </p>
           </article>
         </SectionLayout>
-
-        {/* Vision */}
-        <SectionLayout title="Vision Life We Do" className="flex flex-col justify-center items-center">
-          <CompanyVisionSection/>
-        </SectionLayout>
-
-        {/* Contact Us */}
-        <SectionLayout title="Contact Us">
-          <p className="text-center">Text</p>
-          <div className="h-[500px] m-20 border-2"></div>
-        </SectionLayout>
-      </PageLayout>
+     </PageLayout>
   );
 };
 
