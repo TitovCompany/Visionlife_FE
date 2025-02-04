@@ -1,6 +1,6 @@
 import './index.css'
-import Navigation from "./components/Navigation.tsx";
-import Footer from "./components/Footer.tsx";
+import Navigation from "./layout/Navigation.tsx";
+import Footer from "./layout/Footer.tsx";
 import {Outlet} from "react-router-dom";
 
 function App() {

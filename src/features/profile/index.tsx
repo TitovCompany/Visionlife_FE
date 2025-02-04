@@ -3,11 +3,15 @@ import PageLayout from "../../layout/PageLayout.tsx";
 import SectionLayout from "../../layout/SectionLayout.tsx";
 import profile from "../../data/profile.json";
 import DummyImgBox from "../../components/DummyImgBox.tsx";
+import HeroSection from "../home/components/HeroSection.tsx";
 
 const Profile = () => {
   return (
       <PageLayout title="서비스 페이지 본문">
-          {/* About */}
+        {/* Hero */}
+        <HeroSection/>
+
+        {/* About */}
         <div className="max-w-4xl mx-auto">
           <h3 className="hidden">회사 소개</h3>
           <section className="w-full h-auto max-w-7xl mx-auto mb-32 overflow-hidden">
@@ -19,7 +23,7 @@ const Profile = () => {
                   회사입니다.
                 </p>
                 <p className="max-w-md text-base leading-relaxed">
-                 {/* 당사는 세계 유일의 무폐수 나일론 디지털 나염 기술을<br/>
+                  {/* 당사는 세계 유일의 무폐수 나일론 디지털 나염 기술을<br/>
                   성공적으로 상용화한 기업으로서, 전사지를 사용하지 않고<br/>
                   4색(C.M.Y.K) 잉크만으로 실사를 구현하는<br/>
                   친환경 디지털 프린팅 기술을 보유하고 있습니다. <br/>

@@ -5,7 +5,7 @@ import HeroSection from "./components/HeroSection.tsx";
 const Home = () => {
   return (
       <PageLayout title="서비스 페이지 본문">
-        <HeroSection/>
+        {/*<HeroSection/>*/}
 
         {/* About */}
         <SectionLayout title="ABOUT COMPANY" fullHeight={true}>
