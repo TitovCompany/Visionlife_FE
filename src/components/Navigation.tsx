@@ -12,8 +12,8 @@ const Navigation = () => {
   const isVisible = useScrollDirection();
 
   return (
-      <header className={`fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
-        <div className="mx-10 py-2 flex justify-between items-center">
+      <header className={`w-full fixed top-0 left-0 bg-white shadow-md z-50 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
+        <div className="max-w-[1440px] mx-auto py-2 flex justify-between items-center">
           {/* Logo */}
           <h1 className="text-xl font-bold">
             <Link to={"/"}>
@@ -25,7 +25,7 @@ const Navigation = () => {
             <div className="container mx-auto flex justify-between items-center p-4">
 
               {/* Navigation Menu */}
-              <ul className="hidden md:flex space-x-6 gap-10">
+              <ul className="sm:hidden md:flex space-x-6 gap-10">
                 {navigation.map((item, idx) => (
                     <li key={idx} className="mx-0 text-xl hover:text-black cursor-pointer">
                       <NavLink to={item.link}>{item.label}</NavLink>
