@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import {createHashRouter} from "react-router-dom";
 
 // Root
 import App from "./App.tsx";
@@ -15,8 +15,7 @@ import NewsDetail from "./features/news/pages/NewsDetail.tsx";
 import Overview from "./features/business-overview/pages/Overview.tsx";
 import Utex from "./features/business-overview/pages/Utex.tsx";
 
-
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "/",
     Component: App,
