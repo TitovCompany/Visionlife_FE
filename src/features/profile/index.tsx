@@ -56,10 +56,15 @@ const Profile = () => {
           <SectionLayout
               title="CONTACT US"
               className="flex flex-col items-center justify-center"
-              titleClassName="text-2xl"
+              titleClassName="text-6xl font-normal"
               fullHeight={true}
           >
-            <p className="text-center">Text</p>
+            <p className="max-w-2xl mb-5 text-center text-lg text-gray-700 leading-relaxed">
+              궁금한 점이 있으신가요? 언제든지 문의해 주세요.<br />
+              비젼라이프홀딩스는 고객과의 소통을 중요하게 생각하며,<br />
+              빠르고 친절한 응대를 약속드립니다.
+            </p>
+
             <div className="w-full h-[500px] grid grid-rows-3 grid-cols-5">
               <div className="grid-cols-1 col-span-2">
                 <DummyImgBox width="w-full" height="h-full" isCircle={false}/>
