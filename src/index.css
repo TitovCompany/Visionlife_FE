@@ -16,3 +16,7 @@ body, button, input, select, td, textarea, th {
     font-weight: 400;
     color: #333;
 }
+
+li, ul, ol {
+    list-style: none;
+}

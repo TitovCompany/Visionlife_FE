@@ -7,7 +7,6 @@ interface Props {
   title: string,
 }
 
-// Todo : title 별 색상 추가 필요
 const VisionItem: React.FC<Props> = ({title}) => {
   const icon = {
     "친환경 기술": <MdEco className="text-green-500 text-3xl" />,
