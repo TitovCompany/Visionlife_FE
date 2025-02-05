@@ -1,7 +1,8 @@
-import {ReactNode} from 'react';
+import { ReactNode } from "react";
+import { FaCheckCircle } from "react-icons/fa";
 
 interface Props<T> {
-  data: T[];
+    data: T[];
 }
 
 const OverviewList = <T extends ReactNode>({data}: Props<T>) => {
