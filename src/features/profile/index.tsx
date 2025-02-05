@@ -4,7 +4,7 @@ import SectionLayout from "../../layout/SectionLayout.tsx";
 
 // components
 import DummyImgBox from "../../components/DummyImgBox.tsx";
-import HeroSection from "../home/components/HeroSection.tsx";
+import HeroSection from "./components/HeroSection.tsx";
 import ListCard from "../../components/ListCard.tsx";
 
 // icon

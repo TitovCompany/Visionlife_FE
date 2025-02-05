@@ -1,16 +1,16 @@
-import imageSrc from "/img/home/p2.jpg";
+import DummyImgBox from "../../../components/DummyImgBox.tsx";
 
 const HeroSection = () => {
   return (
-      <section className="h-screen">
-        <figure className="relative w-full h-full">
-          <img className="w-full h-full object-cover" src={imageSrc} alt="Vision Image"/>
-          <figcaption
-              className="absolute inset-0 flex flex-col justify-center items-center text-white text-7xl font-bold bg-black/50">
-            Vision !! <br/> Dreams Come True !!
-          </figcaption>
-        </figure>
-      </section>
+      <article className="mx-32 h-96 grid grid-cols-5 grid-rows-2">
+        <div className="col-span-4 row-span-2">
+          <DummyImgBox width="w-full" height="h-full" isCircle={false}/>
+        </div>
+        <div className="col-span-1 row-span-1">
+          <DummyImgBox width="w-full" height="h-full" isCircle={false}/>
+          <DummyImgBox width="w-full" height="h-full" isCircle={false}/>
+        </div>
+      </article>
   );
 };
 
