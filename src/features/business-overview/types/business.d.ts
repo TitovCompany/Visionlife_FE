@@ -13,27 +13,27 @@ export interface Overview {
 /* UTEX (제품) */
 interface UtexDescription {
   id: string;
-  type: "description";
+  type: 'description';
   content: string;
 }
 
 interface UtexFeature {
   id: string;
-  type: "feature";
+  type: 'feature';
   title?: string;
   content: string;
 }
 
 interface UtexInk {
   id: string;
-  type: "ink";
+  type: 'ink';
   title: string;
   content: string;
 }
 
 export interface UtexComparison {
   id: string;
-  type: "comparison";
+  type: 'comparison';
   title: string;
   steps: UtexStep[];
 }

@@ -1,22 +1,32 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 body {
-    overflow-x: hidden;
-    overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-html, body, #root {
-    width: 100vw;
-    min-height: 100vh;
+html,
+body,
+#root {
+  width: 100vw;
+  min-height: 100vh;
 }
 
-body, button, input, select, td, textarea, th {
-    font-size: 14px;
-    line-height: 1.5;
-    font-weight: 400;
-    color: #333;
+body,
+button,
+input,
+select,
+td,
+textarea,
+th {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #333;
 }
 
-li, ul, ol {
-    list-style: none;
+li,
+ul,
+ol {
+  list-style: none;
 }

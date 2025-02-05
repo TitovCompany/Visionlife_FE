@@ -1,4 +1,4 @@
-import {ReactNode} from "react";
+import {ReactNode} from 'react';
 
 interface Props {
   title: string;
@@ -15,16 +15,17 @@ const ListCard = ({
   description,
   width,
   height,
-  bgColor
+  bgColor,
 }: Props) => {
   return (
-      <li className={`w-full min-w-fit ${width} ${height} p-5 ${bgColor} rounded-xl shadow-md`}>
-        <div className="max-w-fit mb-2 flex items-center justify-between gap-2">
-          {icon}
-          <span className="text-lg font-semibold">{title}</span>
-        </div>
-        <p>{description}</p>
-      </li>
+    <li
+      className={`w-full min-w-fit ${width} ${height} p-5 ${bgColor} rounded-xl shadow-md`}>
+      <div className="max-w-fit mb-2 flex items-center justify-between gap-2">
+        {icon}
+        <span className="text-lg font-semibold">{title}</span>
+      </div>
+      <p>{description}</p>
+    </li>
   );
 };
 
