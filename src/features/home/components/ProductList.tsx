@@ -1,4 +1,5 @@
 import DummyImgBox from '../../../components/DummyImgBox.tsx';
+import ButtonLink from '../../../components/ButtonLink.tsx';
 
 interface Props {
   title: string;
@@ -7,13 +8,18 @@ interface Props {
 
 const ProductList = ({title, description}: Props) => {
   return (
-    <article className="mx-28 h-96 py-20">
+    <article className="mx-10 h-auto py-20">
       <div className="h-full flex gap-14">
-        <div className="max-w-3xl">
-          <h2 className="mb-3 text-3xl font-normal">{title}</h2>
+        <div className="max-w-3xl flex flex-col items-start gap-5">
+          <h2 className="w-full max-w-sm text-3xl font-normal">{title}</h2>
           <p className="text-lg">{description}</p>
+          <ButtonLink
+            href={"/"}
+            size={"md"}>
+            더 보기
+          </ButtonLink>
         </div>
-        <DummyImgBox width="w-full" height="h-full" isCircle={false} />
+        <DummyImgBox width="w-full" height="h-[349px]" isCircle={false} />
       </div>
     </article>
   );
