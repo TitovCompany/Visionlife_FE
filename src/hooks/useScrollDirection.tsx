@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {useEffect, useState} from 'react';
+import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +11,7 @@ const useScrollDirection = () => {
     let lastScrollY = window.scrollY;
 
     ScrollTrigger.create({
-      start: "top+=10 top", // 스크롤이 시작되는 위치
+      start: 'top+=10 top', // 스크롤이 시작되는 위치
       onUpdate: (self) => {
         const currentScrollY = self.scroll();
 
