@@ -3,6 +3,7 @@ import ProductList from './components/ProductList.tsx';
 import NewsCard from './components/NewsCard.tsx';
 import HeroSection from './components/HeroSection.tsx';
 import MoreNewsSection from './components/MoreNewsSection.tsx';
+import {AiOutlineArrowDown} from 'react-icons/ai';
 
 const Home = () => {
   return (
@@ -35,7 +36,10 @@ const Home = () => {
 
         {/* 뉴스 */}
         <section className="mx-32 h-96 py-20">
-          <h2 className="mb-2">비전라이프 최신 소식</h2>
+          <h2 className="ml-3 mb-3 flex items-center gap-3 text-base">
+            <AiOutlineArrowDown />
+            비전라이프 최신 소식
+          </h2>
           <ul className="h-full flex justify-between gap-5">
             <NewsCard title="title" description="article" />
             <NewsCard title="title" description="article" />
