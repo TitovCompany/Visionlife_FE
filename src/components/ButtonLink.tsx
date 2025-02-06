@@ -1,5 +1,5 @@
-import {Link} from 'react-router-dom';
 import {ReactNode} from 'react';
+import {Link} from 'react-router-dom';
 import clsx from 'clsx';
 
 interface ButtonLinkProps {
@@ -30,7 +30,11 @@ const ButtonLink = ({
   );
 
   return (
-    <Link to={href} className={classes} aria-label={label} target={target}>
+    <Link
+      to={href}
+      className={classes}
+      aria-label={label}
+      target={target}>
       {children}
     </Link>
   );
