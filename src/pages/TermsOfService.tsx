@@ -1,62 +1,64 @@
-import React from 'react';  // 레이아웃 컴포넌트 불러오기
-import TermOfService from "../data/termsOfService.json";  // JSON 파일에서 데이터 불러오기
-import PageLayout from "../layout/PageLayout.tsx";  // 레이아웃 컴포넌트 불러오기
+import React from 'react';
+import TermOfService from "../data/termsOfService.json";
+import PageLayout from "../layout/PageLayout.tsx";
 
 const TermsOfService: React.FC = () => {
-  const { termsOfService } = TermOfService;  // JSON 파일에서 'termsOfService' 객체 추출
+  const { termsOfService } = TermOfService;
 
   if (!termsOfService) {
     return <div className="text-center text-red-500">불러오는 중 오류가 발생했습니다.</div>;
   }
 
+  const renderContent = (content: string | string[]) => {
+    if (Array.isArray(content)) {
+      return (
+        <ul className="list-decimal list-inside pl-0 mt-4 mb-6 space-y-3">
+          {content.map((item, idx) => (
+            <li key={idx} className="leading-relaxed">
+              {item}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    return <p className="leading-relaxed mt-2 mb-4">{content}</p>;
+  };
+
   return (
     <PageLayout title={termsOfService.title}>
-      <div className="terms-policy mx-auto max-w-[90%] md:max-w-[80%] p-5">
-        {/* 이용 약관 제목 */}
-        <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center">{termsOfService.title}</h1>
+      <div className="max-w-4xl mx-auto p-5">
+        <h1 className="text-2xl font-bold mb-4">{termsOfService.title}</h1>
 
-        {/* 약관 내용 */}
         {termsOfService.articles.map((article, index) => (
-          <div key={index} className="mb-6">
-            {/* 번호를 없애고 title만 표시 */}
-            <h2 className="text-xl font-semibold">{article.title}</h2>
-            {article.content && <p className="leading-relaxed mt-2 mb-4">{article.content}</p>} {/* content가 있을 때만 렌더링 */}
-
-            {/* 정의 섹션 */}
+          <div key={index} className="mb-8">
+            <h2 className="text-l font-semibold">{article.title}</h2>
+            {article.content && renderContent(article.content)}
             {article.definitions && (
-              <div>
+              <div className="mt-6">
                 <h3 className="text-lg font-semibold mt-4">정의</h3>
-                <ul className="list-disc pl-6">
-                  {article.definitions.map((definition, idx) => (
+                <ul className="list-disc list-inside pl-0">
+                  {article.definitions.map((def, idx) => (
                     <li key={idx} className="mb-2">
-                      <strong>{definition.term}:</strong> {definition.definition}
+                      {def.definition}
                     </li>
                   ))}
                 </ul>
               </div>
             )}
-
-            {/* 섹션 내용 */}
             {article.sections && (
               <div className="mt-4">
                 {article.sections.map((section, idx) => (
                   <div key={idx}>
-                    {section.subtitle && <h3 className="text-lg font-semibold mt-4">{section.subtitle}</h3>}
-                    <ul className="list-decimal pl-6">
-                      {section.content.map((content: string, index: number) => (
-                        <li key={index} className="mb-2">{content}</li>
-                      ))}
-                    </ul>
+                    {section.subtitle && <h3 className="text-l font-semibold mt-4">{section.subtitle}</h3>}
+                    {renderContent(section.content)}
                   </div>
                 ))}
               </div>
             )}
           </div>
         ))}
-
-        {/* 부칙 내용 */}
         <div>
-          <h2 className="text-xl font-semibold mt-6">{termsOfService.appendix.title}</h2>
+          <h1 className="text-l font-semibold mt-6">{termsOfService.appendix.title}</h1>
           <p className="mt-2">{termsOfService.appendix.content}</p>
         </div>
       </div>
