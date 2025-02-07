@@ -14,7 +14,8 @@ import Catalog from './features/catalog';
 import NewsDetail from './features/news/pages/NewsDetail.tsx';
 import Overview from './features/business-overview/pages/Overview.tsx';
 import Utex from './features/business-overview/pages/Utex.tsx';
-import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import History from './features/profile/pages/History.tsx';
+
 import EmailNoCollection from "./pages/EmailNoCollection.tsx";
 import TermsOfService from "./pages/TermsOfService.tsx";
 
@@ -28,19 +29,11 @@ export const router = createHashRouter([
         Component: Home,
       },
       {
-        path: '/company/news',
-        Component: News,
-        children: [
-          {
-            // slug 사용 예정
-            path: ':id',
-            Component: NewsDetail,
-          },
-        ],
-      },
-      {
         path: '/company/profile',
         Component: Profile,
+        children: [
+          {path: 'history', Component: History}
+        ]
       },
       {
         path: '/business',
@@ -48,6 +41,14 @@ export const router = createHashRouter([
         children: [
           {path: 'overview/:slug', Component: Overview},
           {path: 'utex/:slug', Component: Utex},
+        ],
+      },
+      {
+        path: '/company/news',
+        Component: News,
+        children: [
+          // slug 사용 예정
+          {path: ':id', Component: NewsDetail,},
         ],
       },
       {
