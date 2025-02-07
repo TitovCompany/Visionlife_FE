@@ -8,8 +8,10 @@ import HeroSection from './components/HeroSection.tsx';
 import ListCard from '../../components/ListCard.tsx';
 
 // icon
-import {MdEco} from 'react-icons/md';
-import {FaChartLine, FaHandsHelping} from 'react-icons/fa';
+import {MdEco, MdOutlineMail} from 'react-icons/md';
+import {FaChartLine, FaHandsHelping, FaPhoneAlt} from 'react-icons/fa';
+import {LiaFaxSolid} from 'react-icons/lia';
+import {HiOutlineLocationMarker} from 'react-icons/hi';
 
 const Profile = () => {
   return (
@@ -45,51 +47,75 @@ const Profile = () => {
           <ul className="flex flex-col gap-3">
             <ListCard
               title="친환경 기술"
+              type="_highlight"
               bgColor="bg-green-100"
               description="우리는 더 깨끗한 환경과 더 공정한 경제를 꿈꿉니다."
               icon={<MdEco className="text-green-500 text-3xl" />}
             />
             <ListCard
               title="경제력 상승"
+              type="_highlight"
               bgColor="bg-blue-100"
               description="비젼라이프홀딩스는 혁신적인 친환경 기술로 지속 가능한 미래를 만들어갑니다."
               icon={<FaChartLine className="text-blue-500 text-3xl" />}
             />
             <ListCard
               title="함께사는 사회"
+              type="_highlight"
               bgColor="bg-orange-100"
               description="우리 기술이 사람들에게 희망이 되고, 모두가 함께 살아가는 세상을 위한 변화가 되길 바랍니다."
               icon={<FaHandsHelping className="text-orange-500 text-3xl" />}
             />
           </ul>
         </SectionLayout>
-
-        {/* Contact Us */}
-        <SectionLayout
-          title="CONTACT US"
-          className="flex flex-col items-center justify-center"
-          titleClassName="text-6xl font-normal"
-          fullHeight={true}>
-          <p className="max-w-2xl mb-5 text-center text-lg text-gray-700 leading-relaxed">
-            궁금한 점이 있으신가요? 언제든지 문의해 주세요.
-            <br />
-            비젼라이프홀딩스는 고객과의 소통을 중요하게 생각하며,
-            <br />
-            빠르고 친절한 응대를 약속드립니다.
-          </p>
-
-          <div className="w-full h-[500px] grid grid-rows-3 grid-cols-5">
-            <div className="grid-cols-1 col-span-2">
-              <DummyImgBox width="w-full" height="h-full" isCircle={false} />
-              <DummyImgBox width="w-full" height="h-full" isCircle={false} />
-              <DummyImgBox width="w-full" height="h-full" isCircle={false} />
-            </div>
-            <div className="grid-cols-2 col-span-3 row-span-3">
-              <DummyImgBox width="w-full" height="h-full" isCircle={false} />
-            </div>
-          </div>
-        </SectionLayout>
       </div>
+
+      {/* Contact Us */}
+      <SectionLayout
+        title="CONTACT US"
+        className="max-w-4xl mx-auto flex flex-col items-center justify-center"
+        titleClassName="text-6xl font-normal"
+        fullHeight={true}>
+        <p className="max-w-2xl mb-5 text-center text-lg text-gray-700 leading-relaxed">
+          궁금한 점이 있으신가요? 언제든지 문의해 주세요.
+          <br />
+          비젼라이프홀딩스는 고객과의 소통을 중요하게 생각하며,
+          <br />
+          빠르고 친절한 응대를 약속드립니다.
+        </p>
+
+        <div className="w-full h-[600px] grid grid-rows-4 grid-cols-5 gap-x-2">
+          <ul className="col-span-2 row-span-4 grid grid-rows-4 gap-y-1">
+            <ListCard
+              title="전화번호"
+              type="_base"
+              icon={<FaPhoneAlt className="w-14 h-14 p-3 border rounded-full"/>}
+              description="02-555-1202"
+              size="w-full h-full"/>
+            <ListCard
+              title="팩스 (FAX)"
+              type="_base"
+              icon={<LiaFaxSolid className="w-14 h-14 p-3 border rounded-full"/>}
+              description="02-555-5801"
+              size="w-full h-full"/>
+            <ListCard
+              title="이메일"
+              type="_base"
+              icon={<MdOutlineMail className="w-14 h-14 p-3 border rounded-full"/>}
+              description="visionlife2018@naver.com"
+              size="w-full h-full"/>
+            <ListCard
+              title="주소"
+              type="_base"
+              icon={<HiOutlineLocationMarker className="w-16 h-14 p-3 border rounded-full"/>}
+              description="서울 서초구 반포대로 21길 23 세진빌딩 3층"
+              size="w-full h-full"/>
+          </ul>
+          <div className="grid-cols-2 col-span-3 row-span-4">
+            <DummyImgBox width="w-full" height="h-full" isCircle={false} />
+          </div>
+        </div>
+      </SectionLayout>
     </PageLayout>
   );
 };
