@@ -15,7 +15,7 @@ import NewsDetail from './features/news/pages/NewsDetail.tsx';
 import Overview from './features/business-overview/pages/Overview.tsx';
 import Utex from './features/business-overview/pages/Utex.tsx';
 import History from './features/profile/pages/History.tsx';
-
+import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
 import EmailNoCollection from "./pages/EmailNoCollection.tsx";
 import TermsOfService from "./pages/TermsOfService.tsx";
 
