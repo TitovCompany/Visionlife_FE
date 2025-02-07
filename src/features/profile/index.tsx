@@ -19,56 +19,57 @@ const Profile = () => {
       {/* Hero */}
       <HeroSection />
 
-      <div className="max-w-4xl mx-auto">
-        {/* About */}
-        <h3 className="hidden">회사 소개</h3>
-        {/*<AboutSection/>*/}
-        {/* About */}
-        {/*<SectionLayout title="ABOUT COMPANY" fullHeight={true}>
-            <article className="mt-40">
-              <h3 className="p-10 text-center text-3xl font-semibold">ECO FRIENDLY</h3>
-              <h4 className="mt-10 text-center text-2xl font-semibold">
-                미래와 더불어 글로벌 시대를 선도하고 주도하는 비젼라이프 홀딩스
-              </h4>
-              <p className="mt-5 text-center text-gray-600 text-lg leading-relaxed">
-                세계 유일의 무폐수 나일론 디지털 나염을 상용화에 성공한 회사로써<br/>
-                전사지를 사용하지 않고 잉크를 4색(C, M, Y, K)만으로 실사를 구현하는<br/>
-                기술을 보유한 친환경 녹색산업혁명의 회사입니다.
-              </p>
-            </article>
-          </SectionLayout>*/}
+      {/* About */}
+      <SectionLayout
+        title="주식회사 비젼 라이프 홀딩스 회사 소개"
+        className="max-w-4xl mx-auto flex flex-col items-center justify-center"
+        titleClassName="hidden"
+        fullHeight={true}>
+        <article className="mt-40">
+          <h3 className="p-10 text-center text-3xl font-semibold">
+            ECO FRIENDLY
+          </h3>
+          <h4 className="mt-10 text-center text-2xl font-semibold">
+            지속 가능한 미래를 위한 혁신, 비젼라이프 홀딩스
+          </h4>
+          <p className="hidden text-center text-gray-600 text-lg leading-relaxed">
+            우리는 세계 최초로 무폐수 나일론 디지털 나염 기술을 상용화하였으며,<br />
+            전사지를 사용하지 않고도 C, M, Y, K 4색 잉크만으로 정밀한 색상을 구현합니다.<br />
+            환경을 생각하는 기술로 지속 가능한 녹색산업 혁명을 선도합니다.
+          </p>
+        </article>
+      </SectionLayout>
 
-        {/* Vision */}
-        <SectionLayout
-          title="주식회사 비젼 라이프 홀딩스 목표 및 방향성"
-          className="flex flex-col items-center justify-center"
-          titleClassName="text-2xl hidden"
-          fullHeight={true}>
-          <ul className="flex flex-col gap-3">
-            <ListCard
-              title="친환경 기술"
-              type="_highlight"
-              bgColor="bg-green-100"
-              description="우리는 더 깨끗한 환경과 더 공정한 경제를 꿈꿉니다."
-              icon={<MdEco className="text-green-500 text-3xl" />}
-            />
-            <ListCard
-              title="경제력 상승"
-              type="_highlight"
-              bgColor="bg-blue-100"
-              description="비젼라이프홀딩스는 혁신적인 친환경 기술로 지속 가능한 미래를 만들어갑니다."
-              icon={<FaChartLine className="text-blue-500 text-3xl" />}
-            />
-            <ListCard
-              title="함께사는 사회"
-              type="_highlight"
-              bgColor="bg-orange-100"
-              description="우리 기술이 사람들에게 희망이 되고, 모두가 함께 살아가는 세상을 위한 변화가 되길 바랍니다."
-              icon={<FaHandsHelping className="text-orange-500 text-3xl" />}
-            />
-          </ul>
-        </SectionLayout>
-      </div>
+      {/* Vision */}
+      <SectionLayout
+        title="주식회사 비젼 라이프 홀딩스 목표 및 방향성"
+        className="max-w-4xl mx-auto flex flex-col items-center justify-center"
+        titleClassName="hidden"
+        fullHeight={true}>
+        <ul className="flex flex-col gap-3">
+          <ListCard
+            title="친환경 기술"
+            type="_highlight"
+            bgColor="bg-green-100"
+            description="우리는 더 깨끗한 환경과 더 공정한 경제를 꿈꿉니다."
+            icon={<MdEco className="text-green-500 text-3xl" />}
+          />
+          <ListCard
+            title="경제력 상승"
+            type="_highlight"
+            bgColor="bg-blue-100"
+            description="비젼라이프홀딩스는 혁신적인 친환경 기술로 지속 가능한 미래를 만들어갑니다."
+            icon={<FaChartLine className="text-blue-500 text-3xl" />}
+          />
+          <ListCard
+            title="함께사는 사회"
+            type="_highlight"
+            bgColor="bg-orange-100"
+            description="우리 기술이 사람들에게 희망이 되고, 모두가 함께 살아가는 세상을 위한 변화가 되길 바랍니다."
+            icon={<FaHandsHelping className="text-orange-500 text-3xl" />}
+          />
+        </ul>
+      </SectionLayout>
 
       {/* Contact Us */}
       <SectionLayout
