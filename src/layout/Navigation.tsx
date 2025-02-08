@@ -14,9 +14,8 @@ const Navigation = () => {
   const visible = isVisible ? 'translate-y-0' : '-translate-y-full';
 
   return (
-    <header
-      className={`border-b-primary fixed top-0 left-0 z-50 w-full border-b bg-white transition-transform duration-300 ${visible}`}>
-      <div className="mx-20 flex w-full max-w-[1440px] items-center justify-between py-2 md:max-w-[768px] lg:mx-auto">
+    <header className={`border-b-primary fixed top-0 left-0 z-50 w-full border-b bg-white transition-transform duration-300 ${visible}`}>
+      <div className="mx-auto flex w-full items-center justify-between py-2 md:max-w-[768px] lg:max-w-6xl">
         {/* Logo */}
         <h1 className="text-xl font-bold">
           <Link to={'/'}>

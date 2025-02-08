@@ -1,4 +1,3 @@
-import DummyImgBox from '../../../components/DummyImgBox.tsx';
 import TextLink from '../../../components/TextLink.tsx';
 import {LuCircleArrowRight} from 'react-icons/lu';
 
@@ -18,7 +17,9 @@ const MoreNewsSection = () => {
         </TextLink>
       </div>
       <div className="w-1/2">
-        <DummyImgBox width="w-full" height="h-full" isCircle={false} />
+        <div className="w-full h-full py-10">
+          <img src="/img/logo.png" alt="(주) 비전라이프 로고" />
+        </div>
       </div>
     </div>
   );
