@@ -90,27 +90,27 @@ const Profile = () => {
             <ListCard
               title="전화번호"
               type="_base"
-              icon={<FaPhoneAlt className="w-14 h-14 p-3 bg-primary text-white rounded-full"/>}
+              icon={<FaPhoneAlt className="w-14 h-14 p-3 bg-primary text-white rounded-full" />}
               description="02-555-1202"
-              size="w-full h-full"/>
+              size="w-full h-full" />
             <ListCard
               title="팩스 (FAX)"
               type="_base"
-              icon={<LiaFaxSolid className="w-14 h-14 p-3 bg-primary text-white rounded-full"/>}
+              icon={<LiaFaxSolid className="w-14 h-14 p-3 bg-primary text-white rounded-full" />}
               description="02-555-5801"
-              size="w-full h-full"/>
+              size="w-full h-full" />
             <ListCard
               title="이메일"
               type="_base"
-              icon={<MdOutlineMail className="w-14 h-14 p-3 bg-primary text-white rounded-full"/>}
+              icon={<MdOutlineMail className="w-14 h-14 p-3 bg-primary text-white rounded-full" />}
               description="visionlife2018@naver.com"
-              size="w-full h-full"/>
+              size="w-full h-full" />
             <ListCard
               title="주소"
               type="_base"
-              icon={<HiOutlineLocationMarker className="w-16 h-14 p-3 bg-primary text-white rounded-full"/>}
+              icon={<HiOutlineLocationMarker className="w-16 h-14 p-3 bg-primary text-white rounded-full" />}
               description="서울 서초구 반포대로 21길 23 세진빌딩 3층"
-              size="w-full h-full"/>
+              size="w-full h-full" />
           </ul>
           <div className="grid-cols-2 col-span-3 row-span-4">
             <DummyImgBox width="w-full" height="h-full" isCircle={false} />

@@ -9,6 +9,7 @@ import News from './features/news/index';
 import Profile from './features/profile/index';
 import Business from './features/business-overview/index.tsx';
 import Catalog from './features/catalog';
+import Test from './features/test';
 
 // 상세 페이지
 import NewsDetail from './features/news/pages/NewsDetail.tsx';
@@ -51,6 +52,10 @@ export const router = createHashRouter([
       {
         path: '/company/catalogs',
         Component: Catalog,
+      },
+      {
+        path: '/test',
+        Component: Test,
       },
     ],
   },
