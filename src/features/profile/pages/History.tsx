@@ -29,17 +29,17 @@ const History = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full min-h-screen max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-10">기업 연혁</h2>
+    <section ref={sectionRef} className="mx-auto min-h-screen w-full max-w-7xl">
+      <h2 className="mb-10 text-center text-3xl font-bold">기업 연혁</h2>
       <ul className="flex flex-col space-y-12">
         {history.map((item, idx) => (
           <li key={item.id} className="history_item flex items-center">
             <div
-              className={`w-1/4 text-right pr-5 text-gray-600 font-semibold ${idx % 2 === 0 ? 'order-1' : 'order-2'}`}>
+              className={`w-1/4 pr-5 text-right font-semibold text-gray-600 ${idx % 2 === 0 ? 'order-1' : 'order-2'}`}>
               {item.year}
             </div>
             <div
-              className={`w-3/4 bg-gray-100 p-5 rounded-lg shadow-lg ${idx % 2 === 0 ? 'order-2' : 'order-1'}`}>
+              className={`w-3/4 rounded-lg bg-gray-100 p-5 shadow-lg ${idx % 2 === 0 ? 'order-2' : 'order-1'}`}>
               {' '}
               {item.event}
             </div>

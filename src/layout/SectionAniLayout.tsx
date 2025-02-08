@@ -22,7 +22,7 @@ const SectionAniLayout = forwardRef<HTMLElement, Props>(
     ref
   ) => {
     return (
-      <section ref={ref} className={`w-full h-screen ${className}`}>
+      <section ref={ref} className={`h-screen w-full ${className}`}>
         <h2
           className={`w-full ${titlePadding} text-center font-extrabold ${titleClassName}`}>
           {title}

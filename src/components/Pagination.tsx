@@ -14,11 +14,11 @@ const Pagination: React.FC<PaginationProps> = ({
   if (totalPages <= 1) return null;
 
   return (
-    <div className="flex justify-center mt-6 space-x-8">
+    <div className="mt-6 flex justify-center space-x-8">
       <button
         className={`px-8 text-lg ${
           currentPage === 1
-            ? 'opacity-50 cursor-not-allowed'
+            ? 'cursor-not-allowed opacity-50'
             : 'hover:underline'
         }`}
         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
@@ -46,7 +46,7 @@ const Pagination: React.FC<PaginationProps> = ({
       <button
         className={`px-8 text-lg ${
           currentPage === totalPages
-            ? 'opacity-50 cursor-not-allowed'
+            ? 'cursor-not-allowed opacity-50'
             : 'hover:underline'
         }`}
         onClick={() =>

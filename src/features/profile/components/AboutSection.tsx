@@ -2,9 +2,9 @@ import profile from '../../../data/profile.json';
 
 const AboutSection = () => {
   return (
-    <section className="w-full h-auto max-w-7xl mx-auto mb-32 overflow-hidden">
-      <div className="mt-32 relative">
-        <article className="w-fit h-full p-10 bg-[#5c504b] text-white absolute right-0">
+    <section className="mx-auto mb-32 h-auto w-full max-w-7xl overflow-hidden">
+      <div className="relative mt-32">
+        <article className="absolute right-0 h-full w-fit bg-[#5c504b] p-10 text-white">
           <p className="mb-3 text-2xl font-bold text-white">
             (주)비젼라이프홀딩스는
             <br />
@@ -28,7 +28,7 @@ const AboutSection = () => {
           </p>
         </article>
         <img
-          className="w-full max-h-[350px] pt-12 "
+          className="max-h-[350px] w-full pt-12"
           src="/img/home/p2.jpg"
           alt="기업 소개 페이지 히어로 이미지"
         />
@@ -38,7 +38,7 @@ const AboutSection = () => {
         {profile.content.map((item, index) => (
           <p
             key={index}
-            className="first:mt-0 last:mb-0 my-7 text-base leading-relaxed">
+            className="my-7 text-base leading-relaxed first:mt-0 last:mb-0">
             {item}
           </p>
         ))}

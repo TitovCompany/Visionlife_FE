@@ -14,31 +14,31 @@ const NewsDetail: React.FC = () => {
 
   if (!newsItem) {
     return (
-      <div className="flex items-center justify-center h-screen text-gray-600 text-xl">
+      <div className="flex h-screen items-center justify-center text-xl text-gray-600">
         해당 뉴스를 찾을 수 없습니다.
       </div>
     );
   }
   return (
-    <section className="max-w-screen-lg mx-auto px-6 py-12">
+    <section className="mx-auto max-w-screen-lg px-6 py-12">
       {' '}
       {/* ✅ 전체 여백 추가 */}
-      <h1 className="text-4xl font-bold text-gray-900 mb-8">
+      <h1 className="mb-8 text-4xl font-bold text-gray-900">
         {newsItem.title}
       </h1>
-      <div className="text-gray-500 text-sm mb-6">
+      <div className="mb-6 text-sm text-gray-500">
         <span>{newsItem.author}</span> |
         <span className="ml-2">
           {new Date(newsItem.publishedDate).toLocaleDateString()}
         </span>
       </div>
-      <hr className="border-b-2 border-gray-300 mb-10" />
+      <hr className="mb-10 border-b-2 border-gray-300" />
       <img
         src={newsItem.imageUrl}
         alt={newsItem.title}
-        className="w-full h-100 object-cover mt-8 mb-10"
+        className="mt-8 mb-10 h-100 w-full object-cover"
       />
-      <article className="text-gray-700 text-lg leading-relaxed whitespace-pre-line mt-10">
+      <article className="mt-10 text-lg leading-relaxed whitespace-pre-line text-gray-700">
         {newsItem.content}
       </article>
       <hr className="mt-12 border-b-2 border-gray-300" />

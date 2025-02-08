@@ -5,18 +5,26 @@ import SectionLayout from '../../../layout/SectionLayout.tsx';
 const Overview = () => {
   return (
     <SectionLayout
-      title={overview.title}
+      title=""
       className="grid place-items-center"
-      titleClassName="max-w-xl pt-16 text-4xl leading-tight"
       titlePadding="p-0">
-      <div className="max-w-2xl">
-        <article className="w-full text-[1rem] leading-8">
-          <p>{overview.description}</p>
-        </article>
+      <h2 className="flex w-full max-w-xl items-center justify-center gap-4 pt-16 pb-10 text-4xl font-extrabold">
+        <span className="h-[2px] w-16 bg-[#deee]"></span>
+        {overview.header}
+        <span className="h-[2px] w-16 bg-[#deee]"></span>
+      </h2>
+      <h3 className="text-center text-2xl leading-normal font-semibold">
+        비젼라이프의 친환경 에코 잉크와
+        <br />
+        무폐수 디지털 나염 시스템
+      </h3>
+      <article className="w-full max-w-2xl pt-10 text-[1rem] leading-8">
+        <p className="font-base">{overview.description}</p>
+      </article>
+      <div className="w-full pt-24">
+        <OverviewList data={overview.features} />
+        <OverviewList data={overview.benefits} />
       </div>
-
-      <OverviewList data={overview.features} />
-      <OverviewList data={overview.benefits} />
     </SectionLayout>
   );
 };

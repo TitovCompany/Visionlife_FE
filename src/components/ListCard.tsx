@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 interface ListCardProps {
   title: string;
-  type: "_base" | "_highlight";
+  type: '_base' | '_highlight';
   className?: string;
   size?: string;
   description: string;
@@ -13,7 +13,7 @@ interface ListCardProps {
 
 const ListCard = ({
   title,
-  type = "_base",
+  type = '_base',
   icon,
   description,
   className,
@@ -22,15 +22,15 @@ const ListCard = ({
 }: ListCardProps) => {
   const classes = clsx(
     `min-w-fit p-10 rounded-xl shadow-md ${className}`,
-    type === "_base" ? "flex items-center gap-5" : "",
+    type === '_base' ? 'flex items-center gap-5' : '',
     size,
     bgColor
   );
   return (
     <li className={classes}>
-      {type === "_highlight" && (
+      {type === '_highlight' && (
         <>
-          <div className="max-w-fit mb-2 flex items-center justify-between gap-2">
+          <div className="mb-2 flex max-w-fit items-center justify-between gap-2">
             {icon}
             <span className="text-lg font-semibold">{title}</span>
           </div>
@@ -38,10 +38,10 @@ const ListCard = ({
         </>
       )}
 
-      {type === "_base" && (
+      {type === '_base' && (
         <>
           {icon}
-          <div className="max-w-fit mb-2 flex flex-col justify-start gap-1">
+          <div className="mb-2 flex max-w-fit flex-col justify-start gap-1">
             <span className="text-lg font-semibold">{title}</span>
             <p>{description}</p>
           </div>

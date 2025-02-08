@@ -8,21 +8,14 @@ interface ButtonProps {
   className?: string;
 }
 
-const Button = ({
-  children,
-  onClick,
-  active,
-  className,
-}: ButtonProps) => {
+const Button = ({children, onClick, active, className}: ButtonProps) => {
   const classes = clsx(
     `${className} px-4 py-2 rounded transition`,
-    active && "text-white bg-blue-100",
-    !active && "text-white bg-blue-100",
-  )
+    active && 'text-white bg-blue-100',
+    !active && 'text-white bg-blue-100'
+  );
   return (
-    <button
-      className={classes}
-      onClick={onClick}>
+    <button className={classes} onClick={onClick}>
       {children}
     </button>
   );
