@@ -19,31 +19,31 @@ const FeaturedNews: React.FC = () => {
   }
 
   return (
-    <section className="max-w-screen-xl mx-auto px-4 py-6">
-      <hr className="mb-6 border-primary" />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section className="mx-auto max-w-screen-xl px-4 py-6">
+      <hr className="border-primary mb-6" />
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {featuredNews.map((news) => (
           <div
             key={news.id}
-            className="flex flex-col cursor-pointer hover:opacity-80 transition duration-300"
+            className="flex cursor-pointer flex-col transition duration-300 hover:opacity-80"
             onClick={() => navigate(`/company/news/${news.id}`)}>
             <img
               src={news.imageUrl || `/img/news/default-image-${news.id}.jpg`}
               alt={news.title}
-              className="w-full h-70 object-cover mb-4"
+              className="mb-4 h-70 w-full object-cover"
             />
-            <div className="flex flex-col flex-grow">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+            <div className="flex flex-grow flex-col">
+              <h3 className="mb-2 text-lg font-semibold text-gray-800">
                 {news.title}
               </h3>
-              <p className="text-gray-600 text-sm mb-4 flex-grow">
+              <p className="mb-4 flex-grow text-sm text-gray-600">
                 {truncateText(news.content, 130)}
               </p>
             </div>
           </div>
         ))}
       </div>
-      <hr className="mt-6 border-primary" />
+      <hr className="border-primary mt-6" />
     </section>
   );
 };

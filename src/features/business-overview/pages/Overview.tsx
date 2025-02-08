@@ -8,16 +8,18 @@ const Overview = () => {
       title=""
       className="grid place-items-center"
       titlePadding="p-0">
-      <h2 className="w-full max-w-xl pt-16 pb-10 flex items-center justify-center gap-4 text-4xl font-extrabold">
-        <span className="w-16 h-[2px] bg-[#deee]"></span>
+      <h2 className="flex w-full max-w-xl items-center justify-center gap-4 pt-16 pb-10 text-4xl font-extrabold">
+        <span className="h-[2px] w-16 bg-[#deee]"></span>
         {overview.header}
-        <span className="w-16 h-[2px] bg-[#deee]"></span>
+        <span className="h-[2px] w-16 bg-[#deee]"></span>
       </h2>
-      <h3 className="text-2xl text-center font-semibold leading-normal">
-        비젼라이프의 친환경 에코 잉크와<br/>무폐수 디지털 나염 시스템
+      <h3 className="text-center text-2xl leading-normal font-semibold">
+        비젼라이프의 친환경 에코 잉크와
+        <br />
+        무폐수 디지털 나염 시스템
       </h3>
       <article className="w-full max-w-2xl pt-10 text-[1rem] leading-8">
-          <p className="font-base">{overview.description}</p>
+        <p className="font-base">{overview.description}</p>
       </article>
       <div className="w-full pt-24">
         <OverviewList data={overview.features} />

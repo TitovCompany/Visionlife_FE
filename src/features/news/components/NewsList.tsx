@@ -26,29 +26,29 @@ const NewsList: React.FC = () => {
   }
 
   return (
-    <section className="max-w-screen-lg mx-auto px-4 py-6 space-y-6">
+    <section className="mx-auto max-w-screen-lg space-y-6 px-4 py-6">
       {currentNews.map((news, index) => (
         <React.Fragment key={news.id}>
           <article
-            className="flex items-start gap-6 cursor-pointer hover:opacity-80 transition duration-300"
+            className="flex cursor-pointer items-start gap-6 transition duration-300 hover:opacity-80"
             onClick={() => navigate(`/company/news/${news.id}`)}>
-            <div className="w-48 h-36 flex-shrink-0">
+            <div className="h-36 w-48 flex-shrink-0">
               <img
                 src={news.imageUrl || `/img/news/default-image-${news.id}.jpg`}
                 alt={news.title}
-                className="w-full h-full object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
             <div className="flex flex-col space-y-2">
               <div className="flex items-center space-x-2">
-                <span className="bg-gray-200 text-gray-700 text-sm font-semibold px-2 py-1 rounded-md">
+                <span className="rounded-md bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
                   {news.type}
                 </span>
                 <h3 className="text-lg font-bold text-gray-800">
                   {truncateText(news.title, 50)}
                 </h3>
               </div>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm leading-relaxed text-gray-600">
                 {truncateText(news.content, 150)}
               </p>
               <p className="text-xs text-gray-500">
@@ -58,7 +58,7 @@ const NewsList: React.FC = () => {
             </div>
           </article>
           {index < currentNews.length - 1 && (
-            <hr className="my-4 border-primary" />
+            <hr className="border-primary my-4" />
           )}
         </React.Fragment>
       ))}

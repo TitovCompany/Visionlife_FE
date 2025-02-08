@@ -7,18 +7,14 @@ interface Props {
   description: string;
 }
 
-const BusinessCard = ({
-  href,
-  title,
-  description
-}: Props) => {
+const BusinessCard = ({href, title, description}: Props) => {
   return (
-    <div className="w-[300px] h-[350px] rounded-lg bg-white shadow-md overflow-hidden">
+    <div className="h-[350px] w-[300px] overflow-hidden rounded-lg bg-white shadow-md">
       <Link to={href}>
-        <div className="w-full h-full p-6 flex flex-col justify-between gap-y-3">
+        <div className="flex h-full w-full flex-col justify-between gap-y-3 p-6">
           <h3 className="text-xl font-bold">{title}</h3>
-          <p className="text-base font-base">{description}</p>
-          <div className="w-full h-[220px] flex justify-center items-center">
+          <p className="font-base text-base">{description}</p>
+          <div className="flex h-[220px] w-full items-center justify-center">
             <DummyImgBox width="w-full" height="h-full" isCircle={false} />
           </div>
         </div>

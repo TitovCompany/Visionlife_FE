@@ -5,7 +5,7 @@ import {Outlet} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="w-full max-w-[1440px] h-full mx-auto">
+    <div className="mx-auto h-full w-full max-w-[1440px]">
       <Navigation />
       <Outlet />
       <Footer />

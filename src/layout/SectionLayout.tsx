@@ -11,18 +11,19 @@ interface SectionLayoutProps {
 
 const SectionLayout = ({
   children,
-  title = "",
+  title = '',
   className,
   titleClassName = 'text-6xl',
   titlePadding = 'p-18',
   fullHeight = false, // true면 h-screen 적용, false면 auto
-}:SectionLayoutProps) => {
+}: SectionLayoutProps) => {
   const height = fullHeight ? 'h-screen' : 'h-auto';
 
   return (
     <section className={`w-full ${height} ${className}`}>
-      {title !== "" && title !== undefined && (
-        <h2 className={`w-full ${titlePadding} text-center font-extrabold ${titleClassName}`}>
+      {title !== '' && title !== undefined && (
+        <h2
+          className={`w-full ${titlePadding} text-center font-extrabold ${titleClassName}`}>
           {title}
         </h2>
       )}

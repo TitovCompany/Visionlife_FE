@@ -18,26 +18,26 @@ const Catalog = () => {
   return (
     <PageLayout title="카탈로그 페이지 본문">
       <div className="mx-20">
-        <div className="max-w-4xl mx-auto py-8 px-6">
-          <h1 className="text-3xl font-semibold text-gray-900 text-center mb-4">
+        <div className="mx-auto max-w-4xl px-6 py-8">
+          <h1 className="mb-4 text-center text-3xl font-semibold text-gray-900">
             카탈로그
           </h1>
-          <hr className="border-primary mb-6 mx-auto w-4/5" />
+          <hr className="border-primary mx-auto mb-6 w-4/5" />
 
           <ul className="space-y-4">
             {currentData.map((item: CatalogItem) => (
               <li
                 key={item.id}
-                className="flex flex-col md:flex-row items-center justify-between border-b border-primary p-4">
+                className="border-primary flex flex-col items-center justify-between border-b p-4 md:flex-row">
                 <div className="mb-2 md:mb-0">
-                  <p className="text-gray-600 text-base sm:text-lg">
+                  <p className="text-base text-gray-600 sm:text-lg">
                     {item.title}.{item.fileType}
                   </p>
                 </div>
                 <div>
                   <a
                     href={item.downloadUrl}
-                    className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition"
+                    className="inline-flex items-center gap-2 bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
                     download>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
