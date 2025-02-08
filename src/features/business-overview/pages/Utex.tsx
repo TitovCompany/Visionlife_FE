@@ -13,18 +13,16 @@ const Utex = () => {
     <>
       {/* 메인 타이틀 섹션 */}
       <section className="w-full h-screen flex flex-col justify-center items-center">
-        <h2 className="max-w-[330px] w-full p-0 text-center font-extrabold text-4xl leading-tight">
-          비젼라이프의 특허 기기 유텍스를 소개합니다.
-        </h2>
+        <h2 className="max-w-[400px] w-full p-0 text-center font-extrabold text-4xl leading-tight">비젼라이프의 특허 기기<br/>유텍스를 소개합니다.</h2>
       </section>
 
       {/* 제품 개요 섹션 */}
       <SectionLayout
-        key={overview.id}
         title={overview.title}
         className="flex flex-col justify-center items-center"
-        titleClassName="max-w-[330px] text-4xl leading-tight"
-        titlePadding="p-0">
+        titleClassName="hidden"
+        titlePadding="p-0"
+        fullHeight={true}>
         <div className="space-y-4 w-full max-w-4xl">
           {overview.items.map((item) => (
             <div key={item.id}>
@@ -36,11 +34,11 @@ const Utex = () => {
 
       {/* UTEX 특장점 섹션 */}
       <SectionLayout
-        key={features.id}
         title={features.title}
         className="flex flex-col justify-center items-center"
-        titleClassName="max-w-[330px] text-4xl leading-tight"
-        titlePadding="p-0">
+        titleClassName="hidden"
+        titlePadding="p-0"
+        fullHeight={true}>
         <div className="space-y-4 w-full max-w-4xl">
           {features.items.map((item) => (
             <div key={item.id}>
@@ -53,11 +51,11 @@ const Utex = () => {
 
       {/* 잉크 시스템 섹션 */}
       <SectionLayout
-        key={ink.id}
         title={ink.title}
         className="flex flex-col justify-center items-center"
-        titleClassName="max-w-[330px] text-4xl leading-tight"
-        titlePadding="p-0">
+        titleClassName="hidden"
+        titlePadding="p-0"
+        fullHeight={true}>
         <ul className="max-w-4xl w-full px-6 flex justify-between items-center">
           {ink.items.map((item) => (
             <li key={item.id} className="text-center">
@@ -78,8 +76,9 @@ const Utex = () => {
         key={comparison.id}
         title={comparison.title}
         className="flex flex-col justify-center items-center"
-        titleClassName="max-w-[330px] text-4xl leading-tight"
-        titlePadding="p-0">
+        titleClassName="hidden"
+        titlePadding="p-0"
+        fullHeight={true}>
         <div className="space-y-8">
           {comparison.items.map((item) => (
             <div key={item.id} className="text-center">
@@ -106,8 +105,9 @@ const Utex = () => {
         key={performance.id}
         title={performance.title}
         className="flex flex-col justify-center items-center"
-        titleClassName="max-w-[330px] text-4xl leading-tight"
-        titlePadding="p-0">
+        titleClassName="hidden"
+        titlePadding="p-0"
+        fullHeight={true}>
         <div className="space-y-4 w-full max-w-4xl">
           {performance.items.map((item) => (
             <div key={item.id}>

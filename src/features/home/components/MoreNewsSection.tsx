@@ -9,8 +9,8 @@ const MoreNewsSection = () => {
         <h3 className="max-w-sm text-3xl leading-relaxed">
           더 많은 소식 확인하기
         </h3>
-        <TextLink href="/" size="lg" className="ml-3 flex items-center gap-3">
-          <LuCircleArrowRight />
+        <TextLink href="/" size="lg" className="ml-3 flex items-center gap-3 font-extrabold">
+          <LuCircleArrowRight className="text-primary font-extrabold"/>
           <span>모든 소식 보기</span>
         </TextLink>
       </div>

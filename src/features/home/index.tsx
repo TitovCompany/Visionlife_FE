@@ -36,8 +36,8 @@ const Home = () => {
 
         {/* 뉴스 */}
         <section className="mx-32 h-96 py-20">
-          <h2 className="ml-3 mb-3 flex items-center gap-3 text-base">
-            <AiOutlineArrowDown />
+          <h2 className="ml-3 mb-3 flex items-center gap-3 text-lg font-semibold">
+            <AiOutlineArrowDown className="text-primary font-extrabold"/>
             비전라이프 최신 소식
           </h2>
           <ul className="h-full flex justify-between gap-5">

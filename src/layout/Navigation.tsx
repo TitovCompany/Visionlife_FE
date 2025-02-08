@@ -15,7 +15,7 @@ const Navigation = () => {
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 bg-white border-b border-b-[#dceee8] z-50 transition-transform duration-300 ${visible}`}>
+      className={`w-full fixed top-0 left-0 bg-white border-b border-b-primary z-50 transition-transform duration-300 ${visible}`}>
       <div className="w-full max-w-[1440px] md:max-w-[768px] mx-20 lg:mx-auto py-2 flex justify-between items-center">
         {/* Logo */}
         <h1 className="text-xl font-bold">

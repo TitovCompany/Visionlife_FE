@@ -20,7 +20,7 @@ const FeaturedNews: React.FC = () => {
 
   return (
     <section className="max-w-screen-xl mx-auto px-4 py-6">
-      <hr className="mb-6 border-gray-300" />
+      <hr className="mb-6 border-primary" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {featuredNews.map((news) => (
           <div
@@ -43,7 +43,7 @@ const FeaturedNews: React.FC = () => {
           </div>
         ))}
       </div>
-      <hr className="mt-6 border-gray-300" />
+      <hr className="mt-6 border-primary" />
     </section>
   );
 };

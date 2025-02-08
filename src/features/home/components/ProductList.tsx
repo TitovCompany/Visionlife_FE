@@ -22,9 +22,8 @@ const ProductList = ({
           <p className="text-lg">{description}</p>
           <ButtonLink
             href={'/'}
-            size='md'
-            className='ml-4'>
-            더 보기
+            size='md'>
+            더 알아보기
           </ButtonLink>
         </div>
       </div>

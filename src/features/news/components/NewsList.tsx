@@ -58,7 +58,7 @@ const NewsList: React.FC = () => {
             </div>
           </article>
           {index < currentNews.length - 1 && (
-            <hr className="my-4 border-gray-300" />
+            <hr className="my-4 border-primary" />
           )}
         </React.Fragment>
       ))}
