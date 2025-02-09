@@ -1,12 +1,18 @@
-import imageSrc from '/img/home/p2.jpg';
+interface HeroSectionProps {
+  src: string;
+  sectionClass?: string;
+}
 
-const HeroSection = () => {
+const HeroSection = ({
+  src,
+  sectionClass,
+}: HeroSectionProps) => {
   return (
-    <section className="h-screen">
+    <section className={sectionClass}>
       <figure className="relative h-full w-full">
         <img
           className="h-full w-full object-cover"
-          src={imageSrc}
+          src={src}
           alt="Vision Image"
         />
         <figcaption className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-7xl font-bold text-white">

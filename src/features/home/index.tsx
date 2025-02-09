@@ -1,19 +1,17 @@
+import imageSrc from '/img/banner/p1.jpg';
 import PageLayout from '../../layout/PageLayout.tsx';
 import ProductList from './components/ProductList.tsx';
 import NewsCard from './components/NewsCard.tsx';
 import MoreNewsSection from './components/MoreNewsSection.tsx';
 import {AiOutlineArrowDown} from 'react-icons/ai';
 import DummyImgBox from '../../components/DummyImgBox.tsx';
+import HeroSection from '../profile/components/HeroSection.tsx';
 
 const Home = () => {
   return (
     <PageLayout title="서비스 페이지 본문">
       <div className="h-full w-full">
-        <section className="h-[410px] grid grid-cols-1 grid-rows-1">
-          <article className="mr-2">
-            <DummyImgBox width="w-full" height="h-full" isCircle={false} />
-          </article>
-        </section>
+        <HeroSection src={imageSrc} sectionClass="h-[410px] md:h-[600px] grid grid-cols-1 grid-rows-1"/>
 
         <section>
           <article className="mx-32 py-20 text-center">

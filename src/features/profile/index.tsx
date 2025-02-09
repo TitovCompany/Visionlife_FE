@@ -1,3 +1,5 @@
+import imageSrc from '/img/home/p2.jpg';
+
 // layout
 import PageLayout from '../../layout/PageLayout.tsx';
 import SectionLayout from '../../layout/SectionLayout.tsx';
@@ -17,7 +19,7 @@ const Profile = () => {
   return (
     <PageLayout title="서비스 페이지 본문">
       {/* Hero */}
-      <HeroSection />
+      <HeroSection src={imageSrc} sectionClass="h-screen"/>
 
       {/* About */}
       <SectionLayout
