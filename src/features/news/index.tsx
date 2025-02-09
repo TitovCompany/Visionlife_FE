@@ -10,7 +10,7 @@ const News: React.FC = () => {
   return (
     <PageLayout title="뉴스 페이지 본문">
       <div className="mx-20">
-        <h1 className="text-4xl font-bold text-gray-900 mb-20 mt-20 text-center w-full">
+        <h1 className="mt-20 mb-20 w-full text-center text-4xl font-bold text-gray-900">
           언론 보도
         </h1>
 

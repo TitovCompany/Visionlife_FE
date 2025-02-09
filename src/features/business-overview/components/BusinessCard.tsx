@@ -4,16 +4,17 @@ import DummyImgBox from '../../../components/DummyImgBox.tsx';
 interface Props {
   href: string;
   title: string;
+  description: string;
 }
 
-const BusinessCard = ({href, title}: Props) => {
+const BusinessCard = ({href, title, description}: Props) => {
   return (
-    <div className="w-[300px] h-[350px] rounded-lg bg-white shadow-md overflow-hidden">
+    <div className="h-[350px] w-[300px] overflow-hidden rounded-lg bg-white shadow-md">
       <Link to={href}>
-        <div className="w-full h-full p-6 flex flex-col justify-between">
+        <div className="flex h-full w-full flex-col justify-between gap-y-3 p-6">
           <h3 className="text-xl font-bold">{title}</h3>
-          <p>소개</p>
-          <div className="flex justify-center items-center h-[220px] w-full">
+          <p className="font-base text-base">{description}</p>
+          <div className="flex h-[220px] w-full items-center justify-center">
             <DummyImgBox width="w-full" height="h-full" isCircle={false} />
           </div>
         </div>

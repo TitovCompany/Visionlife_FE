@@ -1,12 +1,12 @@
-import { ReactNode } from "react";
+import {ReactNode} from 'react';
 
 interface Props<T> {
-    data: T[];
+  data: T[];
 }
 
 const OverviewList = <T extends ReactNode>({data}: Props<T>) => {
   return (
-    <ul className="w-full max-w-2xl mx-auto bg-white shadow-md rounded-lg p-6 border border-gray-300">
+    <ul className="mx-auto w-full max-w-2xl rounded-lg border border-gray-300 bg-white p-6 shadow-md">
       {data.map((item, index) => (
         <li key={index} className="text-[1rem] leading-8">
           <p>{item}</p>

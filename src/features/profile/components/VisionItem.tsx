@@ -10,9 +10,9 @@ interface Props {
 const VisionItem: React.FC<Props> = ({title}) => {
   const icon =
     {
-      '친환경 기술': <MdEco className="text-green-500 text-3xl" />,
-      '경제력 상승': <FaChartLine className="text-blue-500 text-3xl" />,
-      '함께사는 사회': <FaHandsHelping className="text-orange-500 text-3xl" />,
+      '친환경 기술': <MdEco className="text-3xl text-green-500" />,
+      '경제력 상승': <FaChartLine className="text-3xl text-blue-500" />,
+      '함께사는 사회': <FaHandsHelping className="text-3xl text-orange-500" />,
     }[title] || null;
 
   const bgColor =
@@ -24,7 +24,7 @@ const VisionItem: React.FC<Props> = ({title}) => {
 
   return (
     <li
-      className={`w-40 h-40 flex flex-col items-center justify-center space-y-2 rounded-full shadow-md ${bgColor}`}>
+      className={`flex h-40 w-40 flex-col items-center justify-center space-y-2 rounded-full shadow-md ${bgColor}`}>
       {icon}
       <span className="text-lg font-semibold">{title}</span>
     </li>

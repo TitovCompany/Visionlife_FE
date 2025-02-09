@@ -10,7 +10,7 @@ const DummyImgBox = ({
   const rounded = isCircle ? 'rounded-full' : 'rounded';
   return (
     <div
-      className={`${width} ${height} ${rounded} border-2 flex justify-center items-center`}>
+      className={`${width} ${height} ${rounded} flex items-center justify-center border-2`}>
       Image Box
     </div>
   );

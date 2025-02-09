@@ -12,20 +12,22 @@ const Utex = () => {
   return (
     <>
       {/* 메인 타이틀 섹션 */}
-      <section className="w-full h-screen flex flex-col justify-center items-center">
-        <h2 className="max-w-[330px] w-full p-0 text-center font-extrabold text-4xl leading-tight">
-          비젼라이프의 특허 기기 유텍스를 소개합니다.
+      <section className="flex h-screen w-full flex-col items-center justify-center">
+        <h2 className="w-full max-w-[400px] p-0 text-center text-4xl leading-tight font-extrabold">
+          비젼라이프의 특허 기기
+          <br />
+          유텍스를 소개합니다.
         </h2>
       </section>
 
       {/* 제품 개요 섹션 */}
       <SectionLayout
-        key={overview.id}
         title={overview.title}
-        className="flex flex-col justify-center items-center"
-        titleClassName="max-w-[330px] text-4xl leading-tight"
-        titlePadding="p-0">
-        <div className="space-y-4 w-full max-w-4xl">
+        className="flex flex-col items-center justify-center"
+        titleClassName="hidden"
+        titlePadding="p-0"
+        fullHeight={true}>
+        <div className="w-full max-w-4xl space-y-4">
           {overview.items.map((item) => (
             <div key={item.id}>
               <p className="text-gray-600">{item.content}</p>
@@ -36,12 +38,12 @@ const Utex = () => {
 
       {/* UTEX 특장점 섹션 */}
       <SectionLayout
-        key={features.id}
         title={features.title}
-        className="flex flex-col justify-center items-center"
-        titleClassName="max-w-[330px] text-4xl leading-tight"
-        titlePadding="p-0">
-        <div className="space-y-4 w-full max-w-4xl">
+        className="flex flex-col items-center justify-center"
+        titleClassName="hidden"
+        titlePadding="p-0"
+        fullHeight={true}>
+        <div className="w-full max-w-4xl space-y-4">
           {features.items.map((item) => (
             <div key={item.id}>
               <h3 className="text-xl font-semibold">{item.title}</h3>
@@ -53,12 +55,12 @@ const Utex = () => {
 
       {/* 잉크 시스템 섹션 */}
       <SectionLayout
-        key={ink.id}
         title={ink.title}
-        className="flex flex-col justify-center items-center"
-        titleClassName="max-w-[330px] text-4xl leading-tight"
-        titlePadding="p-0">
-        <ul className="max-w-4xl w-full px-6 flex justify-between items-center">
+        className="flex flex-col items-center justify-center"
+        titleClassName="hidden"
+        titlePadding="p-0"
+        fullHeight={true}>
+        <ul className="flex w-full max-w-4xl items-center justify-between px-6">
           {ink.items.map((item) => (
             <li key={item.id} className="text-center">
               <DummyImgBox
@@ -77,14 +79,15 @@ const Utex = () => {
       <SectionLayout
         key={comparison.id}
         title={comparison.title}
-        className="flex flex-col justify-center items-center"
-        titleClassName="max-w-[330px] text-4xl leading-tight"
-        titlePadding="p-0">
+        className="flex flex-col items-center justify-center"
+        titleClassName="hidden"
+        titlePadding="p-0"
+        fullHeight={true}>
         <div className="space-y-8">
           {comparison.items.map((item) => (
             <div key={item.id} className="text-center">
               <h3 className="text-xl font-semibold">{item.title}</h3>
-              <ul className="flex justify-center items-center space-x-6">
+              <ul className="flex items-center justify-center space-x-6">
                 {item.steps.map((step) => (
                   <li key={step.id} className="flex flex-col items-center">
                     <DummyImgBox
@@ -105,10 +108,11 @@ const Utex = () => {
       <SectionLayout
         key={performance.id}
         title={performance.title}
-        className="flex flex-col justify-center items-center"
-        titleClassName="max-w-[330px] text-4xl leading-tight"
-        titlePadding="p-0">
-        <div className="space-y-4 w-full max-w-4xl">
+        className="flex flex-col items-center justify-center"
+        titleClassName="hidden"
+        titlePadding="p-0"
+        fullHeight={true}>
+        <div className="w-full max-w-4xl space-y-4">
           {performance.items.map((item) => (
             <div key={item.id}>
               <p className="text-gray-600">{item.content}</p>

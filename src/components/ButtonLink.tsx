@@ -30,11 +30,7 @@ const ButtonLink = ({
   );
 
   return (
-    <Link
-      to={href}
-      className={classes}
-      aria-label={label}
-      target={target}>
+    <Link to={href} className={classes} aria-label={label} target={target}>
       {children}
     </Link>
   );
