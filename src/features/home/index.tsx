@@ -4,40 +4,16 @@ import ProductList from './components/ProductList.tsx';
 import NewsCard from './components/NewsCard.tsx';
 import MoreNewsSection from './components/MoreNewsSection.tsx';
 import {AiOutlineArrowDown} from 'react-icons/ai';
-import DummyImgBox from '../../components/DummyImgBox.tsx';
 import HeroSection from '../profile/components/HeroSection.tsx';
+import SectionAbout_Design2 from './components/SectionAbout_Design2.tsx';
 
 const Home = () => {
   return (
     <PageLayout title="서비스 페이지 본문">
       <div className="h-full w-full">
         <HeroSection src={imageSrc} sectionClass="h-[410px] md:h-[600px] grid grid-cols-1 grid-rows-1"/>
-
-        <section>
-          <article className="mx-32 py-20 text-center">
-            <h2 className="mb-5 text-4xl font-semibold">Vision Life</h2>
-            <p className="text-2xl leading-8">
-              지속 가능한 미래를 그리며, 세상을 연결하는
-              <br /> 친환경 기술을 만들어갑니다.
-            </p>
-          </article>
-          <div className="pb-20">
-            <ul className="max-w-7xl h-[300px] mx-auto flex justify-between gap-5">
-              <li className="w-full h-full">
-                <DummyImgBox width="w-full" height="h-full" isCircle={false} />
-              </li>
-              <li className="w-full h-full">
-                <DummyImgBox width="w-full" height="h-full" isCircle={false} />
-              </li>
-              <li className="w-full h-full">
-                <DummyImgBox width="w-full" height="h-full" isCircle={false} />
-              </li>
-              <li className="w-full h-full">
-                <DummyImgBox width="w-full" height="h-full" isCircle={false} />
-              </li>
-            </ul>
-          </div>
-        </section>
+        {/*<SectionAbout_Design1/>*/}
+        <SectionAbout_Design2/>
 
         {/* 제품 */}
         <section className="mx-auto max-w-4xl">
