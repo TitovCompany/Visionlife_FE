@@ -30,6 +30,7 @@ import Catalog from "./features/catalog";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import EmailNoCollection from "./pages/EmailNoCollection.tsx";
 import TermsOfService from "./pages/TermsOfService.tsx";
+import ProfileLayout from './features/profile';
 
 export const router = createHashRouter([
   {
@@ -45,6 +46,7 @@ export const router = createHashRouter([
       // 회사 소개
       {
         path: '/company/profile',
+        Component: ProfileLayout,
         children: [
           {index: true, Component: Profile},
           {path: 'history', Component: History},

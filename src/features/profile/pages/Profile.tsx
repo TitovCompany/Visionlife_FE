@@ -1,17 +1,11 @@
-import imageSrc from '/img/home/p2.jpg';
-import HeroSection from '../components/HeroSection.tsx';
 import SectionLayout from '../../../layout/SectionLayout.tsx';
 import ListCard from '../../../components/ListCard.tsx';
 import {MdEco} from 'react-icons/md';
 import {FaChartLine, FaHandsHelping} from 'react-icons/fa';
-import PageLayout from '../../../layout/PageLayout.tsx';
 
 const Profile = () => {
   return (
-    <PageLayout title="서비스 페이지 본문">
-      {/* Hero */}
-      <HeroSection src={imageSrc} sectionClass="h-[410px] md:h-[635px]"/>
-
+    <>
       {/* About */}
       <SectionLayout
         title="주식회사 비젼 라이프 홀딩스 회사 소개"
@@ -66,7 +60,7 @@ const Profile = () => {
           />
         </ul>
       </SectionLayout>
-    </PageLayout>
+    </>
   );
 };
 
