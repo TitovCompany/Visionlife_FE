@@ -58,7 +58,7 @@ const Utex = () => {
                 {item.title}
                 <span className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-500"></span>
               </h3>
-              <p className="mt-2 text-gray-600 whitespace-pre-line leading-relaxed text-base">
+              <p className="mt-2 text-gray-600 whitespace-pre-line leading-relaxed text-sm md:text-base">
                 {item.content}
               </p>
             </div>
