@@ -1,43 +1,42 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import useScrollDirection from "../hooks/useScrollDirection";
+import Header from './Header.tsx';
 
 const navigation = [
   {
     label: "기업소개",
-    link: "/company/profile",
+    href: "/company/profile",
     sub: [
-      { label: "회사소개", link: "/company/profile" },
-      { label: "비전", link: "#" },
-      { label: "연혁 및 조직도", link: "#" },
-      { label: "특허&시험 성적서", link: "#" },
+      { label: "회사소개", href: "/company/profile" },
+      { label: "비전", href: "#" },
+      { label: "연혁 및 조직도", href: "#" },
+      { label: "오시는길", href: "#" },
     ],
   },
   {
     label: "사업개요",
-    link: "/business",
+    href: "/business",
     sub: [
-      { label: "친환경 무 폐수 날염", link: "#" },
-      { label: "타 제품과의 비교", link: "#" },
+      { label: "친환경 무 폐수 날염", href: "#" },
+      { label: "타 제품과의 비교", href: "#" },
     ],
   },
   {
     label: "언론보도",
-    link: "/company/news",
+    href: "/company/news",
     sub: [
-      { label: "언론보도", link: "#" },
-      { label: "언론보도", link: "#" },
+      { label: "언론보도", href: "#" },
+      { label: "언론보도", href: "#" },
     ],
   },
   {
     label: "카탈로그",
-    link: "/company/catalogs",
-    sub: [{ label: "자료실", link: "#" }],
+    href: "/company/catalogs",
+    sub: [{ label: "자료실", href: "#" }],
   },
 ];
 
 const Navigation = () => {
-  const isVisible = useScrollDirection();
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openSubmenus, setOpenSubmenus] = useState<{ [key: number]: boolean }>({});
@@ -47,12 +46,7 @@ const Navigation = () => {
   };
 
   return (
-    <header
-      id="header"
-      className={`fixed top-0 left-0 z-50 w-full bg-white border-primary transition-transform duration-300 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
+    <Header>
       {/* 데스크탑 내비게이션 */}
       <div
         className="hidden md:block"
@@ -79,7 +73,7 @@ const Navigation = () => {
               {navigation.map((item, idx) => (
                 <li key={idx}>
                   <NavLink
-                    to={item.link}
+                    to={item.href}
                     className="block py-6 text-sm hover:text-primary"
                   >
                     {item.label}
@@ -109,7 +103,7 @@ const Navigation = () => {
                       {item.sub.map((subItem, subIdx) => (
                         <li key={subIdx}>
                           <NavLink
-                            to={subItem.link}
+                            to={subItem.href}
                             className="block py-2 text-gray-600 hover:text-primary text-sm"
                           >
                             {subItem.label}
@@ -174,7 +168,7 @@ const Navigation = () => {
                 <li key={idx}>
                   <div className="flex justify-between items-center">
                     <NavLink
-                      to={item.link}
+                      to={item.href}
                       className="block py-2 text-base text-gray-800 hover:text-primary"
                       onClick={() => {
                         if (!item.sub || item.sub.length === 0) {
@@ -209,7 +203,7 @@ const Navigation = () => {
                       {item.sub.map((subItem, subIdx) => (
                         <li key={subIdx}>
                           <NavLink
-                            to={subItem.link}
+                            to={subItem.href}
                             className="block py-1 text-gray-600 text-sm hover:text-primary"
                             onClick={() => setMobileMenuOpen(false)}
                           >
@@ -225,7 +219,7 @@ const Navigation = () => {
           </nav>
         )}
       </div>
-    </header>
+    </Header>
   );
 };
 
