@@ -1,5 +1,5 @@
+import imageSrc from '/img/home/p2.jpg';
 import HeroSection from '../components/HeroSection.tsx';
-import imageSrc from '*.jpg';
 import SectionLayout from '../../../layout/SectionLayout.tsx';
 import ListCard from '../../../components/ListCard.tsx';
 import {MdEco, MdOutlineMail} from 'react-icons/md';

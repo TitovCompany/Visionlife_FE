@@ -3,7 +3,7 @@ import Navigation from './Navigation.tsx';
 import Footer from './Footer.tsx';
 import {Outlet} from 'react-router-dom';
 
-function App() {
+function RootLayout() {
   return (
     <div className="mx-auto h-full w-full max-w-[1440px]">
       <Navigation />
@@ -13,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default RootLayout;
