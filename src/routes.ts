@@ -1,12 +1,12 @@
 import {createHashRouter} from 'react-router-dom';
 
 // Root
-import App from './App.tsx';
+import App from './layout/App.tsx';
 
 // 페이지
 import Home from './features/home/index';
 import News from './features/news/index';
-import Profile from './features/profile/index';
+import CompanyProfile from './features/profile/index';
 import Business from './features/business-overview/index.tsx';
 import Catalog from './features/catalog';
 import Test from './features/test';
@@ -16,6 +16,7 @@ import NewsDetail from './features/news/pages/NewsDetail.tsx';
 import Overview from './features/business-overview/pages/Overview.tsx';
 import Utex from './features/business-overview/pages/Utex.tsx';
 import History from './features/profile/pages/History.tsx';
+import ContactUs from './features/profile/pages/ContactUs.tsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
 import EmailNoCollection from "./pages/EmailNoCollection.tsx";
 import TermsOfService from "./pages/TermsOfService.tsx";
@@ -31,8 +32,11 @@ export const router = createHashRouter([
       },
       {
         path: '/company/profile',
-        Component: Profile,
-        children: [{path: 'history', Component: History}],
+        Component: CompanyProfile,
+        children: [
+          {path: 'history', Component: History},
+          {path: 'contact', Component: ContactUs}
+        ],
       },
       {
         path: '/business',

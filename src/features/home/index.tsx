@@ -13,7 +13,7 @@ const Home = () => {
       <div className="w-full h-screen">
         <HeroSection
           src={imageSrc}
-          sectionClass="h-[410px] md:h-[635px]  grid grid-cols-1 grid-rows-1"/>
+          sectionClass="h-[410px] md:h-[635px] grid grid-cols-1 grid-rows-1"/>
         {/*<SectionAbout_Design1/>*/}
         <SectionAbout_Design2/>
       </div>

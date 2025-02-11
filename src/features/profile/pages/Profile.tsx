@@ -1,32 +1,15 @@
-import imageSrc from '/img/home/p2.jpg';
-
-// layout
-import PageLayout from '../../layout/PageLayout.tsx';
-import SectionLayout from '../../layout/SectionLayout.tsx';
-
-// components
-import DummyImgBox from '../../components/DummyImgBox.tsx';
-import HeroSection from './components/HeroSection.tsx';
-import ListCard from '../../components/ListCard.tsx';
-
-// icon
+import HeroSection from '../components/HeroSection.tsx';
+import imageSrc from '*.jpg';
+import SectionLayout from '../../../layout/SectionLayout.tsx';
+import ListCard from '../../../components/ListCard.tsx';
 import {MdEco, MdOutlineMail} from 'react-icons/md';
 import {FaChartLine, FaHandsHelping, FaPhoneAlt} from 'react-icons/fa';
 import {LiaFaxSolid} from 'react-icons/lia';
 import {HiOutlineLocationMarker} from 'react-icons/hi';
-import {useLocation, useParams} from 'react-router-dom';
+import DummyImgBox from '../../../components/DummyImgBox.tsx';
+import PageLayout from '../../../layout/PageLayout.tsx';
 
-const CompanyProfile = () => {
-  const param = useParams();
-  const isBusinessDetail = param.slug === undefined;
-  const location = useLocation();
-  const test = location.pathname.split('/');
-  const res = test[test.length - 1];
-  console.log(location.pathname.split('/'));
-  console.log(res);
-  console.log(test.length - 1);
-  console.log(param.slug);
-  console.log(isBusinessDetail);
+const Profile = () => {
   return (
     <PageLayout title="서비스 페이지 본문">
       {/* Hero */}
@@ -149,4 +132,4 @@ const CompanyProfile = () => {
   );
 };
 
-export default CompanyProfile;
+export default Profile;
