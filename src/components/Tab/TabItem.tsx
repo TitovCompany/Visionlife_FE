@@ -54,8 +54,7 @@ const TabItem: React.FC<TabItemProps> = (props) => {
       aria-disabled={disabled ? "true" : "false"}
       aria-controls={id ? `panel${id}` : undefined}
       tabIndex={tabIndex ?? (selected ? 0 : undefined)}
-      data-rttab
-    >
+      data-rttab>
       {children}
     </li>
   );
