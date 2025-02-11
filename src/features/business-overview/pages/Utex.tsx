@@ -14,27 +14,30 @@ const Utex = () => {
       {/* 메인 타이틀 섹션 */}
       <section className="flex h-screen w-full flex-col items-center justify-center">
         <h2 className="w-full max-w-[400px] p-0 text-center text-4xl leading-tight font-extrabold">
-          비젼라이프의 특허 기기
+          비젼라이프의 유텍스를
           <br />
-          유텍스를 소개합니다.
+            소개합니다.
         </h2>
       </section>
 
       {/* 제품 개요 섹션 */}
       <SectionLayout
         title={overview.title}
+        titleClassName="text-4xl text-gray-900 font-bold"
         className="flex flex-col items-center justify-center"
-        titleClassName="hidden"
-        titlePadding="p-0"
-        fullHeight={true}>
-        <div className="w-full max-w-4xl space-y-4">
+        titlePadding="p-10 md:p-20"
+      >
+        <div className="w-full max-w-4xl p-4">
           {overview.items.map((item) => (
-            <div key={item.id}>
-              <p className="text-gray-600">{item.content}</p>
+            <div key={item.id} className="border-b border-pr py-4 last:border-0">
+              <p className="text-center text-gray-700 text-base md:text-lg leading-relaxed">
+                {item.content}
+              </p>
             </div>
           ))}
         </div>
       </SectionLayout>
+
 
       {/* UTEX 특장점 섹션 */}
       <SectionLayout
