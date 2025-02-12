@@ -11,7 +11,7 @@ const Business = () => {
     <PageLayout title="사업개요 페이지 본문">
       {isBusinessDetail && (
         <SectionLayout
-          className="mx-auto h-screen max-w-3xl pt-40"
+          className="mx-auto max-w-3xl pt-40"
           titlePadding="p-0">
           <h2 className="text-left text-4xl leading-tight font-extrabold">
             비젼라이프의

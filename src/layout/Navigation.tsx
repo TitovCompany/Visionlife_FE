@@ -8,31 +8,30 @@ const navigation = [
     href: "/company/profile",
     sub: [
       { label: "회사소개", href: "/company/profile" },
-      { label: "비전", href: "#" },
-      { label: "연혁 및 조직도", href: "#" },
-      { label: "오시는길", href: "#" },
+      { label: "연혁", href: "/company/profile/history" },
+      { label: "오시는길", href: "/company/profile/contact" },
     ],
   },
   {
     label: "사업개요",
-    href: "/business",
+    href: "/business/overview/introduction",
     sub: [
-      { label: "친환경 무 폐수 날염", href: "#" },
-      { label: "타 제품과의 비교", href: "#" },
+      { label: "사업 소개", href: "/business/overview/introduction" },
+      { label: "친환경 무 폐수 날염", href: "/business/utex/introduction" },
+      { label: "타 제품과의 비교", href: "/business/overview/introduction" },
     ],
   },
   {
     label: "언론보도",
     href: "/company/news",
     sub: [
-      { label: "언론보도", href: "#" },
-      { label: "언론보도", href: "#" },
+      { label: "언론보도", href: "/company/news" },
     ],
   },
   {
     label: "카탈로그",
     href: "/company/catalogs",
-    sub: [{ label: "자료실", href: "#" }],
+    sub: [{ label: "자료실", href: "/company/catalogs" }],
   },
 ];
 
