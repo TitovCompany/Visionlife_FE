@@ -53,32 +53,33 @@ const Utex = () => {
       </SectionLayout>
 
       {/* UTEX 특장점 섹션 */}
-      {/*<SectionLayout
+      <SectionLayout
         title={features.title}
         className="flex flex-col items-center justify-center"
-        titleClassName="hidden"
-        titlePadding="p-10 md:p-20"
-      >
-        <div className="w-full max-w-6xl grid grid-cols-2 grid-rows-2 sm:grid-cols-2 lg:grid-cols-2 gap-6 p-4">
-          {features.items.map((item) => (
+        titleClassName="hidden">
+        <h2 className="w-full max-w-xl mx-auto pt-20 pb-10 text-center text-4xl leading-tight font-extrabold">
+          <span className="text-primary">UTEX</span>가 제공하는 4가지 핵심 가치
+        </h2>
+        <div className="w-full h-full max-w-6xl grid grid-cols-2 grid-rows-2 sm:grid-cols-2 lg:grid-cols-2 gap-6 grid-auto-rows-fr">
+        {features.items.map((item) => (
             <div key={item.id} className="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500">
               <DummyImgBox
                 width="w-full"
-                height="h-full"
+                height="h-[400px]"
                 isCircle={false}
               />
-              <h3 className="mt-6 md:mt-10 text-base font-semibold text-gray-800 relative inline-block">
+              <h3 className="mt-6 md:mt-10 text-xl font-semibold text-gray-800 relative inline-block">
                 {item.title}
                 <span className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-500"></span>
               </h3>
-              <p className="mt-2 text-gray-600 whitespace-pre-line leading-relaxed text-sm md:text-base">
+              <p className="mt-2 whitespace-pre-line leading-relaxed text-base md:text-base">
                 {item.content}
               </p>
             </div>
           ))}
         </div>
       </SectionLayout>
-       잉크 시스템 섹션
+      {/* 잉크 시스템 섹션
       <SectionLayout
         title={ink.title}
         className="flex flex-col items-center justify-center"
