@@ -12,7 +12,7 @@ const Utex = () => {
   return (
     <>
       {/* 메인 타이틀 섹션 */}
-      <section className="flex h-screen w-full flex-col items-center justify-center">
+      <section className="flex w-full flex-col items-center justify-center">
         <h2 className="w-full max-w-[400px] p-0 text-center text-4xl leading-tight font-extrabold">
           비젼라이프의 유텍스를
           <br />
@@ -133,7 +133,7 @@ const Utex = () => {
         className="flex flex-col items-center justify-center"
         titleClassName="hidden"
         titlePadding="p-0"
-        fullHeight={true}>
+        fullHeight={false}>
         <div className="space-y-8">
           {comparison.items.map((item) => (
             <div key={item.id} className="text-center">
@@ -162,7 +162,7 @@ const Utex = () => {
         className="flex flex-col items-center justify-center"
         titleClassName="hidden"
         titlePadding="p-0"
-        fullHeight={true}>
+        fullHeight={false}>
         <div className="w-full max-w-4xl space-y-4">
           {performance.items.map((item) => (
             <div key={item.id}>
