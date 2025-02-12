@@ -6,6 +6,7 @@ import overview from '../../../data/business/utex_overview.json';
 import features from '../../../data/business/utex_features.json';
 import ink from '../../../data/business/utex_ink.json';
 import comparison from '../../../data/business/utex_comparison.json';
+import BulletPoint from '../../../components/bullet-point/BulletPoint.tsx';
 
 const Utex = () => {
   return (
@@ -23,23 +24,23 @@ const Utex = () => {
             </h2>
           <div className="flex justify-between gap-5">
             <div className="w-full flex-1">
-              <img src="/img/product/p3.png" alt="기기명 Coltex" className="w-full h-[530px] object-cover rounded"/>
+              <img src="/img/product/p3.png" alt="기기명 Coltex" className="w-full h-[530px] object-cover rounded-lg"/>
             </div>
-            <div className="flex-1 flex flex-col justify-between gap-5">
-              <p className="max-w-xl text-left text-lg">
-                UTEX 무폐수 섬유염색 시스템은 기존 섬유 염색 산업의 복잡한 문제를 해결하며,
-                초고속 염색 속도와 비용 절감 효과를 제공합니다.
-                공정 단축을 통해 높은 경제성을 확보할 수 있으며, 섬유 염색뿐만 아니라
-                다양한 산업 분야에도 활용할 수 있는 혁신적인 기술입니다.
-              </p>
-              <ul className="w-full max-w-2xl p-4">
-                {overview.items.map((item) => (
+            <div className="flex-1 flex flex-col justify-start">
+              <div className="w-full h-fit text-left text-lg/8">
+                <p className="mb-5">
+                  UTEX 무폐수 섬유염색 시스템은 기존 섬유 염색 산업의 복잡한 문제를 해결하며,
+                  초고속 염색 속도와 비용 절감 효과를 제공합니다.
+                </p>
+                <p className="mb-10">
+                  공정 단축을 통해 높은 경제성을 확보할 수 있으며, 섬유 염색뿐만 아니라
+                  다양한 산업 분야에도 활용할 수 있는 혁신적인 기술입니다.
+                </p>
+              </div>
+              <ul className="w-full max-w-2xl">
+                {overview.items.map((item, idx) => (
                   <li key={item.id} className="py-4 text-left flex items-center gap-5">
-                    <DummyImgBox
-                      width="w-[30px]"
-                      height="h-[30px]"
-                      isCircle={true}
-                    />
+                    <BulletPoint bulletPoints={String(idx + 1)}/>
                     <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                       {item.content}
                     </p>
