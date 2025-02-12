@@ -57,7 +57,7 @@ const Utex = () => {
         title={features.title}
         className="flex flex-col items-center justify-center"
         titleClassName="hidden">
-        <h2 className="w-full max-w-xl mx-auto pt-20 pb-10 text-center text-4xl leading-tight font-extrabold">
+        <h2 className="w-full max-w-xl mx-auto pt-32 pb-20 text-center text-4xl leading-tight font-extrabold">
           <span className="text-primary">UTEX</span>가 제공하는 4가지 핵심 가치
         </h2>
         <div className="w-full h-full max-w-6xl grid grid-cols-2 grid-rows-2 sm:grid-cols-2 lg:grid-cols-2 gap-6 grid-auto-rows-fr">
@@ -66,9 +66,8 @@ const Utex = () => {
               <DummyImgBox
                 width="w-full"
                 height="h-[400px]"
-                isCircle={false}
-              />
-              <h3 className="mt-6 md:mt-10 text-xl font-semibold text-gray-800 relative inline-block">
+                isCircle={false} />
+              <h3 className="mt-6 md:mt-10 text-xl font-semibold relative inline-block">
                 {item.title}
                 <span className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-500"></span>
               </h3>
@@ -79,27 +78,28 @@ const Utex = () => {
           ))}
         </div>
       </SectionLayout>
-      {/* 잉크 시스템 섹션
+
+      {/* 잉크 시스템 섹션 */}
       <SectionLayout
         title={ink.title}
         className="flex flex-col items-center justify-center"
-        titleClassName="hidden"
-        titlePadding="p-10 md:p-20"
-      >
+        titleClassName="hidden">
+        <h2 className="w-full max-w-xl mx-auto pt-32 pb-20 text-center text-4xl leading-tight font-extrabold">
+          <span className="text-primary">UTEX</span> 잉크 시스템
+        </h2>
+
         <div className="w-full max-w-4xl space-y-8 p-4">
-           상단: 한 개
+          {/* 상단: 한 개 */}
           <div className="flex justify-center">
             {ink.items[0] && (
               <div
                 key={ink.items[0].id}
-                className="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500"
-              >
+                className="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500">
                 <DummyImgBox
                   width="w-[140px]"
                   height="h-[140px]"
-                  isCircle={true}
-                />
-                <h3 className="mt-6 md:mt-10 text-base font-semibold text-gray-800 relative inline-block">
+                  isCircle={true} />
+                <h3 className="mt-6 md:mt-10 text-xl font-semibold text-gray-800 relative inline-block">
                   {ink.items[0].title}
                   <span className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-500"></span>
                 </h3>
@@ -110,19 +110,17 @@ const Utex = () => {
             )}
           </div>
 
-           하단: 두 개
+         {/*  하단: 두 개 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {ink.items.slice(1, 3).map((item) => (
               <div
                 key={item.id}
-                className="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500"
-              >
+                className="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500">
                 <DummyImgBox
                   width="w-[140px]"
                   height="h-[140px]"
-                  isCircle={true}
-                />
-                <h3 className="mt-4 text-base font-semibold text-gray-800 relative inline-block">
+                  isCircle={true} />
+                <h3 className="mt-4 text-xl font-semibold text-gray-800 relative inline-block">
                   {item.title}
                   <span className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-500"></span>
                 </h3>
@@ -135,34 +133,54 @@ const Utex = () => {
         </div>
       </SectionLayout>
 
-       비교 섹션
+      {/* 비교 섹션 */}
       <SectionLayout
         key={comparison.id}
         title={comparison.title}
         className="flex flex-col items-center justify-center"
         titleClassName="hidden"
-        titlePadding="p-0"
         fullHeight={false}>
-        <div className="space-y-8">
-          {comparison.items.map((item) => (
-            <div key={item.id} className="text-center">
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-              <ul className="flex items-center justify-center space-x-6">
-                {item.steps.map((step) => (
-                  <li key={step.id} className="flex flex-col items-center">
-                    <DummyImgBox
-                      width="w-[140px]"
-                      height="h-[140px]"
-                      isCircle={true}
-                    />
-                    <p className="text-gray-600">{step.content}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <h2 className="w-full max-w-xl mx-auto pt-32 pb-20 text-center text-4xl leading-tight font-extrabold">
+          <span className="text-primary">UTEX</span> vs 기존 섬유 염색 공정
+        </h2>
+
+        {/* 비교 테이블 레이아웃 */}
+        <div className="grid grid-cols-2 gap-10 max-w-6xl w-full">
+          {/* 기존 공정 */}
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <h3 className="text-center text-xl font-semibold text-gray-800 mb-4">
+              기존 섬유 염색 공정
+            </h3>
+            <ul className="space-y-3">
+              {comparison.items[0].steps.map((step) => (
+                <li
+                  key={step.id}
+                  className="flex flex-col items-center p-4 bg-white shadow rounded-lg"
+                >
+                  <DummyImgBox width="w-[100px]" height="h-[100px]" isCircle={true} />
+                  <p className="mt-2 text-gray-700 text-base">{step.content}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* UTEX 공정 */}
+          <div className="bg-primary p-6 rounded-lg shadow-md text-white">
+            <h3 className="text-center text-xl font-semibold mb-4">UTEX 공정</h3>
+            <ul className="space-y-3">
+              {comparison.items[1].steps.map((step) => (
+                <li
+                  key={step.id}
+                  className="flex flex-col items-center p-4 bg-white shadow rounded-lg text-gray-800"
+                >
+                  <DummyImgBox width="w-[100px]" height="h-[100px]" isCircle={true} />
+                  <p className="mt-2 text-base">{step.content}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </SectionLayout>*/}
+      </SectionLayout>
     </div>
   );
 };
