@@ -1,19 +1,19 @@
-import { ReactNode } from "react";
-import { AiOutlineCheckCircle } from "react-icons/ai"; // 체크 아이콘
+import { AiOutlineCheckCircle } from "react-icons/ai";
 
-interface Props<T> {
-  data: T[];
+interface Props {
+  data: string[];
+  className?: string;
 }
 
-const OverviewList = <T extends ReactNode>({ data }: Props<T>) => {
+const OverviewList = ({ data, className = "" }: Props) => {
   return (
-    <ul className="mx-auto w-full max-w-4xl rounded-lg border border-gray-300 bg-white p-6 shadow-md">
+    <ul className={`mx-auto w-full max-w-4xl rounded-lg border border-gray-300 bg-white p-6 shadow-md ${className}`}>
       {data.map((item, index) => (
         <li
           key={index}
-          className="flex items-center gap-3 text-[1rem] leading-8 font-medium text-gray-800"
+          className="flex items-center gap-3 text-base leading-8 font-medium text-gray-800"
         >
-          <AiOutlineCheckCircle className="text-green-500" size={20} />
+          <AiOutlineCheckCircle className="text-green-500 text-xl md:text-xl lg:text-xl min-w-[24px]" />
           <p>{item}</p>
         </li>
       ))}
