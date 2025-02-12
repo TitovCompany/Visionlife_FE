@@ -6,7 +6,7 @@
     {
       "id": "utex_comparison_1",
       "type": "comparison",
-      "title": "전·후처리 공정이 필요하며 염색 과정에서 폐수가 발생합니다.",
+      "title": "전·후처리 공정이 필요하며 염색폐수가 발생합니다.",
       "steps": [
         {
           "id": "utex_step_1",
