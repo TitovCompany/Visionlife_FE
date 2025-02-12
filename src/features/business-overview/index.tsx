@@ -3,6 +3,7 @@ import {Outlet, useParams} from 'react-router-dom';
 import SectionLayout from '../../layout/SectionLayout.tsx';
 import BusinessCard from './components/BusinessCard.tsx';
 
+
 const Business = () => {
   const param = useParams();
   const isBusinessDetail = param.slug === undefined;
@@ -14,9 +15,8 @@ const Business = () => {
           className="mx-auto h-screen max-w-3xl pt-40"
           titlePadding="p-0">
           <h2 className="text-left text-4xl leading-tight font-extrabold">
-            비젼라이프의
-            <br />
-            사업을 소개합니다.
+            비젼라이프를
+            소개합니다.
           </h2>
           <div className="grid w-full max-w-4xl grid-cols-2 gap-8 pt-14">
             {/* Overview */}
