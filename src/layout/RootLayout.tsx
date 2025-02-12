@@ -5,7 +5,7 @@ import {Outlet} from 'react-router-dom';
 
 function RootLayout() {
   return (
-    <div className="mx-auto h-full w-full max-w-[1440px]">
+    <div className="container mx-auto h-full w-full max-w-[1440px]">
       <Navigation />
       <Outlet />
       <Footer />

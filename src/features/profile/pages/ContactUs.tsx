@@ -10,17 +10,9 @@ const ContactUs = () => {
   return (
     <SectionLayout
       title="CONTACT US"
-      className="mx-auto flex max-w-6xl flex-col items-center justify-center"
-      titleClassName="text-6xl font-normal"
-      fullHeight={true}>
-      <p className="mb-16 max-w-2xl text-center text-lg leading-relaxed text-gray-700">
-        궁금한 점이 있으신가요? 언제든지 문의해 주세요.
-        <br />
-        비젼라이프홀딩스는 고객과의 소통을 중요하게 생각하며,
-        <br />
-        빠르고 친절한 응대를 약속드립니다.
-      </p>
-
+      className="mx-auto py-20 flex max-w-6xl flex-col items-center justify-center"
+      titleClassName="py-10 text-4xl font-semibold"
+      fullHeight={false}>
       <div className="grid h-[600px] w-full grid-cols-5 grid-rows-4 gap-x-2">
         <ul className="col-span-2 row-span-4 grid grid-rows-4 gap-y-1">
           <ListCard
