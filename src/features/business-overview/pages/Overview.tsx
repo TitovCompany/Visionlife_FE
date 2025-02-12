@@ -1,6 +1,7 @@
-import overview from '../../../data/businessOverview.json';
-import OverviewList from '../components/OverviewList.tsx';
-import SectionLayout from '../../../layout/SectionLayout.tsx';
+import overview from "../../../data/businessOverview.json";
+import OverviewList from "../components/OverviewList.tsx";
+import BenefitList from "../components/BenefitList.tsx";
+import SectionLayout from "../../../layout/SectionLayout.tsx";
 
 const Overview = () => {
   return (
@@ -18,12 +19,18 @@ const Overview = () => {
         <br />
         무폐수 디지털 나염 시스템
       </h3>
-      <article className="w-full max-w-2xl pt-10 text-[1rem] leading-8">
-        <p className="font-base">{overview.description}</p>
+      <article className="mx-auto w-full max-w-4xl pt-10 text-[1rem] leading-relaxed">
+        <div className="border-l-4 border-primary pl-6">
+          {overview.description.map((line: string, index: number) => (
+            <p key={index} className="mt-4">{line}</p>
+          ))}
+        </div>
       </article>
-      <div className="w-full pt-24">
+
+      <div className="w-full pt-20 space-y-16">
         <OverviewList data={overview.features} />
-        <OverviewList data={overview.benefits} />
+
+        <BenefitList data={overview.benefits} />
       </div>
     </SectionLayout>
   );
