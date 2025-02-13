@@ -10,13 +10,11 @@ import SectionAbout_Design2 from './components/SectionAbout_Design2.tsx';
 const Home = () => {
   return (
     <PageLayout title="서비스 페이지 본문">
-      <div className="w-full h-screen">
-        <HeroSection
-          sectionClass="h-[410px] md:h-[635px] grid grid-cols-1 grid-rows-1"
-          src={imageSrc}/>
-        {/*<SectionAbout_Design1/>*/}
-        <SectionAbout_Design2/>
-      </div>
+      <HeroSection
+        sectionClass="h-[410px] md:h-[635px] grid grid-cols-1 grid-rows-1"
+        src={imageSrc}/>
+      {/*<SectionAbout_Design1/>*/}
+      <SectionAbout_Design2/>
         {/* 제품 */}
         {/*<section className="mx-auto max-w-4xl">
           <ProductList
