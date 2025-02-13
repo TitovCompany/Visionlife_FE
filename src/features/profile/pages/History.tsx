@@ -29,20 +29,38 @@ const History = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="mx-auto min-h-screen w-full max-w-5xl py-32">
+    <section
+      ref={sectionRef}
+      className="mx-auto min-h-screen w-full max-w-3xl py-32">
       <div className="mb-20 font-bold">
         <h2 className="mb-10 text-4xl">
-          <span className="text-primary">비젼라이프</span>가 걸어온 길</h2>
+          <span className="text-primary">비젼라이프</span>가 걸어온 길
+        </h2>
         <h3 className="text-3xl">
-          지속 가능한 세상을 만들기 위한<br/>
+          지속 가능한 세상을 만들기 위한
+          <br />
           비젼라이프의 노력과 성취를 돌아봅니다.
         </h3>
       </div>
       <ul className="flex flex-col space-y-12">
-        {history.map(item => (
-          <li key={item.id} className="history_item flex justify-start items-center">
-            <h4 className="pr-5 text-2xl text-right font-semibold">{item.year}년</h4>
-            <div className="text-base">{item.event}</div>
+        {history.map((item) => (
+          <li key={item.id} className="flex justify-start gap-10">
+            <h4 className="w-1/6 text-right text-2xl font-semibold">
+              {item.year.includes('~')
+                ? `${item.year.split('~')[0]}년 ~ ${item.year.split('~')[1]}년`
+                : `${item.year}년`}
+            </h4>
+            <p className="w-5/6 text-xl">
+              {Array.isArray(item.event) ? (
+                <ul className="list-disc space-y-2">
+                  {item.event.map((subEvent, index) => (
+                    <li key={index}>{subEvent}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>{item.event}</p>
+              )}
+            </p>
           </li>
         ))}
       </ul>
