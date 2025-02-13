@@ -50,17 +50,17 @@ const History = () => {
                 ? `${item.year.split('~')[0]}년 ~ ${item.year.split('~')[1]}년`
                 : `${item.year}년`}
             </h4>
-            <p className="w-5/6 text-xl">
+            <div className="w-5/6 text-xl">
               {Array.isArray(item.event) ? (
-                <ul className="list-disc space-y-2">
+                <>
                   {item.event.map((subEvent, index) => (
-                    <li key={index}>{subEvent}</li>
+                    <p key={index} className="list-disc space-y-2">{subEvent}</p>
                   ))}
-                </ul>
+                </>
               ) : (
                 <p>{item.event}</p>
               )}
-            </p>
+            </div>
           </li>
         ))}
       </ul>
