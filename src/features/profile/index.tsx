@@ -3,7 +3,7 @@ import HeroSection from '../../features/profile/components/HeroSection.tsx';
 import TabList from '../../components/Tab/TabList.tsx';
 import TabNavLinkItem from '../../components/Tab/TabNavLinkItem.tsx';
 import PageLayout from '../../layout/PageLayout.tsx';
-import {Outlet} from 'react-router-dom';
+import {NavLink, Outlet} from 'react-router-dom';
 
 const TAB_LIST = [
   {title: "회사 소개", href: "/company/profile"},
@@ -12,6 +12,7 @@ const TAB_LIST = [
 ]
 
 const ProfileLayout = () => {
+
   return (
     <PageLayout title="서비스 페이지 본문">
       {/* Hero */}
@@ -20,6 +21,7 @@ const ProfileLayout = () => {
         {TAB_LIST.map((item, idx) => (
           <TabNavLinkItem
             key={idx}
+            as={NavLink}
             itemClass="block w-full px-32 py-6"
             title={item.title}
             href={item.href}/>
