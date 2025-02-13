@@ -29,8 +29,9 @@ const History = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="mx-auto min-h-screen w-full max-w-7xl">
-      <h2 className="mb-10 text-center text-3xl font-bold">기업 연혁</h2>
+    <section ref={sectionRef} className="mx-auto min-h-screen w-full max-w-7xl py-32">
+      <h2 className="mb-10 text-center text-3xl font-bold">비젼라이프가 걸어온 길</h2>
+      <h3 className="mb-10 text-center text-3xl font-bold">지속 가능한 세상을 만들기 위한 비젼라이프의 노력과 성취를 돌아봅니다.</h3>
       <ul className="flex flex-col space-y-12">
         {history.map((item, idx) => (
           <li key={item.id} className="history_item flex items-center">
