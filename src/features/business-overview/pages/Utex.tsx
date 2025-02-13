@@ -7,6 +7,7 @@ import features from '../../../data/business/utex_features.json';
 import ink from '../../../data/business/utex_ink.json';
 import comparison from '../../../data/business/utex_comparison.json';
 import BulletPoint from '../../../components/bullet-point/BulletPoint.tsx';
+import AnimatedHeading from '../../../components/AnimatedHeading.tsx';
 
 const Utex = () => {
   return (
@@ -92,17 +93,15 @@ const Utex = () => {
           {/* 상단: 한 개 */}
           <div className="flex justify-center">
             {ink.items[0] && (
-              <div
-                key={ink.items[0].id}
-                className="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500">
+              <div key={ink.items[0].id} className="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500">
                 <DummyImgBox
                   width="w-[140px]"
                   height="h-[140px]"
                   isCircle={true} />
-                <h3 className="mt-6 md:mt-10 text-xl font-semibold text-gray-800 relative inline-block">
-                  {ink.items[0].title}
-                  <span className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-500"></span>
-                </h3>
+                <AnimatedHeading
+                  className="mt-4 text-xl"
+                  title={ink.items[0].title}
+                  role="heading"/>
                 <p className="mt-2 text-gray-600 whitespace-pre-line text-sm md:text-base">
                   {ink.items[0].content}
                 </p>
@@ -120,10 +119,10 @@ const Utex = () => {
                   width="w-[140px]"
                   height="h-[140px]"
                   isCircle={true} />
-                <h3 className="mt-4 text-xl font-semibold text-gray-800 relative inline-block">
-                  {item.title}
-                  <span className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-500"></span>
-                </h3>
+                <AnimatedHeading
+                  className="mt-4 text-xl"
+                  title={item.title}
+                  role="heading"/>
                 <p className="mt-2 text-gray-600 whitespace-pre-line text-sm md:text-base">
                   {item.content}
                 </p>

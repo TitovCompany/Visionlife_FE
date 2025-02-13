@@ -29,19 +29,37 @@ const History = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="mx-auto min-h-screen w-full max-w-7xl">
-      <h2 className="mb-10 text-center text-3xl font-bold">기업 연혁</h2>
+    <section
+      ref={sectionRef}
+      className="mx-auto min-h-screen w-full max-w-3xl py-32">
+      <div className="mb-20 font-bold">
+        <h2 className="mb-10 text-4xl">
+          <span className="text-primary">비젼라이프</span>가 걸어온 길
+        </h2>
+        <h3 className="text-3xl">
+          지속 가능한 세상을 만들기 위한
+          <br />
+          비젼라이프의 노력과 성취를 돌아봅니다.
+        </h3>
+      </div>
       <ul className="flex flex-col space-y-12">
-        {history.map((item, idx) => (
-          <li key={item.id} className="history_item flex items-center">
-            <div
-              className={`w-1/4 pr-5 text-right font-semibold text-gray-600 ${idx % 2 === 0 ? 'order-1' : 'order-2'}`}>
-              {item.year}
-            </div>
-            <div
-              className={`w-3/4 rounded-lg bg-gray-100 p-5 shadow-lg ${idx % 2 === 0 ? 'order-2' : 'order-1'}`}>
-              {' '}
-              {item.event}
+        {history.map((item) => (
+          <li key={item.id} className="flex justify-start gap-10">
+            <h4 className="w-1/6 text-right text-2xl font-semibold">
+              {item.year.includes('~')
+                ? `${item.year.split('~')[0]}년 ~ ${item.year.split('~')[1]}년`
+                : `${item.year}년`}
+            </h4>
+            <div className="w-5/6 text-xl">
+              {Array.isArray(item.event) ? (
+                <>
+                  {item.event.map((subEvent, index) => (
+                    <p key={index} className="list-disc space-y-2">{subEvent}</p>
+                  ))}
+                </>
+              ) : (
+                <p>{item.event}</p>
+              )}
             </div>
           </li>
         ))}

@@ -18,7 +18,6 @@ const navigation = [
     sub: [
       { label: "사업 소개", href: "/business/overview/introduction" },
       { label: "친환경 무 폐수 날염", href: "/business/utex/introduction" },
-      { label: "타 제품과의 비교", href: "/business/overview/introduction" },
     ],
   },
   {
