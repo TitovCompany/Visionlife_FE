@@ -30,9 +30,9 @@ const Overview = () => {
         </div>
       </article>
 
-      <div className="w-full pt-16 space-y-16 md:space-y-16 md:flex md:flex-col lg:flex-col lg:space-y-16">
-        <OverviewList data={overview.features}/>
-        <BenefitList data={overview.benefits}/>
+      <div className="w-full pt-16 space-y-12 md:space-y-10 lg:space-y-12">
+        <OverviewList data={overview.features} />
+        <BenefitList data={overview.benefits} />
       </div>
     </SectionLayout>
   );
