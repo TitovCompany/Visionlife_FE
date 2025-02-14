@@ -42,9 +42,7 @@ const NewsList: React.FC = () => {
             </div>
             <div className="flex flex-col space-y-2 p-4">
               <div className="flex items-center space-x-2">
-                <span className="rounded-md bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                  {news.type}
-                </span>
+
                 <h3 className="text-base sm:text-lg font-bold text-gray-800">
                   {truncateText(news.title, 50)}
                 </h3>
