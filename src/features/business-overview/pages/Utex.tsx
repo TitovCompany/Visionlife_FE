@@ -16,40 +16,43 @@ const Utex = () => {
       <SectionLayout
         title={overview.title}
         className="w-full max-w-7xl mx-auto"
-        titleClassName="hidden">
+        titleClassName="hidden"
+      >
         <article className="w-full h-full p-4">
-          <h2 className="w-full max-w-xl mx-auto pb-10 sm:pb-20 text-center text-3xl sm:text-4xl leading-tight font-extrabold">
+          <h2 className="w-full max-w-xl mx-auto pb-8 md:pb-12 text-center text-2xl md:text-4xl leading-tight font-extrabold">
             비젼라이프의 <span className="text-primary">UTEX</span>
             <br />
             혁신적인 섬유 염색 솔루션
           </h2>
-          <div className="flex flex-col md:flex-row justify-between gap-5">
-            <div className="w-full md:flex-1">
-              <div className="w-full md:flex-1">
-                <img
-                  src="/img/product/p3.png"
-                  alt="기기명 Coltex"
-                  className="w-full h-[300px] md:h-[530px] object-cover rounded-lg"
-                />
-              </div>
-
+          <div className="flex flex-col md:flex-row justify-between gap-6">
+            <div className="w-full md:w-1/2">
+              <img
+                src="/img/product/p3.png"
+                alt="기기명 Coltex"
+                className="w-full h-[300px] md:h-[530px] object-cover rounded-lg"
+              />
             </div>
-            <div className="md:flex-1 flex flex-col justify-start">
-              <div className="w-full h-fit text-left text-base sm:text-lg">
-                <p className="mb-5">
-                  UTEX 무폐수 섬유염색 시스템은 기존 섬유 염색 산업의 복잡한 문제를 해결하며,
+            <div className="w-full md:w-1/2 flex flex-col justify-start">
+              <div className="w-full h-fit text-left text-base md:text-lg mb-6">
+                <p className="mb-4">
+                  UTEX 무폐수 섬유 염색 시스템은 기존 섬유 염색 산업의 복잡한 문제를 해결하며,
                   초고속 염색 속도와 비용 절감 효과를 제공합니다.
                 </p>
-                <p className="mb-10">
+                <p>
                   공정 단축을 통해 높은 경제성을 확보할 수 있으며, 섬유 염색뿐만 아니라
                   다양한 산업 분야에도 활용할 수 있는 혁신적인 기술입니다.
                 </p>
               </div>
-              <ul className="w-full max-w-2xl">
+              <ul className="w-full max-w-2xl space-y-3">
                 {overview.items.map((item, idx) => (
-                  <li key={item.id} className="py-4 text-left flex items-center gap-3">
-                    <BulletPoint bulletPoints={String(idx + 1)} />
-                    <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
+                  <li
+                    key={item.id}
+                    className="flex items-start gap-3"
+                  >
+                    <div className="shrink-0">
+                      <BulletPoint bulletPoints={String(idx + 1)} />
+                    </div>
+                    <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                       {item.content}
                     </p>
                   </li>
@@ -59,6 +62,7 @@ const Utex = () => {
           </div>
         </article>
       </SectionLayout>
+
 
       <SectionLayout
         title={features.title}
@@ -73,7 +77,7 @@ const Utex = () => {
               key={item.id}
               className="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500">
               <img
-                src={`/img/product/Features/p${index + 1}.jpg`}
+                src={`/img/product/features/p${index + 1}.png`}
                 alt={item.title}
                 className="w-full sm:w-11/12 md:w-full max-w-[450px] aspect-[4/3] object-cover"
               />
