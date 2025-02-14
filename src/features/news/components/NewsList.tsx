@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Pagination from '../../../components/Pagination';
 import newsData from '../../../data/newsData.json';
 
@@ -26,25 +26,24 @@ const NewsList: React.FC = () => {
   }
 
   return (
-    <section className="mx-auto max-w-screen-lg space-y-6 px-4 py-6">
+    <section className="mx-auto max-w-screen-lg space-y-6 px-4 sm:px-6 md:px-8 py-6">
       {currentNews.map((news, index) => (
         <React.Fragment key={news.id}>
           <article
-            className="flex cursor-pointer items-start gap-6 transition duration-300 hover:opacity-80"
-            onClick={() => navigate(`/company/news/${news.id}`)}>
-            <div className="h-36 w-48 flex-shrink-0">
+            className="flex flex-col sm:flex-row cursor-pointer items-start gap-4 transition duration-300 hover:opacity-80 shadow overflow-hidden"
+            onClick={() => navigate(`/company/news/${news.id}`)}
+          >
+            <div className="w-full sm:w-48 h-48 sm:h-36 flex-shrink-0">
               <img
                 src={news.imageUrl || `/img/news/default-image-${news.id}.jpg`}
                 alt={news.title}
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-2 p-4">
               <div className="flex items-center space-x-2">
-                <span className="rounded-md bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-700">
-                  {news.type}
-                </span>
-                <h3 className="text-lg font-bold text-gray-800">
+
+                <h3 className="text-base sm:text-lg font-bold text-gray-800">
                   {truncateText(news.title, 50)}
                 </h3>
               </div>

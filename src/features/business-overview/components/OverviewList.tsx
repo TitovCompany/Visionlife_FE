@@ -11,9 +11,9 @@ const OverviewList = ({ data, className = "" }: Props) => {
       {data.map((item, index) => (
         <li
           key={index}
-          className="flex items-center gap-3 text-base leading-8 font-medium text-gray-800"
+          className="flex items-center gap-3 text-sm md:text-base lg:text-base leading-8 font-medium text-gray-800"
         >
-          <AiOutlineCheckCircle className="text-green-500 text-xl md:text-xl lg:text-xl min-w-[24px]" />
+          <AiOutlineCheckCircle className="text-green-500 text-xl md:text-xl lg:text-2xl min-w-[24px]" />
           <p>{item}</p>
         </li>
       ))}
