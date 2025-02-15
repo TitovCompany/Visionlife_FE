@@ -43,7 +43,7 @@ const Utex = () => {
               </div>
               <ul className="w-full max-w-2xl space-y-3">
                 {overview.items.map((item, idx) => (
-                  <li key={item.id} className="flex items-start gap-3">
+                  <li key={item.id} className="flex items-center gap-3">
                     <div className="shrink-0">
                       <BulletPoint bulletPoints={String(idx + 1)} />
                     </div>
