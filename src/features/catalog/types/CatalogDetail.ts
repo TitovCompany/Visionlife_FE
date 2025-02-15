@@ -3,4 +3,5 @@ export interface CatalogItem {
   title: string;
   fileType: string;
   downloadUrl: string;
+  fileSize: number;
 }
