@@ -34,7 +34,7 @@ const History = () => {
       ref={sectionRef}
       className="mx-auto min-h-screen w-full max-w-3xl py-16 md:py-32 px-4 overflow-x-hidden"
     >
-      <div className="mb-10 md:mb-20 font-bold text-center">
+      <div className="mb-10 md:mb-20 font-bold ">
         <h2 className="mb-4 md:mb-10 text-2xl md:text-4xl">
           <span className="text-primary">비젼라이프</span>가 걸어온 길
         </h2>
