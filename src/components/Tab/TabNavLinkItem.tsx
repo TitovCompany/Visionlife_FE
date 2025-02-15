@@ -6,7 +6,6 @@ interface TabNavLinkItemProps {
   as?: typeof Link | typeof NavLink;
   title: string;
   href: string;
-  className?: string;
   itemClass?: string;
   activeClass?: string;
 }
@@ -21,19 +20,21 @@ const TabNavLinkItem: React.FC<TabNavLinkItemProps> = (props) => {
     ...attributes
   } = props;
 
-  const classes =
-    Component === NavLink
-      ? ({ isActive }: { isActive: boolean }) =>
-        clsx(itemClass, isActive && activeClass)
-      : clsx(itemClass);
-
   return (
     <li {...attributes}>
-      <Component
-        to={href}
-        className={classes}>
-        {title}
-      </Component>
+      {Component === NavLink ? (
+        <NavLink
+          to={href}
+          className={({ isActive }) => clsx(itemClass, isActive && activeClass)}>
+          {title}
+        </NavLink>
+      ) : (
+        <Link
+          to={href}
+          className={clsx(itemClass)}>
+          {title}
+        </Link>
+      )}
     </li>
   );
 };
