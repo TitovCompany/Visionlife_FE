@@ -25,7 +25,9 @@ const TabNavLinkItem: React.FC<TabNavLinkItemProps> = (props) => {
       {Component === NavLink ? (
         <NavLink
           to={href}
-          className={({ isActive }) => clsx(itemClass, isActive && activeClass)}>
+          end // 부모 경로와 자식 경로가 겹치는 문제 해결
+          className={({ isActive }) =>
+            clsx(itemClass, isActive && activeClass)}>
           {title}
         </NavLink>
       ) : (
