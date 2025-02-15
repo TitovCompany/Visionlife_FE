@@ -1,122 +1,23 @@
 [
   {
     "id": 1,
-    "title": "비전라이프홀딩스, 친환경 무페수 에코잉크 나염산업",
+    "title": "UTEX TOTAL",
     "fileType": "pdf",
-    "downloadUrl": "/downloads/ecoink-1.pdf"
+    "fileSize": 8.0,
+    "downloadUrl": "src/data/catalogpdf/UTEX TOTAL-1.pdf"
   },
   {
     "id": 2,
-    "title": "비전라이프홀딩스, 친환경 무페수 에코잉크 나염산업",
+    "title": "utex 사업계획서(영문)",
     "fileType": "pdf",
-    "downloadUrl": "/downloads/ecoink-2.pdf"
+    "fileSize": 1.05,
+    "downloadUrl": "src/data/catalogpdf/utex 사업계획서(영문)-1.pdf"
   },
   {
     "id": 3,
-    "title": "비전라이프홀딩스, 친환경 무페수 에코잉크 나염산업",
+    "title": "utex 사업계획서(중문)",
     "fileType": "pdf",
-    "downloadUrl": "/downloads/ecoink-3.pdf"
-  },
-  {
-    "id": 4,
-    "title": "비전라이프홀딩스, 친환경 무페수 에코잉크 나염산업",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/ecoink-4.pdf"
-  },
-  {
-    "id": 5,
-    "title": "비전라이프홀딩스, 친환경 무페수 에코잉크 나염산업",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/ecoink-5.pdf"
-  },
-  {
-    "id": 6,
-    "title": "비전라이프홀딩스, 친환경 무페수 에코잉크 나염산업",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/ecoink-6.pdf"
-  },
-  {
-    "id": 7,
-    "title": "비전라이프홀딩스, 친환경 무페수 에코잉크 나염산업",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/ecoink-7.pdf"
-  },
-  {
-    "id": 8,
-    "title": "비전라이프홀딩스, 친환경 무페수 에코잉크 나염산업",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/ecoink-8.pdf"
-  },
-  {
-    "id": 9,
-    "title": "비전라이프홀딩스, 친환경 무페수 에코잉크 나염산업",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/ecoink-9.pdf"
-  },
-  {
-    "id": 10,
-    "title": "비전라이프홀딩스, 친환경 무페수 에코잉크 나염산업",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/ecoink-10.pdf"
-  },
-  {
-    "id": 11,
-    "title": "비전라이프홀딩스, 지속 가능한 패키징 솔루션",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/sustainable-packaging.pdf"
-  },
-  {
-    "id": 12,
-    "title": "비전라이프홀딩스, 탄소 배출 저감 프로젝트",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/carbon-reduction.pdf"
-  },
-  {
-    "id": 13,
-    "title": "비전라이프홀딩스, 신기술 적용 나염 공정",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/new-tech-printing.pdf"
-  },
-  {
-    "id": 14,
-    "title": "비전라이프홀딩스, 친환경 에너지 혁신",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/eco-energy.pdf"
-  },
-  {
-    "id": 15,
-    "title": "비전라이프홀딩스, 미래를 위한 지속 가능성",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/sustainability-future.pdf"
-  },
-  {
-    "id": 16,
-    "title": "비전라이프홀딩스, 혁신적인 디자인 솔루션",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/design-solutions.pdf"
-  },
-  {
-    "id": 17,
-    "title": "비전라이프홀딩스, 신소재 기술 개발",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/new-materials.pdf"
-  },
-  {
-    "id": 18,
-    "title": "비전라이프홀딩스, 친환경 인쇄 기술",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/eco-printing.pdf"
-  },
-  {
-    "id": 19,
-    "title": "비전라이프홀딩스, 글로벌 시장 확대 전략",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/global-strategy.pdf"
-  },
-  {
-    "id": 20,
-    "title": "비전라이프홀딩스, 혁신적인 생산성 향상",
-    "fileType": "pdf",
-    "downloadUrl": "/downloads/productivity-improvement.pdf"
+    "fileSize": 1.57,
+    "downloadUrl": "src/data/catalogpdf/utex 사업계획서(중문).pdf"
   }
 ]
