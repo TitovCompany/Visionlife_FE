@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Header from "./Header.tsx";
 import useOnClickOutside from "../hooks/useOnClickOutside.ts";
@@ -39,16 +39,18 @@ const Navigation = () => {
   const [openSubmenus, setOpenSubmenus] = useState<{ [key: number]: boolean }>({});
   const mobileMenuContainerRef = useRef<HTMLDivElement>(null);
 
-
   const toggleSubmenu = (index: number) => {
     setOpenSubmenus((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
-  useOnClickOutside(mobileMenuContainerRef, () => {
+  const handleClickOutside = useCallback((_event: Event) => {
+    void _event;
     if (mobileMenuOpen) {
       setMobileMenuOpen(false);
     }
-  });
+  }, [mobileMenuOpen]);
+
+  useOnClickOutside(mobileMenuContainerRef, handleClickOutside);
 
   return (
     <Header>
