@@ -40,7 +40,7 @@ const Footer = memo(() => {
   ], []);
 
   return (
-    <footer className="bg-gray-800 text-white py-10">
+    <footer className="border-t border-t-gray-200 bg-[#f3f3f3] py-10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm justify-items-center">
           {footer.map((item, index) => (
@@ -52,21 +52,21 @@ const Footer = memo(() => {
         </div>
 
         {/*선*/}
-        <div className="border-t border-gray-700 my-8"></div>
+        <div className="border-t border-t-gray-200 my-8"></div>
 
         {/*저작권*/}
-        <div className="flex flex-col items-center gap-4 text-xs">
-          <div className="flex flex-wrap justify-center gap-4">
+        <div className="px-4 flex justify-between items-center gap-4 text-base">
+          <p className=" text-center">© 2025 VisionLife. All Rights Reserved.</p>
+          <div className="text-sm flex flex-wrap justify-center gap-4">
             {policy.map((item, index) => (
               <Link
                 key={index}
                 to={item.path}
-                className="text-sm hover:text-primary transition">
+                className=" hover:text-primary transition">
                 {item.name}
               </Link>
             ))}
           </div>
-          <p className="text-center">© 2025 VisionLife. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
