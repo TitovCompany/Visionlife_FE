@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Header from "./Header.tsx";
+import useOnClickOutside from "../hooks/useOnClickOutside.ts";
 
 const navigation = [
   {
@@ -36,10 +37,18 @@ const Navigation = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openSubmenus, setOpenSubmenus] = useState<{ [key: number]: boolean }>({});
+  const mobileMenuContainerRef = useRef<HTMLDivElement>(null);
+
 
   const toggleSubmenu = (index: number) => {
     setOpenSubmenus((prev) => ({ ...prev, [index]: !prev[index] }));
   };
+
+  useOnClickOutside(mobileMenuContainerRef, () => {
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  });
 
   return (
     <Header>
@@ -49,7 +58,6 @@ const Navigation = () => {
         onMouseEnter={() => setDropdownVisible(true)}
         onMouseLeave={() => setDropdownVisible(false)}
       >
-        {/* 헤더 영역 */}
         <div className="mx-auto max-w-6xl px-4">
           <div className="flex items-center justify-between py-4 h-18">
             {/* 로고 영역 */}
@@ -77,11 +85,10 @@ const Navigation = () => {
                 ))}
               </ul>
             </nav>
-            {/* 오른쪽 공백 */}
             <div className="w-32" />
           </div>
         </div>
-        {/* 하위 메뉴 백그라운드 영역 */}
+        {/* 하위 메뉴 영역 */}
         <div
           className={`absolute inset-x-0 top-full bg-white border-t border-gray-200 shadow-md transition-all duration-300 ease-in-out mt- ${
             isDropdownVisible ? "opacity-100 visible" : "opacity-0 invisible"
@@ -89,7 +96,6 @@ const Navigation = () => {
         >
           <div className="mx-auto max-w-6xl px-4">
             <div className="flex">
-              {/* 상위 메뉴와 동일한 좌우 여백 */}
               <div className="w-32" />
               <div className="flex-1">
                 <ul className="grid grid-cols-4 text-center">
@@ -118,8 +124,7 @@ const Navigation = () => {
       </div>
 
       {/* 모바일 내비게이션 */}
-      <div className="md:hidden">
-        {/* 로고와 햄버거 버튼 */}
+      <div className="md:hidden" ref={mobileMenuContainerRef}>
         <div className="flex justify-between items-center px-4 py-4 border-b border-gray-200">
           <h1 className="text-xl font-bold">
             <Link to="/">
@@ -167,8 +172,6 @@ const Navigation = () => {
             )}
           </button>
         </div>
-
-        {/* 모바일 메뉴 */}
         {mobileMenuOpen && (
           <nav className="px-4 py-2">
             <ul className="space-y-2">
