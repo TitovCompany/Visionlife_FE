@@ -18,17 +18,19 @@ const ProfileLayout = () => {
       <HeroSection src={imageSrc} sectionClass="h-80 sm:h-[410px] md:h-[635px]" />
 
       {/* TabList: 모바일에서는 세로 full-width, sm 이상에서는 인라인 배치 */}
-      <TabList className="flex flex-wrap justify-center bg-[#f3f3f3]">
-        {TAB_LIST.map((item, idx) => (
-          <TabNavLinkItem
-            key={idx}
-            as={NavLink}
-            itemClass="block w-full sm:w-auto px-4 sm:px-8 md:px-12 py-4 sm:py-6 text-center"
-            title={item.title}
-            href={item.href}
-          />
-        ))}
-      </TabList>
+      <div className="bg-[#f3f3f3]">
+        <TabList className="max-w-5xl mx-auto flex flex-wrap justify-center gap-8">
+          {TAB_LIST.map((item, idx) => (
+            <TabNavLinkItem
+              key={idx}
+              as={NavLink}
+              className="text-center"
+              itemClass="block w-full text-xl font-semibold sm:w-auto px-4 sm:px-8 md:px-12 py-4 sm:py-6 hover:text-primary"
+              title={item.title}
+              href={item.href} />
+          ))}
+        </TabList>
+      </div>
       <Outlet />
     </PageLayout>
   );
