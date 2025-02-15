@@ -6,6 +6,7 @@ interface TabNavLinkItemProps {
   as?: typeof Link | typeof NavLink;
   title: string;
   href: string;
+  className?: string;
   itemClass?: string;
   activeClass?: string;
 }
