@@ -35,8 +35,9 @@ const NewsDetail: React.FC = () => {
       <img
         src={newsItem.imageUrl}
         alt={newsItem.title}
-        className="mt-4 sm:mt-8 mb-6 sm:mb-10 h-60 sm:h-80 md:h-96 w-full object-cover"
+        className="mt-4 sm:mt-8 mb-6 sm:mb-10 w-full h-auto object-contain"
       />
+
       <article className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed whitespace-pre-line text-gray-700">
         {newsItem.content}
       </article>

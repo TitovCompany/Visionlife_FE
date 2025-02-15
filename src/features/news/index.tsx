@@ -18,7 +18,9 @@ const News: React.FC = () => {
         {id && <Outlet />}
         {!id && (
           <>
+            <hr className="border-primary mt-1" />
             <FeaturedNews />
+            <hr className="border-primary mt-1" />
             <NewsList />
           </>
         )}
