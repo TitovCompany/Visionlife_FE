@@ -85,7 +85,7 @@ export const router = createHashRouter([
         path: "/policies",
         children: [
           { path: "privacy", Component: PrivacyPolicy },
-          { path: "emailNoCollection", Component: EmailNoCollection },
+          { path: "email-collection", Component: EmailNoCollection },
           { path: "terms", Component: TermsOfService },
         ],
       },
