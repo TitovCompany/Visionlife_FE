@@ -15,7 +15,7 @@ const HeroSection = ({
           src={src}
           alt="Vision Image"
         />
-        <figcaption className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-7xl font-bold text-white">
+        <figcaption className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-4xl sm:text-5xl md:text-7xl font-bold text-white">
           Vision !! <br /> Dreams Come True !!
         </figcaption>
       </figure>
