@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PageLayout from "../../layout/PageLayout.tsx";
 import catalogData from "../../data/catalogData.json";
 import { CatalogItem } from "./types/CatalogDetail.ts";
@@ -23,7 +23,7 @@ const Catalog = () => {
         </h1>
         <hr className="border-primary mb-6 py-1" />
 
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentData.map((item: CatalogItem) => (
             <li key={item.id} className="bg-white border border-gray-200  shadow-md hover:shadow-lg overflow-hidden transition min-h-[220px] sm:min-h-[250px] lg:min-h-[280px] flex flex-col">
               <div className="p-8 sm:p-10 lg:p-12 flex-grow flex flex-col justify-between">
