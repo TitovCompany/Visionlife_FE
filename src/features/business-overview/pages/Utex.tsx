@@ -7,7 +7,7 @@ import features from '../../../data/business/utex_features.json';
 import ink from '../../../data/business/utex_ink.json';
 import comparison from '../../../data/business/utex_comparison.json';
 import BulletPoint from '../../../components/bullet-point/BulletPoint.tsx';
-import AnimatedHeading from '../../../components/AnimatedHeading.tsx';
+import ImageCard from '../../../components/ImageCard.tsx';
 
 const Utex = () => {
   return (
@@ -67,19 +67,17 @@ const Utex = () => {
         </h2>
         <div className="w-full h-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
           {features.items.map((item, index) => (
-            <div key={item.id} className="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500">
-              <img
-                src={`/img/product/features/p${index + 1}.png`}
-                alt={item.title}
-                className="w-full sm:w-11/12 md:w-full aspect-[4/3] object-cover" />
-              <AnimatedHeading
-                className="mt-4 text-lg sm:text-2xl"
-                title={item.title}
-                role="heading" />
-              <p className="mt-2 whitespace-pre-line leading-relaxed text-sm sm:text-base">
-                {item.content}
-              </p>
-            </div>
+            <ImageCard
+              key={item.id}
+              as="div"
+              title={item.title}
+              animation={true}
+              src={`/img/product/features/p${index + 1}.png`}
+              alt={item.title}
+              description={item.content}
+              wrapperClass="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500"
+              imageClass="w-full sm:w-11/12 md:w-full aspect-[4/3] object-cover"
+              descriptionClass="mt-2 whitespace-pre-line leading-relaxed text-sm sm:text-base"/>
           ))}
         </div>
       </SectionLayout>
@@ -96,37 +94,31 @@ const Utex = () => {
           {/* 상단: 한 개 */}
           <div className="flex justify-center">
             {ink.items[0] && (
-              <div key={ink.items[0].id} className="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500">
-                <img
-                  src="/img/product/ink/p1.png"
-                  alt={ink.items[0].title}
-                  className="w-[120px] md:w-[140px] h-[120px] md:h-[140px] object-cover" />
-                <AnimatedHeading
-                  className="mt-4 text-lg sm:text-xl"
-                  title={ink.items[0].title}
-                  role="heading" />
-                <p className="mt-2 text-gray-600 whitespace-pre-line text-xs sm:text-sm md:text-base">
-                  {ink.items[0].content}
-                </p>
-              </div>
+              <ImageCard
+                key={ink.items[0].id}
+                as="div"
+                title={ink.items[0].title}
+                animation={true}
+                src={`/img/product/ink/p1.png`}
+                alt={ink.items[0].title}
+                description={ink.items[0].content}
+                wrapperClass="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500"
+                descriptionClass="mt-2 text-gray-600 whitespace-pre-line text-xs sm:text-sm md:text-base"/>
             )}
           </div>
           {/* 하단: 두 개 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {ink.items.slice(1, 3).map((item, idx) => (
-              <div key={item.id} className="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500">
-                <img
-                  src={`/img/product/ink/p${idx + 2}.png`}
-                  alt={item.title}
-                  className="w-[120px] md:w-[140px] h-[120px] md:h-[140px] object-cover" />
-                <AnimatedHeading
-                  className="mt-4 text-lg sm:text-xl"
-                  title={item.title}
-                  role="heading" />
-                <p className="mt-2 text-gray-600 whitespace-pre-line text-xs sm:text-sm md:text-base">
-                  {item.content}
-                </p>
-              </div>
+              <ImageCard
+                key={item.id}
+                as="div"
+                title={item.title}
+                animation={true}
+                src={`/img/product/ink/p${idx + 2}.png`}
+                alt={item.title}
+                description={item.content}
+                wrapperClass="group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500"
+                descriptionClass="mt-2 text-gray-600 whitespace-pre-line text-xs sm:text-sm md:text-base"/>
             ))}
           </div>
         </div>
@@ -149,16 +141,17 @@ const Utex = () => {
               기존 섬유 염색 공정
             </h3>
             <ul className="space-y-3">
-              {comparison.items[0].steps.map((step, index) => (
-                <li key={step.id} className="flex flex-col items-center p-4 bg-white shadow rounded-lg">
-                  <img
-                    src={`/img/product/compare/p${index + 1}.png`}
-                    alt={step.content}
-                    className="w-[120px] md:w-[140px] h-[120px] md:h-[140px] object-cover rounded-full" />
-                  <p className="mt-2 text-gray-700 text-sm md:text-base">
-                    {step.content}
-                  </p>
-                </li>
+              {comparison.items[0].steps.map((step, idx) => (
+                <ImageCard
+                  key={step.id}
+                  as="li"
+                  animation={true}
+                  src={`/img/product/compare/p${idx + 1}.png`}
+                  alt={step.content}
+                  description={step.content}
+                  wrapperClass="flex flex-col items-center p-4 bg-white shadow rounded-lg"
+                  imageClass="w-[120px] md:w-[140px] h-[120px] md:h-[140px] object-cover rounded-full"
+                  descriptionClass="mt-2 text-gray-700 text-sm md:text-base"/>
               ))}
             </ul>
           </div>
@@ -167,13 +160,16 @@ const Utex = () => {
             <h3 className="text-center text-xl font-semibold mb-4">UTEX 공정</h3>
             <ul className="space-y-3">
               {comparison.items[1].steps.map((step) => (
-                <li key={step.id} className="flex flex-col items-center p-4 bg-white shadow rounded-lg text-gray-800">
-                  <img
-                    src={`/img/product/compare/p4.png`}
-                    alt={step.content}
-                    className="w-[120px] md:w-[140px] h-[120px] md:h-[140px] object-cover rounded-full" />
-                  <p className="mt-2 text-sm md:text-base">{step.content}</p>
-                </li>
+                <ImageCard
+                  key={step.id}
+                  as="li"
+                  animation={true}
+                  src="/img/product/compare/p4.png"
+                  alt={step.content}
+                  description={step.content}
+                  wrapperClass="flex flex-col items-center p-4 bg-white shadow rounded-lg text-gray-800"
+                  imageClass="w-[120px] md:w-[140px] h-[120px] md:h-[140px] object-cover rounded-full"
+                  descriptionClass="mt-2 text-sm md:text-base"/>
               ))}
             </ul>
           </div>
