@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Header from "./Header.tsx";
+import useOnClickOutside from "../hooks/useOnClickOutside.ts";
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
+
 
 const navigation = [
   {
@@ -36,10 +39,20 @@ const Navigation = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openSubmenus, setOpenSubmenus] = useState<{ [key: number]: boolean }>({});
+  const mobileMenuContainerRef = useRef<HTMLDivElement>(null);
 
   const toggleSubmenu = (index: number) => {
     setOpenSubmenus((prev) => ({ ...prev, [index]: !prev[index] }));
   };
+
+  const handleClickOutside = useCallback((_event: Event) => {
+    void _event;
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  }, [mobileMenuOpen]);
+
+  useOnClickOutside(mobileMenuContainerRef, handleClickOutside);
 
   return (
     <Header>
@@ -49,7 +62,6 @@ const Navigation = () => {
         onMouseEnter={() => setDropdownVisible(true)}
         onMouseLeave={() => setDropdownVisible(false)}
       >
-        {/* 헤더 영역 */}
         <div className="mx-auto max-w-6xl px-4">
           <div className="flex items-center justify-between py-4 h-18">
             {/* 로고 영역 */}
@@ -77,11 +89,10 @@ const Navigation = () => {
                 ))}
               </ul>
             </nav>
-            {/* 오른쪽 공백 */}
             <div className="w-32" />
           </div>
         </div>
-        {/* 하위 메뉴 백그라운드 영역 */}
+        {/* 하위 메뉴 영역 */}
         <div
           className={`absolute inset-x-0 top-full bg-white border-t border-gray-200 shadow-md transition-all duration-300 ease-in-out mt- ${
             isDropdownVisible ? "opacity-100 visible" : "opacity-0 invisible"
@@ -89,7 +100,6 @@ const Navigation = () => {
         >
           <div className="mx-auto max-w-6xl px-4">
             <div className="flex">
-              {/* 상위 메뉴와 동일한 좌우 여백 */}
               <div className="w-32" />
               <div className="flex-1">
                 <ul className="grid grid-cols-4 text-center">
@@ -118,8 +128,7 @@ const Navigation = () => {
       </div>
 
       {/* 모바일 내비게이션 */}
-      <div className="md:hidden">
-        {/* 로고와 햄버거 버튼 */}
+      <div className="md:hidden" ref={mobileMenuContainerRef}>
         <div className="flex justify-between items-center px-4 py-4 border-b border-gray-200">
           <h1 className="text-xl font-bold">
             <Link to="/">
@@ -135,40 +144,12 @@ const Navigation = () => {
             className="p-2 focus:outline-none"
           >
             {mobileMenuOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <FiX className="h-6 w-6" />
             ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              <FiMenu className="h-6 w-6" />
             )}
           </button>
         </div>
-
-        {/* 모바일 메뉴 */}
         {mobileMenuOpen && (
           <nav className="px-4 py-2">
             <ul className="space-y-2">
@@ -191,22 +172,11 @@ const Navigation = () => {
                         onClick={() => toggleSubmenu(idx)}
                         className="p-2 focus:outline-none"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
+                        <FiChevronDown
                           className={`h-5 w-5 transform transition-transform duration-200 ${
                             openSubmenus[idx] ? "rotate-180" : "rotate-0"
                           }`}
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
+                        />
                       </button>
                     )}
                   </div>
