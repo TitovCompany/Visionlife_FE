@@ -26,24 +26,22 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = (props) => {
           {/* 로고 영역 */}
           <Logo type="_desktop"/>
           {/* 상위 메뉴 영역 */}
-          <nav className="flex-1">
+          <nav className="w-full max-w-3xl">
             <ul className="grid grid-cols-4 text-center">
               {navigation.map((item, idx) => (
                 <li key={idx}>
                   <NavLink
                     to={item.href}
-                    className="block py-4 text-sm hover:text-primary"
-                  >
+                    className="block py-4 font-medium text-lg hover:text-primary">
                     {item.label}
                   </NavLink>
                 </li>
               ))}
             </ul>
           </nav>
-          {/* 오른쪽 공백 */}
-          <div className="w-32" />
         </div>
       </div>
+
       {/* 하위 메뉴 백그라운드 영역 */}
       <div
         className={`absolute inset-x-0 top-full bg-white border-t border-gray-200 shadow-md transition-all duration-300 ease-in-out mt- ${
