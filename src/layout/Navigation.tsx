@@ -2,6 +2,8 @@ import { useState, useRef, useCallback } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Header from "./Header.tsx";
 import useOnClickOutside from "../hooks/useOnClickOutside.ts";
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
+
 
 const navigation = [
   {
@@ -142,35 +144,9 @@ const Navigation = () => {
             className="p-2 focus:outline-none"
           >
             {mobileMenuOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <FiX className="h-6 w-6" />
             ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              <FiMenu className="h-6 w-6" />
             )}
           </button>
         </div>
@@ -196,22 +172,11 @@ const Navigation = () => {
                         onClick={() => toggleSubmenu(idx)}
                         className="p-2 focus:outline-none"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
+                        <FiChevronDown
                           className={`h-5 w-5 transform transition-transform duration-200 ${
                             openSubmenus[idx] ? "rotate-180" : "rotate-0"
                           }`}
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
+                        />
                       </button>
                     )}
                   </div>
