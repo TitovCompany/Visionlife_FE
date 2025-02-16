@@ -1,19 +1,19 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {Index} from './index.tsx';
+import {NavigationT} from './index.tsx';
 import Logo from '../../components/Logo.tsx';
 
 interface MobileNavbarProps {
   isMobileMenuOpen: boolean;
   setIsMobileMenuOpen: (isMobileMenuOpen: boolean) => void;
-  navigation: Index[];
+  navigation: NavigationT[];
   toggleSubmenu: (index: number) => void;
   openSubmenus: {
     [key: number]: boolean;
   };
 }
 
-const MobileNavbar: React.FC<MobileNavbarProps> = (props) => {
+const NavbarMobile: React.FC<MobileNavbarProps> = (props) => {
   const {
     isMobileMenuOpen,
     setIsMobileMenuOpen,
@@ -131,4 +131,4 @@ const MobileNavbar: React.FC<MobileNavbarProps> = (props) => {
   );
 };
 
-export default MobileNavbar;
+export default NavbarMobile;

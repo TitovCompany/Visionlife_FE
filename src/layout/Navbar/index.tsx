@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Header from "../Header.tsx";
-import MobileNavbar from './MobileNavbar.tsx';
-import DesktopNavbar from './DesktopNavbar.tsx';
+import NavbarMobile from './NavbarMobile.tsx';
+import NavbarDesktop from './NavbarDesktop.tsx';
 
-export interface Index {
+export interface NavigationT {
   label: string;
   href: string;
   sub: {
@@ -53,11 +53,11 @@ const Navigation = () => {
 
   return (
     <Header>
-      <DesktopNavbar
+      <NavbarDesktop
         isDropdownVisible={isDropdownVisible}
         setIsDropdownVisible={setIsDropdownVisible}
         navigation={navigation}/>
-      <MobileNavbar
+      <NavbarMobile
         isMobileMenuOpen={isMobileMenuOpen}
         setIsMobileMenuOpen={setIsMobileMenuOpen}
         navigation={navigation}
