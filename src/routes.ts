@@ -20,7 +20,8 @@ import Overview from "./features/business-overview/pages/Overview.tsx";
 import Utex from "./features/business-overview/pages/Utex.tsx";
 
 // 📰 뉴스
-import News from "./features/news/index";
+import NewsLayout from "./features/news/index";
+import News from './features/news/pages/News.tsx';
 import NewsDetail from "./features/news/pages/NewsDetail.tsx";
 
 // 📦 제품 카탈로그
@@ -67,9 +68,10 @@ export const router = createHashRouter([
       // 뉴스 페이지 (언론 보도)
       {
         path: '/company/news',
-        Component: News,
+        Component: NewsLayout,
         children: [
           // slug 사용 예정
+          {index: true, Component: News},
           {path: ':id', Component: NewsDetail},
         ],
       },

@@ -1,5 +1,5 @@
 {
-  "news": [
+  "items": [
     {
       "id": "1",
       "type": "ISSUE",
@@ -29,9 +29,7 @@
       "author": "유현정",
       "publishedDate": "2025.01.22 11:05",
       "views": 0
-    }
-  ],
-  "newsList": [
+    },
     {
       "id": "4",
       "type": "ISSUE",
