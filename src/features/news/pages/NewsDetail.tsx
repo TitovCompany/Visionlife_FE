@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import newsData from '../../../data/newsData.json';
+import newsData from '../../../data/news.json';
 
 const NewsDetail: React.FC = () => {
   const { id } = useParams();
   const newsItem =
-    newsData.news.find((news) => news.id === id) ||
-    newsData.newsList.find((news) => news.id === id);
+    newsData.items.find((news) => news.id === id) ||
+    newsData.items.find((news) => news.id === id);
 
   useEffect(() => {
     window.scrollTo(0, 0);

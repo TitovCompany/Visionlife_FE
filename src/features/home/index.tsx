@@ -6,7 +6,7 @@ import MoreNewsSection from './components/MoreNewsSection.tsx';
 import {AiOutlineArrowDown} from 'react-icons/ai';
 import HeroSection from '../profile/components/HeroSection.tsx';
 import SectionAbout_Design2 from './components/SectionAbout_Design2.tsx';
-import newsData from '../../data/newsData.json';
+import newsData from '../../data/news.json';
 
 const Home = () => {
   const combinedNews = [...(newsData.news || []), ...(newsData.newsList || [])];
