@@ -24,7 +24,7 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = (props) => {
       <div className="mx-auto max-w-7xl">
         <div className="flex items-center justify-between py-4 h-18">
           {/* 로고 영역 */}
-          <Logo/>
+          <Logo type="_desktop"/>
           {/* 상위 메뉴 영역 */}
           <nav className="flex-1">
             <ul className="grid grid-cols-4 text-center">

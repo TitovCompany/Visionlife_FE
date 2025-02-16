@@ -1,6 +1,7 @@
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {Index} from './index.tsx';
+import Logo from '../../components/Logo.tsx';
 
 interface MobileNavbarProps {
   isMobileMenuOpen: boolean;
@@ -25,15 +26,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = (props) => {
     <div className="md:hidden">
       {/* 로고와 햄버거 버튼 */}
       <div className="flex justify-between items-center px-4 py-4 border-b border-gray-200">
-        <h1 className="text-xl font-bold">
-          <Link to="/">
-            <img
-              src="/img/logo.png"
-              alt="(주)비젼라이프 홈페이지 로고"
-              className="max-w-30"
-            />
-          </Link>
-        </h1>
+        <Logo type="_mobile"/>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="p-2 focus:outline-none"
