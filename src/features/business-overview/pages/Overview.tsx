@@ -6,8 +6,9 @@ import SectionLayout from "../../../layout/SectionLayout.tsx";
 const Overview = () => {
   return (
     <SectionLayout
-      title=""
+      title="비전라이프 사업 소개"
       className="grid place-items-center px-4 sm:px-6 lg:px-8"
+      titleClassName="hidden"
       titlePadding="p-0">
 
       <h2 className="flex w-full max-w-lg md:max-w-xl lg:max-w-2xl items-center justify-center gap-2 md:gap-4 lg:gap-6 pt-16 pb-10 text-3xl md:text-4xl lg:text-5xl font-extrabold text-center">
