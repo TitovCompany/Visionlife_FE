@@ -1,14 +1,27 @@
 import React from 'react';
+import clsx from 'clsx';
 
-const PageLayout = ({
-  title,
-  children,
-}: {
+interface PageLayoutProps {
   title: string;
   children: React.ReactNode;
-}) => {
+  isFullHeight?: boolean;
+  isMinHeight?: boolean;
+}
+
+const PageLayout: React.FC<PageLayoutProps> = (props) => {
+  const {
+    title,
+    children,
+    isFullHeight = false,
+    isMinHeight = false,
+  } = props;
+  const classes = clsx(
+    isFullHeight ? "h-screen" : "h-auto",
+    isMinHeight ? "min-h-screen" : "min-h-[calc(100vh-4rem+10px-17.875rem)]",
+    "w-full pt-[calc(4rem+10px)] flex flex-col");
+
   return (
-    <main className={`mt-[calc(4rem+10px)] flex min-h-screen w-full flex-col`}>
+    <main className={classes}>
       {/* SEO 최적화용 */}
       <h1 className="hidden">{title}</h1>
       {children}

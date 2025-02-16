@@ -16,7 +16,10 @@ const Catalog = () => {
   );
 
   return (
-    <PageLayout title="카탈로그">
+    <PageLayout
+      title="카탈로그"
+      isFullHeight={false}
+      isMinHeight={false}>
       <div className="mx-auto max-w-5xl md:max-w-6xl lg:max-w-7xl px-4 sm:px-6 md:px-10 lg:px-12 ">
         <h1 className="text-4xl font-bold text-center text-gray-900 mt-12 sm:mt-16 lg:mt-20 mb-8">
           카탈로그

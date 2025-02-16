@@ -18,10 +18,10 @@ const Utex = () => {
         className="w-full max-w-7xl mx-auto"
         titleClassName="hidden">
         <article className="w-full h-full p-4">
-          <h2 className="w-full max-w-xl mx-auto pb-8 md:pb-12 text-center text-2xl md:text-4xl leading-tight font-extrabold">
+          <h2 className="w-full max-w-xl mx-auto pb-16 md:pb-20 text-center text-2xl md:text-4xl leading-tight font-extrabold">
             비젼라이프의 <span className="text-primary">UTEX</span>
             <br />
-            혁신적인 섬유 염색 솔루션
+            친환경 섬유 염색 솔루션
           </h2>
           <div className="flex flex-col md:flex-row justify-between gap-6">
             <div className="w-full md:w-1/2">
