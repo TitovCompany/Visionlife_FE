@@ -6,8 +6,13 @@ import MoreNewsSection from './components/MoreNewsSection.tsx';
 import {AiOutlineArrowDown} from 'react-icons/ai';
 import HeroSection from '../profile/components/HeroSection.tsx';
 import SectionAbout_Design2 from './components/SectionAbout_Design2.tsx';
+import newsData from '../../data/newsData.json';
 
 const Home = () => {
+  const combinedNews = [...(newsData.news || []), ...(newsData.newsList || [])];
+  const filteredNews = combinedNews.filter((news) =>
+    ['1', '2', '3', '4'].includes(news.id)
+  );
   return (
     <PageLayout title="서비스 페이지 본문">
       <HeroSection
@@ -30,18 +35,20 @@ const Home = () => {
         </section>*/}
 
         {/* 뉴스 */}
-        <section className="pt-20 mx-32 h-96 py-20">
-          <h2 className="mb-3 ml-3 flex items-center gap-3 text-lg font-semibold">
-            <AiOutlineArrowDown className="text-primary font-extrabold" />
-            비전라이프 최신 소식
-          </h2>
-          <ul className="flex h-full justify-between gap-5">
-            <NewsCard title="title" description="article" />
-            <NewsCard title="title" description="article" />
-            <NewsCard title="title" description="article" />
-            <NewsCard title="title" description="article" />
-          </ul>
-        </section>
+      {/* 뉴스 섹션 */}
+      <section className="pt-20 mx-32 h-96 py-20">
+        <h2 className="mb-3 ml-3 flex items-center gap-3 text-lg font-semibold">
+          <AiOutlineArrowDown className="text-primary font-extrabold" />
+          비전라이프 최신 소식
+        </h2>
+        <ul className="flex h-full justify-between gap-5">
+          {filteredNews.map((news) => (
+            <li key={news.id}>
+              <NewsCard news={news} />
+            </li>
+          ))}
+        </ul>
+      </section>
 
         <section className="mx-auto h-96 max-w-3xl py-20">
           <MoreNewsSection />
