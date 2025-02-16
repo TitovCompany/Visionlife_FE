@@ -32,7 +32,6 @@ const Footer = memo(() => {
       ],
     },
   ],[]);
-
   const policy = useMemo(() => [
     { name: "개인정보 처리방침", path: "/policies/privacy" },
     { name: "이용약관", path: "/policies/terms" },
@@ -42,7 +41,7 @@ const Footer = memo(() => {
   return (
     <footer className="border-t border-t-gray-200 bg-[#f3f3f3] py-10">
       <div className="max-w-4xl mx-auto">
-        <div className="max-w-3xl mx-auto flex justify-around text-base">
+        <div className="max-w-3xl mx-auto flex flex-col gap-5 md:flex-row md:gap-0 justify-around text-base">
           {footer.map((item, index) => (
             <FooterColumn
               key={index}
@@ -55,7 +54,7 @@ const Footer = memo(() => {
         <div className="border-t border-t-gray-200 my-8"></div>
 
         {/*저작권*/}
-        <div className="px-4 flex justify-between items-center gap-4 text-base">
+        <div className="px-4 flex flex-col-reverse sm:flex-row justify-between items-center gap-4 text-base">
           <p className=" text-center">© 2025 VisionLife. All Rights Reserved.</p>
           <div className="text-sm flex flex-wrap justify-center gap-4">
             {policy.map((item, index) => (
