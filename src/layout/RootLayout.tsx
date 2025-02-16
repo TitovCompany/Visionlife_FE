@@ -2,10 +2,10 @@ import '../index.css';
 import Navigation from './Navbar';
 import Footer from './Footer';
 import {Outlet} from 'react-router-dom';
-// container max-w-[1440px] mx-auto
+
 function RootLayout() {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full min-h-screen min-w-full">
       <Navigation />
       <Outlet />
       <Footer />

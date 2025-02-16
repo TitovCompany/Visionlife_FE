@@ -4,21 +4,21 @@ import clsx from 'clsx';
 interface PageLayoutProps {
   title: string;
   children: React.ReactNode;
-  fullHeight?: boolean;
-  minHeight?: boolean;
+  isFullHeight?: boolean;
+  isMinHeight?: boolean;
 }
 
 const PageLayout: React.FC<PageLayoutProps> = (props) => {
   const {
     title,
     children,
-    fullHeight = true,
-    minHeight = true,
+    isFullHeight = false,
+    isMinHeight = false,
   } = props;
   const classes = clsx(
-    fullHeight ? "h-screen" : "h-auto",
-    minHeight && "min-h-screen",
-    "w-full mt-[calc(4rem+10px)] flex flex-col");
+    isFullHeight ? "h-screen" : "h-auto",
+    isMinHeight ? "min-h-screen" : "min-h-[calc(100vh-4rem+10px-17.875rem)]",
+    "w-full pt-[calc(4rem+10px)] flex flex-col");
 
   return (
     <main className={classes}>

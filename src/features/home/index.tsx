@@ -14,7 +14,10 @@ const Home = () => {
     ['1', '2', '3', '4'].includes(news.id),
   );
   return (
-    <PageLayout title="서비스 페이지 본문">
+    <PageLayout
+      title="사업개요 페이지 본문"
+      fullHeight={false}
+      minHeight={false}>
       <HeroSection
         sectionClass="h-[410px] md:h-[635px] grid grid-cols-1 grid-rows-1"
         src={imageSrc} />
