@@ -14,6 +14,8 @@ interface NavbarMenuProps {
   closeMenu?: () => void;
   toggleSubmenu?: (index: number) => void;
   openSubmenus?: {[key: number]: boolean;};
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
 const NavbarMenu: React.FC<NavbarMenuProps> = (props) => {
@@ -27,6 +29,8 @@ const NavbarMenu: React.FC<NavbarMenuProps> = (props) => {
     openSubmenus = {},
     toggleSubmenu,
     closeMenu,
+    onMouseEnter,
+    onMouseLeave,
   } = props;
   const componentClasses = clsx(
     type !== '_mobile' && 'w-full max-w-3xl ml-auto',
@@ -50,7 +54,10 @@ const NavbarMenu: React.FC<NavbarMenuProps> = (props) => {
     `block ${linkClass}`);
 
   return (
-    <Component className={componentClasses}>
+    <Component
+      className={componentClasses}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}>
       <ul className={listClasses}>
         {items.map((item, index) => (
           <li key={index} className={itemClasses}>
