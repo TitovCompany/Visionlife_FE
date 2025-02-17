@@ -4,20 +4,10 @@ import news from '../../../data/news.json';
 import {Link} from 'react-router-dom';
 import Pagination from '../../../components/Pagination.tsx';
 import usePagenation from '../../../hooks/usePagenation.ts';
+import {NewsType} from '../../../types';
 
 interface NewsCardListProps {
   layout?: 'horizontal' | 'vertical';
-}
-
-interface News {
-  id: string;
-  type: string;
-  imageUrl: string;
-  title: string;
-  content: string;
-  author: string;
-  publishedDate: string;
-  views: number;
 }
 
 const truncateText = (text: string, maxLength: number) => {
@@ -32,7 +22,7 @@ const NewsCardList: React.FC<NewsCardListProps> = (props) => {
     currentPage,
     totalPages,
     setCurrentPage
-  } = usePagenation<News>(news.items, itemsPerPage);
+  } = usePagenation<NewsType>(news.items, itemsPerPage);
 
   const displayedItems  =
     layout === 'horizontal'
