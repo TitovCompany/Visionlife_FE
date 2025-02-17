@@ -38,16 +38,14 @@ const Home = () => {
         </section>*/}
 
       {/* 뉴스 */}
-      <section className="pt-20 mx-32 h-auto py-20">
-        <h2 className="mb-3 ml-3 flex items-center gap-3 text-lg font-semibold">
+      <section className="py-20 mx-32 h-auto">
+        <h2 className="mb-10 ml-3 flex items-center gap-3 text-lg font-semibold">
           <AiOutlineArrowDown className="text-primary font-extrabold" />
           비전라이프 최신 소식
         </h2>
         <ul className="flex h-full justify-between gap-5">
-          {filteredNews.map((news) => (
-            <li key={news.id}>
-              <NewsCard news={news} />
-            </li>
+          {filteredNews.slice(0,3).map((news) => (
+            <NewsCard key={news.id} news={news} />
           ))}
         </ul>
       </section>
