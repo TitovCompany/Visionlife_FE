@@ -56,7 +56,12 @@ const ContactUs = () => {
         </ul>
         {/* 이미지 영역 */}
         <div className="lg:col-span-3">
-          <DummyImgBox width="w-full" height="h-full" isCircle={false} />
+          <img
+            src="/img/contactus/map.png"
+            alt="Contact Us Map"
+            className="w-full h-full object-cover object-center transform scale-110 md:scale-100"
+          />
+
         </div>
       </div>
     </SectionLayout>
