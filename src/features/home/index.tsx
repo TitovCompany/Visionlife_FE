@@ -44,8 +44,8 @@ const Home = () => {
           비전라이프 최신 소식
         </h2>
         <ul className="flex h-full justify-between gap-5">
-          {filteredNews.slice(0,3).map((news) => (
-            <NewsCard key={news.id} news={news} />
+          {filteredNews.slice(0,3).map((news, index) => (
+            <NewsCard key={index} news={news} />
           ))}
         </ul>
       </section>
