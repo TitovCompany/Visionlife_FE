@@ -9,7 +9,7 @@ const MoreNewsSection = () => {
           더 많은 소식 확인하기
         </h3>
         <TextLink
-          href="/"
+          href="/company/news"
           size="lg"
           className="flex items-center gap-3 font-extrabold">
           <LuCircleArrowRight className="text-primary font-extrabold" />
