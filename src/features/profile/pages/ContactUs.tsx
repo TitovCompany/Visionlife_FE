@@ -18,12 +18,12 @@ const ContactUs = () => {
         {/* 연락처 정보 */}
         <ul className="flex flex-col gap-6 lg:col-span-2">
           <ListCard
-            title="전화번호"
+            title="대표번호"
             type="_base"
             icon={
               <FaPhoneAlt className="bg-primary h-12 w-12 sm:h-14 sm:w-14 rounded-full p-2 sm:p-3 text-white" />
             }
-            description="02-555-1202"
+            description= "010-7563-1272"
             size="w-full h-full"
           />
           <ListCard
@@ -32,7 +32,7 @@ const ContactUs = () => {
             icon={
               <LiaFaxSolid className="bg-primary h-12 w-12 sm:h-14 sm:w-14 rounded-full p-2 sm:p-3 text-white" />
             }
-            description="02-555-5801"
+            description="02-555-580"
             size="w-full h-full"
           />
           <ListCard

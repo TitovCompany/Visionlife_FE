@@ -50,12 +50,12 @@ const History = () => {
             key={item.id}
             className="history_item flex flex-col md:flex-row items-center md:items-start justify-start gap-2 md:gap-10"
           >
-            <h4 className="w-full md:w-1/6 text-center md:text-right text-xl md:text-2xl font-semibold">
+            <h4 className="w-full md:w-1/6 text-left md:text-right text-xl md:text-2xl font-semibold">
               {item.year.includes('~')
                 ? `${item.year.split('~')[0]}년 ~ ${item.year.split('~')[1]}년`
                 : `${item.year}년`}
             </h4>
-            <div className="w-full md:w-5/6 text-center md:text-left text-base md:text-xl">
+            <div className="w-full md:w-5/6 text-left md:text-left text-base md:text-xl">
               {Array.isArray(item.event) ? (
                 <>
                   {item.event.map((subEvent, index) => (
