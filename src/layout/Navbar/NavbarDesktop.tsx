@@ -24,16 +24,23 @@ const NavbarDesktop: React.FC<DesktopNavbarProps> = (props) => {
   return (
     <div
       className="hidden md:block relative"
-      onMouseEnter={() => setIsDropdownVisible(true)}
-      onMouseLeave={() => setIsDropdownVisible(false)}>
+      >
       <div className="mx-auto max-w-7xl flex items-center justify-between py-4 h-18">
         <Logo type="_desktop" />
-        <NavbarMenu type="_nav" items={navigation} />
+        <NavbarMenu
+          type="_nav"
+          items={navigation}
+          onMouseEnter={() => setIsDropdownVisible(true)}
+          onMouseLeave={() => setIsDropdownVisible(false)}/>
       </div>
 
       <div className={subClasses}>
         <div className="w-full max-w-7xl mx-auto flex">
-          <NavbarMenu type="_sub" items={navigation} />
+          <NavbarMenu
+            type="_sub"
+            items={navigation}
+            onMouseEnter={() => setIsDropdownVisible(true)}
+            onMouseLeave={() => setIsDropdownVisible(false)}/>
         </div>
       </div>
     </div>
