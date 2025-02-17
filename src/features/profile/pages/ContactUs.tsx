@@ -3,6 +3,7 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import { LiaFaxSolid } from 'react-icons/lia';
 import { MdOutlineMail } from 'react-icons/md';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
+import DummyImgBox from '../../../components/DummyImgBox.tsx';
 import SectionLayout from '../../../layout/SectionLayout.tsx';
 
 const ContactUs = () => {
@@ -47,7 +48,7 @@ const ContactUs = () => {
             title="주소"
             type="_base"
             icon={
-              <HiOutlineLocationMarker className="bg-primary h-12 w-12 sm:h-14 sm:w-16 rounded-full p-2 sm:p-3 text-white" />
+              <HiOutlineLocationMarker className="bg-primary h-12 w-12 sm:h-14 sm:w-14 rounded-full p-2 sm:p-3 text-white" />
             }
             description="서울 서초구 반포대로 21길 23 세진빌딩 3층"
             size="w-full h-full"
@@ -55,12 +56,7 @@ const ContactUs = () => {
         </ul>
         {/* 이미지 영역 */}
         <div className="lg:col-span-3">
-          <img
-            src="/img/contactus/map.png"
-            alt="Contact Us Map"
-            className="w-full h-full object-cover object-center transform scale-110 md:scale-100"
-          />
-
+          <DummyImgBox width="w-full" height="h-full" isCircle={false} />
         </div>
       </div>
     </SectionLayout>
