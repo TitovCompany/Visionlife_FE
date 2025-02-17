@@ -47,7 +47,7 @@ export default defineConfig({
   },
 
   build: {
-    minify: 'terser',
+    minify: 'esbuild',
     terserOptions: {
       mangle: true,           // 변수명 난독화
       compress: {
