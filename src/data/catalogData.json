@@ -4,20 +4,27 @@
     "title": "UTEX TOTAL",
     "fileType": "pdf",
     "fileSize": 8.0,
-    "downloadUrl": "src/data/catalogpdf/UTEX TOTAL-1.pdf"
+    "downloadUrl": "src/data/catalogdata/UTEX TOTAL-1.pdf"
   },
   {
     "id": 2,
     "title": "utex 사업계획서(영문)",
     "fileType": "pdf",
     "fileSize": 1.05,
-    "downloadUrl": "src/data/catalogpdf/utex 사업계획서(영문)-1.pdf"
+    "downloadUrl": "src/data/catalogdata/utex 사업계획서(영문)-1.pdf"
   },
   {
     "id": 3,
     "title": "utex 사업계획서(중문)",
     "fileType": "pdf",
     "fileSize": 1.57,
-    "downloadUrl": "src/data/catalogpdf/utex 사업계획서(중문).pdf"
+    "downloadUrl": "src/data/catalogdata/utex 사업계획서(중문).pdf"
+  },
+  {
+    "id": 4,
+    "title": "Coltex",
+    "fileType": "mp4",
+    "fileSize": 12.4,
+    "downloadUrl": "src/data/catalogdata/Coltex.mp4"
   }
 ]
