@@ -9,15 +9,15 @@ import SectionAbout_Design2 from './components/SectionAbout_Design2.tsx';
 import newsData from '../../data/news.json';
 
 const Home = () => {
-  const combinedNews = [...(newsData.news || []), ...(newsData.newsList || [])];
+  const combinedNews = [...(newsData.items || []), ...(newsData.items || [])];
   const filteredNews = combinedNews.filter((news) =>
     ['1', '2', '3', '4'].includes(news.id),
   );
   return (
     <PageLayout
       title="사업개요 페이지 본문"
-      fullHeight={false}
-      minHeight={false}>
+      isFullHeight={false}
+      isMinHeight={false}>
       <HeroSection
         sectionClass="h-[410px] md:h-[635px] grid grid-cols-1 grid-rows-1"
         src={imageSrc} />
