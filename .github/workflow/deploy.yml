@@ -1,0 +1,42 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # main 브랜치에 푸시될 때 배포
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 리포지토리 체크아웃
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Node.js 설치
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Node.js 버전 설정
+
+      # 의존성 설치
+      - name: Install dependencies
+        run: npm install  # yarn 또는 npm 사용
+
+      # 빌드 실행
+      - name: Build project
+        run: vite build  # Vite 프로젝트 빌드
+
+      # GitHub Pages로 배포
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # GitHub token 사용
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          # Vite 빌드 결과물이 저장된 디렉토리
+          publish_dir: ./dist
+
+    env:
+      # GitHub Secrets에서 VITE_MAP_API_KEY 환경 변수 주입
+      VITE_MAP_API_KEY: ${{ secrets.VITE_MAP_API_KEY }}
