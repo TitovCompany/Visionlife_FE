@@ -35,7 +35,8 @@ const Home = () => {
         </h2>
       </div>
 
-      <div ref={sectionRef}>
+
+      <div ref={sectionRef} className="overflow-x-hidden">
         {intro.data.map((item, index) => (
           <BusinessSectionLayout
             key={index}
@@ -43,7 +44,8 @@ const Home = () => {
             description={item.description}
             src={item.src}
             art={item.art}
-            href={item.href}/>
+            href={item.href}
+          />
         ))}
       </div>
 
