@@ -26,8 +26,8 @@ const NavbarMobile: React.FC<MobileNavbarProps> = (props) => {
   } = props;
 
   return (
-    <div className="md:hidden">
-      {/* 로고와 햄버거 버튼 */}
+    <div className="lg:hidden">
+    {/* 로고와 햄버거 버튼 */}
       <div className="flex justify-between items-center px-4 py-4 border-b border-gray-200">
         <Logo type="_mobile"/>
         <button
