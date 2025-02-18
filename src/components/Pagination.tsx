@@ -17,7 +17,9 @@ const Pagination: React.FC<PaginationProps> = ({
     <div className="mt-16 flex flex-wrap justify-center items-center gap-2 sm:gap-4">
       <button
         className={`px-4 sm:px-8 py-1 text-base sm:text-lg ${
-          currentPage === 1 ? 'cursor-not-allowed opacity-50' : 'hover:underline'
+          currentPage === 1 
+            ? 'cursor-not-allowed opacity-50' 
+            : 'cursor-pointer hover:underline'
         }`}
         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
@@ -31,7 +33,7 @@ const Pagination: React.FC<PaginationProps> = ({
         return (
           <button
             key={pageNumber}
-            className={`px-3 sm:px-6 py-1 text-base sm:text-lg transition-colors rounded ${
+            className={`px-3 sm:px-6 py-1 text-base sm:text-lg cursor-pointer ${
               currentPage === pageNumber
                 ? 'font-bold !text-primary'
                 : 'text-gray-700 hover:text-primary'
@@ -45,7 +47,9 @@ const Pagination: React.FC<PaginationProps> = ({
 
       <button
         className={`px-4 sm:px-8 py-1 text-base sm:text-lg ${
-          currentPage === totalPages ? 'cursor-not-allowed opacity-50' : 'hover:underline'
+          currentPage === totalPages 
+            ? 'cursor-not-allowed opacity-50'
+            : 'cursor-pointer hover:underline'
         }`}
         onClick={() =>
           currentPage < totalPages && onPageChange(currentPage + 1)
