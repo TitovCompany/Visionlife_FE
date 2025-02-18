@@ -3,6 +3,7 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import { LiaFaxSolid } from 'react-icons/lia';
 import { MdOutlineMail } from 'react-icons/md';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
+import DummyImgBox from '../../../components/DummyImgBox.tsx';
 import SectionLayout from '../../../layout/SectionLayout.tsx';
 import NaverMap from '../../../components/Map/NaverMap.tsx';
 
