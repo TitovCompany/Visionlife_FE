@@ -19,7 +19,6 @@ function NaverMap({
 }) {
   // 지도 로딩 상태
   const [isMapLoaded, setMapLoaded] = useState(false);
-  console.log(isMapLoaded);
   const initMap = () => {
     // 추가 옵션 설정
     const mapOptions = {
@@ -66,7 +65,13 @@ function NaverMap({
   }, [latitude, longitude]);
 
   {/* 위치 정보(지도) */}
-  return <div id="map" className="w-full h-full rounded-2xl"/>
+  return (
+    <>
+      {isMapLoaded && (
+        <div id="map" className="w-full h-full rounded-2xl"/>
+      )}
+    </>
+  )
 }
 
 export default NaverMap;

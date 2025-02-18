@@ -36,9 +36,9 @@ const ContactUs = () => {
       className="mx-auto py-12 sm:py-16 lg:py-20 flex max-w-6xl flex-col items-center justify-center"
       titleClassName="py-6 text-3xl lg:text-4xl font-semibold text-center"
       fullHeight={false}>
-      <div className="w-full mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+      <div className="w-full md:mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-5">
         {/* 연락처 정보 */}
-        <ul className="flex flex-col gap-6 lg:col-span-2">
+        <ul className="max-w-sm mx-auto flex flex-col gap-6 lg:col-span-2">
           {contactInfo.map((item, index) => (
             <ListCard
               key={index}
@@ -52,7 +52,7 @@ const ContactUs = () => {
         </ul>
         
         {/* 이미지 영역 */}
-        <div className="lg:col-span-3">
+        <div className="w-full h-96 lg:h-full pt-10 lg:pt-0 lg:col-span-3">
           {/*<img
             src="/img/contactus/map.png"
             alt="Contact Us Map"
