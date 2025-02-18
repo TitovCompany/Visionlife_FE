@@ -2,12 +2,18 @@ name: Deploy to GitHub Pages
 
 on:
   push:
+    # main 브랜치에 푸시될 때 배포
     branches:
-      - main  # main 브랜치에 푸시될 때 배포
+      - main
+    # 수동 실행 가능
+    workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      # ✅ GitHub Actions가 푸시할 수 있도록 권한 부여
+      contents: write
 
     steps:
       - name: Checkout repository
