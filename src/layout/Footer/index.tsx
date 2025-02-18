@@ -41,7 +41,7 @@ const Footer = memo(() => {
   return (
     <footer className="border-t border-t-gray-200 bg-[#f3f3f3] py-10">
       <div className="max-w-4xl mx-auto">
-        <div className="max-w-3xl mx-auto flex flex-col gap-5 md:flex-row md:gap-0 justify-around text-base">
+        <div className="max-w-4xl mx-auto flex flex-col gap-5 md:flex-row md:gap-20 justify-between text-base">
           {footer.map((item, index) => (
             <FooterColumn
               key={index}
