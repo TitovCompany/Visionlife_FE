@@ -4,6 +4,7 @@ import { LiaFaxSolid } from 'react-icons/lia';
 import { MdOutlineMail } from 'react-icons/md';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import SectionLayout from '../../../layout/SectionLayout.tsx';
+import NaverMap from '../../../components/Map/NaverMap.tsx';
 
 const contactInfo = [
   {
@@ -52,11 +53,14 @@ const ContactUs = () => {
         
         {/* 이미지 영역 */}
         <div className="lg:col-span-3">
-          <img
+          {/*<img
             src="/img/contactus/map.png"
             alt="Contact Us Map"
             className="w-full h-full object-cover object-center transform scale-110 md:scale-100"
-          />
+          />*/}
+          <NaverMap
+            latitude={37.48771788371748}
+            longitude={127.00855064427329}/>
         </div>
       </div>
     </SectionLayout>
