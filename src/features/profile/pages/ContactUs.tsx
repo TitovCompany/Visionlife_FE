@@ -31,9 +31,9 @@ const contactInfo = [
 const ContactUs = () => {
   return (
     <SectionLayout
-      title="오시는길 페이지"
+      title="CONTACT US"
       className="mx-auto py-12 sm:py-16 lg:py-20 flex max-w-6xl flex-col items-center justify-center"
-      titleClassName="hidden"
+      titleClassName="py-6 text-3xl lg:text-4xl font-semibold text-center"
       fullHeight={false}>
       <div className="w-full mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
         {/* 연락처 정보 */}
