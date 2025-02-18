@@ -21,7 +21,7 @@ const ListCard = ({
   bgColor,
 }: ListCardProps) => {
   const classes = clsx(
-    `min-w-fit p-10 rounded-xl shadow-md ${className}`,
+    `min-w-fit p-5 md:p-10 rounded-xl shadow-md ${className}`,
     type === '_base' ? 'flex items-center gap-5' : '',
     size,
     bgColor
