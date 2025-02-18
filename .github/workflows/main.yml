@@ -21,12 +21,13 @@ jobs:
           node-version: '14'  # Node.js 버전 설정
 
       # 의존성 설치
+      # devDependencies 포함하여 설치
       - name: Install dependencies
-        run: npm install  # yarn 또는 npm 사용
+        run: npm ci --production=false
 
       # 빌드 실행
       - name: Build project
-        run: npm run build  # Vite 프로젝트 빌드
+        run: vite build  # Vite 프로젝트 빌드
 
       # GitHub Pages로 배포
       - name: Deploy to GitHub Pages
