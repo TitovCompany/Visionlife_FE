@@ -10,14 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 리포지토리 체크아웃
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      # 빌드 실행
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Node.js 버전 지정
+
+      - name: Install dependencies
+        run: npm install  # 또는 yarn install
+
+      - name: Create .env file  # ✅ 환경변수 파일 생성
+        run: |
+          echo "VITE_MAP_API_KEY=${{ secrets.VITE_MAP_API_KEY }}" > .env
+
       - name: Build project
-        run: npm run build  # Vite 프로젝트 빌드
+        run: npm run build  # 또는 yarn build
 
-    env:
-      # GitHub Secrets에서 VITE_MAP_API_KEY 환경 변수 주입
-      VITE_MAP_API_KEY: ${{ secrets.VITE_MAP_API_KEY }}
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # GitHub Pages 배포 브랜치
+          folder: dist  # Vite의 빌드 결과 폴더 (기본값: dist)
