@@ -36,7 +36,7 @@ const navigation = [
     sub: [{ label: "언론보도", href: "/company/news" }],
   },
   {
-    label: "카탈로그",
+    label: "자료실",
     href: "/company/catalogs",
     sub: [{ label: "자료실", href: "/company/catalogs" }],
   },

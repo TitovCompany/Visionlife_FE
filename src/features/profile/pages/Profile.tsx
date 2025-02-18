@@ -2,54 +2,46 @@ import SectionLayout from '../../../layout/SectionLayout.tsx';
 import ListCard from '../../../components/ListCard.tsx';
 import { MdEco } from 'react-icons/md';
 import { FaChartLine, FaHandsHelping } from 'react-icons/fa';
+import overview from "../../../data/profile/overview.json"
+import {useRef} from 'react';
+import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
 
 const Profile = () => {
+  const sectionRef = useRef(null);
+  useScrollAnimation(".profile_item", "top 100%");
+
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+    <div ref={sectionRef} className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
       {/* About */}
       <SectionLayout
-        title="주식회사 비젼 라이프 홀딩스 회사 소개"
-        className="flex flex-col items-center justify-center"
+        title="주식회사 비전 라이프 홀딩스 회사 소개"
+        className="mb-52 flex flex-col items-center justify-center"
         titleClassName="hidden"
-        fullHeight={false}
-      >
+        fullHeight={false}>
         <article className="w-full max-w-3xl mx-auto">
-          <h3 className="text-primary px-4 sm:px-10 pt-16 sm:pt-24 text-center text-2xl sm:text-3xl md:text-4xl font-semibold">
-            ECO FRIENDLY
-          </h3>
-          <h4 className="mt-4 sm:mt-5 text-center text-xl sm:text-2xl md:text-3xl font-semibold">
-            지속 가능한 미래를 위한 혁신, 비젼라이프 홀딩스
-          </h4>
-          <p className="pt-6 sm:pt-10 text-base sm:text-xl leading-relaxed">
-            비젼라이프 홀딩스는 환경 보호와 생산 효율성을 동시에 고려한
-            친환경 기술을 연구하고 개발하는 기업입니다.
-          </p>
-          <p className="pt-6 sm:pt-10 text-base sm:text-xl leading-relaxed">
-            우리는 무폐수 나일론 디지털 나염 기술을 세계 최초로 상용화하며,
-            환경 보호와 경제적 가치를 동시에 창출하고 있습니다.
-          </p>
-          <p className="pt-6 sm:pt-10 text-base sm:text-xl leading-relaxed">
-            기존의 섬유 염색 방식은 다량의 물과 화학 처리가 필요하지만,
-            비젼라이프의 기술은 전·후처리 과정 없이도 높은 품질의 염색이 가능하여
-            제조 과정에서의 자원 낭비를 줄이고 비용 절감을 실현합니다.
-          </p>
-          <p className="pt-6 sm:pt-10 text-base sm:text-xl leading-relaxed">
-            우리는 앞으로도 지속적인 연구 개발을 통해
-            기업이 환경 친화적인 생산 공정을 도입할 수 있도록 지원하고,
-            더 나아가 섬유 산업의 환경 부담을 줄이는 실질적인 해결책을 제시하겠습니다.
-            비젼라이프 홀딩스는 환경과 기업이 함께 성장할 수 있는 기술을 만들기 위해 최선을 다하겠습니다.
-          </p>
+          <div className="pt-16 sm:pt-32 pb-10 text-left font-semibold">
+            <h3 className="text-primary text-2xl sm:text-3xl md:text-4xl">
+              ECO FRIENDLY
+            </h3>
+            <h4 className="mt-4 sm:mt-5 text-xl sm:text-2xl md:text-3xl">
+              지속 가능한 미래를 위한<br/>차별화된 기술, 비젼라이프 홀딩스
+            </h4>
+          </div>
+          {overview.items.map((item, index) => (
+            <p key={index} className="profile_item pt-6 sm:pt-10 text-base sm:text-xl leading-relaxed">
+              {item}
+            </p>
+          ))}
         </article>
       </SectionLayout>
 
       {/* Vision */}
       <SectionLayout
         title="주식회사 비젼 라이프 홀딩스 목표 및 방향성"
-        className="mt-16 sm:mt-20 mx-auto flex flex-col items-center justify-center gap-6 sm:gap-10"
+        className="mb-52 mt-16 sm:mt-20 mx-auto flex flex-col items-center justify-center gap-6 sm:gap-10"
         titleClassName="hidden"
-        fullHeight={false}
-      >
-        <h3 className="w-full text-center text-xl sm:text-2xl md:text-3xl font-semibold">
+        fullHeight={false}>
+        <h3 className="w-full text-left text-xl sm:text-2xl md:text-3xl font-semibold">
           비젼라이프 홀딩스가 제공하는 가치
         </h3>
         <ul className="flex flex-col gap-3 w-full">
@@ -79,7 +71,7 @@ const Profile = () => {
 
       <SectionLayout
         title="주식회사 비젼 라이프 홀딩스 목표 및 방향성"
-        className="mt-16 sm:mt-20 mx-auto flex flex-col items-center justify-center gap-6 sm:gap-10"
+        className="mb-32 mt-16 sm:mt-20 mx-auto flex flex-col items-center justify-center gap-6 sm:gap-10"
         titleClassName="hidden"
         fullHeight={false}
       >
@@ -88,15 +80,16 @@ const Profile = () => {
         </h3>
         <article className="w-full">
           <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-            비젼라이프 홀딩스는 단순한 기술 제공을 넘어,
-            비즈니스 파트너로서 환경을 생각하는 지속 가능한 미래를 함께 만들어가겠습니다.
-            우리는 끊임없는 연구 개발과 협력을 통해, 고객사의 가치 창출을 극대화하고 함께 성장하는 기업이 되겠습니다.
+            비젼라이프 홀딩스는 단순히 기술을 제공하는 것을 넘어,
+            비즈니스 파트너로서 지속 가능한 미래를 함께 만들어가겠습니다.
+            우리는 연구 개발과 협력을 통해 고객의 가치를 창출하고,
+            함께 성장하는 파트너가 될 것입니다.
           </p>
         </article>
+        <div className="pt-8 sm:pt-10 pb-10 sm:pb-20 text-center text-sm sm:text-base md:text-xl font-semibold">
+          <p>비젼라이프 홀딩스와 함께 더 나은 내일을 만듭니다.</p>
+        </div>
       </SectionLayout>
-      <div className="pt-8 sm:pt-10 pb-10 sm:pb-20 text-center text-sm sm:text-base md:text-xl font-semibold">
-        <p>비젼라이프 홀딩스와 함께, 더 나은 미래를 만들어가세요.</p>
-      </div>
     </div>
   );
 };

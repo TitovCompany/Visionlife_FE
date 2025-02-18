@@ -32,6 +32,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import EmailNoCollection from "./pages/EmailNoCollection.tsx";
 import TermsOfService from "./pages/TermsOfService.tsx";
 import ProfileLayout from './features/profile';
+import ScrollSnap from './features/test/pages/ScrollSnap.tsx';
 
 export const router = createHashRouter([
   {
@@ -97,6 +98,10 @@ export const router = createHashRouter([
         path: '/test',
         Component: Test,
       },
+      {
+        path: '/test/scroll',
+        Component: ScrollSnap,
+      }
     ],
   },
 ]);
