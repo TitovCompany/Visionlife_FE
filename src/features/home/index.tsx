@@ -35,7 +35,7 @@ const Home = () => {
         </h2>
       </div>
 
-      <div ref={sectionRef}>
+      <div ref={sectionRef} className="overflow-x-hidden">
         {intro.data.map((item, index) => (
           <BusinessSectionLayout
             key={index}
