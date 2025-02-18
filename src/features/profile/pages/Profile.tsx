@@ -11,7 +11,7 @@ const Profile = () => {
   useScrollAnimation(".profile_item", "top 100%");
 
   return (
-    <div ref={sectionRef} className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+    <div ref={sectionRef} className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8 overflow-x-hidden">
       {/* About */}
       <SectionLayout
         title="주식회사 비전 라이프 홀딩스 회사 소개"
