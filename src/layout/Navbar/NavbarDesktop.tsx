@@ -22,11 +22,12 @@ const NavbarDesktop: React.FC<DesktopNavbarProps> = (props) => {
     isDropdownVisible ? 'opacity-100 visible' : 'opacity-0 invisible');
 
   return (
-    <div
-      className="hidden md:block relative"
-      >
-      <div className="mx-auto max-w-7xl flex items-center justify-between py-4 h-18">
-        <Logo type="_desktop" />
+    <div className="hidden lg:block relative">
+
+    <div className="mx-auto max-w-7xl flex items-center justify-between py-4 h-18">
+        <div className="ml-3">
+          <Logo type="_desktop" />
+        </div>
         <NavbarMenu
           type="_nav"
           items={navigation}
