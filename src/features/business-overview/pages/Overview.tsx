@@ -25,19 +25,20 @@ const Overview = () => {
             무폐수 디지털 나염 시스템
           </h3>
         </div>
+        <div className="px-4 md:px-8">
+          <article className="mx-auto w-full max-w-lg md:max-w-2xl lg:max-w-4xl md:text-xl leading-relaxed">
+            <div className="border-l-4 border-primary pl-4 md:pl-6">
+              {overview.description.map((line: string, index: number) => (
+                <p key={index} className="mt-3 md:mt-4">{line}</p>
+              ))}
+            </div>
+          </article>
 
-        <article className="mx-auto w-full max-w-lg md:max-w-2xl lg:max-w-4xl md:text-xl leading-relaxed">
-          <div className="border-l-4 border-primary pl-4 md:pl-6">
-            {overview.description.map((line: string, index: number) => (
-              <p key={index} className="mt-3 md:mt-4">{line}</p>
-            ))}
-          </div>
-        </article>
-
-        <div className="w-full pt-32 space-y-12 md:space-y-10 lg:space-y-12">
-          <OverviewList data={overview.features} />
-          <div className="pt-20">
-            <BenefitList data={overview.benefits} />
+          <div className="w-full pt-32 space-y-12 md:space-y-10 lg:space-y-12">
+            <OverviewList data={overview.features} />
+            <div className="pt-20">
+              <BenefitList data={overview.benefits} />
+            </div>
           </div>
         </div>
       </SectionLayout>
