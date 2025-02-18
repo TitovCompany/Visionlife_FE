@@ -14,7 +14,7 @@ import useScrollAnimation from '../../hooks/useScrollAnimation.ts';
 const Home = () => {
   // 애니메이션 적용
   const sectionRef = useRef(null);
-  useScrollAnimation(".home_item", "top 90%");
+  useScrollAnimation(".home_item", "top 80%");
 
   const combinedNews = [...(newsData.items || []), ...(newsData.items || [])];
   const filteredNews = combinedNews.filter((news) =>
@@ -29,8 +29,8 @@ const Home = () => {
       <HeroSection
         sectionClass="h-[410px] md:h-[635px] grid grid-cols-1 grid-rows-1"
         src={imageSrc} />
-      <div className="w-full h-auto">
-        <h2 className="pt-20 pb-10 text-center text-3xl leading-relaxed font-semibold">
+      <div className="w-full h-auto max-w-2xl mx-auto">
+        <h2 className="pt-10 md:pt-20 pb-10 text-center text-lg md:text-3xl leading-relaxed font-semibold">
           <span className="text-primary">비전라이프</span>는 지속 가능한 미래를 그리며<br/>세상을 연결하는 친환경 기술을 만들어 갑니다.
         </h2>
       </div>
