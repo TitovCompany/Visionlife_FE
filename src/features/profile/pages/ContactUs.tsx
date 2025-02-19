@@ -52,12 +52,7 @@ const ContactUs = () => {
         </ul>
         
         {/* 이미지 영역 */}
-        <div className="w-full h-96 lg:h-full pt-10 lg:pt-0 lg:col-span-3">
-          {/*<img
-            src="/img/contactus/map.png"
-            alt="Contact Us Map"
-            className="w-full h-full object-cover object-center transform scale-110 md:scale-100"
-          />*/}
+        <div id="map" className="w-full h-96 lg:h-full pt-10 lg:pt-0 lg:col-span-3 rounded-2xl">
           <NaverMap
             latitude={37.48771788371748}
             longitude={127.00855064427329}/>

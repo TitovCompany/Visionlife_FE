@@ -64,11 +64,32 @@ function NaverMap({
     }
   }, [latitude, longitude]);
 
+  /*useEffect(() => {
+    const initializeNaverMap = () => {
+      if (window.naver && window.naver.maps) {
+        initMap();
+      }
+    };
+
+    // 스크립트가 이미 로드되었는지 확인
+    if (!window.naver || !window.naver.maps) {
+      loadScript(
+        `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${import.meta.env.VITE_MAP_API_KEY}`,
+        () => {
+          console.log("✅ Naver Map Script Loaded");
+          initializeNaverMap();
+        }
+      );
+    } else {
+      initializeNaverMap();
+    }
+  }, [latitude, longitude]);*/
+
   {/* 위치 정보(지도) */}
   return (
     <>
       {isMapLoaded && (
-        <div id="map" className="w-full h-full rounded-2xl"/>
+        <div className="w-full h-full"/>
       )}
     </>
   )
