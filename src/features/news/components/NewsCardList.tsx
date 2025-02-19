@@ -57,16 +57,18 @@ const NewsCardList: React.FC<NewsCardListProps> = (props) => {
           <Link
             to={`/company/news/${item.id}`}
             className={linkClasses}>
-            <div className={imgWrapClasses}>
+            <div className={clsx(imgWrapClasses, 'p-2' , 'mt-4')}>
               <img
                 src={item.imageUrl || `/img/news/default-image-${item.id}.jpg`}
                 alt={item.title}
                 className={imgClasses}
               />
+
             </div>
 
+
             {layout === "horizontal" && (
-              <div className="flex flex-col flex-grow">
+              <div className="flex flex-col flex-grow p-4">
                 <h3 className="mb-2 text-lg font-semibold text-gray-800">
                   {item.title}
                 </h3>
@@ -74,7 +76,7 @@ const NewsCardList: React.FC<NewsCardListProps> = (props) => {
             )}
 
             {layout === "vertical" && (
-              <div className="flex flex-col space-y-2">
+              <div className="flex flex-col space-y-2 p-4">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-base sm:text-lg font-bold text-gray-800">
                     {truncateText(item.title, 50)}
