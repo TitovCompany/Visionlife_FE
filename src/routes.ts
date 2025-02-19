@@ -33,6 +33,7 @@ import EmailNoCollection from "./pages/EmailNoCollection.tsx";
 import TermsOfService from "./pages/TermsOfService.tsx";
 import ProfileLayout from './features/profile';
 import ScrollSnap from './features/test/pages/ScrollSnap.tsx';
+import Utex2 from './features/business-overview/pages/Utex2.tsx';
 
 export const router = createHashRouter([
   {
@@ -63,6 +64,7 @@ export const router = createHashRouter([
         children: [
           {path: 'overview/:slug', Component: Overview},
           {path: 'utex/:slug', Component: Utex},
+          {path: 'utex2/:slug', Component: Utex2},
         ],
       },
 

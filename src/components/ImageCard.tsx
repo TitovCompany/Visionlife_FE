@@ -22,6 +22,7 @@ interface ImageCardProps {
   description: string;
   src: string;
   alt: string;
+  isFlex?: boolean;
   wrapperClass?: string;
   imageClass?: string;
   descriptionClass?: string;
@@ -55,6 +56,7 @@ const ImageCard: React.FC<ImageCardProps> = (props) => {
     title,
     description,
     animation = false,
+    isFlex = false,
     src,
     alt,
     wrapperClass,
@@ -72,15 +74,32 @@ const ImageCard: React.FC<ImageCardProps> = (props) => {
         className={imgClasses}
         src={src}
         alt={alt}/>
-      {animation && title && (
-        <AnimatedHeading
-          className="mt-4 text-lg sm:text-xl"
-          title={title}
-          role="heading" />
+
+      {isFlex ? (
+        <div className="flex flex-col">
+          {animation && title && (
+            <AnimatedHeading
+              className="mt-4 text-xl sm:text-2xl"
+              title={title}
+              role="heading" />
+          )}
+          <p className={descriptionClass}>
+            {description}
+          </p>
+        </div>
+      ) : (
+        <>
+          {animation && title && (
+            <AnimatedHeading
+              className="mt-4 text-lg sm:text-xl"
+              title={title}
+              role="heading" />
+          )}
+          <p className={descriptionClass}>
+            {description}
+          </p>
+        </>
       )}
-      <p className={descriptionClass}>
-        {description}
-      </p>
     </Component>
   );
 };

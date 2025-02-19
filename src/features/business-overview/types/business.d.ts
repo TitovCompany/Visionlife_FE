@@ -35,10 +35,13 @@ export interface UtexComparison {
   id: string;
   type: 'comparison';
   title: string;
+  subTitle: string;
+  description: string;
   steps: UtexStep[];
 }
 
 interface UtexStep {
   id: string;
   content: string;
+  description: string;
 }

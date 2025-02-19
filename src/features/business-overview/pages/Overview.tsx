@@ -42,11 +42,11 @@ const Overview = () => {
           디지털 나염으로<br/>완성하는 <span className="text-primary">친환경 생산</span>
         </h2>
         {bizInfo.data.map((item, index) => (
-          <div className="pt-5 md:pt-10 flex items-center gap-5">
+          <div key={index} className="pt-5 md:pt-10 flex items-center gap-5">
             <p className="pl-2 md:pl-6 text-2xl md:text-3xl font-bold text-primary">
               #{String(index + 1)}.
             </p>
-            <p key={index} className="pt-5 md:pt-0 text-md lg:text-xl font-semibold lg:whitespace-pre-line">{item}</p>
+            <p className="pt-5 md:pt-0 text-md lg:text-xl font-semibold lg:whitespace-pre-line">{item}</p>
           </div>
         ))}
       </article>
