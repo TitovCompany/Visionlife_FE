@@ -23,7 +23,7 @@ const useInfiniteCarousel = (): React.RefObject<HTMLUListElement> => {
 
     gsap.to(slider, {
       xPercent: -100, // 왼쪽으로 계속 이동
-      duration: 10, // 속도 조절 가능
+      duration: 50, // 속도 조절 가능
       ease: "linear",
       repeat: -1, // 무한 반복
       modifiers: {
