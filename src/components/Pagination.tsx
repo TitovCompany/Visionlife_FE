@@ -1,3 +1,4 @@
+// Pagination.tsx
 import React from 'react';
 
 interface PaginationProps {
@@ -11,14 +12,13 @@ const Pagination: React.FC<PaginationProps> = ({
                                                  totalPages,
                                                  onPageChange,
                                                }) => {
-  if (totalPages <= 1) return null;
 
   return (
     <div className="mt-16 flex flex-wrap justify-center items-center gap-2 sm:gap-4">
       <button
         className={`px-4 sm:px-8 py-1 text-base sm:text-lg ${
-          currentPage === 1 
-            ? 'cursor-not-allowed opacity-50' 
+          currentPage === 1
+            ? 'cursor-not-allowed opacity-50'
             : 'cursor-pointer hover:underline'
         }`}
         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
@@ -27,7 +27,6 @@ const Pagination: React.FC<PaginationProps> = ({
         &lt;
       </button>
 
-      {/* 페이지 숫자 버튼 */}
       {Array.from({ length: totalPages }, (_, index) => {
         const pageNumber = index + 1;
         return (
@@ -47,7 +46,7 @@ const Pagination: React.FC<PaginationProps> = ({
 
       <button
         className={`px-4 sm:px-8 py-1 text-base sm:text-lg ${
-          currentPage === totalPages 
+          currentPage === totalPages
             ? 'cursor-not-allowed opacity-50'
             : 'cursor-pointer hover:underline'
         }`}
