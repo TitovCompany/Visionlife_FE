@@ -21,7 +21,7 @@ const NewsDetail: React.FC = () => {
   }
 
   return (
-    <section className="py-32 mx-auto max-w-screen-lg">
+    <section className="py-32 px-4 mx-auto max-w-screen-lg">
       <div className="max-w-2xl mx-auto text-center">
         <h1 className="mb-6 sm:mb-8 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
           {newsItem.title}
