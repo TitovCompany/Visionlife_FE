@@ -13,7 +13,6 @@ const Pagination: React.FC<PaginationProps> = ({
                                                  onPageChange,
                                                  pagesPerBlock = 5, // 기본 크기는 5
                                                }) => {
-  if (totalPages <= 1) return null;
 
   const currentBlock = Math.ceil(currentPage / pagesPerBlock);
   const startPage = (currentBlock - 1) * pagesPerBlock + 1;
