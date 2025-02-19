@@ -16,7 +16,7 @@ const truncateText = (text: string, maxLength: number) => {
 
 const NewsCardList: React.FC<NewsCardListProps> = (props) => {
   const {layout = 'horizontal'} = props;
-  const itemsPerPage = 5;
+  const itemsPerPage = 10;
   const {
     currentItems,
     currentPage,
