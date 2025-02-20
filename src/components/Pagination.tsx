@@ -4,6 +4,7 @@ interface PaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
+  pagesPerBlock?: number; // 페이지네이션 크기를 동적으로 설정할 수 있는 prop
 }
 
 const Pagination: React.FC<PaginationProps> = ({
