@@ -18,20 +18,18 @@ const BusinessSectionLayout: React.FC<BusinessSectionLayoutProps> = (props) => {
         <img
           src={src}
           alt={art}
-          className="mx-auto h-[400px] w-[370px] rounded-xl object-cover md:mx-0 md:h-[500px] md:w-[600px]"
+          className="mx-auto w-80 h-80 sm:w-[370px] sm:h-[400px] rounded-xl object-cover md:mx-0 md:h-[500px] md:w-[600px]"
         />
         <div className="flex flex-col gap-5 py-5 md:w-full md:gap-10 md:py-10">
           <div className="mx-auto max-w-xs md:mx-0 md:w-full md:max-w-2xl">
-            <h3 className="text-2xl font-medium md:w-full md:text-4xl">
+            <h3 className="text-2xl font-bold md:w-full md:text-4xl">
               {title}
             </h3>
-            <p className="w-full pt-5 text-lg leading-relaxed md:pt-10 md:text-xl">
+            <p className="w-full pt-3 sm:pt-5 text-base sm:text-lg leading-relaxed md:pt-10 md:text-xl">
               {description}
             </p>
           </div>
-          <Link
-            to={href}
-            className="ml-5 flex items-center justify-center gap-4 text-xl md:justify-start">
+          <Link to={href} className="ml-5 flex items-center justify-start sm:justify-center gap-4 text-xl md:justify-start">
             <LuCircleArrowRight className="text-primary font-extrabold" />더
             알아보기
           </Link>

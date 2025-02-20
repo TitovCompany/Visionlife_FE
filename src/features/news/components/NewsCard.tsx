@@ -15,7 +15,7 @@ const NewsCard: React.FC<NewsCardProps> = (props) => {
     <li className="h-full w-full rounded-xl">
       <Link
         to={`/company/news/${news.id}`}
-        className="flex w-[350px] flex-col overflow-hidden rounded-xl shadow-md transition duration-300 hover:opacity-80">
+        className="flex w-[250px] h-[300px] sm:w-[350px] flex-col overflow-hidden rounded-xl transition duration-300 hover:opacity-80">
         <img
           src={
             isDefaultImg
@@ -27,7 +27,7 @@ const NewsCard: React.FC<NewsCardProps> = (props) => {
           loading="lazy"
         />
         <div className="flex h-40 w-full flex-grow flex-col rounded-b-xl bg-[#f3f3f3] px-6 pt-6 pb-10">
-          <h3 className="mb-2 w-full text-lg font-semibold break-words whitespace-normal text-gray-800">
+          <h3 className="mb-2 w-full text-lg font-semibold break-words whitespace-normal text-gray-800 line-clamp-2">
             {news.title}
           </h3>
           {isDescription && (
