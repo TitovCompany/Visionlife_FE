@@ -6,19 +6,14 @@ import clsx from 'clsx';
 
 interface NavbarMobileMenuProps {
   navigation: NavigationT[];
-  openSubmenus: { [key: number]: boolean };
+  openSubmenus: {[key: number]: boolean};
   toggleSubmenu: (index: number) => void;
   closeMenu: () => void;
 }
 
 const NavbarMobileMenu: React.FC<NavbarMobileMenuProps> = (props) => {
-  const {
-    navigation,
-    openSubmenus,
-    toggleSubmenu,
-    closeMenu
-  } = props;
-  const linkClasses = clsx("block hover:text-primary")
+  const {navigation, openSubmenus, toggleSubmenu, closeMenu} = props;
+  const linkClasses = clsx('block hover:text-primary');
 
   return (
     <nav className="px-4 py-2">
@@ -28,20 +23,20 @@ const NavbarMobileMenu: React.FC<NavbarMobileMenuProps> = (props) => {
 
           return (
             <li key={index}>
-              <div className="flex justify-between items-center">
+              <div className="flex items-center justify-between">
                 <NavLink
                   to={item.href}
                   className={`${linkClasses} py-2 text-base text-gray-800`}
                   onClick={closeMenu}>
                   {item.label}
                 </NavLink>
-                {hasSubMenu &&
+                {hasSubMenu && (
                   <button
                     onClick={() => toggleSubmenu(index)}
-                    className="p-2 cursor-pointer focus:outline-none">
-                    {openSubmenus[index] ? <FaChevronUp/> : <FaChevronDown />}
+                    className="cursor-pointer p-2 focus:outline-none">
+                    {openSubmenus[index] ? <FaChevronUp /> : <FaChevronDown />}
                   </button>
-                }
+                )}
               </div>
 
               {hasSubMenu && openSubmenus[index] && (
@@ -50,7 +45,7 @@ const NavbarMobileMenu: React.FC<NavbarMobileMenuProps> = (props) => {
                     <li key={subIdx}>
                       <NavLink
                         to={subItem.href}
-                        className={`${linkClasses} py-1 text-gray-600 text-sm`}
+                        className={`${linkClasses} py-1 text-sm text-gray-600`}
                         onClick={closeMenu}>
                         {subItem.label}
                       </NavLink>
@@ -59,7 +54,7 @@ const NavbarMobileMenu: React.FC<NavbarMobileMenuProps> = (props) => {
                 </ul>
               )}
             </li>
-          )
+          );
         })}
       </ul>
     </nav>

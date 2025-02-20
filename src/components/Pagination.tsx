@@ -8,52 +8,52 @@ interface PaginationProps {
 }
 
 const Pagination: React.FC<PaginationProps> = ({
-                                                 currentPage,
-                                                 totalPages,
-                                                 onPageChange,
-                                                 pagesPerBlock = 5, // 기본 크기는 5
-                                               }) => {
-
-  const currentBlock = Math.ceil(currentPage / pagesPerBlock);
-  const startPage = (currentBlock - 1) * pagesPerBlock + 1;
-  const endPage = Math.min(startPage + pagesPerBlock - 1, totalPages);
+  currentPage,
+  totalPages,
+  onPageChange,
+}) => {
+  if (totalPages <= 1) return null;
 
   return (
-    <div className="mt-16 flex flex-wrap justify-center items-center gap-2 sm:gap-4">
+    <div className="mt-16 flex flex-wrap items-center justify-center gap-2 sm:gap-4">
       <button
-        className={`px-4 sm:px-8 py-1 text-base sm:text-lg ${
-          currentPage === 1 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer hover:underline'
+        className={`px-4 py-1 text-base sm:px-8 sm:text-lg ${
+          currentPage === 1
+            ? 'cursor-not-allowed opacity-50'
+            : 'cursor-pointer hover:underline'
         }`}
         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-      >
+        disabled={currentPage === 1}>
         &lt;
       </button>
 
-      {Array.from({ length: endPage - startPage + 1 }, (_, index) => {
-        const pageNumber = startPage + index;
+      {/* 페이지 숫자 버튼 */}
+      {Array.from({length: totalPages}, (_, index) => {
+        const pageNumber = index + 1;
         return (
           <button
             key={pageNumber}
-            className={`px-3 sm:px-6 py-1 text-base sm:text-lg cursor-pointer ${
+            className={`cursor-pointer px-3 py-1 text-base sm:px-6 sm:text-lg ${
               currentPage === pageNumber
-                ? 'font-bold !text-primary'
-                : 'text-gray-700 hover:text-primary'
+                ? '!text-primary font-bold'
+                : 'hover:text-primary text-gray-700'
             }`}
-            onClick={() => onPageChange(pageNumber)}
-          >
+            onClick={() => onPageChange(pageNumber)}>
             {pageNumber}
           </button>
         );
       })}
 
       <button
-        className={`px-4 sm:px-8 py-1 text-base sm:text-lg ${
-          currentPage === totalPages ? 'cursor-not-allowed opacity-50' : 'cursor-pointer hover:underline'
+        className={`px-4 py-1 text-base sm:px-8 sm:text-lg ${
+          currentPage === totalPages
+            ? 'cursor-not-allowed opacity-50'
+            : 'cursor-pointer hover:underline'
         }`}
-        onClick={() => currentPage < totalPages && onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-      >
+        onClick={() =>
+          currentPage < totalPages && onPageChange(currentPage + 1)
+        }
+        disabled={currentPage === totalPages}>
         &gt;
       </button>
     </div>

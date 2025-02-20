@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from "react";
+import {useEffect, RefObject} from 'react';
 
 /**
  * 외부 클릭 시 실행할 핸들러 함수의 타입입니다.
@@ -30,12 +30,12 @@ function useOnClickOutside(
       handler(event);
     };
 
-    document.addEventListener("mousedown", listener);
-    document.addEventListener("touchstart", listener);
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
 
     return () => {
-      document.removeEventListener("mousedown", listener);
-      document.removeEventListener("touchstart", listener);
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
     };
   }, [handler]); // ref는 객체이므로 의존성 배열에서 제거
 }

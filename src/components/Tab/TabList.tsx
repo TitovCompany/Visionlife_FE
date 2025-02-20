@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import {HTMLAttributes, ReactNode} from 'react';
 
 interface TabListProps extends HTMLAttributes<HTMLUListElement> {
   children: ReactNode; // 모든 React 요소 허용
@@ -22,7 +22,7 @@ interface TabListProps extends HTMLAttributes<HTMLUListElement> {
  * @returns {JSX.Element} - `<ul>` 요소를 반환
  */
 const TabList = (props: TabListProps): JSX.Element => {
-  const { children, ...attributes } = props;
+  const {children, ...attributes} = props;
   return <ul {...attributes}>{children}</ul>;
 };
 

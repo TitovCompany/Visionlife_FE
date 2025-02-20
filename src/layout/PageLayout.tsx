@@ -9,16 +9,12 @@ interface PageLayoutProps {
 }
 
 const PageLayout: React.FC<PageLayoutProps> = (props) => {
-  const {
-    title,
-    children,
-    isFullHeight = false,
-    isMinHeight = false,
-  } = props;
+  const {title, children, isFullHeight = false, isMinHeight = false} = props;
   const classes = clsx(
-    isFullHeight ? "h-screen" : "h-auto",
-    isMinHeight ? "min-h-screen" : "min-h-[calc(100vh-4rem+10px-17.875rem)]",
-    "w-full pt-[calc(4rem+10px)] flex flex-col");
+    isFullHeight ? 'h-screen' : 'h-auto',
+    isMinHeight ? 'min-h-screen' : 'min-h-[calc(100vh-4rem+10px-17.875rem)]',
+    'w-full pt-[calc(4rem+10px)] flex flex-col'
+  );
 
   return (
     <main className={classes}>

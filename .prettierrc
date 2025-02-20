@@ -2,6 +2,12 @@
   "bracketSpacing": false,
   "singleQuote": true,
   "bracketSameLine": true,
+  "arrowParens": "always",
+  "semi": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "jsxSingleQuote": true,
   "trailingComma": "es5",
   "printWidth": 80,
   "plugins": ["prettier-plugin-tailwindcss"],
@@ -10,6 +16,18 @@
       "files": "*.css",
       "options": {
         "parser": "css"
+      }
+    },
+    {
+      "files": "*.tsx",
+      "options": {
+        "jsxBracketSameLine": true
+      }
+    },
+    {
+      "files": "*.jsx",
+      "options": {
+        "jsxBracketSameLine": true
       }
     }
   ]

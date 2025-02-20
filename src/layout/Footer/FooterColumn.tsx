@@ -25,27 +25,27 @@ const FooterColumn: React.FC<FooterColumnProps> = memo((props) => {
 
   const titleClasses = clsx(`
   w-full py-5 flex justify-between  items-center gap-2 text-lg font-semibold cursor-pointer 
-  md:mb-4 md:py-0 md:cursor-default md:justify-around`)
+  md:mb-4 md:py-0 md:cursor-default md:justify-around`);
 
   const listClasses = clsx(`
    md:max-h-full md:opacity-100 md:text-center
    text-left overflow-hidden transition-all duration-300 
-  ${isOpen 
-    ? "pb-6 max-h-40 opacity-100" 
-    : "pb-0 max-h-0 opacity-0"}`)
+  ${isOpen ? 'pb-6 max-h-40 opacity-100' : 'pb-0 max-h-0 opacity-0'}`);
 
   return (
-    <div className="w-full max-w-xs mx-auto flex flex-col md:items-center border-b border-b-gray-300 sm:border-b-0">
+    <div className="mx-auto flex w-full max-w-xs flex-col border-b border-b-gray-300 sm:border-b-0 md:items-center">
       <strong className={titleClasses} onClick={handleClick}>
         {title}
         <span className="text-gray-400 md:hidden">
-          {isOpen ? <FaChevronUp/> : <FaChevronDown/>}
+          {isOpen ? <FaChevronUp /> : <FaChevronDown />}
         </span>
       </strong>
       {/*<ul className="space-y-2 text-center">*/}
       <ul className={listClasses}>
         {sortedLinks.map((item, index) => (
-          <li key={index} className="pb-5 hover:text-primary transition md:pb-0">
+          <li
+            key={index}
+            className="hover:text-primary pb-5 transition md:pb-0">
             <Link to={item.path}>{item.name}</Link>
           </li>
         ))}
@@ -54,5 +54,5 @@ const FooterColumn: React.FC<FooterColumnProps> = memo((props) => {
   );
 });
 
-FooterColumn.displayName = "FooterColumn";
+FooterColumn.displayName = 'FooterColumn';
 export default FooterColumn;

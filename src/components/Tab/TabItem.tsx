@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import React, { useEffect, useRef, HTMLAttributes, ReactNode } from "react";
+import clsx from 'clsx';
+import React, {useEffect, useRef, HTMLAttributes, ReactNode} from 'react';
 
 interface TabItemProps extends HTMLAttributes<HTMLLIElement> {
   children: ReactNode;
@@ -41,8 +41,8 @@ const TabItem: React.FC<TabItemProps> = (props) => {
     <li
       {...attributes}
       className={clsx(className, {
-        [selectedClassName || ""]: selected,
-        [disabledClassName || ""]: disabled,
+        [selectedClassName || '']: selected,
+        [disabledClassName || '']: disabled,
       })}
       ref={(node) => {
         if (node) nodeRef.current = node;
@@ -50,8 +50,8 @@ const TabItem: React.FC<TabItemProps> = (props) => {
       }}
       role="tab"
       id={id ? `tab${id}` : undefined}
-      aria-selected={selected ? "true" : "false"}
-      aria-disabled={disabled ? "true" : "false"}
+      aria-selected={selected ? 'true' : 'false'}
+      aria-disabled={disabled ? 'true' : 'false'}
       aria-controls={id ? `panel${id}` : undefined}
       tabIndex={tabIndex ?? (selected ? 0 : undefined)}
       data-rttab>

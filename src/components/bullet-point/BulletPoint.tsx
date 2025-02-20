@@ -1,15 +1,13 @@
 import React from 'react';
 
 interface BulletPointProps {
-  bulletPoints: string
+  bulletPoints: string;
 }
 
 const BulletPoint: React.FC<BulletPointProps> = (props) => {
-  const {
-    bulletPoints,
-  } = props;
+  const {bulletPoints} = props;
   return (
-    <div className="py-2 px-4 bg-primary text-white rounded-full text-xl font-extrabold">
+    <div className="bg-primary rounded-full px-4 py-2 text-xl font-extrabold text-white">
       <span>{bulletPoints}</span>
     </div>
   );

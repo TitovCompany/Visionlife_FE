@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 
 let mapInstance: naver.maps.Map | null = null;
 
@@ -57,7 +57,7 @@ function NaverMap({
     if (typeof naver === 'undefined') {
       loadScript(
         `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${import.meta.env.VITE_MAP_API_KEY}`,
-        initMap,
+        initMap
       );
     } else {
       initMap();
@@ -85,14 +85,10 @@ function NaverMap({
     }
   }, [latitude, longitude]);*/
 
-  {/* 위치 정보(지도) */}
-  return (
-    <>
-      {isMapLoaded && (
-        <div className="w-full h-full"/>
-      )}
-    </>
-  )
+  {
+    /* 위치 정보(지도) */
+  }
+  return <>{isMapLoaded && <div className="h-full w-full" />}</>;
 }
 
 export default NaverMap;

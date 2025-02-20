@@ -1,36 +1,36 @@
 import {createHashRouter} from 'react-router-dom';
 
 // ETC
-import Test from "./features/test/index.tsx";
+import Test from './features/test/index.tsx';
 
 // 🌍 Root Layout
-import RootLayout from "./layout/RootLayout.tsx";
+import RootLayout from './layout/RootLayout.tsx';
 
 // 🏠 메인 페이지
-import Home from "./features/home/index";
+import Home from './features/home/index';
 
 // 🏢 회사 정보
-import Profile from "./features/profile/pages/Profile.tsx";
-import History from "./features/profile/pages/History.tsx";
-import ContactUs from "./features/profile/pages/ContactUs.tsx";
+import Profile from './features/profile/pages/Profile.tsx';
+import History from './features/profile/pages/History.tsx';
+import ContactUs from './features/profile/pages/ContactUs.tsx';
 
 // 📈 비즈니스 개요
-import Business from "./features/business-overview/index.tsx";
-import Overview from "./features/business-overview/pages/Overview.tsx";
-import Utex from "./features/business-overview/pages/Utex.tsx";
+import Business from './features/business-overview/index.tsx';
+import Overview from './features/business-overview/pages/Overview.tsx';
+import Utex from './features/business-overview/pages/Utex.tsx';
 
 // 📰 뉴스
-import NewsLayout from "./features/news/index";
+import NewsLayout from './features/news/index';
 import News from './features/news/pages/News.tsx';
-import NewsDetail from "./features/news/pages/NewsDetail.tsx";
+import NewsDetail from './features/news/pages/NewsDetail.tsx';
 
 // 📦 제품 카탈로그
-import Catalog from "./features/catalog";
+import Catalog from './features/catalog';
 
 // 📄 정책 및 약관
-import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
-import EmailNoCollection from "./pages/EmailNoCollection.tsx";
-import TermsOfService from "./pages/TermsOfService.tsx";
+import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
+import EmailNoCollection from './pages/EmailNoCollection.tsx';
+import TermsOfService from './pages/TermsOfService.tsx';
 import ProfileLayout from './features/profile';
 import ScrollSnap from './features/test/pages/ScrollSnap.tsx';
 
@@ -52,7 +52,7 @@ export const router = createHashRouter([
         children: [
           {index: true, Component: Profile},
           {path: 'history', Component: History},
-          {path: 'contact', Component: ContactUs}
+          {path: 'contact', Component: ContactUs},
         ],
       },
 
@@ -85,11 +85,11 @@ export const router = createHashRouter([
 
       // 정책 및 약관
       {
-        path: "/policies",
+        path: '/policies',
         children: [
-          { path: "privacy", Component: PrivacyPolicy },
-          { path: "email-collection", Component: EmailNoCollection },
-          { path: "terms", Component: TermsOfService },
+          {path: 'privacy', Component: PrivacyPolicy},
+          {path: 'email-collection', Component: EmailNoCollection},
+          {path: 'terms', Component: TermsOfService},
         ],
       },
 
@@ -101,7 +101,7 @@ export const router = createHashRouter([
       {
         path: '/test/scroll',
         Component: ScrollSnap,
-      }
+      },
     ],
   },
 ]);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import {Outlet} from 'react-router-dom';
 import PageLayout from '../../layout/PageLayout.tsx';
 
 const NewsLayout: React.FC = () => {
@@ -8,7 +8,7 @@ const NewsLayout: React.FC = () => {
       title="뉴스 페이지 본문"
       isFullHeight={false}
       isMinHeight={false}>
-      <Outlet/>
+      <Outlet />
     </PageLayout>
   );
 };

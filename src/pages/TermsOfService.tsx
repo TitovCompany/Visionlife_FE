@@ -1,18 +1,22 @@
 import React from 'react';
-import TermOfService from "../data/termsOfService.json";
-import PageLayout from "../layout/PageLayout.tsx";
+import TermOfService from '../data/policies/termsOfService.json';
+import PageLayout from '../layout/PageLayout.tsx';
 
 const TermsOfService: React.FC = () => {
-  const { termsOfService } = TermOfService;
+  const {termsOfService} = TermOfService;
 
   if (!termsOfService) {
-    return <div className="text-center text-red-500">불러오는 중 오류가 발생했습니다.</div>;
+    return (
+      <div className="text-center text-red-500">
+        불러오는 중 오류가 발생했습니다.
+      </div>
+    );
   }
 
   const renderContent = (content: string | string[]) => {
     if (Array.isArray(content)) {
       return (
-        <ul className="list-decimal list-inside pl-0 mt-4 mb-6 space-y-3">
+        <ul className="mt-4 mb-6 list-inside list-decimal space-y-3 pl-0">
           {content.map((item, idx) => (
             <li key={idx} className="leading-relaxed">
               {item}
@@ -21,13 +25,13 @@ const TermsOfService: React.FC = () => {
         </ul>
       );
     }
-    return <p className="leading-relaxed mt-2 mb-4">{content}</p>;
+    return <p className="mt-2 mb-4 leading-relaxed">{content}</p>;
   };
 
   return (
     <PageLayout title={termsOfService.title}>
-      <div className="max-w-4xl mx-auto p-5">
-        <h1 className="text-2xl font-bold mb-4">{termsOfService.title}</h1>
+      <div className="mx-auto max-w-4xl p-5">
+        <h1 className="mb-4 text-2xl font-bold">{termsOfService.title}</h1>
 
         {termsOfService.articles.map((article, index) => (
           <div key={index} className="mb-8">
@@ -35,8 +39,8 @@ const TermsOfService: React.FC = () => {
             {article.content && renderContent(article.content)}
             {article.definitions && (
               <div className="mt-6">
-                <h3 className="text-lg font-semibold mt-4">정의</h3>
-                <ul className="list-disc list-inside pl-0">
+                <h3 className="mt-4 text-lg font-semibold">정의</h3>
+                <ul className="list-inside list-disc pl-0">
                   {article.definitions.map((def, idx) => (
                     <li key={idx} className="mb-2">
                       {def.definition}
@@ -49,7 +53,11 @@ const TermsOfService: React.FC = () => {
               <div className="mt-4">
                 {article.sections.map((section, idx) => (
                   <div key={idx}>
-                    {section.subtitle && <h3 className="text-l font-semibold mt-4">{section.subtitle}</h3>}
+                    {section.subtitle && (
+                      <h3 className="text-l mt-4 font-semibold">
+                        {section.subtitle}
+                      </h3>
+                    )}
                     {renderContent(section.content)}
                   </div>
                 ))}
@@ -58,7 +66,9 @@ const TermsOfService: React.FC = () => {
           </div>
         ))}
         <div>
-          <h1 className="text-l font-semibold mt-6">{termsOfService.appendix.title}</h1>
+          <h1 className="text-l mt-6 font-semibold">
+            {termsOfService.appendix.title}
+          </h1>
           <p className="mt-2">{termsOfService.appendix.content}</p>
         </div>
       </div>

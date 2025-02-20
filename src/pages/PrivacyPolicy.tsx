@@ -1,13 +1,11 @@
 import React from 'react';
-import PrivacyPolicyData from "../data/privacyPolicy.json";
-import PageLayout from "../layout/PageLayout";
+import PrivacyPolicyData from '../data/policies/privacyPolicy.json';
+import PageLayout from '../layout/PageLayout';
 
-
-
-const ContentRenderer: React.FC<{ content: string | string[] }> = ({ content }) => {
+const ContentRenderer: React.FC<{content: string | string[]}> = ({content}) => {
   if (Array.isArray(content)) {
     return (
-      <ul className="list-disc list-inside pl-0 mt-2 mb-4">
+      <ul className="mt-2 mb-4 list-inside list-disc pl-0">
         {content.map((item, idx) => (
           <li key={idx}>{item}</li>
         ))}
@@ -17,75 +15,107 @@ const ContentRenderer: React.FC<{ content: string | string[] }> = ({ content }) 
   return <p className="mt-2 mb-4">{content}</p>;
 };
 
-const TableRenderer: React.FC<{ headers: string[]; rows: any[] }> = ({ headers, rows }) => (
-  <table className="min-w-full border border-gray-300 mb-4">
+const TableRenderer: React.FC<{headers: string[]; rows: any[]}> = ({
+  headers,
+  rows,
+}) => (
+  <table className="mb-4 min-w-full border border-gray-300">
     <thead>
-    <tr>
-      {headers.map((header, idx) => (
-        <th key={idx} className="px-4 py-2 border border-gray-300 bg-gray-100 text-center">
-          {header}
-        </th>
-      ))}
-    </tr>
-    </thead>
-    <tbody>
-    {rows.map((row, idx) => (
-      <tr key={idx}>
-        {headers.map((header, i) => (
-          <td key={i} className="px-4 py-2 border border-gray-300 text-center">
-            {row[header]}
-          </td>
+      <tr>
+        {headers.map((header, idx) => (
+          <th
+            key={idx}
+            className="border border-gray-300 bg-gray-100 px-4 py-2 text-center">
+            {header}
+          </th>
         ))}
       </tr>
-    ))}
+    </thead>
+    <tbody>
+      {rows.map((row, idx) => (
+        <tr key={idx}>
+          {headers.map((header, i) => (
+            <td
+              key={i}
+              className="border border-gray-300 px-4 py-2 text-center">
+              {row[header]}
+            </td>
+          ))}
+        </tr>
+      ))}
     </tbody>
   </table>
 );
 
-const SectionTitle: React.FC<{ index: number; title: string }> = ({ index, title }) => (
-  <h2 className="text-xl font-semibold mb-2">{index}. {title}</h2>
+const SectionTitle: React.FC<{index: number; title: string}> = ({
+  index,
+  title,
+}) => (
+  <h2 className="mb-2 text-xl font-semibold">
+    {index}. {title}
+  </h2>
 );
 
 const PrivacyPolicy: React.FC = () => {
   const data = PrivacyPolicyData;
 
-
   if (!data || !data.privacyPolicy) {
-    return <div className="text-center text-red-500">불러오는 중 오류가 발생했습니다.</div>;
+    return (
+      <div className="text-center text-red-500">
+        불러오는 중 오류가 발생했습니다.
+      </div>
+    );
   }
   return (
     <PageLayout title="개인정보처리방침">
-      <div className="max-w-4xl mx-auto p-5">
+      <div className="mx-auto max-w-4xl p-5">
         {/* 0. 소개 (메인 타이틀, 번호 없음) */}
         <section id={data.privacyPolicy.introduction.id}>
-          <h1 className="text-2xl font-bold mb-4">개인정보처리방침</h1>
+          <h1 className="mb-4 text-2xl font-bold">개인정보처리방침</h1>
           <ContentRenderer content={data.privacyPolicy.introduction.notice} />
         </section>
 
         {/* 1. 개인정보처리방침 용어의 정의 */}
         <section id={data.privacyPolicy.definitions.id}>
-          <SectionTitle index={1} title={data.privacyPolicy.definitions.subtitle} />
-          <ContentRenderer content={data.privacyPolicy.definitions.description} />
+          <SectionTitle
+            index={1}
+            title={data.privacyPolicy.definitions.subtitle}
+          />
+          <ContentRenderer
+            content={data.privacyPolicy.definitions.description}
+          />
         </section>
 
         {/* 2. 개인정보 수집에 대한 동의 */}
         <section id={data.privacyPolicy.consentToCollect.id}>
-          <SectionTitle index={2} title={data.privacyPolicy.consentToCollect.subtitle} />
-          <ContentRenderer content={data.privacyPolicy.consentToCollect.description} />
+          <SectionTitle
+            index={2}
+            title={data.privacyPolicy.consentToCollect.subtitle}
+          />
+          <ContentRenderer
+            content={data.privacyPolicy.consentToCollect.description}
+          />
         </section>
 
         {/* 3. 수집하는 개인정보의 항목 및 수집방법 */}
         <section id={data.privacyPolicy.collectedInformation.id}>
-          <SectionTitle index={3} title={data.privacyPolicy.collectedInformation.subtitle} />
-          <ContentRenderer content={data.privacyPolicy.collectedInformation.description} />
+          <SectionTitle
+            index={3}
+            title={data.privacyPolicy.collectedInformation.subtitle}
+          />
+          <ContentRenderer
+            content={data.privacyPolicy.collectedInformation.description}
+          />
           {data.privacyPolicy.collectedInformation.collectedItems && (
             <div className="mb-4">
-              <ul className="list-disc list-inside">
-                {data.privacyPolicy.collectedInformation.collectedItems.map((item: any, idx: number) => (
-                  <li key={idx}>
-                    {item.category} : {item.details}
-                  </li>
-                ))}
+              <ul className="list-inside list-disc">
+                {data.privacyPolicy.collectedInformation.collectedItems.map(
+                  (item: any, idx: number) => (
+                    <li key={idx}>
+                      {item.category} : {item.details}
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           )}
@@ -93,8 +123,13 @@ const PrivacyPolicy: React.FC = () => {
 
         {/* 4. 아동의 개인정보보호 */}
         <section id={data.privacyPolicy.childProtection.id}>
-          <SectionTitle index={4} title={data.privacyPolicy.childProtection.subtitle} />
-          <ContentRenderer content={data.privacyPolicy.childProtection.description} />
+          <SectionTitle
+            index={4}
+            title={data.privacyPolicy.childProtection.subtitle}
+          />
+          <ContentRenderer
+            content={data.privacyPolicy.childProtection.description}
+          />
         </section>
 
         {/* 5. 개인정보의 수집 및 이용목적 */}
@@ -110,12 +145,14 @@ const PrivacyPolicy: React.FC = () => {
           <p className="mb-2">{data.retentionPeriod.legalBasis}</p>
           {data.retentionPeriod.retentionDetails && (
             <div className="mb-4">
-              <ul className="list-disc list-inside">
-                {data.retentionPeriod.retentionDetails.map((item: any, idx: number) => (
-                  <li key={idx}>
-                    {item.dataType}: {item.duration}
-                  </li>
-                ))}
+              <ul className="list-inside list-disc">
+                {data.retentionPeriod.retentionDetails.map(
+                  (item: any, idx: number) => (
+                    <li key={idx}>
+                      {item.dataType}: {item.duration}
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           )}
@@ -127,14 +164,22 @@ const PrivacyPolicy: React.FC = () => {
           <ContentRenderer content={data.dataDestruction.description} />
           {data.dataDestruction.destructionProcess && (
             <div className="mb-4">
-              <h3 className="text-lg font-medium">{data.dataDestruction.destructionProcess.title}</h3>
-              <ContentRenderer content={data.dataDestruction.destructionProcess.steps} />
+              <h3 className="text-lg font-medium">
+                {data.dataDestruction.destructionProcess.title}
+              </h3>
+              <ContentRenderer
+                content={data.dataDestruction.destructionProcess.steps}
+              />
             </div>
           )}
           {data.dataDestruction.destructionMethods && (
             <div className="mb-4">
-              <h3 className="text-lg font-medium">{data.dataDestruction.destructionMethods.title}</h3>
-              <ContentRenderer content={data.dataDestruction.destructionMethods.methods} />
+              <h3 className="text-lg font-medium">
+                {data.dataDestruction.destructionMethods.title}
+              </h3>
+              <ContentRenderer
+                content={data.dataDestruction.destructionMethods.methods}
+              />
             </div>
           )}
         </section>
@@ -145,38 +190,57 @@ const PrivacyPolicy: React.FC = () => {
           <ContentRenderer content={data.thirdPartySharing.description} />
           {data.thirdPartySharing.thirdPartyProvision && (
             <div className="mb-4">
-              <h3 className="text-lg font-medium">{data.thirdPartySharing.thirdPartyProvision.title}</h3>
-              <ContentRenderer content={data.thirdPartySharing.thirdPartyProvision.details} />
+              <h3 className="text-lg font-medium">
+                {data.thirdPartySharing.thirdPartyProvision.title}
+              </h3>
+              <ContentRenderer
+                content={data.thirdPartySharing.thirdPartyProvision.details}
+              />
             </div>
           )}
           {data.thirdPartySharing.exceptions && (
             <div className="mb-4">
-              <h3 className="text-lg font-medium">{data.thirdPartySharing.exceptions.title}</h3>
-              <ContentRenderer content={data.thirdPartySharing.exceptions.cases} />
+              <h3 className="text-lg font-medium">
+                {data.thirdPartySharing.exceptions.title}
+              </h3>
+              <ContentRenderer
+                content={data.thirdPartySharing.exceptions.cases}
+              />
             </div>
           )}
         </section>
 
         {/* 9. 개인정보의 처리위탁 */}
         <section id={data.dataProcessingDelegation.id}>
-          <SectionTitle index={9} title={data.dataProcessingDelegation.subtitle} />
-          <ContentRenderer content={data.dataProcessingDelegation.description} />
+          <SectionTitle
+            index={9}
+            title={data.dataProcessingDelegation.subtitle}
+          />
+          <ContentRenderer
+            content={data.dataProcessingDelegation.description}
+          />
           {data.dataProcessingDelegation.delegatedTasksTable && (
             <div className="mb-4">
               <TableRenderer
-                headers={data.dataProcessingDelegation.delegatedTasksTable.headers}
+                headers={
+                  data.dataProcessingDelegation.delegatedTasksTable.headers
+                }
                 rows={data.dataProcessingDelegation.delegatedTasksTable.rows}
               />
             </div>
           )}
           {data.dataProcessingDelegation.contractRegulations && (
             <div className="mb-4">
-              <ContentRenderer content={data.dataProcessingDelegation.contractRegulations} />
+              <ContentRenderer
+                content={data.dataProcessingDelegation.contractRegulations}
+              />
             </div>
           )}
           {data.dataProcessingDelegation.changePolicy && (
             <div className="mb-4">
-              <ContentRenderer content={data.dataProcessingDelegation.changePolicy} />
+              <ContentRenderer
+                content={data.dataProcessingDelegation.changePolicy}
+              />
             </div>
           )}
         </section>
@@ -206,17 +270,25 @@ const PrivacyPolicy: React.FC = () => {
           {data.cookiePolicy.cookieSettings && (
             <div className="mb-4">
               <h3 className="text-lg font-medium">쿠키의 설치/운영 및 거부</h3>
-              <ContentRenderer content={data.cookiePolicy.cookieSettings.description} />
+              <ContentRenderer
+                content={data.cookiePolicy.cookieSettings.description}
+              />
               {data.cookiePolicy.cookieSettings.browserSettings && (
                 <div className="mt-2">
                   <h4 className="text-md font-medium">쿠키설정 방법</h4>
-                  <ul className="list-disc list-inside">
-                    {Object.entries(data.cookiePolicy.cookieSettings.browserSettings).map(([key, value], idx) => {
-                      if (key === "id") return null;
+                  <ul className="list-inside list-disc">
+                    {Object.entries(
+                      data.cookiePolicy.cookieSettings.browserSettings
+                    ).map(([key, value], idx) => {
+                      if (key === 'id') return null;
                       return (
                         <li key={idx}>
-                          {key}:{" "}
-                          <a href={value as string} className="text-blue-500" target="_blank" rel="noreferrer">
+                          {key}:{' '}
+                          <a
+                            href={value as string}
+                            className="text-blue-500"
+                            target="_blank"
+                            rel="noreferrer">
                             {value}
                           </a>
                         </li>
@@ -236,13 +308,17 @@ const PrivacyPolicy: React.FC = () => {
           {data.protectionMeasures.technicalMeasures && (
             <div className="mb-4">
               <h3 className="text-lg font-medium">기술적 대책</h3>
-              <ContentRenderer content={data.protectionMeasures.technicalMeasures} />
+              <ContentRenderer
+                content={data.protectionMeasures.technicalMeasures}
+              />
             </div>
           )}
           {data.protectionMeasures.managerialMeasures && (
             <div className="mb-4">
               <h3 className="text-lg font-medium">관리적 대책</h3>
-              <ContentRenderer content={data.protectionMeasures.managerialMeasures} />
+              <ContentRenderer
+                content={data.protectionMeasures.managerialMeasures}
+              />
             </div>
           )}
         </section>
@@ -268,21 +344,29 @@ const PrivacyPolicy: React.FC = () => {
           <ContentRenderer content={data.remedyMethods.description} />
           {data.remedyMethods.contacts && (
             <div className="mb-4">
-              <ul className="list-disc list-inside">
-                {data.remedyMethods.contacts.map((contact: any, idx: number) => (
-                  <li key={idx}>
-                    {contact.name}{" "}
-                    {contact.phone && <span>{contact.phone}</span>}
-                    {contact.website && (
-                      <span>
-                        {" "}
-                        (<a href={contact.website} className="text-blue-500" target="_blank" rel="noreferrer">
-                          {contact.website}
-                        </a>)
-                      </span>
-                    )}
-                  </li>
-                ))}
+              <ul className="list-inside list-disc">
+                {data.remedyMethods.contacts.map(
+                  (contact: any, idx: number) => (
+                    <li key={idx}>
+                      {contact.name}{' '}
+                      {contact.phone && <span>{contact.phone}</span>}
+                      {contact.website && (
+                        <span>
+                          {' '}
+                          (
+                          <a
+                            href={contact.website}
+                            className="text-blue-500"
+                            target="_blank"
+                            rel="noreferrer">
+                            {contact.website}
+                          </a>
+                          )
+                        </span>
+                      )}
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           )}
@@ -294,8 +378,8 @@ const PrivacyPolicy: React.FC = () => {
           <ContentRenderer content={data.policyChangeNotice.description} />
           {data.policyChangeNotice.noticeDates && (
             <div className="mb-4">
-              <p>공고일자: {data.policyChangeNotice.noticeDates["공고일자"]}</p>
-              <p>시행일자: {data.policyChangeNotice.noticeDates["시행일자"]}</p>
+              <p>공고일자: {data.policyChangeNotice.noticeDates['공고일자']}</p>
+              <p>시행일자: {data.policyChangeNotice.noticeDates['시행일자']}</p>
             </div>
           )}
         </section>
