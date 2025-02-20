@@ -15,9 +15,9 @@ import History from './features/profile/pages/History.tsx';
 import ContactUs from './features/profile/pages/ContactUs.tsx';
 
 // 📈 비즈니스 개요
-import Business from './features/business-overview/index.tsx';
-import Overview from './features/business-overview/pages/Overview.tsx';
-import Utex from './features/business-overview/pages/Utex.tsx';
+import Business from './features/business/index.tsx';
+import Overview from './features/business/pages/Overview.tsx';
+import Utex from './features/business/pages/Utex.tsx';
 
 // 📰 뉴스
 import NewsLayout from './features/news/index';
