@@ -61,8 +61,8 @@ export const router = createHashRouter([
         path: '/business',
         Component: Business,
         children: [
-          {path: 'overview/:slug', Component: Overview},
-          {path: 'utex/:slug', Component: Utex},
+          {path: 'overview/introduction', Component: Overview},
+          {path: 'utex/introduction', Component: Utex},
         ],
       },
 
@@ -73,7 +73,7 @@ export const router = createHashRouter([
         children: [
           // slug 사용 예정
           {index: true, Component: News},
-          {path: ':id', Component: NewsDetail},
+          {path: ':slug', Component: NewsDetail},
         ],
       },
 
