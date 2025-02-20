@@ -1,5 +1,5 @@
 import React from 'react';
-import {CatalogItem} from '../types/catalog';
+import {CatalogItem} from '../../../types/catalog';
 import {FiDownload} from 'react-icons/fi';
 
 interface DownloadItemProps {

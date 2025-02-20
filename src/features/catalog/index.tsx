@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import PageLayout from '../../layout/PageLayout.tsx';
 import catalogData from '../../data/catalogData.json';
-import {CatalogItem} from './types/catalog';
+import {CatalogItem} from '../../types/catalog';
 // import Pagination from "../../components/Pagination.tsx";
 import DownloadItem from './components/DownloadItem.tsx';
 
