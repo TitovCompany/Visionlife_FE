@@ -35,8 +35,7 @@ const Overview = () => {
         <img
           src="/img/business/p1.jpg"
           alt=""
-          className="h-96 w-full object-cover md:h-[500px] md:w-[50%]"
-        />
+          className="h-96 w-full object-cover md:h-[500px] md:w-[50%]" />
       </article>
 
       {/* 4가지 장점 */}
