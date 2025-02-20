@@ -40,12 +40,11 @@ const FooterColumn: React.FC<FooterColumnProps> = memo((props) => {
           {isOpen ? <FaChevronUp /> : <FaChevronDown />}
         </span>
       </strong>
-      {/*<ul className="space-y-2 text-center">*/}
       <ul className={listClasses}>
         {sortedLinks.map((item, index) => (
           <li
             key={index}
-            className="hover:text-primary pb-5 transition lg:pb-0">
+            className="hover:text-primary pb-5 transition">
             <Link to={item.path}>{item.name}</Link>
           </li>
         ))}
