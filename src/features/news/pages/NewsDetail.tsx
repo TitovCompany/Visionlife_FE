@@ -1,16 +1,12 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useParams} from 'react-router-dom';
 import newsData from '../../../data/news.json';
 
 const NewsDetail: React.FC = () => {
-  const {id} = useParams();
+  const {slug} = useParams();
   const newsItem =
-    newsData.items.find((news) => news.id === id) ||
-    newsData.items.find((news) => news.id === id);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    newsData.items.find((news) => news.id === slug) ||
+    newsData.items.find((news) => news.id === slug);
 
   if (!newsItem) {
     return (

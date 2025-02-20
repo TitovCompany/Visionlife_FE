@@ -3,8 +3,12 @@ import BusinessPoint from '../components/BusinessPoint.tsx';
 import overview from '../../../data/businessOverview.json';
 import bizInfo from '../../../data/business/biz_info.json';
 import bizPoint from '../../../data/business/biz_point.json';
+import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
+import {useRef} from 'react';
 
 const Overview = () => {
+  const sectionRef = useRef(null);
+  useScrollAnimation('.biz_item', 'top 80%')
   const maxWidth = 'max-w-lg md:max-w-2xl lg:max-w-5xl mx-auto';
   return (
     <SectionLayout
@@ -26,7 +30,7 @@ const Overview = () => {
 
           <div className="text-md md:text-lg">
             {overview.description.map((line: string, index: number) => (
-              <p key={index} className="mt-3 leading-relaxed md:mt-4">
+              <p ref={sectionRef} key={index} className="biz_item mt-3 leading-relaxed md:mt-4">
                 {line}
               </p>
             ))}
@@ -35,8 +39,7 @@ const Overview = () => {
         <img
           src="/img/business/p1.jpg"
           alt=""
-          className="h-96 w-full object-cover md:h-[500px] md:w-[50%]"
-        />
+          className="h-96 w-full object-cover md:h-[500px] md:w-[50%]" />
       </article>
 
       {/* 4가지 장점 */}
@@ -57,7 +60,7 @@ const Overview = () => {
           완성하는 <span className="text-primary">친환경 생산</span>
         </h2>
         {bizInfo.data.map((item, index) => (
-          <div key={index} className="flex items-center gap-5 pt-5 md:pt-10">
+          <div ref={sectionRef} key={index} className="biz_item flex items-center gap-5 pt-5 md:pt-10">
             <p className="text-primary pl-2 text-2xl font-bold md:pl-6 md:text-3xl">
               #{String(index + 1)}.
             </p>

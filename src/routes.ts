@@ -15,9 +15,9 @@ import History from './features/profile/pages/History.tsx';
 import ContactUs from './features/profile/pages/ContactUs.tsx';
 
 // 📈 비즈니스 개요
-import Business from './features/business-overview/index.tsx';
-import Overview from './features/business-overview/pages/Overview.tsx';
-import Utex from './features/business-overview/pages/Utex.tsx';
+import Business from './features/business/index.tsx';
+import Overview from './features/business/pages/Overview.tsx';
+import Utex from './features/business/pages/Utex.tsx';
 
 // 📰 뉴스
 import NewsLayout from './features/news/index';
@@ -61,8 +61,8 @@ export const router = createHashRouter([
         path: '/business',
         Component: Business,
         children: [
-          {path: 'overview/:slug', Component: Overview},
-          {path: 'utex/:slug', Component: Utex},
+          {path: 'overview/introduction', Component: Overview},
+          {path: 'utex/introduction', Component: Utex},
         ],
       },
 
@@ -73,7 +73,7 @@ export const router = createHashRouter([
         children: [
           // slug 사용 예정
           {index: true, Component: News},
-          {path: ':id', Component: NewsDetail},
+          {path: ':slug', Component: NewsDetail},
         ],
       },
 
