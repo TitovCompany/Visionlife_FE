@@ -11,8 +11,8 @@ const HomeNews = () => {
   const sliderRef = useInfiniteCarousel();
 
   return (
-    <section className="h-auto overflow-hidden py-20">
-      <div className="mb-10 ml-12 text-2xl font-semibold">
+    <section className="h-auto overflow-hidden py-12 sx:py-16 sm:py-20">
+      <div className="mb-5 sm:mb-10 ml-3 xs:ml-5 sm:ml-12 text-xl sm:text-2xl font-semibold">
         <h3 className="flex items-center gap-3">
           <AiOutlineArrowDown className="text-primary font-extrabold" />
           비전라이프 최근 소식
