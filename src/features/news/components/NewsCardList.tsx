@@ -26,10 +26,10 @@ const NewsCardList: React.FC<NewsCardListProps> = (props) => {
   const listClasses = clsx(
     layout === 'horizontal' &&
       'grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-8',
-    layout === 'vertical' && 'py-14 max-w-4xl mx-auto space-y-6'
+    layout === 'vertical' && 'pb-14 max-w-4xl mx-auto space-y-6'
   );
 
-  const itemClasses = clsx(layout === 'vertical' && 'my-14');
+  const itemClasses = clsx(layout === 'vertical' && 'my-5 md:my-14');
 
   const linkClasses = clsx(
     'flex flex-col transition duration-300 hover:opacity-80 overflow-hidden gap-4',
@@ -77,7 +77,7 @@ const NewsCardList: React.FC<NewsCardListProps> = (props) => {
                     {truncateText(item.title, 50)}
                   </h3>
                 </div>
-                <p className="text-sm leading-relaxed text-gray-600">
+                <p className="hidden md:block text-sm leading-relaxed text-gray-600">
                   {truncateText(item.content, 150)}
                 </p>
                 <p className="text-xs text-gray-500">
