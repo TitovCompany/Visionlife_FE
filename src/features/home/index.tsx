@@ -68,7 +68,7 @@ const Home = () => {
       <section className="mx-auto h-auto max-w-3xl pb-20">
         <MoreNewsSection />
       </section>
-      {/*<SectionAbout_Design2 />*/}
+      {/*<SectionAbout />*/}
     </PageLayout>
   );
 };

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import history from '../../../data/history.json';
+import history from '../../../data/profile/history.json';
 import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
 
 const History = () => {

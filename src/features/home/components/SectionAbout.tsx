@@ -8,7 +8,7 @@ const serviceItem = [
   { id: 4, src: "/img/service/p4.webp", title: "오시는 길" },
 ];
 
-const SectionAbout_Design2 = () => {
+const SectionAbout = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -93,4 +93,4 @@ const SectionAbout_Design2 = () => {
   );
 };
 
-export default SectionAbout_Design2;
+export default SectionAbout;

@@ -1,5 +1,5 @@
 import React from 'react';
-import PrivacyPolicyData from "../data/privacyPolicy.json";
+import PrivacyPolicyData from "../data/policies/privacyPolicy.json";
 import PageLayout from "../layout/PageLayout";
 
 
