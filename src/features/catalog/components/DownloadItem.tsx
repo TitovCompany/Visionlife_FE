@@ -8,8 +8,8 @@ interface DownloadItemProps {
 
 const DownloadItem: React.FC<DownloadItemProps> = ({data}) => {
   return (
-    <li className="flex min-h-[220px] flex-col overflow-hidden border border-gray-200 bg-white shadow-md transition hover:shadow-lg sm:min-h-[250px] lg:min-h-20">
-      <div className="p-8 sm:p-10 lg:p-12">
+    <li className="flex flex-col flex-grow overflow-hidden border border-gray-200 bg-white shadow-md transition hover:shadow-lg">
+      <div className="flex-grow p-8 sm:p-10 lg:p-12">
         <h2 className="text-lg font-semibold text-gray-800 sm:text-xl">
           {data.title}.{data.fileType}
         </h2>
@@ -18,7 +18,7 @@ const DownloadItem: React.FC<DownloadItemProps> = ({data}) => {
         </p>
       </div>
 
-      <div className="flex items-center justify-between bg-gray-100 px-6 py-4">
+      <div className="flex items-center justify-between bg-gray-100 px-6 py-4 flex-shrink-0">
         <p className="text-sm text-gray-600 sm:text-base">
           파일 크기: {data.fileSize}MB
         </p>
@@ -31,6 +31,7 @@ const DownloadItem: React.FC<DownloadItemProps> = ({data}) => {
         </a>
       </div>
     </li>
+
   );
 };
 
