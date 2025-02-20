@@ -1,5 +1,5 @@
 import SectionLayout from '../../../layout/SectionLayout.tsx';
-import {useRef} from 'react';
+import { useRef } from 'react';
 import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
 import VisionScroll from '../components/VisionScroll.tsx';
 import overview from '../../../data/profile/overview.json';
@@ -10,7 +10,7 @@ const Profile = () => {
   useScrollAnimation('.profile_item', 'top 100%');
 
   return (
-    <div ref={sectionRef} className="w-full overflow-hidden">
+    <div ref={sectionRef} className="w-full overflow-hidden px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
       {/* About */}
       <SectionLayout
         title="주식회사 비전 라이프 홀딩스 회사 소개"
@@ -31,7 +31,8 @@ const Profile = () => {
           {overview.items.map((item, index) => (
             <p
               key={index}
-              className="profile_item pt-6 text-base leading-relaxed sm:pt-10 sm:text-xl">
+              className="profile_item pt-6 text-base leading-relaxed sm:pt-10 sm:text-xl"
+            >
               {item}
             </p>
           ))}
