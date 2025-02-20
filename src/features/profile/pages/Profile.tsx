@@ -14,11 +14,11 @@ const Profile = () => {
       {/* About */}
       <SectionLayout
         title="주식회사 비전 라이프 홀딩스 회사 소개"
-        className="mx-auto mb-52 flex max-w-4xl flex-col items-center justify-center"
+        className="mx-auto mb-10 lg:mb-52 flex max-w-4xl flex-col items-center justify-center"
         titleClassName="hidden"
         fullHeight={false}>
         <article className="mx-auto w-full max-w-3xl">
-          <div className="pt-16 pb-10 text-left font-semibold sm:pt-32">
+          <div className="pt-10 lg:pt-16 lg:pb-10 text-left font-semibold sm:pt-32">
             <h3 className="text-primary text-2xl sm:text-3xl md:text-4xl">
               ECO FRIENDLY
             </h3>
@@ -29,12 +29,7 @@ const Profile = () => {
             </h4>
           </div>
           {overview.items.map((item, index) => (
-            <p
-              key={index}
-              className="profile_item pt-6 text-base leading-relaxed sm:pt-10 sm:text-xl"
-            >
-              {item}
-            </p>
+            <p key={index} className="profile_item pt-6 text-base leading-relaxed sm:pt-10 sm:text-xl">{item}</p>
           ))}
         </article>
       </SectionLayout>
@@ -44,20 +39,16 @@ const Profile = () => {
 
       <SectionLayout
         title="주식회사 비젼 라이프 홀딩스 목표 및 방향성"
-        className="mx-auto mt-16 mb-32 flex max-w-2xl flex-col items-center justify-center sm:mt-20"
+        className="mx-auto mt-16 mb-16 lg:mb-32 flex max-w-2xl flex-col items-center justify-center sm:mt-20"
         titleClassName="hidden">
-        <h3 className="w-full pt-40 text-left text-2xl font-semibold sm:text-3xl md:text-4xl">
+        <h3 className="w-full pt-20 lg:pt-40 text-left text-2xl font-semibold sm:text-3xl md:text-4xl">
           비즈니스 파트너로서의 <span className="text-primary">약속</span>
         </h3>
         <article className="mr-auto w-full max-w-3xl">
           {comment.data.map((item, index) => (
-            <p
-              key={index}
-              className="profile_item pt-14 text-base leading-relaxed sm:text-lg md:text-xl">
-              {item.text}
-            </p>
+            <p key={index} className="profile_item pt-8 lg:pt-14 text-base leading-relaxed sm:text-lg md:text-xl">{item.text}</p>
           ))}
-          <p className="profile_item pt-14 text-base leading-relaxed font-semibold sm:text-lg md:text-xl">
+          <p className="profile_item pt-8 lg:pt-14 text-base leading-relaxed font-semibold sm:text-lg md:text-xl">
             <span className="text-primary">비전라이프 홀딩스</span>와<br />
             함께 더 나은 내일을 만듭니다.
           </p>
