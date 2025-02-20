@@ -1,4 +1,5 @@
 import NewsCardList from '../components/NewsCardList.tsx';
+import MobileVerticalNewsList from '../components/MobileVerticalNewsList.tsx';
 
 const News = () => {
   return (
