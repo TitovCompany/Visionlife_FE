@@ -7,7 +7,7 @@ function RootLayout() {
   return (
     <>
       <ScrollRestoration />
-      <div className="w-full h-full min-h-screen min-w-full">
+      <div className="h-full min-h-screen w-full min-w-full">
         <Navigation />
         <Outlet />
         <Footer />

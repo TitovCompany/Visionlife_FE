@@ -43,9 +43,7 @@
         },
         {
           "category": "개인정보 수집방법",
-          "details":  "홈페이지 상담 게시판, 전화, 전자우편"
-
-
+          "details": "홈페이지 상담 게시판, 전화, 전자우편"
         }
       ],
       "id": "privacyPolicy_collectedInformation"

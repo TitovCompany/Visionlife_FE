@@ -28,14 +28,16 @@ const NavbarMobile: React.FC<MobileNavbarProps> = (props) => {
   return (
     <div className="lg:hidden">
       {/* 로고와 햄버거 버튼 */}
-      <div className="flex justify-between items-center px-4 py-4 border-b border-gray-200">
-        <Logo type="_mobile"/>
+      <div className="flex items-center justify-between border-b border-gray-200 px-4 py-4">
+        <Logo type="_mobile" />
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="p-2 cursor-pointer focus:outline-none">
-          {isMobileMenuOpen
-            ? <IoMdClose className="h-6 w-6"/>
-            : <GiHamburgerMenu className="h-6 w-6"/>}
+          className="cursor-pointer p-2 focus:outline-none">
+          {isMobileMenuOpen ? (
+            <IoMdClose className="h-6 w-6" />
+          ) : (
+            <GiHamburgerMenu className="h-6 w-6" />
+          )}
         </button>
       </div>
 

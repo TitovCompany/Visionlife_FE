@@ -24,7 +24,7 @@ export default defineConfig({
       '@catalog': '/src/features/catalog',
       '@news': '/src/features/news',
       '@profile': '/src/features/profile',
-    }
+    },
   },
 
   server: {
@@ -33,27 +33,28 @@ export default defineConfig({
 
     headers: {
       // XSS 및 Clickjacking 방지
-      "content_security_policy": "default-src 'self' style-src 'self' 'unsafe-inline';",
-      'X-Frame-Options': 'DENY',  // Clickjacking 방지
-      'X-Content-Type-Options': 'nosniff',  // MIME 타입 스니핑 방지
+      content_security_policy:
+        "default-src 'self' style-src 'self' 'unsafe-inline';",
+      'X-Frame-Options': 'DENY', // Clickjacking 방지
+      'X-Content-Type-Options': 'nosniff', // MIME 타입 스니핑 방지
       'Referrer-Policy': 'strict-origin-when-cross-origin', // Referrer 정보 최소화
     },
   },
 
   css: {
     modules: {
-      generateScopedName: '[hash:base64:6]',  // 클래스명 난독화
-    }
+      generateScopedName: '[hash:base64:6]', // 클래스명 난독화
+    },
   },
 
   build: {
     minify: 'esbuild',
     terserOptions: {
-      mangle: true,           // 변수명 난독화
+      mangle: true, // 변수명 난독화
       compress: {
-        drop_console: true,   // console.log 제거
-        drop_debugger: true,  // debugger 제거
-      }
+        drop_console: true, // console.log 제거
+        drop_debugger: true, // debugger 제거
+      },
     },
 
     // 소스맵 제거 (개발시 사용)
@@ -67,7 +68,7 @@ export default defineConfig({
         entryFileNames: 'assets/[name].[hash].js',
         chunkFileNames: 'assets/[name].[hash].js',
         assetFileNames: 'assets/[name].[hash].[ext]',
-      }
+      },
     },
 
     // 브라우저 지원 대상
@@ -79,8 +80,5 @@ export default defineConfig({
     include: ['react', 'react-dom'], // 최적화 포함 대상 지정
   },
 
-  plugins: [
-    react(),
-    tailwindcss(),
-  ],
+  plugins: [react(), tailwindcss()],
 });

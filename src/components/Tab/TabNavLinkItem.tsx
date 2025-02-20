@@ -17,7 +17,7 @@ const TabNavLinkItem: React.FC<TabNavLinkItemProps> = (props) => {
     title,
     href,
     itemClass,
-    activeClass = "text-primary font-bold",
+    activeClass = 'text-primary font-bold',
     ...attributes
   } = props;
 
@@ -27,14 +27,11 @@ const TabNavLinkItem: React.FC<TabNavLinkItemProps> = (props) => {
         <NavLink
           to={href}
           end // 부모 경로와 자식 경로가 겹치는 문제 해결
-          className={({ isActive }) =>
-            clsx(itemClass, isActive && activeClass)}>
+          className={({isActive}) => clsx(itemClass, isActive && activeClass)}>
           {title}
         </NavLink>
       ) : (
-        <Link
-          to={href}
-          className={clsx(itemClass)}>
+        <Link to={href} className={clsx(itemClass)}>
           {title}
         </Link>
       )}

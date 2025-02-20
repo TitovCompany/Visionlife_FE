@@ -6,10 +6,10 @@ import UtexComparison from '../components/UtexComparison.tsx';
 const Utex = () => {
   return (
     <div className="py-12 sm:py-20 md:py-32">
-      <UtexOverview/>
-      <UtexFeatures/>
-      <UtexInkSystem/>
-      <UtexComparison/>
+      <UtexOverview />
+      <UtexFeatures />
+      <UtexInkSystem />
+      <UtexComparison />
     </div>
   );
 };

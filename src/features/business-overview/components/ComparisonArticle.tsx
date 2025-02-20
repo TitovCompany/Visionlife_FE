@@ -11,13 +11,7 @@ interface ComparisonArticleProps {
 }
 
 const ComparisonArticle: React.FC<ComparisonArticleProps> = (props) => {
-  const {
-    title,
-    subtitle,
-    description,
-    isFlex,
-    items
-  } = props;
+  const {title, subtitle, description, isFlex, items} = props;
   return (
     <article>
       <div className="text-left text-2xl font-semibold">

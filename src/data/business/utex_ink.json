@@ -3,14 +3,11 @@
   "category": "ink",
   "title": "잉크의 특장점",
   "items": [
-
     {
       "id": "utex_ink_1",
       "type": "ink",
       "title": "친환경",
-      "content":
-        "당사의 잉크는 친환경 기준에 적합 판정,\n공정 특성상 오폐수 미발생"
-
+      "content": "당사의 잉크는 친환경 기준에 적합 판정,\n공정 특성상 오폐수 미발생"
     },
     {
       "id": "utex_ink_2",

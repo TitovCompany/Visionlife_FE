@@ -16,7 +16,7 @@ import React from 'react';
  * @property {string} [descriptionClass] - 설명의 추가 클래스
  */
 interface ImageCardProps {
-  as?: "div" | "li";
+  as?: 'div' | 'li';
   title?: string;
   animation: boolean;
   description: string;
@@ -64,16 +64,15 @@ const ImageCard: React.FC<ImageCardProps> = (props) => {
     descriptionClass,
   } = props;
 
-  const imgClasses = clsx(imageClass
-    ? imageClass
-    : "w-[120px] md:w-[140px] h-[120px] md:h-[140px] object-cover");
+  const imgClasses = clsx(
+    imageClass
+      ? imageClass
+      : 'w-[120px] md:w-[140px] h-[120px] md:h-[140px] object-cover'
+  );
 
   return (
     <Component className={wrapperClass}>
-      <img
-        className={imgClasses}
-        src={src}
-        alt={alt}/>
+      <img className={imgClasses} src={src} alt={alt} />
 
       {isFlex ? (
         <div className="flex flex-col">
@@ -81,11 +80,10 @@ const ImageCard: React.FC<ImageCardProps> = (props) => {
             <AnimatedHeading
               className="mt-4 text-xl sm:text-2xl"
               title={title}
-              role="heading" />
+              role="heading"
+            />
           )}
-          <p className={descriptionClass}>
-            {description}
-          </p>
+          <p className={descriptionClass}>{description}</p>
         </div>
       ) : (
         <>
@@ -93,11 +91,10 @@ const ImageCard: React.FC<ImageCardProps> = (props) => {
             <AnimatedHeading
               className="mt-4 text-lg sm:text-xl"
               title={title}
-              role="heading" />
+              role="heading"
+            />
           )}
-          <p className={descriptionClass}>
-            {description}
-          </p>
+          <p className={descriptionClass}>{description}</p>
         </>
       )}
     </Component>

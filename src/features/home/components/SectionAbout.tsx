@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 
 const serviceItem = [
-  { id: 1, src: "/img/service/p1.webp", title: "회사 연혁" },
-  { id: 2, src: "/img/service/p2.webp", title: "회사 소개" },
-  { id: 3, src: "/img/service/p3.webp", title: "비즈니스" },
-  { id: 4, src: "/img/service/p4.webp", title: "오시는 길" },
+  {id: 1, src: '/img/service/p1.webp', title: '회사 연혁'},
+  {id: 2, src: '/img/service/p2.webp', title: '회사 소개'},
+  {id: 3, src: '/img/service/p3.webp', title: '비즈니스'},
+  {id: 4, src: '/img/service/p4.webp', title: '오시는 길'},
 ];
 
 const SectionAbout = () => {
@@ -36,30 +36,32 @@ const SectionAbout = () => {
   }, []);
 
   return (
-    <section className="flex flex-col md:flex-row h-auto md:h-[560px] relative overflow-x-hidden">
+    <section className="relative flex h-auto flex-col overflow-x-hidden md:h-[560px] md:flex-row">
       {/* 왼쪽 섹션 */}
-      <article className="w-full md:w-1/2 lg:w-1/3 md:px-14 lg:px-12 pt-8 px-4 md:pt-16 pb-8 md:pb-80 text-center bg-primary text-white">
-        <h2 className="mb-4 md:mb-10 text-2xl md:text-3xl lg:text-4xl text-left font-semibold">
+      <article className="bg-primary w-full px-4 pt-8 pb-8 text-center text-white md:w-1/2 md:px-14 md:pt-16 md:pb-80 lg:w-1/3 lg:px-12">
+        <h2 className="mb-4 text-left text-2xl font-semibold md:mb-10 md:text-3xl lg:text-4xl">
           Vision Life
         </h2>
-        <p className="text-base md:text-lg lg:text-xl text-left leading-6 md:leading-8">
-          지속 가능한 미래를 그리며,<br />
-          세상을 연결하는 친환경 기술을<br />
+        <p className="text-left text-base leading-6 md:text-lg md:leading-8 lg:text-xl">
+          지속 가능한 미래를 그리며,
+          <br />
+          세상을 연결하는 친환경 기술을
+          <br />
           만들어갑니다.
         </p>
       </article>
 
       {/* 오른쪽 섹션 */}
-      <ul className="w-full md:w-1/2 lg:w-2/3 h-[500px] md:h-full mx-auto flex flex-col relative overflow-hidden">
+      <ul className="relative mx-auto flex h-[500px] w-full flex-col overflow-hidden md:h-full md:w-1/2 lg:w-2/3">
         {serviceItem.map((item, index) => {
           const isActive = hoveredId === item.id;
           let liStyle: React.CSSProperties = {};
 
           if (isDesktop) {
             if (hoveredId === null) {
-              liStyle = { top: `${index * (100 / serviceItem.length)}%` };
+              liStyle = {top: `${index * (100 / serviceItem.length)}%`};
             } else if (!isActive) {
-              liStyle = { top: `${index < hoveredId ? 0 : 100}%` };
+              liStyle = {top: `${index < hoveredId ? 0 : 100}%`};
             }
           }
 
@@ -69,21 +71,18 @@ const SectionAbout = () => {
               role="button"
               tabIndex={0}
               style={liStyle}
-              className={`relative md:absolute w-full transition-[height,top,opacity] duration-400 ease-in-out cursor-pointer
-                ${isActive ? "h-full top-0 left-0 z-50 opacity-100" : "h-1/4 opacity-100"}`}
+              className={`relative w-full cursor-pointer transition-[height,top,opacity] duration-400 ease-in-out md:absolute ${isActive ? 'top-0 left-0 z-50 h-full opacity-100' : 'h-1/4 opacity-100'}`}
               onMouseEnter={() => setHoveredId(item.id)}
-              onMouseLeave={() => setHoveredId(null)}
-            >
+              onMouseLeave={() => setHoveredId(null)}>
               <Link
                 to="/"
-                className="absolute inset-0 z-30 w-full h-full flex items-center justify-start text-xl md:text-3xl font-semibold pl-6"
-              >
+                className="absolute inset-0 z-30 flex h-full w-full items-center justify-start pl-6 text-xl font-semibold md:text-3xl">
                 {item.title}
               </Link>
               <img
                 src={item.src}
                 alt={`${item.title} 백그라운드 이미지`}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out blur-md scale-100"
+                className="absolute inset-0 h-full w-full scale-100 object-cover blur-md transition-transform duration-300 ease-in-out"
               />
             </li>
           );

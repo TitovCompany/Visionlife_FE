@@ -1,14 +1,16 @@
-import { useRef } from 'react';
+import {useRef} from 'react';
 import history from '../../../data/profile/history.json';
 import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
 
 const History = () => {
   const sectionRef = useRef(null);
-  useScrollAnimation(".history_item", "top 80%");
+  useScrollAnimation('.history_item', 'top 80%');
   return (
-    <section ref={sectionRef} className="mx-auto min-h-screen w-full max-w-3xl py-16 md:py-32 px-4 overflow-x-hidden">
-      <div className="mb-10 md:mb-20 font-bold ">
-        <h2 className="mb-4 md:mb-10 text-2xl md:text-4xl">
+    <section
+      ref={sectionRef}
+      className="mx-auto min-h-screen w-full max-w-3xl overflow-x-hidden px-4 py-16 md:py-32">
+      <div className="mb-10 font-bold md:mb-20">
+        <h2 className="mb-4 text-2xl md:mb-10 md:text-4xl">
           <span className="text-primary">비젼라이프</span>가 걸어온 길
         </h2>
         <h3 className="text-lg md:text-3xl">
@@ -21,13 +23,13 @@ const History = () => {
         {history.map((item) => (
           <li
             key={item.id}
-            className="history_item flex flex-col md:flex-row items-center md:items-start justify-start gap-2 md:gap-10">
-            <h4 className="w-full md:w-1/6 text-left md:text-right text-xl md:text-2xl font-semibold">
+            className="history_item flex flex-col items-center justify-start gap-2 md:flex-row md:items-start md:gap-10">
+            <h4 className="w-full text-left text-xl font-semibold md:w-1/6 md:text-right md:text-2xl">
               {item.year.includes('~')
                 ? `${item.year.split('~')[0]}년 ~ ${item.year.split('~')[1]}년`
                 : `${item.year}년`}
             </h4>
-            <div className="w-full md:w-5/6 text-left md:text-left text-base md:text-xl">
+            <div className="w-full text-left text-base md:w-5/6 md:text-left md:text-xl">
               {Array.isArray(item.event) ? (
                 <>
                   {item.event.map((subEvent, index) => (

@@ -9,12 +9,9 @@ const SelectBusiness = () => {
   return (
     <div>
       {isBusinessDetail && (
-        <SectionLayout
-          className="mx-auto max-w-3xl pt-40"
-          titlePadding="p-0">
+        <SectionLayout className="mx-auto max-w-3xl pt-40" titlePadding="p-0">
           <h2 className="text-left text-4xl leading-tight font-extrabold">
-            비젼라이프를
-            소개합니다.
+            비젼라이프를 소개합니다.
           </h2>
           <div className="grid w-full max-w-4xl grid-cols-2 gap-8 pt-14">
             {/* Overview */}
