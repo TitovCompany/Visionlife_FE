@@ -1,5 +1,5 @@
 import imageSrc from '/img/home/p2.jpg';
-import HeroSection from '../../features/profile/components/HeroSection.tsx';
+import HeroSection from '../../layout/HeroSection.tsx';
 import TabList from '../../components/Tab/TabList.tsx';
 import TabNavLinkItem from '../../components/Tab/TabNavLinkItem.tsx';
 import PageLayout from '../../layout/PageLayout.tsx';
@@ -19,9 +19,8 @@ const ProfileLayout = () => {
       isMinHeight={false}>
       {/* Hero Section: 모바일에서는 h-80, sm에서는 410px, md 이상에서는 635px */}
       <HeroSection
-        src={imageSrc}
-        sectionClass="h-80 sm:h-[410px] md:h-[635px]"
-      />
+        sectionClass="h-80 sm:h-[410px] md:h-[635px] grid grid-cols-1 grid-rows-1"
+        src={imageSrc}/>
 
       {/* TabList: 모바일에서는 세로 full-width, sm 이상에서는 인라인 배치 */}
       <div className="bg-[#f3f3f3]">

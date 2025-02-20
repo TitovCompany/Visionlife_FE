@@ -1,6 +1,6 @@
 import imageSrc from '/img/banner/p1.jpg';
 import PageLayout from '../../layout/PageLayout.tsx';
-import HeroSection from '../profile/components/HeroSection.tsx';
+import HeroSection from '../../layout/HeroSection.tsx';
 import MoreNewsSection from './components/MoreNewsSection.tsx';
 import BusinessSectionLayout from '../../layout/BusinessSectionLayout.tsx';
 import intro from '../../data/home/intro.json';
@@ -19,7 +19,7 @@ const Home = () => {
       isFullHeight={false}
       isMinHeight={false}>
       <HeroSection
-        sectionClass="h-[310px] sm:h-[410px] md:h-[635px] grid grid-cols-1 grid-rows-1"
+        sectionClass="h-80 sm:h-[410px] md:h-[635px] grid grid-cols-1 grid-rows-1"
         src={imageSrc} />
       <div className="mx-auto h-auto w-full max-w-md xs:max-w-2xl">
         <h2 className="pt-10 pb-10 text-center text-base xs:text-lg leading-relaxed font-semibold md:pt-20 md:text-3xl">
