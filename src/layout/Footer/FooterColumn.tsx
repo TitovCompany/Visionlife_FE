@@ -25,18 +25,18 @@ const FooterColumn: React.FC<FooterColumnProps> = memo((props) => {
 
   const titleClasses = clsx(`
   w-full py-5 flex justify-between  items-center gap-2 text-lg font-semibold cursor-pointer 
-  md:mb-4 md:py-0 md:cursor-default md:justify-around`);
+  lg:mb-4 lg:py-0 lg:cursor-default lg:justify-around`);
 
   const listClasses = clsx(`
-   md:max-h-full md:opacity-100 md:text-center
+   lg:max-h-full lg:opacity-100 lg:text-center
    text-left overflow-hidden transition-all duration-300 
   ${isOpen ? 'pb-6 max-h-40 opacity-100' : 'pb-0 max-h-0 opacity-0'}`);
 
   return (
-    <div className="mx-auto flex w-full max-w-xs flex-col border-b border-b-gray-300 sm:border-b-0 md:items-center">
+    <div className="mx-auto flex w-full max-w-xl lg:max-w-xs flex-col border-b border-b-gray-300 lg:border-b-0 lg:items-center">
       <strong className={titleClasses} onClick={handleClick}>
         {title}
-        <span className="text-gray-400 md:hidden">
+        <span className="text-gray-400 lg:hidden">
           {isOpen ? <FaChevronUp /> : <FaChevronDown />}
         </span>
       </strong>
@@ -45,7 +45,7 @@ const FooterColumn: React.FC<FooterColumnProps> = memo((props) => {
         {sortedLinks.map((item, index) => (
           <li
             key={index}
-            className="hover:text-primary pb-5 transition md:pb-0">
+            className="hover:text-primary pb-5 transition lg:pb-0">
             <Link to={item.path}>{item.name}</Link>
           </li>
         ))}
