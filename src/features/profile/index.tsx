@@ -4,6 +4,7 @@ import TabList from '../../components/Tab/TabList.tsx';
 import TabNavLinkItem from '../../components/Tab/TabNavLinkItem.tsx';
 import PageLayout from '../../layout/PageLayout.tsx';
 import {NavLink, Outlet} from 'react-router-dom';
+import Dropdown from '../../components/Dropdown.tsx';
 
 const TAB_LIST = [
   {title: '회사 소개', href: '/company/profile'},
@@ -24,7 +25,7 @@ const ProfileLayout = () => {
 
       {/* TabList: 모바일에서는 세로 full-width, sm 이상에서는 인라인 배치 */}
       <div className="bg-[#f3f3f3]">
-        <TabList className="mx-auto flex max-w-5xl flex-wrap justify-center gap-8">
+        <TabList className="hidden max-w-5xl mx-auto md:flex md:flex-wrap md:justify-center md:gap-8">
           {TAB_LIST.map((item, idx) => (
             <TabNavLinkItem
               key={idx}
@@ -36,6 +37,7 @@ const ProfileLayout = () => {
             />
           ))}
         </TabList>
+        <Dropdown title="메뉴 보기" items={TAB_LIST} />
       </div>
       <Outlet />
     </PageLayout>

@@ -1,7 +1,8 @@
-import React, {memo, useMemo, useState} from 'react';
+import React, {memo, useMemo} from 'react';
 import {Link} from 'react-router-dom';
 import {FaChevronDown, FaChevronUp} from 'react-icons/fa';
 import clsx from 'clsx';
+import useToggle from '../../hooks/useToggle.ts';
 
 interface FooterColumnProps {
   title: string;
@@ -13,11 +14,11 @@ interface SubLinks {
   path: string;
 }
 
-const FooterColumn: React.FC<FooterColumnProps> = memo((props) => {
-  const {title, subLinks} = props;
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = () => setIsOpen(!isOpen);
+const FooterColumn: React.FC<FooterColumnProps> = memo(({
+  title,
+  subLinks
+}) => {
+  const { isOpen, toggle } = useToggle();
 
   const sortedLinks = useMemo(() => {
     return [...subLinks].sort((a, b) => a.name.localeCompare(b.name));
@@ -34,7 +35,7 @@ const FooterColumn: React.FC<FooterColumnProps> = memo((props) => {
 
   return (
     <div className="mx-auto flex w-full max-w-xs sm:max-w-sm md:max-w-xl flex-col border-b border-b-gray-300 lg:border-b-0 lg:items-center">
-      <strong className={titleClasses} onClick={handleClick}>
+      <strong className={titleClasses} onClick={toggle}>
         {title}
         <span className="text-gray-400 lg:hidden">
           {isOpen ? <FaChevronUp /> : <FaChevronDown />}
