@@ -52,11 +52,11 @@ const Profile = () => {
           {comment.data.map((item, index) => (
             <p
               key={index}
-              className="pt-14 text-base leading-relaxed sm:text-lg md:text-xl">
+              className="profile_item pt-14 text-base leading-relaxed sm:text-lg md:text-xl">
               {item.text}
             </p>
           ))}
-          <p className="pt-14 text-base leading-relaxed font-semibold sm:text-lg md:text-xl">
+          <p className="profile_item pt-14 text-base leading-relaxed font-semibold sm:text-lg md:text-xl">
             <span className="text-primary">비전라이프 홀딩스</span>와<br />
             함께 더 나은 내일을 만듭니다.
           </p>
