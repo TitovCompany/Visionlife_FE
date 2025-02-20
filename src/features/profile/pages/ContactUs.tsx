@@ -41,8 +41,8 @@
     return (
       <SectionLayout
         title="CONTACT US"
-        className="mx-auto px-4 sm:px-6 md:px-8 lg:px-5 flex max-w-6xl xl:max-w-7xl flex-col items-center justify-center py-12 sm:py-16 lg:py-20"
-        titleClassName="py-6 text-3xl lg:text-4xl font-semibold text-center"
+        className="mx-auto px-4 sm:px-6 md:px-8 lg:px-5 flex max-w-6xl xl:max-w-7xl flex-col items-center justify-center py-6 md:py-12 sm:py-16 lg:py-20"
+        titleClassName="py-6 text-2xl sm:text-3xl lg:text-4xl font-semibold text-center"
         fullHeight={false}
       >
         {/* 연락처 정보 */}
