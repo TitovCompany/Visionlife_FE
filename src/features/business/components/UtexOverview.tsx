@@ -8,13 +8,9 @@ const UtexOverview = forwardRef<HTMLDivElement, object>((_, ref) => {
       title={overview.title}
       className="mx-auto w-full max-w-7xl"
       titleClassName="hidden">
-      <article ref={ref} className="flex h-full w-full flex-col justify-between gap-14 p-4 md:flex-row">
-        <img
-          src="/img/product/p3.png"
-          alt="기기명 Coltex"
-          className="h-[300px] w-full rounded-lg object-cover md:h-[530px] md:w-1/3"
-        />
-        <div className="flex w-full flex-col justify-start md:w-2/3">
+      <article ref={ref} className="flex h-full w-full flex-col justify-between gap-14 py-4 lg:p-4 lg:flex-row">
+        <img src="/img/product/p3.png" alt="기기명 Coltex" className="h-[300px] w-full lg:rounded-lg object-cover md:h-[530px] lg:w-1/3"/>
+        <div className="flex w-full flex-col justify-start mx-auto md:w-2/3">
           <h2 className="w-full max-w-xl pb-4 text-left text-2xl leading-12 font-extrabold md:pb-8 md:text-4xl">
             비전라이프의 <span className="text-primary">UTEX</span>
             <br />
