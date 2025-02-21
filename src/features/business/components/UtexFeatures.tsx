@@ -5,17 +5,17 @@ import {forwardRef} from 'react';
 
 const UtexFeatures = forwardRef<HTMLDivElement, object>((_, ref) => {
   return (
-    <SectionLayout
-      title={features.title}
-      className="flex flex-col items-center justify-center px-4"
-      titleClassName="hidden">
-      <div className="w-full pt-12 pb-10 px-4 text-left text-2xl font-semibold">
+    <SectionLayout className="flex flex-col items-center justify-center px-4 max-w-5xl mx-auto">
+      <div className="w-full pt-12 pb-10 text-left text-2xl font-semibold">
         <p className="border-b-primary text-primary mb-3 w-fit border-b mx-1 pb-1 text-left text-sm font-bold">
           #섬유 프린팅의 새로운 기준
         </p>
-        <h3> <span className="text-primary">UTEX</span>의 차별화된<br/>4가지 핵심 기술</h3>
+        <h3 className="leading-10 text-3xl">
+          <span className="text-primary">UTEX</span>의 차별화된<br/>
+          4가지 핵심 기술
+        </h3>
       </div>
-      <div ref={ref} className="grid h-full w-full max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
+      <div ref={ref} className="grid h-full w-full grid-cols-1 gap-6 md:grid-cols-2">
         {features.items.map((item, index) => (
           <ImageCard
             key={item.id}

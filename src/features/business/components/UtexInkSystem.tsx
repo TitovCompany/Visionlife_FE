@@ -5,18 +5,15 @@ import {forwardRef} from 'react';
 
 const UtexInkSystem = forwardRef<HTMLDivElement, object>((_, ref) => {
   return (
-    <SectionLayout
-      title={ink.title}
-      className="flex flex-col items-center justify-center"
-      titleClassName="hidden">
-      {/*<h2 className="mx-auto w-full max-w-xl pt-12 pb-10 text-center text-3xl leading-tight font-extrabold sm:pt-32 sm:pb-20 sm:text-4xl">
-        <span className="text-primary">UTEX</span> 잉크 시스템
-      </h2>*/}
+    <SectionLayout className="flex flex-col items-center justify-center py-20 px-4 max-w-5xl mx-auto">
       <div className="w-full pt-12 pb-10 px-4 text-left text-2xl font-semibold">
         <p className="border-b-primary text-primary mb-3 w-fit border-b mx-1 pb-1 text-left text-sm font-bold">
           #친환경 잉크
         </p>
-        <h3>환경을 생각하는<br/>고품질 <span className="text-primary">UTEX 잉크</span></h3>
+        <h3 className="leading-10 text-3xl">
+          환경을 생각하는<br/>
+          고품질 <span className="text-primary">UTEX 잉크</span>
+        </h3>
       </div>
       <div ref={ref} className="w-full max-w-4xl space-y-8 p-4">
         {/* 상단: 한 개 */}
