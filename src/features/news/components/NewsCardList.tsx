@@ -32,14 +32,15 @@ const NewsCardList: React.FC<NewsCardListProps> = (props) => {
   const itemClasses = clsx(layout === 'vertical' && 'my-5 md:my-14');
 
   const linkClasses = clsx(
-    'flex flex-col transition duration-300 hover:opacity-80 overflow-hidden gap-4',
+    'flex flex-col transition gap-4',
+    'duration-300 hover:opacity-80 overflow-hidden',
     layout === 'horizontal' && 'cursor-pointer items-start',
-    layout === 'vertical' && 'sm:flex-row'
+    layout === 'vertical' && 'md:flex-row'
   );
 
   const imgWrapClasses = clsx(
     layout === 'horizontal' && 'w-full h-full object-cover',
-    layout === 'vertical' && 'sm:w-48 h-48 sm:h-36 flex-shrink-0'
+    layout === 'vertical' && 'w-full md:w-48 h-48 sm:h-36 flex-shrink-0'
   );
 
   const imgClasses = clsx(
@@ -58,8 +59,7 @@ const NewsCardList: React.FC<NewsCardListProps> = (props) => {
               <img
                 src={item.imageUrl || `/img/news/default-image-${item.id}.jpg`}
                 alt={item.title}
-                className={imgClasses}
-              />
+                className={imgClasses} />
             </div>
 
             {layout === 'horizontal' && (
@@ -72,12 +72,10 @@ const NewsCardList: React.FC<NewsCardListProps> = (props) => {
 
             {layout === 'vertical' && (
               <div className="flex flex-col space-y-2 p-4">
-                <div className="flex items-center space-x-2">
-                  <h3 className="text-base font-bold text-gray-800 sm:text-lg">
-                    {truncateText(item.title, 50)}
-                  </h3>
-                </div>
-                <p className="hidden md:block text-sm leading-relaxed text-gray-600">
+                <h3 className="text-base font-bold text-gray-800 sm:text-lg">
+                  {truncateText(item.title, 50)}
+                </h3>
+                <p className="hidden lg:block text-sm leading-relaxed text-gray-600">
                   {truncateText(item.content, 150)}
                 </p>
                 <p className="text-xs text-gray-500">
