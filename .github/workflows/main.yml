@@ -51,7 +51,8 @@ jobs:
         with:
           host: ${{ secrets.NCP_HOST }}
           username: ${{ secrets.NCP_USER }}
-          key: ${{ secrets.NCP_SSH_KEY }}
+          # key: ${{ secrets.NCP_SSH_KEY }}
+          password: ${{ secrets.NCP_PASS }}
           script: |
             echo "SSH Connected Successfully"
             ls -al
@@ -61,9 +62,10 @@ jobs:
         with:
           # NCP 서버 IP
           host: ${{ secrets.NCP_HOST }}
-          username: root
+          username: ${{ secrets.NCP_USER }}
           # GitHub Secrets에 저장된 SSH 키
-          key: ${{ secrets.NCP_SSH_KEY }}
+          # key: ${{ secrets.NCP_SSH_KEY }}
+          password: ${{ secrets.NCP_PASS }}
           script: |
             cd /var/www/Visionlife_FE
             git pull origin main
