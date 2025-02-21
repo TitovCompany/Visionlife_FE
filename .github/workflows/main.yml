@@ -34,8 +34,28 @@ jobs:
       - name: Build project
         run: npm run build # 또는 yarn build
 
+      # 스테이지 서버 배포 (GitHub Pages)
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages # GitHub Pages 배포 브랜치
           folder: dist # Vite의 빌드 결과 폴더 (기본값: dist)
+
+  # 라이브 서버 배포 (NCP Server)
+  deploy-to-ncp:
+    runs-on: ubuntu-latest
+    needs: deploy # GitHub Pages 배포 후 실행
+    steps:
+      - name: Deploy to NCP Server via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          # NCP 서버 IP
+          host: ${{ secrets.NCP_HOST }}
+          username: root
+          # GitHub Secrets에 저장된 SSH 키
+          key: ${{ secrets.NCP_SSH_KEY }}
+          script: |
+            cd /var/www/Visionlife_FE
+            git pull origin main
+            npm install
+            vite build
