@@ -46,6 +46,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy # GitHub Pages 배포 후 실행
     steps:
+      - name: Test SSH Connection
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.NCP_HOST }}
+          username: ${{ secrets.NCP_USER }}
+          key: ${{ secrets.NCP_SSH_KEY }}
+          script: |
+            echo "SSH Connected Successfully"
+            ls -al
+
       - name: Deploy to NCP Server via SSH
         uses: appleboy/ssh-action@master
         with:
