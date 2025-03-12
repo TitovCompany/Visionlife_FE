@@ -1,4 +1,3 @@
-import {AiOutlineArrowDown} from 'react-icons/ai';
 import NewsCard from '../../news/components/NewsCard.tsx';
 import newsData from '../../../data/news.json';
 import useInfiniteCarousel from '../../../hooks/useInfiniteCarousel.ts';
