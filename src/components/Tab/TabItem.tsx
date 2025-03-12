@@ -48,7 +48,7 @@ const TabItem: React.FC<TabItemProps> = (props) => {
         if (node) nodeRef.current = node;
         if (tabRef) tabRef(node);
       }}
-      role="tab"
+      role='tab'
       id={id ? `tab${id}` : undefined}
       aria-selected={selected ? 'true' : 'false'}
       aria-disabled={disabled ? 'true' : 'false'}

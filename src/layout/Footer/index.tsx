@@ -41,9 +41,9 @@ const Footer = memo(() => {
   );
 
   return (
-    <footer className="border-t border-t-gray-200 bg-[#f3f3f3] py-10">
-      <div className="mx-auto max-w-4xl">
-        <div className="mx-auto flex max-w-4xl flex-col justify-between gap-5 text-base lg:flex-row lg:gap-20">
+    <footer className='border-t border-t-gray-200 bg-[#f3f3f3] py-10'>
+      <div className='mx-auto max-w-4xl'>
+        <div className='mx-auto flex max-w-4xl flex-col justify-between gap-5 text-base lg:flex-row lg:gap-20'>
           {footer.map((item, index) => (
             <FooterColumn
               key={index}
@@ -54,19 +54,19 @@ const Footer = memo(() => {
         </div>
 
         {/*선*/}
-        <div className="my-8 border-t border-t-gray-200"></div>
+        <div className='my-8 border-t border-t-gray-200'></div>
 
         {/*저작권*/}
-        <div className="flex flex-col-reverse items-center justify-between gap-4 px-4 text-base lg:flex-row">
-          <p className="text-center">
+        <div className='flex flex-col-reverse items-center justify-between gap-4 px-4 text-base lg:flex-row'>
+          <p className='text-center'>
             © 2025 VisionLife. All Rights Reserved.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
+          <div className='flex flex-wrap justify-center gap-4 text-sm'>
             {policy.map((item, index) => (
               <Link
                 key={index}
                 to={item.path}
-                className="hover:text-primary transition">
+                className='hover:text-primary transition'>
                 {item.name}
               </Link>
             ))}

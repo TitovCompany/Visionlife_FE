@@ -14,11 +14,8 @@ interface SubLinks {
   path: string;
 }
 
-const FooterColumn: React.FC<FooterColumnProps> = memo(({
-  title,
-  subLinks
-}) => {
-  const { isOpen, toggle } = useToggle();
+const FooterColumn: React.FC<FooterColumnProps> = memo(({title, subLinks}) => {
+  const {isOpen, toggle} = useToggle();
 
   const sortedLinks = useMemo(() => {
     return [...subLinks].sort((a, b) => a.name.localeCompare(b.name));
@@ -34,18 +31,16 @@ const FooterColumn: React.FC<FooterColumnProps> = memo(({
   ${isOpen ? 'pb-6 max-h-40 opacity-100' : 'pb-0 max-h-0 opacity-0'}`);
 
   return (
-    <div className="mx-auto flex w-full max-w-xs sm:max-w-sm md:max-w-xl flex-col border-b border-b-gray-300 lg:border-b-0 lg:items-center">
+    <div className='mx-auto flex w-full max-w-xs flex-col border-b border-b-gray-300 sm:max-w-sm md:max-w-xl lg:items-center lg:border-b-0'>
       <strong className={titleClasses} onClick={toggle}>
         {title}
-        <span className="text-gray-400 lg:hidden">
+        <span className='text-gray-400 lg:hidden'>
           {isOpen ? <FaChevronUp /> : <FaChevronDown />}
         </span>
       </strong>
       <ul className={listClasses}>
         {sortedLinks.map((item, index) => (
-          <li
-            key={index}
-            className="hover:text-primary pb-5 transition">
+          <li key={index} className='hover:text-primary pb-5 transition'>
             <Link to={item.path}>{item.name}</Link>
           </li>
         ))}

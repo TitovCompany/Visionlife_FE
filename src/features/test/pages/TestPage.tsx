@@ -19,9 +19,9 @@ const TestPage = () => {
   }, []);
 
   return (
-    <div className="h-screen">
-      <div className="container-test bg-primary flex h-[500vh] flex-col">
-        <div className="square-fst fixed mt-32 h-[5rem] w-[5rem] bg-white"></div>
+    <div className='h-screen'>
+      <div className='container-test bg-primary flex h-[500vh] flex-col'>
+        <div className='square-fst fixed mt-32 h-[5rem] w-[5rem] bg-white'></div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import {createHashRouter} from 'react-router-dom';
+import {createBrowserRouter, createHashRouter} from 'react-router-dom';
 
 // ETC
 import Test from './features/test/index.tsx';
@@ -34,7 +34,7 @@ import TermsOfService from './pages/TermsOfService.tsx';
 import ProfileLayout from './features/profile';
 import ScrollSnap from './features/test/pages/ScrollSnap.tsx';
 
-export const router = createHashRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     Component: RootLayout,

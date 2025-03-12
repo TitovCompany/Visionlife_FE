@@ -7,7 +7,7 @@ const EmailNoCollection: React.FC = () => {
 
   if (!emailNoCollectionPolicy) {
     return (
-      <div className="text-center text-red-500">
+      <div className='text-center text-red-500'>
         불러오는 중 오류가 발생했습니다.
       </div>
     );
@@ -15,30 +15,30 @@ const EmailNoCollection: React.FC = () => {
 
   return (
     <PageLayout title={emailNoCollectionPolicy.title}>
-      <div className="mx-auto max-w-4xl p-5">
-        <h1 className="mb-4 text-2xl font-bold">
+      <div className='mx-auto max-w-4xl p-5'>
+        <h1 className='mb-4 text-2xl font-bold'>
           {emailNoCollectionPolicy.title}
         </h1>
 
         {emailNoCollectionPolicy.content.map(
           (paragraph: string, index: number) => (
-            <p key={index} className="mb-3 leading-relaxed">
+            <p key={index} className='mb-3 leading-relaxed'>
               {paragraph}
             </p>
           )
         )}
 
-        <section className="mt-6">
-          <h2 className="mb-2 text-lg font-semibold">
+        <section className='mt-6'>
+          <h2 className='mb-2 text-lg font-semibold'>
             {emailNoCollectionPolicy.law.title}
           </h2>
 
           {/* 제 50조의*/}
-          <h3 className="mt-4 text-sm font-semibold">
+          <h3 className='mt-4 text-sm font-semibold'>
             {emailNoCollectionPolicy.law.article.number}{' '}
             {emailNoCollectionPolicy.law.article.title}
           </h3>
-          <div className="mt-2">
+          <div className='mt-2'>
             {emailNoCollectionPolicy.law.article.content.map(
               (item: string, index: number) => (
                 <p key={index}>
@@ -49,11 +49,11 @@ const EmailNoCollection: React.FC = () => {
           </div>
 
           {/* 제 65조의 2*/}
-          <h3 className="mt-6 text-sm font-semibold">
+          <h3 className='mt-6 text-sm font-semibold'>
             {emailNoCollectionPolicy.law.punishment.article.number}{' '}
             {emailNoCollectionPolicy.law.punishment.article.title}
           </h3>
-          <div className="mt-2">
+          <div className='mt-2'>
             {emailNoCollectionPolicy.law.punishment.article.content.map(
               (violation: string, index: number) => (
                 <p key={index}>

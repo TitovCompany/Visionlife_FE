@@ -7,13 +7,13 @@ import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
 
 const Utex = () => {
   const sectionRef = useRef(null);
-  useScrollAnimation('.biz_item', 'top 90%')
+  useScrollAnimation('.biz_item', 'top 90%');
   return (
-    <div className="py-12 sm:py-20 lg:py-32 overflow-x-hidden">
-      <UtexOverview ref={sectionRef}/>
-      <UtexFeatures ref={sectionRef}/>
-      <UtexInkSystem ref={sectionRef}/>
-      <UtexComparison ref={sectionRef}/>
+    <div className='overflow-x-hidden py-12 sm:py-20 lg:py-32'>
+      <UtexOverview ref={sectionRef} />
+      <UtexFeatures ref={sectionRef} />
+      <UtexInkSystem ref={sectionRef} />
+      <UtexComparison ref={sectionRef} />
     </div>
   );
 };

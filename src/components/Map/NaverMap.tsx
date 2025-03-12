@@ -88,7 +88,7 @@ function NaverMap({
   {
     /* 위치 정보(지도) */
   }
-  return <>{isMapLoaded && <div className="h-full w-full" />}</>;
+  return <>{isMapLoaded && <div className='h-full w-full' />}</>;
 }
 
 export default NaverMap;

@@ -7,7 +7,7 @@ import fs from 'fs';
 // test page 폴더를 제외
 const excludeTestPage = () => {
   const testPagePath = path.resolve(__dirname, 'src/test');
-  return fs.existsSync(testPagePath) ? { test_page: testPagePath } : {};
+  return fs.existsSync(testPagePath) ? {test_page: testPagePath} : {};
 };
 
 // https://vite.dev/config/
@@ -89,9 +89,7 @@ export default defineConfig(({mode}) => {
         main: path.resolve(__dirname, 'index.html'),
 
         // test page 폴더를 배포에서 제외
-        ...(isProduction && excludeTestPage()
-          ? {}
-          : { test: excludeTestPage() }),
+        ...(isProduction && excludeTestPage() ? {} : {test: excludeTestPage()}),
       },
 
       // 브라우저 지원 대상
@@ -104,5 +102,5 @@ export default defineConfig(({mode}) => {
     },
 
     plugins: [react(), tailwindcss()],
-  }
+  };
 });

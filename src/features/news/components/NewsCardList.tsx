@@ -59,26 +59,27 @@ const NewsCardList: React.FC<NewsCardListProps> = (props) => {
               <img
                 src={item.imageUrl || `/img/news/default-image-${item.id}.jpg`}
                 alt={item.title}
-                className={imgClasses} />
+                className={imgClasses}
+              />
             </div>
 
             {layout === 'horizontal' && (
-              <div className="flex flex-grow flex-col p-4">
-                <h3 className="mb-2 text-lg font-semibold text-gray-800">
+              <div className='flex flex-grow flex-col p-4'>
+                <h3 className='mb-2 text-lg font-semibold text-gray-800'>
                   {item.title}
                 </h3>
               </div>
             )}
 
             {layout === 'vertical' && (
-              <div className="flex flex-col space-y-2 p-4">
-                <h3 className="text-base font-bold text-gray-800 sm:text-lg">
+              <div className='flex flex-col space-y-2 p-4'>
+                <h3 className='text-base font-bold text-gray-800 sm:text-lg'>
                   {truncateText(item.title, 50)}
                 </h3>
-                <p className="hidden lg:block text-sm leading-relaxed text-gray-600">
+                <p className='hidden text-sm leading-relaxed text-gray-600 lg:block'>
                   {truncateText(item.content, 150)}
                 </p>
-                <p className="text-xs text-gray-500">
+                <p className='text-xs text-gray-500'>
                   <span>{item.author}</span> |{' '}
                   <span>
                     {new Date(item.publishedDate).toLocaleDateString()}
