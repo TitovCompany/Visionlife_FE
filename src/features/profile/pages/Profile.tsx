@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 const Profile = () => {
  useGSAP(() => {
-  const panels = gsap.utils.toArray(".pSection");
+  const panels = gsap.utils.toArray(".pSection") as HTMLElement[];
   panels.forEach((panel) => {
    ScrollTrigger.create({
     trigger: panel,
