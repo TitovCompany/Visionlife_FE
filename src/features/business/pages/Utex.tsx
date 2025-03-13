@@ -10,6 +10,13 @@ const Utex = () => {
   useScrollAnimation('.biz_item', 'top 90%');
   return (
     <div className='overflow-x-hidden py-12 sm:py-20 lg:py-32'>
+     <video
+      src='/video/print.mp4'
+      controls={false}
+      autoPlay
+      loop
+      muted
+      playsInline/>
       <UtexOverview ref={sectionRef} />
       <UtexFeatures ref={sectionRef} />
       <UtexInkSystem ref={sectionRef} />

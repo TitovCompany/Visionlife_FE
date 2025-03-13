@@ -16,6 +16,13 @@ const Overview = () => {
     title='비전라이프 사업 소개'
     className='mx-auto grid w-full place-items-center overflow-x-hidden sm:py-16 md:py-32'
     titleClassName='hidden'>
+    <video
+     src='/video/eco.mp4'
+     controls={false}
+     autoPlay
+     loop
+     muted
+     playsInline/>
     <article
      className={`${maxWidth} flex w-full flex-col-reverse gap-10 leading-relaxed md:text-xl lg:flex-row`}>
      <div className='mx-auto w-full max-w-xs sm:max-w-sm md:mr-auto md:max-w-lg'>
