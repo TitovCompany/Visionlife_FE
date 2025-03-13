@@ -4,6 +4,7 @@
     "href": "/company/profile",
     "sub": [
       {"label": "Who We Are", "href": "/company/profile"},
+      {"label": "CEO’s Vision", "href": "/company/profile/ceo"},
       {"label": "Story", "href": "/company/profile/history"},
       {"label": "Location", "href": "/company/profile/contact"}
     ]
