@@ -8,6 +8,7 @@ import WhyUsSection from './components/WhyUsSection.tsx';
 import GlobalBusiness from './components/GlobalBusiness.tsx';
 import Media from './components/Media.tsx';
 import HeroV2 from './components/Hero_v2.tsx';
+import Solutions from './components/Solutions.tsx';
 
 gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
@@ -27,6 +28,7 @@ const Home = () => {
      </div>
     </section>*/}
     <Media />
+    <Solutions/>
     <GlobalBusiness />
    </main>
   </>

@@ -2,8 +2,8 @@ import news from '../../../data/news.json';
 
 const Media = () => {
  return (
-  <section className='bg-primary text-color py-20'>
-   <h2 className='text-5xl font-bold'>MEDIA</h2>
+  <section className='pb-20'>
+   <h2 className='text-5xl font-bold'>News</h2>
    <article className='mx-auto max-w-2xl py-10'>
     {/* Media Carousel */}
     <div className='relative border-color flex items-start justify-around border-2'>
