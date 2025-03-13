@@ -40,7 +40,7 @@ const contactInfo = [
 const ContactUs = () => {
   return (
     <SectionLayout
-      title='CONTACT US'
+      title='Let&apos;s Stay Connected'
       className='mx-auto flex max-w-6xl flex-col items-center justify-center px-4 py-6 sm:px-6 sm:py-16 md:px-8 md:py-12 lg:px-5 lg:py-20 xl:max-w-7xl'
       titleClassName='py-6 text-2xl sm:text-3xl lg:text-4xl font-semibold text-center'
       fullHeight={false}>
