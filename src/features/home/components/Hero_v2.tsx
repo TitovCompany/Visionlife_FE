@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import {useGSAP} from '@gsap/react';
 
 const carouselItems = [
- {title: 'Title 01', src: '/img/home/p1.webp'},
+ {title: 'Title 01', src: '/img/home/ceo01.webp'},
  {title: 'Title 02', src: '/img/home/p2.webp'},
  {title: 'Title 03', src: '/img/home/p3.webp'},
 ];

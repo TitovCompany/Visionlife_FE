@@ -18,13 +18,10 @@ const ProfileLayout = () => {
   return (
     <>
       <Header />
-      <PageLayout
-        title='회사 소개 페이지 본문'
-        isFullHeight={false}
-        isMinHeight={false}>
+      <PageLayout title='회사 소개 페이지 본문'>
         {/* Hero Section: 모바일에서는 h-80, sm에서는 410px, md 이상에서는 635px */}
         <HeroSection
-          sectionClass='h-80 sm:h-[410px] md:h-[635px] grid grid-cols-1 grid-rows-1'
+          sectionClass='h-80 md:h-[400px] grid grid-cols-1 grid-rows-1'
           src={imageSrc}
         />
 

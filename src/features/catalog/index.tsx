@@ -17,7 +17,7 @@ const Catalog = () => {
   );*/
 
   return (
-    <PageLayout title='카탈로그' isFullHeight={false} isMinHeight={false}>
+    <PageLayout title='카탈로그'>
       <div className='xs:max-w-xs mx-auto min-h-full w-full px-2 sm:max-w-sm md:max-w-2xl lg:max-w-4xl xl:max-w-6xl'>
         <div className='py-12 md:py-16 lg:py-20'>
           <h1 className='border-b-primary border-b pb-8 text-left text-4xl font-bold text-gray-900'>
