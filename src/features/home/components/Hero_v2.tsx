@@ -27,17 +27,24 @@ const HeroV2 = () => {
 
  useGSAP(() => {
   if (sliderRef.current.length === 0) return;
+
+  // 기존 애니메이션 정리
+  gsap.killTweensOf(sliderRef.current);
+  gsap.killTweensOf(slideTimeRef.current);
+
     // 슬라이드 이동 애니메이션
     gsap.to(sliderRef.current, {
      xPercent: -100 * currentIndex,
     })
   
     // 프로그래스 바 애니메이션 (5초 동안 증가)
-    gsap.fromTo(slideTimeRef.current, { width: '0%'},{
+    gsap.fromTo(slideTimeRef.current, {
+     width: '0%'
+    },{
      width: '100%',
-     duration: 5000,
+     duration: 5,
      ease: "linear",
-    })
+    });
  }, [currentIndex]);
 
  // 버튼 클릭시 슬라이드 변경
@@ -88,7 +95,7 @@ const HeroV2 = () => {
    </div>
 
    <div className='relative z-[9999]'>
-    <nav className='text-color w-full py-5'>
+    <nav className='text-color w-full pt-5'>
      <ul className='mx-auto flex w-full max-w-xl justify-between'>
       {buttonList.map((item, index) => (
         <li
@@ -104,7 +111,7 @@ const HeroV2 = () => {
     </nav>
 
     {/* 프로그래스 바 */}
-    <div className='bg-gray-200'>
+    <div className='w-full bg-gray-200'>
      <div ref={slideTimeRef} className='bg-primary h-3'></div>
     </div>
    </div>

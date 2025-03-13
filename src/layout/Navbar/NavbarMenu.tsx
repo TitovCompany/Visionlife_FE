@@ -14,14 +14,14 @@ const NavbarMenu: React.FC<NavbarMenuProps> = (props) => {
   onMouseLeave,
  } = props;
  const componentClasses = clsx(
-  type !== '_mobile' && 'w-full max-w-3xl ml-auto',
+  type !== '_mobile' && 'max-w-3xl',
   type === '_mobile' && 'px-4 py-2'
  );
 
  const listClasses = clsx(
   type === '_nav' && 'text-lg font-medium',
-  type === '_sub' && 'text-base font-normal',
-  type !== '_mobile' && 'grid grid-cols-4 text-center',
+  type === '_sub' && 'text-base font-normal gap-7',
+  type !== '_mobile' && 'flex gap-5 text-center',
   type === '_mobile' && 'space-y-2'
  );
 
@@ -32,7 +32,7 @@ const NavbarMenu: React.FC<NavbarMenuProps> = (props) => {
 
  const linkClasses = clsx(
   type === '_nav' && 'py-5 hover:font-semibold',
-  type === '_sub' && 'py-2 hover:text-primary',
+  type === '_sub' && 'py-2 hover:border-b-2 hover:border-color',
   `block`
  );
 
