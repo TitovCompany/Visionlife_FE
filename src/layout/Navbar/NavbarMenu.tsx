@@ -20,7 +20,7 @@ const NavbarMenu: React.FC<NavbarMenuProps> = (props) => {
 
  const listClasses = clsx(
   type === '_nav' && 'text-lg font-medium',
-  type === '_sub' && 'text-base font-normal gap-7',
+  type === '_sub' && 'text-base fonts-normal gap-7',
   type !== '_mobile' && 'flex gap-5 text-center',
   type === '_mobile' && 'space-y-2'
  );
@@ -31,7 +31,7 @@ const NavbarMenu: React.FC<NavbarMenuProps> = (props) => {
  );
 
  const linkClasses = clsx(
-  type === '_nav' && 'py-5 hover:font-semibold',
+  type === '_nav' && 'py-5 hover:fonts-semibold',
   type === '_sub' && 'py-2 hover:border-b-2 hover:border-color',
   `block`
  );

@@ -15,6 +15,22 @@
   --breakpoint-2xl: 1536px;
 }
 
+/* Font */
+@font-face {
+  font-family: 'NotoSansKR';
+  src: url('/public/fonts/NotoSansKR-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSansKR';
+  src: url('/public/fonts/NotoSansKR-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
 body {
   overflow-x: hidden;
   overflow-y: auto;
@@ -22,6 +38,7 @@ body {
   color: var(--color-color);*/
   font-size: 14px;
   line-height: 1.5;
+  font-family: 'NotoSansKR', sans-serif;
 }
 
 html,

@@ -17,7 +17,7 @@ const TabNavLinkItem: React.FC<TabNavLinkItemProps> = (props) => {
     title,
     href,
     itemClass,
-    activeClass = 'text-primary font-bold',
+    activeClass = 'text-primary fonts-bold',
     ...attributes
   } = props;
 

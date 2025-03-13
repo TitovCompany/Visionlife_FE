@@ -23,7 +23,7 @@ const AnimatedHeading: React.FC<HoverUnderlineTitleProps> = (props) => {
   } = props;
 
   const classes = clsx(
-    'relative inline-block font-semibold text-gray-800',
+    'relative inline-block fonts-semibold text-gray-800',
     className
   );
 
