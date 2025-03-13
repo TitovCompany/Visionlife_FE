@@ -1,60 +1,75 @@
-import {useRef} from 'react';
+// import {useRef} from 'react';
 import history from '../../../data/profile/history.json';
-import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
+// import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
+import clsx from 'clsx';
 
 const History = () => {
- const sectionRef = useRef(null);
- useScrollAnimation('.history_item', 'top 80%');
+ // const sectionRef = useRef(null);
+ // useScrollAnimation('.history_item', 'top 80%');
  return (
-  <section
-   ref={sectionRef}
-   className='mx-auto min-h-screen w-full max-w-3xl overflow-x-hidden px-4 py-16 md:py-32'>
-   <video
-    src='/video/history.mp4'
-    controls={false}
-    autoPlay
-    loop
-    muted
-    playsInline/>
-   {/* Header */}
-   <header className='mb-10 font-bold md:mb-20'>
-    <h2 className='mb-4 text-2xl md:mb-10 md:text-4xl'>
-     <span className='text-primary'>비젼라이프</span>가 걸어온 길
-    </h2>
-    <h3 className='text-lg md:text-3xl'>
-     지속 가능한 세상을 만들기 위한
-     <br />
-     비젼라이프의 노력과 성취를 돌아봅니다.
-    </h3>
-   </header>
-   {/* Content */}
-   <ul className='flex flex-col space-y-8 md:space-y-12'>
-    {history.map((item) => (
-     <li
+  <>
+   {/* Hero */}
+   <section className='relative'>
+    <video
+     width='100%'
+     height='100%'
+     src='/video/history.mp4'
+     controls={false}
+     autoPlay
+     loop
+     muted
+     playsInline
+    />
+    {/* Header */}
+    <div className='absolute top-1/2 left-1/2 mb-10 -translate-x-1/2 -translate-y-1/2 text-center font-bold text-white md:mb-20'>
+     <h2 className='mb-4 text-2xl md:mb-10 md:text-6xl'>비젼라이프의 여정</h2>
+     <h3 className='text-lg leading-10 md:text-3xl'>
+      더 나은 미래를 위한 혁신과 도전,
+      <br />
+      비전라이프가 걸어온 길을 함께합니다.
+     </h3>
+    </div>
+   </section>
+   {/* History */}
+   <section className='flex flex-col space-y-8 md:space-y-12'>
+    {history.map((item, index) => (
+     <article
       key={item.id}
-      className='history_item flex flex-col items-center justify-start gap-2 md:flex-row md:items-start md:gap-10'>
-      <h4 className='w-full text-left text-xl font-semibold md:w-1/6 md:text-right md:text-2xl'>
-       {item.year.includes('~')
-        ? `${item.year.split('~')[0]}년 ~ ${item.year.split('~')[1]}년`
-        : `${item.year}년`}
-      </h4>
-      <div className='w-full text-left text-base md:w-5/6 md:text-left md:text-xl'>
-       {Array.isArray(item.event) ? (
-        <>
-         {item.event.map((subEvent, index) => (
-          <p key={index} className='list-disc'>
-           {subEvent}
-          </p>
-         ))}
-        </>
-       ) : (
-        <p>{item.event}</p>
-       )}
+      className={clsx(
+       'px-20 py-10',
+       'flex flex-col items-center justify-start',
+       index % 2 === 0 && 'bg-primary text-color w-3/4'
+      )}>
+      {/* History - header */}
+      <div className='w-full text-left font-bold'>
+       <h2 className='text-xl md:text-2xl'>
+        {item.year.includes('~')
+         ? `${item.year.split('~')[0]}년 ~ ${item.year.split('~')[1]}년`
+         : `${item.year}년`}
+       </h2>
+       <h3 className='text-lg leading-10 md:text-3xl'>{item.title}</h3>
       </div>
-     </li>
+      {/* History - Contents */}
+      <div className='mt-5 w-full text-left text-base'>
+       <p className='mb-2 md:text-xl'>
+        {Array.isArray(item.event) ? (
+         <>
+          {item.event.map((subEvent, index) => (
+           <p key={index} className='list-disc'>
+            {subEvent}
+           </p>
+          ))}
+         </>
+        ) : (
+         <p>{item.event}</p>
+        )}
+       </p>
+       <p>{item.description}</p>
+      </div>
+     </article>
     ))}
-   </ul>
-  </section>
+   </section>
+  </>
  );
 };
 

@@ -13,7 +13,7 @@ const Footer = memo(() => {
   );
 
   return (
-    <footer className='border-t border-t-gray-200 py-10'>
+    <footer className='border-t border-t-gray-200 py-10 mt-20'>
      <div className='flex flex-col items-center justify-between gap-4 px-4 text-base'>
       <div className='flex flex-wrap justify-center gap-4 text-sm'>
        {policy.map((item, index) => (
