@@ -11,7 +11,8 @@ const Header = ({ref}: {ref?: RefObject<HTMLDivElement | null>}) => {
    id='header'
    ref={ref}
    className={clsx(
-    'bg-primary text-color',
+    //'bg-primary text-color',
+    'text-black',
     'fixed top-0 left-0 z-50 w-full',
     'transition-transform duration-300',
     isVisible ? 'translate-y-0' : '-translate-y-full'

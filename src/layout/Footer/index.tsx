@@ -25,7 +25,7 @@ const Footer = memo(() => {
         </Link>
        ))}
       </div>
-      <p className='text-center'>
+      <p className='text-center text-sm'>
        © 2025 PROUTEX. All Rights Reserved.
       </p>
      </div>

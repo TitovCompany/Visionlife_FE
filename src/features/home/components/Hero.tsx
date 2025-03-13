@@ -1,6 +1,6 @@
 const Hero = () => {
  return (
-  <section className='bg-primary text-color pt-52 pb-72'>
+  <section className='bg-primary text-color pt-20 pb-72'>
    <article className='flex flex-col items-center justify-center'>
     <img
      src='/img/logo.webp'
