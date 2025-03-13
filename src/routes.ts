@@ -1,4 +1,4 @@
-import {createBrowserRouter, createHashRouter} from 'react-router-dom';
+import {createBrowserRouter} from 'react-router-dom';
 
 // ETC
 import Test from './features/test/index.tsx';
@@ -33,6 +33,7 @@ import EmailNoCollection from './pages/EmailNoCollection.tsx';
 import TermsOfService from './pages/TermsOfService.tsx';
 import ProfileLayout from './features/profile';
 import ScrollSnap from './features/test/pages/ScrollSnap.tsx';
+import CEO from './features/profile/pages/CEO.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,7 @@ export const router = createBrowserRouter([
         children: [
           {index: true, Component: Profile},
           {path: 'history', Component: History},
+          {path: 'ceo', Component: CEO},
           {path: 'contact', Component: ContactUs},
         ],
       },

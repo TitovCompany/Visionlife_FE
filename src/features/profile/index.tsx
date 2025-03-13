@@ -9,7 +9,7 @@ import imageSrc from '../../../public/img/banner/p1.jpg';
 
 const TAB_LIST = [
   {title: '회사 소개', href: '/company/profile'},
-  {title: 'CEO 인사말', href: '/'},
+  {title: 'CEO 인사말', href: '/company/profile/ceo'},
   {title: '회사 연혁', href: '/company/profile/history'},
   {title: '오시는길', href: '/company/profile/contact'},
 ];
