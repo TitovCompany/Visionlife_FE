@@ -13,10 +13,10 @@ const BusinessPoint: React.FC<BusinessPointProps> = ({
   point,
   title,
   src,
-  isReversed = false
+  isReversed = false,
 }) => {
   const sectionRef = useRef(null);
-  useScrollAnimation('.biz_item', 'top 80%')
+  useScrollAnimation('.biz_item', 'top 80%');
 
   const containerClasses = clsx(
     'biz_item mt-36 grid w-full items-center gap-10',
@@ -43,15 +43,15 @@ const BusinessPoint: React.FC<BusinessPointProps> = ({
     <article ref={sectionRef} className={containerClasses}>
       {/* 이미지 섹션 */}
       <div className={imageContainerClasses}>
-        <img src={src} alt="" className={imageClasses} />
+        <img src={src} alt='' className={imageClasses} />
       </div>
 
       {/* 텍스트 섹션 */}
       <div className={textContainerClasses}>
-        <p className="text-primary text-2xl font-semibold md:text-3xl xl:text-4xl">
+        <p className='text-primary text-2xl font-semibold md:text-3xl xl:text-4xl'>
           #{point}
         </p>
-        <h2 className="text-2xl font-bold leading-relaxed md:text-xl lg:text-2xl xl:text-3xl">
+        <h2 className='text-2xl leading-relaxed font-bold md:text-xl lg:text-2xl xl:text-3xl'>
           {title}
         </h2>
       </div>

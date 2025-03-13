@@ -30,9 +30,9 @@ const ListCard = ({
     <li className={classes}>
       {type === '_highlight' && (
         <>
-          <div className="mb-2 flex max-w-fit items-center justify-between gap-2">
+          <div className='mb-2 flex max-w-fit items-center justify-between gap-2'>
             {icon}
-            <span className="text-lg font-semibold">{title}</span>
+            <span className='text-lg font-semibold'>{title}</span>
           </div>
           <p>{description}</p>
         </>
@@ -41,8 +41,8 @@ const ListCard = ({
       {type === '_base' && (
         <>
           {icon}
-          <div className="mb-2 flex max-w-fit flex-col justify-start gap-1">
-            <span className="text-lg font-semibold">{title}</span>
+          <div className='mb-2 flex max-w-fit flex-col justify-start gap-1'>
+            <span className='text-lg font-semibold'>{title}</span>
             <p>{description}</p>
           </div>
         </>

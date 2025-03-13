@@ -5,27 +5,27 @@ import PageLayout from '../layout/PageLayout';
 const ContentRenderer: React.FC<{content: string | string[]}> = ({content}) => {
   if (Array.isArray(content)) {
     return (
-      <ul className="mt-2 mb-4 list-inside list-disc pl-0">
+      <ul className='mt-2 mb-4 list-inside list-disc pl-0'>
         {content.map((item, idx) => (
           <li key={idx}>{item}</li>
         ))}
       </ul>
     );
   }
-  return <p className="mt-2 mb-4">{content}</p>;
+  return <p className='mt-2 mb-4'>{content}</p>;
 };
 
 const TableRenderer: React.FC<{headers: string[]; rows: any[]}> = ({
   headers,
   rows,
 }) => (
-  <table className="mb-4 min-w-full border border-gray-300">
+  <table className='mb-4 min-w-full border border-gray-300'>
     <thead>
       <tr>
         {headers.map((header, idx) => (
           <th
             key={idx}
-            className="border border-gray-300 bg-gray-100 px-4 py-2 text-center">
+            className='border border-gray-300 bg-gray-100 px-4 py-2 text-center'>
             {header}
           </th>
         ))}
@@ -37,7 +37,7 @@ const TableRenderer: React.FC<{headers: string[]; rows: any[]}> = ({
           {headers.map((header, i) => (
             <td
               key={i}
-              className="border border-gray-300 px-4 py-2 text-center">
+              className='border border-gray-300 px-4 py-2 text-center'>
               {row[header]}
             </td>
           ))}
@@ -51,7 +51,7 @@ const SectionTitle: React.FC<{index: number; title: string}> = ({
   index,
   title,
 }) => (
-  <h2 className="mb-2 text-xl font-semibold">
+  <h2 className='mb-2 text-xl font-semibold'>
     {index}. {title}
   </h2>
 );
@@ -61,17 +61,17 @@ const PrivacyPolicy: React.FC = () => {
 
   if (!data || !data.privacyPolicy) {
     return (
-      <div className="text-center text-red-500">
+      <div className='text-center text-red-500'>
         불러오는 중 오류가 발생했습니다.
       </div>
     );
   }
   return (
-    <PageLayout title="개인정보처리방침">
-      <div className="mx-auto max-w-4xl p-5">
+    <PageLayout title='개인정보처리방침'>
+      <div className='mx-auto max-w-4xl p-5'>
         {/* 0. 소개 (메인 타이틀, 번호 없음) */}
         <section id={data.privacyPolicy.introduction.id}>
-          <h1 className="mb-4 text-2xl font-bold">개인정보처리방침</h1>
+          <h1 className='mb-4 text-2xl font-bold'>개인정보처리방침</h1>
           <ContentRenderer content={data.privacyPolicy.introduction.notice} />
         </section>
 
@@ -107,8 +107,8 @@ const PrivacyPolicy: React.FC = () => {
             content={data.privacyPolicy.collectedInformation.description}
           />
           {data.privacyPolicy.collectedInformation.collectedItems && (
-            <div className="mb-4">
-              <ul className="list-inside list-disc">
+            <div className='mb-4'>
+              <ul className='list-inside list-disc'>
                 {data.privacyPolicy.collectedInformation.collectedItems.map(
                   (item: any, idx: number) => (
                     <li key={idx}>
@@ -142,10 +142,10 @@ const PrivacyPolicy: React.FC = () => {
         <section id={data.retentionPeriod.id}>
           <SectionTitle index={6} title={data.retentionPeriod.subtitle} />
           <ContentRenderer content={data.retentionPeriod.description} />
-          <p className="mb-2">{data.retentionPeriod.legalBasis}</p>
+          <p className='mb-2'>{data.retentionPeriod.legalBasis}</p>
           {data.retentionPeriod.retentionDetails && (
-            <div className="mb-4">
-              <ul className="list-inside list-disc">
+            <div className='mb-4'>
+              <ul className='list-inside list-disc'>
                 {data.retentionPeriod.retentionDetails.map(
                   (item: any, idx: number) => (
                     <li key={idx}>
@@ -163,8 +163,8 @@ const PrivacyPolicy: React.FC = () => {
           <SectionTitle index={7} title={data.dataDestruction.subtitle} />
           <ContentRenderer content={data.dataDestruction.description} />
           {data.dataDestruction.destructionProcess && (
-            <div className="mb-4">
-              <h3 className="text-lg font-medium">
+            <div className='mb-4'>
+              <h3 className='text-lg font-medium'>
                 {data.dataDestruction.destructionProcess.title}
               </h3>
               <ContentRenderer
@@ -173,8 +173,8 @@ const PrivacyPolicy: React.FC = () => {
             </div>
           )}
           {data.dataDestruction.destructionMethods && (
-            <div className="mb-4">
-              <h3 className="text-lg font-medium">
+            <div className='mb-4'>
+              <h3 className='text-lg font-medium'>
                 {data.dataDestruction.destructionMethods.title}
               </h3>
               <ContentRenderer
@@ -189,8 +189,8 @@ const PrivacyPolicy: React.FC = () => {
           <SectionTitle index={8} title={data.thirdPartySharing.subtitle} />
           <ContentRenderer content={data.thirdPartySharing.description} />
           {data.thirdPartySharing.thirdPartyProvision && (
-            <div className="mb-4">
-              <h3 className="text-lg font-medium">
+            <div className='mb-4'>
+              <h3 className='text-lg font-medium'>
                 {data.thirdPartySharing.thirdPartyProvision.title}
               </h3>
               <ContentRenderer
@@ -199,8 +199,8 @@ const PrivacyPolicy: React.FC = () => {
             </div>
           )}
           {data.thirdPartySharing.exceptions && (
-            <div className="mb-4">
-              <h3 className="text-lg font-medium">
+            <div className='mb-4'>
+              <h3 className='text-lg font-medium'>
                 {data.thirdPartySharing.exceptions.title}
               </h3>
               <ContentRenderer
@@ -220,7 +220,7 @@ const PrivacyPolicy: React.FC = () => {
             content={data.dataProcessingDelegation.description}
           />
           {data.dataProcessingDelegation.delegatedTasksTable && (
-            <div className="mb-4">
+            <div className='mb-4'>
               <TableRenderer
                 headers={
                   data.dataProcessingDelegation.delegatedTasksTable.headers
@@ -230,14 +230,14 @@ const PrivacyPolicy: React.FC = () => {
             </div>
           )}
           {data.dataProcessingDelegation.contractRegulations && (
-            <div className="mb-4">
+            <div className='mb-4'>
               <ContentRenderer
                 content={data.dataProcessingDelegation.contractRegulations}
               />
             </div>
           )}
           {data.dataProcessingDelegation.changePolicy && (
-            <div className="mb-4">
+            <div className='mb-4'>
               <ContentRenderer
                 content={data.dataProcessingDelegation.changePolicy}
               />
@@ -250,7 +250,7 @@ const PrivacyPolicy: React.FC = () => {
           <SectionTitle index={10} title={data.userRights.subtitle} />
           <div>
             {data.userRights.description.map((item, index) => (
-              <p key={index} className="text-gray-700">
+              <p key={index} className='text-gray-700'>
                 {index + 1}. {item}
               </p>
             ))}
@@ -262,21 +262,21 @@ const PrivacyPolicy: React.FC = () => {
           <SectionTitle index={11} title={data.cookiePolicy.subtitle} />
           <ContentRenderer content={data.cookiePolicy.description} />
           {data.cookiePolicy.cookieUsagePurpose && (
-            <div className="mb-4">
-              <h3 className="text-lg font-medium">쿠키 사용 목적</h3>
+            <div className='mb-4'>
+              <h3 className='text-lg font-medium'>쿠키 사용 목적</h3>
               <ContentRenderer content={data.cookiePolicy.cookieUsagePurpose} />
             </div>
           )}
           {data.cookiePolicy.cookieSettings && (
-            <div className="mb-4">
-              <h3 className="text-lg font-medium">쿠키의 설치/운영 및 거부</h3>
+            <div className='mb-4'>
+              <h3 className='text-lg font-medium'>쿠키의 설치/운영 및 거부</h3>
               <ContentRenderer
                 content={data.cookiePolicy.cookieSettings.description}
               />
               {data.cookiePolicy.cookieSettings.browserSettings && (
-                <div className="mt-2">
-                  <h4 className="text-md font-medium">쿠키설정 방법</h4>
-                  <ul className="list-inside list-disc">
+                <div className='mt-2'>
+                  <h4 className='text-md font-medium'>쿠키설정 방법</h4>
+                  <ul className='list-inside list-disc'>
                     {Object.entries(
                       data.cookiePolicy.cookieSettings.browserSettings
                     ).map(([key, value], idx) => {
@@ -286,9 +286,9 @@ const PrivacyPolicy: React.FC = () => {
                           {key}:{' '}
                           <a
                             href={value as string}
-                            className="text-blue-500"
-                            target="_blank"
-                            rel="noreferrer">
+                            className='text-blue-500'
+                            target='_blank'
+                            rel='noreferrer'>
                             {value}
                           </a>
                         </li>
@@ -306,16 +306,16 @@ const PrivacyPolicy: React.FC = () => {
           <SectionTitle index={12} title={data.protectionMeasures.subtitle} />
           <ContentRenderer content={data.protectionMeasures.description} />
           {data.protectionMeasures.technicalMeasures && (
-            <div className="mb-4">
-              <h3 className="text-lg font-medium">기술적 대책</h3>
+            <div className='mb-4'>
+              <h3 className='text-lg font-medium'>기술적 대책</h3>
               <ContentRenderer
                 content={data.protectionMeasures.technicalMeasures}
               />
             </div>
           )}
           {data.protectionMeasures.managerialMeasures && (
-            <div className="mb-4">
-              <h3 className="text-lg font-medium">관리적 대책</h3>
+            <div className='mb-4'>
+              <h3 className='text-lg font-medium'>관리적 대책</h3>
               <ContentRenderer
                 content={data.protectionMeasures.managerialMeasures}
               />
@@ -328,8 +328,8 @@ const PrivacyPolicy: React.FC = () => {
           <SectionTitle index={13} title={data.contactInfo.subtitle} />
           <ContentRenderer content={data.contactInfo.description} />
           {data.contactInfo.responsiblePerson && (
-            <div className="mb-4">
-              <h3 className="text-lg font-medium">개인정보 관리 책임자</h3>
+            <div className='mb-4'>
+              <h3 className='text-lg font-medium'>개인정보 관리 책임자</h3>
               <p>이름: {data.contactInfo.responsiblePerson.name}</p>
               <p>부서: {data.contactInfo.responsiblePerson.department}</p>
               <p>직책: {data.contactInfo.responsiblePerson.position}</p>
@@ -343,8 +343,8 @@ const PrivacyPolicy: React.FC = () => {
           <SectionTitle index={14} title={data.remedyMethods.subtitle} />
           <ContentRenderer content={data.remedyMethods.description} />
           {data.remedyMethods.contacts && (
-            <div className="mb-4">
-              <ul className="list-inside list-disc">
+            <div className='mb-4'>
+              <ul className='list-inside list-disc'>
                 {data.remedyMethods.contacts.map(
                   (contact: any, idx: number) => (
                     <li key={idx}>
@@ -356,9 +356,9 @@ const PrivacyPolicy: React.FC = () => {
                           (
                           <a
                             href={contact.website}
-                            className="text-blue-500"
-                            target="_blank"
-                            rel="noreferrer">
+                            className='text-blue-500'
+                            target='_blank'
+                            rel='noreferrer'>
                             {contact.website}
                           </a>
                           )
@@ -377,7 +377,7 @@ const PrivacyPolicy: React.FC = () => {
           <SectionTitle index={15} title={data.policyChangeNotice.subtitle} />
           <ContentRenderer content={data.policyChangeNotice.description} />
           {data.policyChangeNotice.noticeDates && (
-            <div className="mb-4">
+            <div className='mb-4'>
               <p>공고일자: {data.policyChangeNotice.noticeDates['공고일자']}</p>
               <p>시행일자: {data.policyChangeNotice.noticeDates['시행일자']}</p>
             </div>

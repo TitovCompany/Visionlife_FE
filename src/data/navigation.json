@@ -1,0 +1,33 @@
+[
+  {
+    "label": "ABOUT US",
+    "href": "/company/profile",
+    "sub": [
+      {"label": "Who We Are", "href": "/company/profile"},
+      {"label": "Story", "href": "/company/profile/history"},
+      {"label": "Location", "href": "/company/profile/contact"}
+    ]
+  },
+  {
+    "label": "PRODUCT",
+    "href": "/business/overview/introduction",
+    "sub": [
+      {"label": "N-RECT", "href": "/business/overview/introduction"},
+      {"label": "PROUTEX", "href": "/business/utex/introduction"}
+    ]
+  },
+  {
+    "label": "MEDIA",
+    "href": "/company/news",
+    "sub": [
+      {"label": "MEDIA", "href": "/company/news"}
+    ]
+  },
+  {
+    "label": "RESOURCES",
+    "href": "/company/catalogs",
+    "sub": [
+      {"label": "RESOURCES", "href": "/company/catalogs"}
+    ]
+  }
+]

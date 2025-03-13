@@ -75,12 +75,12 @@ const ImageCard: React.FC<ImageCardProps> = (props) => {
       <img className={imgClasses} src={src} alt={alt} />
 
       {isFlex ? (
-        <div className="flex flex-col">
+        <div className='flex flex-col'>
           {animation && title && (
             <AnimatedHeading
-              className="mt-4 text-xl sm:text-2xl"
+              className='mt-4 text-xl sm:text-2xl'
               title={title}
-              role="heading"
+              role='heading'
             />
           )}
           <p className={descriptionClass}>{description}</p>
@@ -89,9 +89,9 @@ const ImageCard: React.FC<ImageCardProps> = (props) => {
         <>
           {animation && title && (
             <AnimatedHeading
-              className="mt-4 text-lg sm:text-xl"
+              className='mt-4 text-lg sm:text-xl'
               title={title}
-              role="heading"
+              role='heading'
             />
           )}
           <p className={descriptionClass}>{description}</p>

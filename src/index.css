@@ -1,6 +1,12 @@
 @import 'tailwindcss';
 @theme {
-  --color-primary: #25b6b1;
+  /* color */
+  --color-primary: #1a3027;
+  --color-secondary: #dbad7e;
+  --color-color: #ffe6cc;
+  /*--color-primary: #25b6b1;*/
+
+  /* size */
   --breakpoint-xs: 365px;
   --breakpoint-sm: 460px;
   --breakpoint-md: 640px;
@@ -12,6 +18,10 @@
 body {
   overflow-x: hidden;
   overflow-y: auto;
+  /*background: var(--color-primary);
+  color: var(--color-color);*/
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 html,
@@ -21,19 +31,6 @@ body,
   height: auto;
   max-width: 100%;
   min-height: 100vh;
-}
-
-body,
-button,
-input,
-select,
-td,
-textarea,
-th {
-  font-size: 14px;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #333;
 }
 
 li,

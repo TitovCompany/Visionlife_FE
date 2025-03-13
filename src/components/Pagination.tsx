@@ -15,7 +15,7 @@ const Pagination: React.FC<PaginationProps> = ({
   if (totalPages <= 1) return null;
 
   return (
-    <div className="mt-16 flex flex-wrap items-center justify-center gap-2 sm:gap-4">
+    <div className='mt-16 flex flex-wrap items-center justify-center gap-2 sm:gap-4'>
       <button
         className={`px-4 py-1 text-base sm:px-8 sm:text-lg ${
           currentPage === 1

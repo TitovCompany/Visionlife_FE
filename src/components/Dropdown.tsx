@@ -13,29 +13,26 @@ interface DropdownProps {
   items: Dropdown[];
 }
 
-const Dropdown: React.FC<DropdownProps> = ({
-  title,
-  items
-}) => {
-  const { isOpen, toggle, close } = useToggle();
+const Dropdown: React.FC<DropdownProps> = ({title, items}) => {
+  const {isOpen, toggle, close} = useToggle();
 
   return (
-    <div className="relative block md:hidden">
+    <div className='relative block md:hidden'>
       <button
         onClick={toggle}
-        className="w-full px-4 py-4 bg-gray-200 rounded-md flex items-center justify-center gap-3">
-        <span className="text-base font-semibold">{title}</span>
-        <span className="text-base font-semibold text-gray-400">
+        className='flex w-full items-center justify-center gap-3 rounded-md bg-gray-200 px-4 py-4'>
+        <span className='text-base font-semibold'>{title}</span>
+        <span className='text-base font-semibold text-gray-400'>
           {isOpen ? <FaChevronUp /> : <FaChevronDown />}
         </span>
       </button>
       {isOpen && (
-        <ul className="absolute left-0 w-full bg-white shadow-md rounded-md mt-2">
+        <ul className='absolute left-0 mt-2 w-full rounded-md bg-white shadow-md'>
           {items.map((item, idx) => (
             <li key={idx}>
               <NavLink
                 to={item.href}
-                className="block px-4 py-3 text-center hover:bg-gray-100"
+                className='block px-4 py-3 text-center hover:bg-gray-100'
                 onClick={close}>
                 {item.title}
               </NavLink>
