@@ -34,6 +34,7 @@ import TermsOfService from './pages/TermsOfService.tsx';
 import ProfileLayout from './features/profile';
 import ScrollSnap from './features/test/pages/ScrollSnap.tsx';
 import CEO from './features/profile/pages/CEO.tsx';
+import NRect from './features/business/pages/NRect.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +65,7 @@ export const router = createBrowserRouter([
         Component: Business,
         children: [
           {path: 'overview/introduction', Component: Overview},
+          {path: 'n-rect/introduction', Component: NRect},
           {path: 'utex/introduction', Component: Utex},
         ],
       },

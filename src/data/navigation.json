@@ -5,15 +5,16 @@
     "sub": [
       {"label": "Who We Are", "href": "/company/profile"},
       {"label": "CEO’s Vision", "href": "/company/profile/ceo"},
-      {"label": "Story", "href": "/company/profile/history"},
-      {"label": "Location", "href": "/company/profile/contact"}
+      {"label": "Our Story", "href": "/company/profile/history"},
+      {"label": "Our Location", "href": "/company/profile/contact"}
     ]
   },
   {
     "label": "PRODUCT",
     "href": "/business/overview/introduction",
     "sub": [
-      {"label": "N-RECT", "href": "/business/overview/introduction"},
+      {"label": "Information", "href": "/business/overview/introduction"},
+      {"label": "N-RECT", "href": "/business/n-rect/introduction"},
       {"label": "PROUTEX", "href": "/business/utex/introduction"}
     ]
   },
@@ -21,14 +22,14 @@
     "label": "MEDIA",
     "href": "/company/news",
     "sub": [
-      {"label": "MEDIA", "href": "/company/news"}
+      {"label": "News", "href": "/company/news"}
     ]
   },
   {
     "label": "RESOURCES",
     "href": "/company/catalogs",
     "sub": [
-      {"label": "RESOURCES", "href": "/company/catalogs"}
+      {"label": "Downloads", "href": "/company/catalogs"}
     ]
   }
 ]

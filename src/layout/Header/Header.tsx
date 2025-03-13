@@ -6,9 +6,15 @@ import navigation from '../../data/navigation.json';
 import NavbarMobile from '../Navbar/NavbarMobile.tsx';
 //  Logo from '../../components/Logo.tsx';
 
-const Header = ({ref}: {ref?: RefObject<HTMLDivElement | null>}) => {
+const Header = ({
+ ref,
+ className,
+}: {
+ ref?: RefObject<HTMLDivElement | null>;
+ className?: string;
+}) => {
  // Nav State
- const [isDropdownVisible, setIsDropdownVisible] = useState(true);
+ const [isDropdownVisible, setIsDropdownVisible] = useState(false);
  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
  const [openSubmenus, setOpenSubmenus] = useState<{[key: number]: boolean}>({});
 
@@ -25,6 +31,7 @@ const Header = ({ref}: {ref?: RefObject<HTMLDivElement | null>}) => {
    id='header'
    ref={ref}
    className={clsx(
+    className,
     //'bg-primary text-color',
     'bg-primary text-color',
     'fixed top-0 left-0 z-50 w-full',

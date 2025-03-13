@@ -1,71 +1,40 @@
-import SectionLayout from '../../../layout/SectionLayout.tsx';
-import {useRef} from 'react';
-import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
-import VisionScroll from '../components/VisionScroll.tsx';
-import overview from '../../../data/profile/overview.json';
-import comment from '../../../data/profile/comment.json';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
+gsap.registerPlugin(ScrollTrigger);
 const Profile = () => {
-  const sectionRef = useRef(null);
-  useScrollAnimation('.profile_item', 'top 100%');
+ useGSAP(() => {
+  const panels = gsap.utils.toArray(".pSection");
+  panels.forEach((panel) => {
+   ScrollTrigger.create({
+    trigger: panel,
+    start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+    pin: true,
+    pinSpacing: false
+   });
+  });
+ }, []);
 
-  return (
-    <div
-      ref={sectionRef}
-      className='w-full overflow-hidden px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12'>
-      {/* About */}
-      <SectionLayout
-        title='주식회사 비전 라이프 홀딩스 회사 소개'
-        className='mx-auto mb-10 flex max-w-4xl flex-col items-center justify-center lg:mb-52'
-        titleClassName='hidden'
-        fullHeight={false}>
-        <article className='mx-auto w-full max-w-3xl'>
-          <div className='pt-10 text-left font-semibold sm:pt-32 lg:pt-16 lg:pb-10'>
-            <h3 className='text-primary text-2xl sm:text-3xl md:text-4xl'>
-              ECO FRIENDLY
-            </h3>
-            <h4 className='mt-4 text-xl leading-relaxed sm:mt-5 sm:text-2xl md:text-3xl'>
-              지속 가능한 미래를 위한
-              <br />
-              차별화된 기술, 비전라이프
-            </h4>
-          </div>
-          {overview.items.map((item, index) => (
-            <p
-              key={index}
-              className='profile_item pt-6 text-base leading-relaxed sm:pt-10 sm:text-xl'>
-              {item}
-            </p>
-          ))}
-        </article>
-      </SectionLayout>
+ return (
+  <>
+   <section className="pSection relative h-screen flex items-center justify-center bg-cover bg-center bg-[url('/img/product/features/p4.png')]">
+    <h1 className="text-white text-7xl font-bold">About Us</h1>
+   </section>
 
-      {/* Vision */}
-      <VisionScroll />
+   <section className="pSection relative h-screen flex items-center justify-center bg-cover bg-center bg-[url('/img/business/p1.jpg')]">
+    <h1 className="text-white text-7xl font-bold">Vision Life</h1>
+   </section>
 
-      <SectionLayout
-        title='주식회사 비젼 라이프 홀딩스 목표 및 방향성'
-        className='mx-auto mt-16 mb-16 flex max-w-2xl flex-col items-center justify-center sm:mt-20 lg:mb-32'
-        titleClassName='hidden'>
-        <h3 className='w-full pt-20 text-left text-2xl font-semibold sm:text-3xl md:text-4xl lg:pt-40'>
-          비즈니스 파트너로서의 <span className='text-primary'>약속</span>
-        </h3>
-        <article className='mr-auto w-full max-w-3xl'>
-          {comment.data.map((item, index) => (
-            <p
-              key={index}
-              className='profile_item pt-8 text-base leading-relaxed sm:text-lg md:text-xl lg:pt-14'>
-              {item.text}
-            </p>
-          ))}
-          <p className='profile_item pt-8 text-base leading-relaxed font-semibold sm:text-lg md:text-xl lg:pt-14'>
-            <span className='text-primary'>비전라이프 홀딩스</span>와<br />
-            함께 더 나은 내일을 만듭니다.
-          </p>
-        </article>
-      </SectionLayout>
-    </div>
-  );
+   <section className="pSection relative h-screen flex items-center justify-center bg-cover bg-center bg-[url('/img/business/p2.jpg')]">
+    <h1 className="text-white text-7xl font-bold">Visual Identity</h1>
+   </section>
+
+   <section className="pSection relative h-screen flex items-center justify-center bg-cover bg-center bg-[url('/img/business/p3.jpg')]">
+    <h1 className="text-white text-7xl font-bold">Product</h1>
+   </section>
+  </>
+ );
 };
 
 export default Profile;
