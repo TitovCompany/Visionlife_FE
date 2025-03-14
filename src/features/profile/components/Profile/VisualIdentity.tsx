@@ -2,6 +2,7 @@ import {useRef} from 'react';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useGSAP} from '@gsap/react';
+import clsx from 'clsx';
 
 gsap.registerPlugin(ScrollTrigger);
 const VisualIdentity = () => {
@@ -24,7 +25,7 @@ const VisualIdentity = () => {
  }, []);
 
  return (
-  <section ref={identityRef} className='relative flex h-[182vh] flex-col items-start gap-5'>
+  <section ref={identityRef} className={clsx('relative flex h-[182vh] flex-col items-start gap-5', 'col-span-12 lg:col-span-10 lg:col-start-2')}>
    <img ref={bgRef} src='/img/business/p2.jpg' alt='' className='absolute top-0 right-0 -z-1 h-full w-full' />
    {/* Identity */}
    <article className='mt-32 mb-20 ml-10 max-w-3xl text-left text-white'>

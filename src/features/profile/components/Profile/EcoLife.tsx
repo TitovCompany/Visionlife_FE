@@ -1,6 +1,8 @@
+import clsx from 'clsx';
+
 const EcoLife = () => {
  return (
-  <section className="pSection relative h-screen flex flex-col items-center justify-center bg-cover bg-center bg-[url('/img/profile/p1.jpg')] text-center px-6">
+  <section className={clsx('relative h-screen flex flex-col items-center justify-center bg-cover bg-center bg-[url(\'/img/profile/p1.jpg\')] text-center px-6', 'col-span-12 lg:col-span-10 lg:col-start-2')}>
    {/* 메인 타이틀 */}
    <h2 className="text-white text-5xl font-bold">
     비전라이프의 기술이 만드는 ECO Life
