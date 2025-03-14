@@ -25,10 +25,10 @@ const VisualIdentity = () => {
  }, []);
 
  return (
-  <section ref={identityRef} className={clsx('relative flex h-[182vh] flex-col items-start gap-5', 'col-span-12 lg:col-span-10 lg:col-start-2')}>
-   <img ref={bgRef} src='/img/business/p2.jpg' alt='' className='absolute top-0 right-0 -z-1 h-full w-full' />
+  <section ref={identityRef} className={clsx('relative min-h-[182vh]', 'grid grid-cols-12', 'text-primary')}>
+   {/*<img ref={bgRef} src='/img/business/p2.jpg' alt='' className='absolute top-0 right-0 -z-1 h-full w-full' />*/}
    {/* Identity */}
-   <article className='mt-32 mb-20 ml-10 max-w-3xl text-left text-white'>
+   <article className={clsx('mt-32 mb-20 ml-10 max-w-3xl text-left ', 'col-span-12 lg:col-span-10 lg:col-start-2')}>
     <h2 className='text-7xl font-bold'>Visual Identity</h2>
     <p className='mt-10 text-xl leading-8'>
      우리의 브랜드 아이덴티티는 지속 가능성과 혁신을 반영합니다.
@@ -36,10 +36,11 @@ const VisualIdentity = () => {
      모든 브랜드 요소는 환경과 조화를 이루며, 사용자와 소통하는 경험을 제공합니다.
     </p>
    </article>
+
    {/* Logo */}
-   <article className='flex w-full items-center justify-center gap-10 py-10'>
+   <article className={clsx('w-full py-10', 'col-span-12 lg:col-span-10 lg:col-start-2', 'flex')}>
     <img src="/img/logo.webp" alt="Vision Life Logo" />
-    <div className='w-full h-full p-6 text-white'>
+    <div className='w-full h-full p-6'>
      <h2 className="text-2xl font-bold mb-4">Proutex 브랜드 아이덴티티</h2>
      <p className="text-lg leading-relaxed">
       Proutex의 로고는 Vision Life(VL)의 첫 글자를 형상화하여 브랜드의 정체성을 시각적으로 표현합니다.
@@ -55,8 +56,9 @@ const VisualIdentity = () => {
      </p>
     </div>
    </article>
+
    {/* Brand Meaning */}
-   <article className='mt-32 mb-20 ml-10 max-w-4xl text-left text-white'>
+   <article className={clsx('mt-32 mb-20 ml-10 max-w-4xl text-left ', 'col-span-12 lg:col-span-10 lg:col-start-2')}>
     <h2 className='text-7xl font-bold'>Brand Meaning</h2>
     <p className='mt-10 text-xl leading-8'>
      Vision Life는 단순한 제품을 넘어, 지속 가능한 기술과 혁신을 바탕으로 환경과 조화를 이루는 제품을 개발하는 브랜드입니다. 우리는 친환경적인 솔루션을 통해 지속 가능한 미래를 창조하는 것을 목표로 합니다.
@@ -69,8 +71,9 @@ const VisualIdentity = () => {
      Proutex와 N-RECT는 이러한 가치 아래 탄생한 제품 라인으로, 각기 다른 방식으로 지속 가능성을 실현합니다. Proutex는 프리미엄 친환경 섬유를, N-RECT는 혁신적인 인쇄 기술을 통해 지속 가능한 패브릭 솔루션을 제공합니다.
     </p>
    </article>
+
    {/* Color */}
-   <article className='w-full flex items-center justify-center gap-10 bg-white py-10'>
+   <article className={clsx('w-full flex items-center justify-center gap-10 py-10', 'col-span-12 lg:col-span-10 lg:col-start-2')}>
     <ul className='flex flex-col gap-10'>
      <li className='flex justify-center items-center gap-6'>
       <div className='bg-primary h-48 w-48'></div>
