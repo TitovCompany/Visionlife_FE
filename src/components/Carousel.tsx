@@ -4,16 +4,13 @@ import {Navigation, Pagination, Autoplay} from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import news from '../data/news.json';
 import {Link} from 'react-router-dom';
-//  max-w-xs md:max-w-6xl mx-auto
+
 const NewsCarousel: React.FC = () => {
   return (
-    /*<div className="relative w-full h-full py-10">
-
-    </div>*/
     <Swiper
-      className='my-14 h-full w-full max-w-xs md:max-w-6xl lg:max-w-7xl'
+      className='mySwiper my-14 w-full col-span-12 lg:col-start-2 lg:col-end-12'
       modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={20}
+      spaceBetween={30}
       slidesPerView={'auto'}
       navigation
       pagination={{clickable: true}}
@@ -30,8 +27,8 @@ const NewsCarousel: React.FC = () => {
         <SwiperSlide key={item.id} className='mx-auto mb-14'>
           <Link
             to={`/company/news/${item.id}`}
-            className='mx-auto block w-96 transform overflow-hidden rounded-lg bg-gray-100 transition-transform hover:scale-105'>
-            <div className='relative h-48 rounded-lg sm:h-56 md:h-96 md:w-full lg:h-72 xl:h-80'>
+            className='mx-auto block transform overflow-hidden rounded-lg bg-gray-100 transition-transform hover:scale-105'>
+            <div className='relative h-48 rounded-lg md:w-full'>
               <img
                 src={item.imageUrl || `/img/news/default-image.jpg`}
                 alt={item.title}
