@@ -2,14 +2,16 @@
 import history from '../../../data/profile/history.json';
 // import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
 import clsx from 'clsx';
+import GridLayout from '../../../layout/Grid/GridLayout.tsx';
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 
 const History = () => {
  // const sectionRef = useRef(null);
  // useScrollAnimation('.history_item', 'top 80%');
  return (
-  <>
+  <GridLayout>
    {/* Hero */}
-   <section className='relative'>
+   <GridArticle>
     <video
      width='100%'
      height='100%'
@@ -29,9 +31,9 @@ const History = () => {
       비전라이프가 걸어온 길을 함께합니다.
      </h3>
     </div>
-   </section>
+   </GridArticle>
    {/* History */}
-   <section className='flex flex-col space-y-8 md:space-y-12'>
+   <GridArticle>
     {history.map((item, index) => (
      <article
       key={item.id}
@@ -68,8 +70,8 @@ const History = () => {
       </div>
      </article>
     ))}
-   </section>
-  </>
+   </GridArticle>
+  </GridLayout>
  );
 };
 

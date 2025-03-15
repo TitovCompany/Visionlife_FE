@@ -1,46 +1,69 @@
 import clsx from 'clsx';
 
-const COL_SPANS: Record<number, string> = {
- 1: 'col-span-1',
- 2: 'col-span-2',
- 3: 'col-span-3',
- 4: 'col-span-4',
- 5: 'col-span-5',
- 6: 'col-span-6',
- 7: 'col-span-7',
- 8: 'col-span-8',
- 9: 'col-span-9',
- 10: 'col-span-10',
- 11: 'col-span-11',
- 12: 'col-span-12',
-};
+const COL_SPANS = Object.fromEntries(
+ Array.from({length: 12}, (_, i) => [i + 1, `col-span-${i + 1}`])
+);
 
-const ROW_SPANS: Record<number, string> = {
- 1: 'row-span-1',
- 2: 'row-span-2',
- 3: 'row-span-3',
- 4: 'row-span-4',
- 5: 'row-span-5',
- 6: 'row-span-6',
- 7: 'row-span-7',
- 8: 'row-span-8',
- 9: 'row-span-9',
- 10: 'row-span-10',
- 11: 'row-span-11',
- 12: 'row-span-12',
+const ROW_SPANS = Object.fromEntries(
+ Array.from({length: 12}, (_, i) => [i + 1, `row-span-${i + 1}`])
+);
+
+const COL_STARTS = Object.fromEntries(
+ Array.from({length: 12}, (_, i) => [i + 1, `col-start-${i + 1}`])
+);
+
+const COL_ENDS = Object.fromEntries(
+ Array.from({length: 13}, (_, i) => [i + 2, `col-end-${i + 2}`])
+);
+
+const ROW_STARTS = Object.fromEntries(
+ Array.from({length: 12}, (_, i) => [i + 1, `row-start-${i + 1}`])
+);
+
+const ROW_ENDS = Object.fromEntries(
+ Array.from({length: 13}, (_, i) => [i + 2, `row-end-${i + 2}`])
+);
+
+const GAP_SIZES = Object.fromEntries(
+ Array.from({length: 10}, (_, i) => [i + 1, `gap-${i + 1}`])
+);
+
+const ORDER_SIZES = Object.fromEntries(
+ Array.from({length: 12}, (_, i) => [i + 1, `order-${i + 1}`])
+);
+
+const PLACE_SELF_OPTIONS = {
+ start: 'place-self-start',
+ center: 'place-self-center',
+ end: 'place-self-end',
+ stretch: 'place-self-stretch',
 };
 
 interface GridArticleProps {
  children: React.ReactNode;
  colSpan?: number;
  rowSpan?: number;
+ colStart?: number;
+ colEnd?: number;
+ rowStart?: number;
+ rowEnd?: number;
+ gap?: number;
+ order?: number;
+ placeSelf?: keyof typeof PLACE_SELF_OPTIONS;
  className?: string;
 }
 
 const GridArticle: React.FC<GridArticleProps> = ({
  children,
- colSpan = 12, // 기본적으로 한 줄을 차지하도록 설정
+ colSpan = 12,
  rowSpan = 1,
+ colStart,
+ colEnd,
+ rowStart,
+ rowEnd,
+ gap,
+ order,
+ placeSelf,
  className,
 }) => {
  return (
@@ -48,6 +71,13 @@ const GridArticle: React.FC<GridArticleProps> = ({
    className={clsx(
     COL_SPANS[colSpan] || 'col-span-12',
     ROW_SPANS[rowSpan] || 'row-span-1',
+    colStart && COL_STARTS[colStart],
+    colEnd && COL_ENDS[colEnd],
+    rowStart && ROW_STARTS[rowStart],
+    rowEnd && ROW_ENDS[rowEnd],
+    gap && GAP_SIZES[gap],
+    order && ORDER_SIZES[order],
+    placeSelf && PLACE_SELF_OPTIONS[placeSelf],
     className)}>
    {children}
   </article>

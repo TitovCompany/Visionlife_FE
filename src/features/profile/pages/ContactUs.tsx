@@ -5,6 +5,7 @@ import {MdOutlineMail} from 'react-icons/md';
 import {HiOutlineLocationMarker} from 'react-icons/hi';
 import NaverMap from '../../../components/Map/NaverMap.tsx';
 import GridLayout from '../../../layout/Grid/GridLayout.tsx';
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 
 const contactInfo = [
   {
@@ -39,14 +40,9 @@ const contactInfo = [
 
 const ContactUs = () => {
   return (
-    <section>
-      <GridLayout cols={2}>
-        <div>test</div>
-        <div>test2</div>
-        <div>test2</div>
-      </GridLayout>
+    <GridLayout>
       {/* 연락처 정보 */}
-      <article className='grid w-full grid-cols-1 gap-8 md:grid-cols-1 lg:mt-10 lg:grid-cols-5 lg:gap-12'>
+      <GridArticle colStart={2} colEnd={6}>
         <ul className='mx-auto flex max-w-sm flex-col gap-6 md:grid md:max-w-4xl md:grid-cols-2 lg:col-span-2 lg:flex lg:flex-col xl:max-w-5xl'>
           {contactInfo.map((item, index) => (
             <ListCard
@@ -59,18 +55,14 @@ const ContactUs = () => {
             />
           ))}
         </ul>
-
-        {/* 이미지 영역 */}
-        <div
-          id='map'
-          className='mx-auto h-64 w-full max-w-sm rounded-2xl pt-10 md:h-[600px] md:max-w-4xl lg:col-span-3 lg:mx-0 lg:h-full lg:max-w-full'>
-          <NaverMap
-            latitude={37.48771788371748}
-            longitude={127.00855064427329}
-          />
+      </GridArticle>
+      {/* 지도 영역 */}
+      <GridArticle colStart={6} colEnd={12}>
+        <div id='map' className='mx-auto h-64 w-full max-w-sm rounded-2xl pt-10 md:h-[600px] md:max-w-4xl lg:col-span-3 lg:mx-0 lg:h-full lg:max-w-full'>
+          <NaverMap latitude={37.48771788371748} longitude={127.00855064427329} />
         </div>
-      </article>
-    </section>
+      </GridArticle>
+    </GridLayout>
   );
 };
 
