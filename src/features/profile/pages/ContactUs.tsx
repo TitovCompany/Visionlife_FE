@@ -3,7 +3,6 @@ import {FaPhoneAlt} from 'react-icons/fa';
 import {LiaFaxSolid} from 'react-icons/lia';
 import {MdOutlineMail} from 'react-icons/md';
 import {HiOutlineLocationMarker} from 'react-icons/hi';
-import SectionLayout from '../../../layout/SectionLayout.tsx';
 import NaverMap from '../../../components/Map/NaverMap.tsx';
 
 const contactInfo = [
@@ -39,13 +38,9 @@ const contactInfo = [
 
 const ContactUs = () => {
   return (
-    <SectionLayout
-      title='Let&apos;s Stay Connected'
-      className='mx-auto flex max-w-6xl flex-col items-center justify-center px-4 py-6 sm:px-6 sm:py-16 md:px-8 md:py-12 lg:px-5 lg:py-20 xl:max-w-7xl'
-      titleClassName='py-6 text-2xl sm:text-3xl lg:text-4xl font-semibold text-center'
-      fullHeight={false}>
+    <section>
       {/* 연락처 정보 */}
-      <div className='grid w-full grid-cols-1 gap-8 md:grid-cols-1 lg:mt-10 lg:grid-cols-5 lg:gap-12'>
+      <article className='grid w-full grid-cols-1 gap-8 md:grid-cols-1 lg:mt-10 lg:grid-cols-5 lg:gap-12'>
         <ul className='mx-auto flex max-w-sm flex-col gap-6 md:grid md:max-w-4xl md:grid-cols-2 lg:col-span-2 lg:flex lg:flex-col xl:max-w-5xl'>
           {contactInfo.map((item, index) => (
             <ListCard
@@ -68,8 +63,8 @@ const ContactUs = () => {
             longitude={127.00855064427329}
           />
         </div>
-      </div>
-    </SectionLayout>
+      </article>
+    </section>
   );
 };
 

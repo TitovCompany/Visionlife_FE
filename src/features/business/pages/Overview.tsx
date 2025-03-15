@@ -1,4 +1,3 @@
-import SectionLayout from '../../../layout/SectionLayout.tsx';
 import overview from '../../../data/businessOverview.json';
 import bizInfo from '../../../data/business/biz_info.json';
 import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
@@ -10,10 +9,7 @@ const Overview = () => {
 
   const maxWidth = 'max-w-lg md:max-w-2xl lg:max-w-5xl mx-auto';
   return (
-   <SectionLayout
-    title='비전라이프 사업 소개'
-    className='mx-auto grid w-full place-items-center overflow-x-hidden'
-    titleClassName='hidden'>
+   <section className='mx-auto grid w-full place-items-center overflow-x-hidden'>
     <article className='relative'>
      <video
       src='/video/eco.mp4'
@@ -126,7 +122,7 @@ const Overview = () => {
       </div>
      ))}
     </article>
-   </SectionLayout>
+   </section>
   );
 };
 
