@@ -4,6 +4,7 @@ import {LiaFaxSolid} from 'react-icons/lia';
 import {MdOutlineMail} from 'react-icons/md';
 import {HiOutlineLocationMarker} from 'react-icons/hi';
 import NaverMap from '../../../components/Map/NaverMap.tsx';
+import GridLayout from '../../../layout/Grid/GridLayout.tsx';
 
 const contactInfo = [
   {
@@ -39,6 +40,11 @@ const contactInfo = [
 const ContactUs = () => {
   return (
     <section>
+      <GridLayout cols={2}>
+        <div>test</div>
+        <div>test2</div>
+        <div>test2</div>
+      </GridLayout>
       {/* 연락처 정보 */}
       <article className='grid w-full grid-cols-1 gap-8 md:grid-cols-1 lg:mt-10 lg:grid-cols-5 lg:gap-12'>
         <ul className='mx-auto flex max-w-sm flex-col gap-6 md:grid md:max-w-4xl md:grid-cols-2 lg:col-span-2 lg:flex lg:flex-col xl:max-w-5xl'>

@@ -9,8 +9,8 @@ const Overview = () => {
 
   const maxWidth = 'max-w-lg md:max-w-2xl lg:max-w-5xl mx-auto';
   return (
-   <section className='mx-auto grid w-full place-items-center overflow-x-hidden'>
-    <article className='relative'>
+   <section className='mx-auto grid grid-cols-12 w-full  overflow-x-hidden'>
+    <article className='relative col-span-12'>
      <video
       src='/video/eco.mp4'
       controls={false}
