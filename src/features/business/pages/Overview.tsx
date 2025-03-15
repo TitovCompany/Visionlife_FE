@@ -2,18 +2,20 @@ import overview from '../../../data/businessOverview.json';
 import bizInfo from '../../../data/business/biz_info.json';
 import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
 import {useRef} from 'react';
+import GridLayout from '../../../layout/Grid/GridLayout.tsx';
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 
 const Overview = () => {
   const sectionRef = useRef(null);
   useScrollAnimation('.biz_item', 'top 80%');
 
-  const maxWidth = 'max-w-lg md:max-w-2xl lg:max-w-5xl mx-auto';
   return (
-   <section className='mx-auto grid grid-cols-12 w-full  overflow-x-hidden'>
-    <article className='relative col-span-12'>
+   <GridLayout>
+    <GridArticle>
      <video
       src='/video/eco.mp4'
       controls={false}
+      className='object-cover min-h-[calc(100vh-67.98px)]'
       autoPlay
       loop
       muted
@@ -28,10 +30,9 @@ const Overview = () => {
        무폐수 디지털 나염 시스템
       </h3>
      </div>
-    </article>
+    </GridArticle>
 
-    <article
-     className={`${maxWidth} flex w-full flex-col-reverse gap-10 leading-relaxed md:text-xl lg:flex-row`}>
+    <GridArticle>
      <div className='mx-auto w-full max-w-xs sm:max-w-sm md:mr-auto md:max-w-lg'>
       <h3 className='text-xl leading-normal font-semibold md:text-2xl'>
        <span className='text-primary'>비전라이프</span>는 환경 보호와 지속 가능한 생산을 실현하기 위해
@@ -55,10 +56,10 @@ const Overview = () => {
       alt=''
       className='h-96 w-full object-cover sm:w-full md:h-[500px] lg:w-[50%]'
      />
-    </article>
+    </GridArticle>
 
     {/* 해결하는 문제 */}
-    <article className='mt-14'>
+    <GridArticle>
      <h3 className='text-3xl font-bold text-primary mb-4'>비전라이프가 해결하는 문제</h3>
      <p>
       기존 섬유 염색 및 인쇄 공정은 많은 물과 화학약품을 필요로 하며,
@@ -66,8 +67,8 @@ const Overview = () => {
       비전라이프의 무폐수 디지털 나염 기술은 이러한 문제를 해결하여,
       물 사용을 획기적으로 줄이고 배출되는 유해 물질을 최소화합니다.
      </p>
-    </article>
-    <article className={`${maxWidth} mt-16 text-lg leading-relaxed`}>
+    </GridArticle>
+    <GridArticle>
      <h2 className='mt-10 text-2xl font-bold md:text-3xl lg:text-4xl text-primary'>
       기술 차별점 및 효과
      </h2>
@@ -81,15 +82,15 @@ const Overview = () => {
       <strong className="text-primary">80% 이상의 물 절감 효과</strong>를 보고 있으며,
       기존 대비 <strong className="text-primary">탄소 배출량을 50% 이상 저감</strong>하는 데 성공하였습니다.
      </p>
-    </article>
+    </GridArticle>
 
     {/* PROUTEX & N-RECT 시스템 */}
-    <article className='mt-14'>
+    <GridArticle>
      <h3 className='text-3xl font-bold text-primary mb-4'>PROUTEX & N-RECT 시스템</h3>
      <p className='mb-4'>
       비전라이프는 친환경 인쇄 솔루션을 제공하기 위해
-      **N-RECT (친환경 잉크)와 PROUTEX (디지털 프린트기기)**를 개발하였습니다.
-      두 가지 기술이 결합되어 **무폐수 디지털 나염을 가능하게 하며**,
+      N-RECT (친환경 잉크)와 PROUTEX (디지털 프린트기기)를 개발하였습니다.
+      두 가지 기술이 결합되어 무폐수 디지털 나염을 가능하게 하며,
       기존 대비 환경 부담을 줄이면서도 높은 인쇄 품질과 생산 효율성을 제공합니다.
      </p>
      <div className="flex gap-6 mt-6">
@@ -100,9 +101,9 @@ const Overview = () => {
        PROUTEX 자세히 보기
       </a>
      </div>
-    </article>
+    </GridArticle>
 
-    <article className='mx-auto w-full max-w-xs pb-20 sm:max-w-sm lg:max-w-3xl'>
+    <GridArticle>
      <h2 className='pt-16 text-2xl leading-relaxed font-bold md:pt-32 lg:text-4xl'>
       디지털 나염으로
       <br />
@@ -121,8 +122,8 @@ const Overview = () => {
        </p>
       </div>
      ))}
-    </article>
-   </section>
+    </GridArticle>
+   </GridLayout>
   );
 };
 

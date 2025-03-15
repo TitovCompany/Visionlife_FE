@@ -1,10 +1,11 @@
 import news from '../../../data/news.json';
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 
 const Media = () => {
  return (
-  <section className='pb-20'>
+  <GridArticle colStart={3} colEnd={11} className='py-20'>
    <h2 className='text-5xl font-bold'>News</h2>
-   <article className='mx-auto max-w-2xl py-10'>
+   <div className='py-10'>
     {/* Media Carousel */}
     <div className='relative border-color flex items-start justify-around border-2'>
      <img src='/img/logo.webp' alt='test' className='h-72 w-72' />
@@ -22,8 +23,8 @@ const Media = () => {
         <button>다음</button>
       </div>
     </div>
-   </article>
-  </section>
+   </div>
+  </GridArticle>
  );
 };
 

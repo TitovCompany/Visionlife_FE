@@ -1,4 +1,5 @@
 import { CheckCircle, Leaf, ShieldCheck } from "lucide-react";
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 
 const WhyUsSection = () => {
  const features = [
@@ -8,8 +9,8 @@ const WhyUsSection = () => {
  ];
 
  return (
-  <section className="w-full bg-white py-32">
-   <div className="max-w-5xl mx-auto text-center">
+  <GridArticle colStart={2} colEnd={12} className='py-32'>
+   <div className="text-center">
     <h2 className="text-5xl font-bold">Why Choose Us?</h2>
     <p className="mt-4 text-xl text-gray-600">지속 가능성과 품질을 동시에 제공합니다.</p>
 
@@ -23,7 +24,7 @@ const WhyUsSection = () => {
      ))}
     </div>
    </div>
-  </section>
+  </GridArticle>
  );
 };
 

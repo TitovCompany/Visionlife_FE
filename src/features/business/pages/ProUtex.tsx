@@ -12,11 +12,17 @@ const ProUtex = () => {
     <video
      src='/video/print.mp4'
      controls={false}
+     className='object-cover min-h-[calc(100vh-67.98px)]'
      autoPlay
      loop
      muted
      playsInline
     />
+    <h2 className='w-full max-w-xl pb-4 text-left text-2xl leading-12 font-extrabold md:pb-8 md:text-4xl'>
+     비전라이프의 <span className='text-primary'>PROUTEX</span>
+     <br />
+     친환경 섬유 염색 솔루션
+    </h2>
    </GridArticle>
    <GridArticle>
     <img
@@ -27,18 +33,14 @@ const ProUtex = () => {
    </GridArticle>
    <GridArticle>
     <div className='mx-auto flex w-full flex-col justify-start md:w-2/3'>
-     <h2 className='w-full max-w-xl pb-4 text-left text-2xl leading-12 font-extrabold md:pb-8 md:text-4xl'>
-      비전라이프의 <span className='text-primary'>PROUTEX</span>
-      <br />
-      친환경 섬유 염색 솔루션
-     </h2>
+
      <div className='mb-6 h-fit w-full text-left text-base md:text-lg lg:max-w-2xl'>
       <p className='biz_item mb-4 leading-8'>
        PROUTEX는 N-RECT 친환경 잉크에 최적화된 디지털 프린팅 기기입니다.
        기존 프린터 대비 더 빠른 속도, 낮은 잉크 소비량, 더 선명한 품질을 제공합니다.
       </p>
       <p className='biz_item mb-8 leading-8'>
-       PROUTEX는 **무폐수 공정**을 지원하여 환경 부담을 줄이며,
+       PROUTEX는 무폐수 공정을 지원하여 환경 부담을 줄이며,
        일반적인 면, 폴리에스터, 나일론 원단에 최적화된 고품질 출력이 가능합니다.
       </p>
      </div>

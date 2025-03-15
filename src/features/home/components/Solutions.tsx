@@ -1,3 +1,5 @@
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
+
 const solutions = [
  {
   id: 1,
@@ -24,27 +26,25 @@ const solutions = [
 
 const Solutions = () => {
  return (
-  <section className='bg-primary text-color relative py-20 mb-20'>
-   <article className='max-w-6xl mx-auto p-4'>
-    {/* Title */}
-    <h2 className='text-5xl font-bold'>
-     <p>Our Eco-Friendly</p>
-     <p>Dyeing Solutions</p>
-    </h2>
-    {/* Contents */}
-    <ul className='mt-20 flex gap-5'>
-     {solutions.map((solution) => (
-      <li key={solution.id} className='relative flex-1'>
-       <img src={solution.image} alt={solution.title} className='absolute'/>
-       <div className='relative z-10'>
-        <h3 className='text-3xl font-bold'>{solution.title}</h3>
-        <p className='text-xl'>{solution.description}</p>
-       </div>
-      </li>
-     ))}
-    </ul>
-   </article>
-  </section>
+  <GridArticle colStart={2} colEnd={12} className='py-20 mb-20'>
+   {/* Title */}
+   <h2 className='text-5xl font-bold'>
+    <p>Our Eco-Friendly</p>
+    <p>Dyeing Solutions</p>
+   </h2>
+   {/* Contents */}
+   <ul className='mt-20 flex gap-5'>
+    {solutions.map((solution) => (
+     <li key={solution.id} className='relative flex-1'>
+      <img src={solution.image} alt={solution.title} className='absolute'/>
+      <div className='relative z-10'>
+       <h3 className='text-3xl font-bold'>{solution.title}</h3>
+       <p className='text-xl'>{solution.description}</p>
+      </div>
+     </li>
+    ))}
+   </ul>
+  </GridArticle>
  );
 };
 

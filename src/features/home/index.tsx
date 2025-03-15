@@ -9,6 +9,7 @@ import GlobalBusiness from './components/GlobalBusiness.tsx';
 import Media from './components/Media.tsx';
 import HeroV2 from './components/Hero_v2.tsx';
 import Solutions from './components/Solutions.tsx';
+import GridLayout from '../../layout/Grid/GridLayout.tsx';
 
 gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
@@ -17,19 +18,14 @@ const Home = () => {
  return (
   <>
    <Header />
-   <main className='min-h-screen w-full text-center'>
-    {/*<Hero />*/}
-    <HeroV2 />
-    <WhyUsSection />
-    {/*<section className='relative w-full bg-primary py-32'>
-     <div className=''>
-      <div>Special Design</div>
-      <div>Future Continuous</div>
-     </div>
-    </section>*/}
-    <Media />
-    <Solutions/>
-    <GlobalBusiness />
+   <main className='min-h-screen w-full text-center bg-color/20'>
+    <GridLayout>
+     <HeroV2 />
+     <WhyUsSection />
+     <Media />
+     <Solutions/>
+     <GlobalBusiness />
+    </GridLayout>
    </main>
   </>
  );

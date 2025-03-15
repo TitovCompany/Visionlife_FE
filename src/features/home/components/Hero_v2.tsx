@@ -1,6 +1,7 @@
 import {useEffect, useRef, useState} from 'react';
 import gsap from 'gsap';
 import {useGSAP} from '@gsap/react';
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 
 const carouselItems = [
  {title: 'Title 01', src: '/img/home/p1.webp'},
@@ -53,10 +54,10 @@ const HeroV2 = () => {
  };
 
  return (
-  <section className='relative bg-primary text-color '>
+  <GridArticle className='relative bg-primary text-color'>
    {/* Slider */}
    <div className='flex h-[768px] w-full whitespace-nowrap'>
-    <article
+    <div
      ref={(el) => {
       if (el) sliderRef.current[0] = el;
      }}
@@ -71,10 +72,10 @@ const HeroV2 = () => {
       (주)비젼라이프홀딩스의 나일론잉크 “N-RECT 엔렉”은
      </p>
      <p className='text-3xl'>99% 무폐수로 만들어집니다.</p>
-    </article>
+    </div>
 
     {carouselItems.map((item, index) => (
-     <article
+     <div
       key={index}
       ref={(el) => {
        if (el) sliderRef.current[index + 1] = el;
@@ -90,7 +91,7 @@ const HeroV2 = () => {
        <p className='mt-5 text-4xl'>Description</p>
        <button className='mt-10 text-2xl'>Move</button>
       </div>
-     </article>
+     </div>
     ))}
    </div>
 
@@ -115,7 +116,7 @@ const HeroV2 = () => {
      <div ref={slideTimeRef} className='bg-primary h-3'></div>
     </div>
    </div>
-  </section>
+  </GridArticle>
  );
 };
 
