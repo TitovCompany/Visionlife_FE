@@ -11,7 +11,7 @@ const UtexFeatures = forwardRef<HTMLDivElement, object>((_, ref) => {
           #섬유 프린팅의 새로운 기준
         </p>
         <h3 className='text-3xl leading-10'>
-          <span className='text-primary'>UTEX</span>의 차별화된
+          <span className='text-primary'>PROUTEX</span>의 차별화된
           <br />
           4가지 핵심 기술
         </h3>

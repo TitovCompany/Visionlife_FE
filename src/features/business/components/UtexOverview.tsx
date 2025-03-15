@@ -18,18 +18,18 @@ const UtexOverview = forwardRef<HTMLDivElement, object>((_, ref) => {
         />
         <div className='mx-auto flex w-full flex-col justify-start md:w-2/3'>
           <h2 className='w-full max-w-xl pb-4 text-left text-2xl leading-12 font-extrabold md:pb-8 md:text-4xl'>
-            비전라이프의 <span className='text-primary'>UTEX</span>
+            비전라이프의 <span className='text-primary'>PROUTEX</span>
             <br />
             친환경 섬유 염색 솔루션
           </h2>
           <div className='mb-6 h-fit w-full text-left text-base md:text-lg lg:max-w-2xl'>
             <p className='biz_item mb-4 leading-8'>
-              UTEX 무폐수 섬유 염색 시스템은 기존 섬유 염색 산업의 복잡한 문제를
-              해결하며, 초고속 염색 속도와 비용 절감 효과를 제공합니다.
+              PROUTEX는 N-RECT 친환경 잉크에 최적화된 디지털 프린팅 기기입니다.
+              기존 프린터 대비 더 빠른 속도, 낮은 잉크 소비량, 더 선명한 품질을 제공합니다.
             </p>
             <p className='biz_item mb-8 leading-8'>
-              공정 단축을 통해 높은 경제성을 확보할 수 있으며, 섬유 염색뿐만
-              아니라 다양한 산업 분야에도 활용할 수 있는 혁신적인 기술입니다.
+              PROUTEX는 **무폐수 공정**을 지원하여 환경 부담을 줄이며,
+              일반적인 면, 폴리에스터, 나일론 원단에 최적화된 고품질 출력이 가능합니다.
             </p>
           </div>
           <ul className='w-full max-w-2xl space-y-3'>

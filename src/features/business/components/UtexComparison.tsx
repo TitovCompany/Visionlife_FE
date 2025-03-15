@@ -9,12 +9,12 @@ const UtexComparison = forwardRef<HTMLDivElement, object>((_, ref) => {
       <article ref={ref} className='max-w-6xl'>
         <div className='pb-6 text-left text-2xl font-semibold'>
           <p className='border-b-primary text-primary mb-3 w-fit border-b px-1 pb-1 text-left text-sm font-bold'>
-            {/*섬유 염색 공정 비교*/}
-            #복잡한 공정 구조와 높은 비용
+            #일반 디지털 프린팅의 한계
           </p>
-          <h3>기존 섬유 염색 공정</h3>
-          <p className='text-gray-600'>다단계 처리 & 폐수 발생</p>
+          <h3>기존 디지털 프린팅 공정</h3>
+          <p className='text-gray-600'>잉크 소비량 증가 & 색상 선명도 저하</p>
         </div>
+
 
         <ul className='grid grid-cols-1 gap-8 md:grid-cols-2'>
           {comparison.items[0].steps.map((step, idx) => (
@@ -37,15 +37,14 @@ const UtexComparison = forwardRef<HTMLDivElement, object>((_, ref) => {
         </ul>
       </article>
 
-      {/* UTEX 공정 */}
+      {/* PROUTEX 공정 */}
       <article ref={ref} className='max-w-6xl pt-20'>
         <div className='pb-6 text-left text-2xl font-semibold'>
           <p className='border-b-primary text-primary mb-3 w-fit border-b px-1 pb-1 text-left text-sm font-bold'>
-            {/*섬유 염색 공정 비교*/}
-            #단순한 공정, 폐수 없는 시스템
+            #PROUTEX 친환경 디지털 프린팅
           </p>
-          <h3>UTEX 친환경 염색 시스템</h3>
-          <p className='text-primary'>단일 공정 & 폐수 0%</p>
+          <h3>PROUTEX 디지털 프린팅 공정</h3>
+          <p className='text-primary'>고속 출력 & 무폐수 공정</p>
         </div>
 
         <ul className='grid grid-cols-1 gap-8 md:grid-cols-2'>

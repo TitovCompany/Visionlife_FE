@@ -1,8 +1,6 @@
 import SectionLayout from '../../../layout/SectionLayout.tsx';
-import BusinessPoint from '../components/BusinessPoint.tsx';
 import overview from '../../../data/businessOverview.json';
 import bizInfo from '../../../data/business/biz_info.json';
-import bizPoint from '../../../data/business/biz_point.json';
 import useScrollAnimation from '../../../hooks/useScrollAnimation.ts';
 import {useRef} from 'react';
 
@@ -14,25 +12,35 @@ const Overview = () => {
   return (
    <SectionLayout
     title='비전라이프 사업 소개'
-    className='mx-auto grid w-full place-items-center overflow-x-hidden sm:py-16 md:py-32'
+    className='mx-auto grid w-full place-items-center overflow-x-hidden'
     titleClassName='hidden'>
-    <video
-     src='/video/eco.mp4'
-     controls={false}
-     autoPlay
-     loop
-     muted
-     playsInline/>
-    <article
-     className={`${maxWidth} flex w-full flex-col-reverse gap-10 leading-relaxed md:text-xl lg:flex-row`}>
-     <div className='mx-auto w-full max-w-xs sm:max-w-sm md:mr-auto md:max-w-lg'>
-      <h2 className='md:text-4x pb-5 text-3xl font-extrabold md:pb-10 lg:text-5xl'>
+    <article className='relative'>
+     <video
+      src='/video/eco.mp4'
+      controls={false}
+      autoPlay
+      loop
+      muted
+      playsInline/>
+     <div className='absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/10 backdrop-blur-xs p-6 rounded-lg'>
+     <h2 className='md:text-4x pb-5 text-3xl font-extrabold md:pb-10 lg:text-5xl'>
        {overview.header}
       </h2>
       <h3 className='text-xl leading-normal font-semibold md:text-2xl'>
-       <span className='text-primary'>비전라이프</span>의 친환경 에코 잉크와
+       비전라이프의 친환경 에코 잉크와
        <br />
        무폐수 디지털 나염 시스템
+      </h3>
+     </div>
+    </article>
+
+    <article
+     className={`${maxWidth} flex w-full flex-col-reverse gap-10 leading-relaxed md:text-xl lg:flex-row`}>
+     <div className='mx-auto w-full max-w-xs sm:max-w-sm md:mr-auto md:max-w-lg'>
+      <h3 className='text-xl leading-normal font-semibold md:text-2xl'>
+       <span className='text-primary'>비전라이프</span>는 환경 보호와 지속 가능한 생산을 실현하기 위해
+       <br />
+       디지털 나염 기술과 친환경 솔루션을 제공합니다.
       </h3>
 
       <div className='text-md md:text-lg'>
@@ -53,16 +61,50 @@ const Overview = () => {
      />
     </article>
 
-    {/* 4가지 장점 */}
-    {bizPoint.data.map((item, index) => (
-     <BusinessPoint
-      key={index}
-      point={item.point}
-      title={item.title}
-      src={item.src}
-      isReversed={item.isReversed}
-     />
-    ))}
+    {/* 해결하는 문제 */}
+    <article className='mt-14'>
+     <h3 className='text-3xl font-bold text-primary mb-4'>비전라이프가 해결하는 문제</h3>
+     <p>
+      기존 섬유 염색 및 인쇄 공정은 많은 물과 화학약품을 필요로 하며,
+      환경 오염을 유발하는 주요 원인 중 하나입니다.
+      비전라이프의 무폐수 디지털 나염 기술은 이러한 문제를 해결하여,
+      물 사용을 획기적으로 줄이고 배출되는 유해 물질을 최소화합니다.
+     </p>
+    </article>
+    <article className={`${maxWidth} mt-16 text-lg leading-relaxed`}>
+     <h2 className='mt-10 text-2xl font-bold md:text-3xl lg:text-4xl text-primary'>
+      기술 차별점 및 효과
+     </h2>
+     <p className='mt-4'>
+      일반적인 섬유 염색 방식은 많은 물과 화학약품을 필요로 하지만,
+      비전라이프의 <strong>무폐수 디지털 나염 기술</strong>은 물 사용을 획기적으로 줄이고,
+      공정 중 배출되는 유해 물질을 최소화하여 환경 친화적인 생산을 가능하게 합니다.
+     </p>
+     <p className='mt-4'>
+      또한, 비전라이프의 기술을 적용한 기업들은 생산 공정에서
+      <strong className="text-primary">80% 이상의 물 절감 효과</strong>를 보고 있으며,
+      기존 대비 <strong className="text-primary">탄소 배출량을 50% 이상 저감</strong>하는 데 성공하였습니다.
+     </p>
+    </article>
+
+    {/* PROUTEX & N-RECT 시스템 */}
+    <article className='mt-14'>
+     <h3 className='text-3xl font-bold text-primary mb-4'>PROUTEX & N-RECT 시스템</h3>
+     <p className='mb-4'>
+      비전라이프는 친환경 인쇄 솔루션을 제공하기 위해
+      **N-RECT (친환경 잉크)와 PROUTEX (디지털 프린트기기)**를 개발하였습니다.
+      두 가지 기술이 결합되어 **무폐수 디지털 나염을 가능하게 하며**,
+      기존 대비 환경 부담을 줄이면서도 높은 인쇄 품질과 생산 효율성을 제공합니다.
+     </p>
+     <div className="flex gap-6 mt-6">
+      <a href="/n-rect" className="px-6 py-3 bg-primary text-white rounded-lg">
+       N-RECT 자세히 보기
+      </a>
+      <a href="/proutex" className="px-6 py-3 bg-secondary text-white rounded-lg">
+       PROUTEX 자세히 보기
+      </a>
+     </div>
+    </article>
 
     <article className='mx-auto w-full max-w-xs pb-20 sm:max-w-sm lg:max-w-3xl'>
      <h2 className='pt-16 text-2xl leading-relaxed font-bold md:pt-32 lg:text-4xl'>

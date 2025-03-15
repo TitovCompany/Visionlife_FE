@@ -17,7 +17,7 @@ import ContactUs from './features/profile/pages/ContactUs.tsx';
 // 📈 비즈니스 개요
 import Business from './features/business/index.tsx';
 import Overview from './features/business/pages/Overview.tsx';
-import Utex from './features/business/pages/Utex.tsx';
+import ProUtex from './features/business/pages/ProUtex.tsx';
 
 // 📰 뉴스
 import NewsLayout from './features/news/index';
@@ -66,7 +66,7 @@ export const router = createBrowserRouter([
         children: [
           {path: 'overview/introduction', Component: Overview},
           {path: 'n-rect/introduction', Component: NRect},
-          {path: 'utex/introduction', Component: Utex},
+          {path: 'utex/introduction', Component: ProUtex},
         ],
       },
 
