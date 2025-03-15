@@ -1,7 +1,10 @@
+import GridLayout from '../../../layout/Grid/GridLayout.tsx';
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
+
 const NRect = () => {
  return (
-  <section>
-   <article className='relative h-full w-full pointer-events-none'>
+  <GridLayout>
+   <GridArticle>
     <div>
      <iframe
       width='100%'
@@ -28,10 +31,10 @@ const NRect = () => {
       혁신적인 솔루션을 통해 새로운 인쇄 표준을 경험하세요.
      </p>
     </div>
-   </article>
+   </GridArticle>
 
    {/* 기존 잉크와 비교 - 차별점 강조 */}
-   <article className="py-10">
+   <GridArticle>
     <h2 className="text-3xl font-bold text-gray-900">N-RECT vs 기존 잉크</h2>
     <p className="text-lg text-gray-700 leading-relaxed mt-4">
      기존 잉크는 빠른 건조를 위해 높은 온도를 사용하지만, 두꺼운 표면 코팅으로 인해 원단의 자연스러운 질감을 손상시킬 수 있습니다. 또한, 대량의 물을 소비하고 폐수 배출이 불가피하여 환경에 부담을 줄 뿐만 아니라, 전처리 및 후처리 과정에서 추가적인 에너지와 비용이 발생합니다.
@@ -67,10 +70,10 @@ const NRect = () => {
      </tr>
      </tbody>
     </table>
-   </article>
+   </GridArticle>
 
    {/* 적용 가능 소재 & 사용처 */}
-   <article className="py-10">
+   <GridArticle>
     <h2 className="text-3xl font-bold text-gray-900">N-RECT 적용 가능 소재</h2>
     <p className="text-lg text-gray-700 leading-relaxed mt-4">
      N-RECT 잉크는 나일론, 면, 폴리에스터, 인조가죽 등 다양한 섬유 소재에 최적화되어 있습니다.
@@ -84,9 +87,9 @@ const NRect = () => {
      <li>고급 맞춤형 텍스타일 인쇄</li>
      <li>자동차 시트 및 실내 소재</li>
     </ul>
-   </article>
+   </GridArticle>
 
-   <article className="py-10 bg-gray-50">
+   <GridArticle>
     <h2 className="text-3xl font-bold text-gray-900 text-center">PROUTEX와 함께하는 최적의 프린팅 솔루션</h2>
     <p className="text-lg text-gray-700 leading-relaxed text-center mt-4">
      **N-RECT는 PROUTEX 전용으로 개발된 친환경 수성 잉크입니다.**
@@ -111,10 +114,10 @@ const NRect = () => {
       </p>
      </div>
     </div>
-   </article>
+   </GridArticle>
 
    {/* 환경적 장점 강조 */}
-   <article className="py-10">
+   <GridArticle>
     <h2 className="text-3xl font-bold text-gray-900">환경적 장점</h2>
     <p className="text-lg text-gray-700 leading-relaxed mt-4">
      기존의 잉크 공정은 막대한 물 소비와 폐수를 동반하지만, N-RECT는 무폐수 공정을 실현하여
@@ -124,9 +127,9 @@ const NRect = () => {
      또한, OEKO-TEX® & GOTS 친환경 인증을 획득하여
      지속 가능한 섬유 생산을 지원하고 있습니다.
     </p>
-   </article>
+   </GridArticle>
 
-   <article>
+   <GridArticle>
     <p className="text-lg text-gray-700 leading-relaxed mb-4">
      비전라이프의 N-RECT 잉크는 고급 수성 잉크로, 섬유 친화적인 화학
      조성을 바탕으로 최적의 프린팅 품질을 보장합니다.
@@ -135,9 +138,9 @@ const NRect = () => {
      또한, 최적의 흡수 속도를 유지함으로써 색상의 왜곡 없이 자연스럽고 깊이
      있는 표현이 가능합니다.
     </p>
-   </article>
+   </GridArticle>
 
-   <article>
+   <GridArticle>
     <p className="text-lg text-gray-700 leading-relaxed mb-4">
      정밀한 잉크 적용 기술을 통해 최상의 결과를 제공합니다.
      한 번에 너무 많은 잉크가 적용될 경우, 섬유 표면에서 과도한 흘림
@@ -146,8 +149,8 @@ const NRect = () => {
      균형을 유지하도록 설계되어 있으며, 잉크가 완벽하게 침투하면서도
      번짐 없이 유지될 수 있도록 개발되었습니다.
     </p>
-   </article>
-   <article>
+   </GridArticle>
+   <GridArticle>
     <p className="text-lg text-gray-700 leading-relaxed">
      N-RECT 잉크는 나일론 섬유에 최적화되어 있으며, 일반적인 면, 폴리에스터 섬유에도 우수한 성능을 보입니다.
      그러나 폴리우레탄 또는 특정 합성 코팅된 나일론 직물에서는 잉크의 흡수율이
@@ -157,10 +160,10 @@ const NRect = () => {
      비전라이프는 지속 가능한 소재와 최첨단 프린팅 기술을 결합하여, 더욱
      혁신적인 출력 솔루션을 제공합니다.
     </p>
-   </article>
+   </GridArticle>
 
    {/* Call to Action */}
-   <article className="text-center py-10">
+   <GridArticle>
     <h2 className="text-3xl font-bold text-gray-900">PROUTEX와 함께 최고의 프린팅을 경험하세요</h2>
     <p className="text-lg text-gray-700 leading-relaxed mt-4">
      N-RECT는 PROUTEX 디지털 프린터와 함께 사용해야 최상의 결과를 제공합니다.
@@ -171,8 +174,8 @@ const NRect = () => {
       PROUTEX 디지털 프린터 보기
      </a>
     </div>
-   </article>
-  </section>
+   </GridArticle>
+  </GridLayout>
  );
 };
 
