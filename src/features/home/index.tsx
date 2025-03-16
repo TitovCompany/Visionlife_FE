@@ -7,7 +7,7 @@ import WhyUsSection from './components/WhyUsSection.tsx';
 // import Hero from './components/Hero.tsx';
 import GlobalBusiness from './components/GlobalBusiness.tsx';
 import Media from './components/Media.tsx';
-import HeroV2 from './Hero/Hero.tsx';
+import Hero from './Hero/Hero.tsx';
 import Solutions from './components/Solutions.tsx';
 import GridLayout from '../../layout/Grid/GridLayout.tsx';
 
@@ -20,7 +20,7 @@ const Home = () => {
    <Header />
    <main className='min-h-screen w-full text-center bg-color/20'>
     <GridLayout>
-     <HeroV2 />
+     <Hero />
      <WhyUsSection />
      <Media />
      <Solutions/>

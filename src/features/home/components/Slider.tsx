@@ -8,7 +8,7 @@ interface SliderProps {
 
 const Slider = ({children, className}: SliderProps) => {
  return (
-  <div className={clsx('flex h-[768px] w-full whitespace-nowrap', className)}>
+  <div className={clsx('h-[700px] pt-[68px] flex min-w-full whitespace-nowrap', className)}>
    {children}
   </div>
  );

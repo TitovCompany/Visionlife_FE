@@ -12,7 +12,7 @@ const carouselItems = [
  {title: 'Title 03', src: '/img/home/p3.webp'},
 ];
 
-const HeroV2 = () => {
+const Hero = () => {
  const [currentIndex, setCurrentIndex] = useState(0);
  const titleRef = useRef(null);
  const contentRef = useRef<(HTMLElement | null)[]>([]);
@@ -85,12 +85,12 @@ const HeroV2 = () => {
  }, [currentIndex]);
 
  return (
-  <GridArticle className='bg-primary text-color relative'>
+  <GridArticle className='bg-primary text-color relative min-w-screen'>
    {/* Slider */}
    <Slider>
     <div ref={(el) => {
       if (el) sliderRef.current[0] = el;}}
-      className='flex w-full flex-shrink-0 flex-col items-center justify-center pt-20 pb-40'>
+      className='flex min-w-full flex-shrink-0 flex-col items-center justify-center pt-20 pb-40'>
      {/* Title */}
      <img ref={imageRef} src='/img/logo.webp' alt='히어로 섹션 이미지' className='h-full w-[400px]' />
      <h2 ref={titleRef} className='mb-10 text-7xl'>PROUTEX</h2>
@@ -103,16 +103,12 @@ const HeroV2 = () => {
     </div>
 
     {carouselItems.map((item, index) => (
-     <div
-      key={index}
-      ref={(el) => {
-       if (el) sliderRef.current[index + 1] = el;
-      }}
-      className='relative w-full flex-shrink-0'>
+     <div key={index} ref={(el) => {if (el) sliderRef.current[index + 1] = el;}}
+      className='relative min-w-full h-[700px] flex-shrink-0'>
       <img
        src={item.src}
        alt='히어로 섹션 이미지'
-       className='absolute z-[999] h-[857px] w-full bg-black/10'
+       className='absolute z-[999]  w-full h-full bg-black/10'
       />
       <div className='absolute top-[40%] left-1/2 z-[9999] -translate-x-1/2'>
        <h3 className='text-color text-7xl'>Title</h3>
@@ -133,4 +129,4 @@ const HeroV2 = () => {
  );
 };
 
-export default HeroV2;
+export default Hero;
