@@ -4,7 +4,7 @@ import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 const Media = () => {
  return (
   <GridArticle colStart={3} colEnd={11} className='py-20'>
-   <h2 className='text-5xl font-bold'>News</h2>
+   <h2 className='text-5xl font-bold text-primary'>News</h2>
    <div className='py-10'>
     {/* Media Carousel */}
     <div className='relative border-color flex items-start justify-around border-2'>

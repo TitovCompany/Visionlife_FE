@@ -28,18 +28,18 @@ const Solutions = () => {
  return (
   <GridArticle colStart={2} colEnd={12} className='py-20 mb-20'>
    {/* Title */}
-   <h2 className='text-5xl font-bold'>
+   <h2 className='text-5xl font-bold text-primary'>
     <p>Our Eco-Friendly</p>
     <p>Dyeing Solutions</p>
    </h2>
    {/* Contents */}
    <ul className='mt-20 flex gap-5'>
     {solutions.map((solution) => (
-     <li key={solution.id} className='relative flex-1'>
-      <img src={solution.image} alt={solution.title} className='absolute'/>
-      <div className='relative z-10'>
-       <h3 className='text-3xl font-bold'>{solution.title}</h3>
-       <p className='text-xl'>{solution.description}</p>
+     <li key={solution.id} className='w-52 relative flex-1 rounded-xl'>
+      <img src={solution.image} alt={solution.title} className='absolute w-full h-full object-cover rounded-xl'/>
+      <div className='relative z-10 p-8'>
+       <h3 className='text-xl font-bold mb-5'>{solution.title}</h3>
+       <p className='text-lg'>{solution.description}</p>
       </div>
      </li>
     ))}

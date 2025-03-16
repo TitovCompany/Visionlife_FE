@@ -13,8 +13,6 @@ import GridLayout from '../../layout/Grid/GridLayout.tsx';
 
 gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
- // min-h-[calc(100vh-4rem+10px-17.875rem)]
- // scroll-py-72
  return (
   <>
    <Header />

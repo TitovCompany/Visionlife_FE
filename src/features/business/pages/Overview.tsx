@@ -33,23 +33,20 @@ const Overview = () => {
     </GridArticle>
 
     <GridArticle>
-     <div className='mx-auto w-full max-w-xs sm:max-w-sm md:mr-auto md:max-w-lg'>
-      <h3 className='text-xl leading-normal font-semibold md:text-2xl'>
-       <span className='text-primary'>비전라이프</span>는 환경 보호와 지속 가능한 생산을 실현하기 위해
-       <br />
-       디지털 나염 기술과 친환경 솔루션을 제공합니다.
-      </h3>
+     <h3 className='text-xl leading-normal font-semibold md:text-2xl'>
+      <span className='text-primary'>비전라이프</span>는 환경 보호와 지속 가능한 생산을 실현하기 위해
+      디지털 나염 기술과 친환경 솔루션을 제공합니다.
+     </h3>
 
-      <div className='text-md md:text-lg'>
-       {overview.description.map((line: string, index: number) => (
-        <p
-         ref={sectionRef}
-         key={index}
-         className='biz_item mt-3 leading-relaxed md:mt-4'>
-         {line}
-        </p>
-       ))}
-      </div>
+     <div className='text-md md:text-lg'>
+      {overview.description.map((line: string, index: number) => (
+       <p
+        ref={sectionRef}
+        key={index}
+        className='biz_item mt-3 leading-relaxed md:mt-4'>
+        {line}
+       </p>
+      ))}
      </div>
      <img
       src='/img/business/p1.jpg'

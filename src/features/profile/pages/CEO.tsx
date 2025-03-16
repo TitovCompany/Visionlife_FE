@@ -2,23 +2,45 @@ import GridLayout from '../../../layout/Grid/GridLayout.tsx';
 import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 
 const CEO = () => {
+ // grid-rows-[minmax(100px,1fr)_minmax(200px,1fr)_minmax(200px)]
  return (
-  <GridLayout>
-   <h2 className='col-span-12 col-start-2 text-3xl font-bold text-gray-900 mt-20 mb-5'>
-    대표이사 <span className='text-primary'>차무현</span>
-   </h2>
-   {/* CEO 이미지 */}
-   <GridArticle colStart={2} colEnd={6}>
-    <div className='overflow-hidden rounded-xl shadow-lg'>
-     <img
-      src='/img/profile/ceo.webp'
-      alt='CEO'
-      className='h-full w-full object-cover'
-     />
+  <GridLayout className='pt-32'>
+   <GridArticle colStart={2} colEnd={12} className='grid grid-rows-[100px_100px_(200px, 1fr)] grid-cols-12'>
+    {/* Intro */}
+    <div className='col-span-6'>
+     <h3 className='text-xl font-semibold text-gray-700 md:text-5xl'>
+      폐수 없는 잉크, 지속 가능한 선택
+     </h3>
+     <p className='mt-4 leading-relaxed text-gray-600'>
+      우리는 잉크를 단순한 ‘색’이 아닌, 환경을 책임지는 기술로 생각합니다. 잉크
+      한 방울에도 우리의 미래가 담겨 있어야 합니다.
+     </p>
+    </div>
+    {/* Intro 2 */}
+    <div className='row-start-3 items-center col-span-6'>
+     <p className='mt-3 leading-relaxed text-gray-600'>
+      <span className='text-primary font-semibold'>비전라이프</span>는 폐수 없이 생산되는 친환경 잉크 기술을 통해 인쇄 산업의 패러다임을 바꾸고
+      있습니다. 나일론을 사용하지 않으며, 환경에 부담을 주지 않는 지속 가능한
+      솔루션을 개발하고 있습니다.
+     </p>
+     <p className='mt-3 leading-relaxed text-gray-600'>
+      환경 보호와 산업 발전이 함께할 수 있도록, 우리는 기술 혁신을 통해
+      현실적인 대안을 만들어 갑니다.
+     </p>
+     <p className='mt-5 text-lg font-semibold text-gray-800'>
+      더 나은 미래를 위한 선택, 비전라이프와 함께하세요.
+     </p>
+    </div>
+    {/* CEO Image*/}
+    <div className='row-span-1 row-start-3 col-start-8 col-end-13 overflow-hidden rounded-xl flex flex-col items-center justify-center'>
+     <img src='/img/profile/ceo.webp' alt='CEO Profile Image' className='h-full w-full object-cover rounded-xl' />
+     <h2 className='text-lg font-bold text-gray-900 mt-2 mb-5'>
+      대표이사 <span className='text-primary'>차무현</span>
+     </h2>
     </div>
    </GridArticle>
    {/* CEO 소개 */}
-   <GridArticle colStart={7} colEnd={12}>
+   {/*<GridArticle colStart={2} colEnd={6}>
     <div className='max-w-md'>
      <h3 className='mt-2 text-xl font-semibold text-gray-700 md:text-2xl'>
       폐수 없는 잉크, 지속 가능한 선택
@@ -42,7 +64,16 @@ const CEO = () => {
       더 나은 미래를 위한 선택, 비전라이프와 함께하세요.
      </p>
     </div>
-   </GridArticle>
+   </GridArticle>*/}
+   {/* CEO 이미지 */}
+   {/*<GridArticle colStart={7} colEnd={12}>
+    <div className='overflow-hidden rounded-xl flex flex-col items-center justify-center'>
+     <img src='/img/profile/ceo.webp' alt='CEO Profile Image' className='h-full w-full object-cover rounded-xl' />
+     <h2 className='text-lg font-bold text-gray-900 mt-2 mb-5'>
+      대표이사 <span className='text-primary'>차무현</span>
+     </h2>
+    </div>
+   </GridArticle>*/}
    {/* CEO 철학 */}
    <GridArticle colStart={2} colEnd={12}>
     <h2 className='mt-20 text-left text-4xl font-bold text-gray-900'>
