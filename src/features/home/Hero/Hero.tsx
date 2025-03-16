@@ -3,14 +3,14 @@ import gsap from 'gsap';
 import {useGSAP} from '@gsap/react';
 import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 import ProgressBar from '../../../components/ProgressBar.tsx';
+import HeroNavbar from './HeroNavbar.tsx';
+import Slider from '../components/Slider.tsx';
 
 const carouselItems = [
  {title: 'Title 01', src: '/img/home/p1.webp'},
  {title: 'Title 02', src: '/img/home/p2.webp'},
  {title: 'Title 03', src: '/img/home/p3.webp'},
 ];
-
-const buttonList = ['PROUTEX', 'Title 01', 'Title 02', 'Title 03'];
 
 const HeroV2 = () => {
  const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,6 +30,7 @@ const HeroV2 = () => {
   return () => clearInterval(interval); // 컴포넌트 언마운트 시 정리
  }, []);
 
+ // 애니메이션 실행 및 적용
  useGSAP(() => {
   if (sliderRef.current.length === 0) return;
   const tl = gsap.timeline();
@@ -83,15 +84,10 @@ const HeroV2 = () => {
   );
  }, [currentIndex]);
 
- // 버튼 클릭시 슬라이드 변경
- const handleButtonClick = (index: number) => {
-  setCurrentIndex(index);
- };
-
  return (
   <GridArticle className='bg-primary text-color relative'>
    {/* Slider */}
-   <div className='flex h-[768px] w-full whitespace-nowrap'>
+   <Slider>
     <div ref={(el) => {
       if (el) sliderRef.current[0] = el;}}
       className='flex w-full flex-shrink-0 flex-col items-center justify-center pt-20 pb-40'>
@@ -125,24 +121,11 @@ const HeroV2 = () => {
       </div>
      </div>
     ))}
-   </div>
-
+   </Slider>
+   {/* Hero Footer */}
    <div className='relative z-[9999]'>
-    <nav className='text-color w-full pt-5'>
-     <ul className='mx-auto flex w-full max-w-xl justify-between'>
-      {buttonList.map((item, index) => (
-       <li
-        key={index}
-        className={`cursor-pointer px-4 py-2 ${
-         currentIndex === index ? 'bg-white font-bold text-black' : ''
-        }`}
-        onClick={() => handleButtonClick(index)}>
-        {item}
-       </li>
-      ))}
-     </ul>
-    </nav>
-
+    {/* Hero 네비게이션 */}
+    <HeroNavbar currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
     {/* 프로그래스 바 */}
     <ProgressBar ref={slideTimeRef}/>
    </div>
