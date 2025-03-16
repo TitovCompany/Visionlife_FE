@@ -9,7 +9,7 @@ const WhyUsSection = () => {
  ];
 
  return (
-  <GridArticle colStart={2} colEnd={12} className='py-32'>
+  <GridArticle colStart={2} colEnd={11} className='py-32'>
    <div className="text-center">
     <h2 className="text-5xl font-bold">Why Choose Us?</h2>
     <p className="mt-4 text-xl text-gray-600">지속 가능성과 품질을 동시에 제공합니다.</p>

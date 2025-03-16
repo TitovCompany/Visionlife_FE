@@ -3,7 +3,7 @@ import gsap from 'gsap';
 // import {useGSAP} from '@gsap/react';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import Header from '../../layout/Header/Header.tsx';
-import WhyUsSection from './components/WhyUsSection.tsx';
+import WhyUsSection from './WhyUsSection/WhyUsSection.tsx';
 // import Hero from './components/Hero.tsx';
 import GlobalBusiness from './components/GlobalBusiness.tsx';
 import Media from './components/Media.tsx';
