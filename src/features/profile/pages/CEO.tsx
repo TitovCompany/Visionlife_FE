@@ -4,43 +4,54 @@ import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 const CEO = () => {
  // grid-rows-[minmax(100px,1fr)_minmax(200px,1fr)_minmax(200px)]
  return (
-  <GridLayout className='pt-32'>
-   <GridArticle colStart={2} colEnd={12} className='grid grid-rows-[100px_100px_(200px, 1fr)] grid-cols-12'>
+  <GridLayout className='pt-32' rows={4}>
+   <GridArticle
+    colStart={2}
+    colEnd={12}
+    className='grid-rows-3 grid grid-cols-12'>
     {/* Intro */}
-    <div className='col-span-6'>
-     <h3 className='text-xl font-semibold text-gray-700 md:text-5xl'>
-      폐수 없는 잉크, 지속 가능한 선택
+    <div className='col-start-1 col-end-7 row-start-1 row-end-3'>
+     <h3 className='text-xl leading-12 font-semibold text-gray-700 md:text-4xl'>
+      <p>폐수 없는 잉크,</p>
+      <p>지속 가능한 선택</p>
      </h3>
-     <p className='mt-4 leading-relaxed text-gray-600'>
+     <p className='mt-4 text-xl leading-relaxed text-gray-600'>
       우리는 잉크를 단순한 ‘색’이 아닌, 환경을 책임지는 기술로 생각합니다. 잉크
       한 방울에도 우리의 미래가 담겨 있어야 합니다.
      </p>
     </div>
+
     {/* Intro 2 */}
-    <div className='row-start-3 items-center col-span-6'>
+    <div className='col-span-6 row-start-4 row-end-6 items-center'>
      <p className='mt-3 leading-relaxed text-gray-600'>
-      <span className='text-primary font-semibold'>비전라이프</span>는 폐수 없이 생산되는 친환경 잉크 기술을 통해 인쇄 산업의 패러다임을 바꾸고
-      있습니다. 나일론을 사용하지 않으며, 환경에 부담을 주지 않는 지속 가능한
-      솔루션을 개발하고 있습니다.
+      <span className='text-primary font-semibold'>비전라이프</span>는 폐수 없이
+      생산되는 친환경 잉크 기술을 통해 인쇄 산업의 패러다임을 바꾸고 있습니다.
+      나일론을 사용하지 않으며, 환경에 부담을 주지 않는 지속 가능한 솔루션을
+      개발하고 있습니다.
      </p>
      <p className='mt-3 leading-relaxed text-gray-600'>
-      환경 보호와 산업 발전이 함께할 수 있도록, 우리는 기술 혁신을 통해
-      현실적인 대안을 만들어 갑니다.
+      환경 보호와 산업 발전이 함께할 수 있도록, 우리는 기술 혁신을 통해 현실적인
+      대안을 만들어 갑니다.
      </p>
      <p className='mt-5 text-lg font-semibold text-gray-800'>
       더 나은 미래를 위한 선택, 비전라이프와 함께하세요.
      </p>
     </div>
-    {/* CEO Image*/}
-    <div className='row-span-1 row-start-3 col-start-8 col-end-13 overflow-hidden rounded-xl flex flex-col items-center justify-center'>
-     <img src='/img/profile/ceo.webp' alt='CEO Profile Image' className='h-full w-full object-cover rounded-xl' />
-     <h2 className='text-lg font-bold text-gray-900 mt-2 mb-5'>
+    {/* CEO Image */}
+
+    <div className='col-start-8 col-end-13 row-start-2 row-end-4 flex flex-col items-center justify-center overflow-hidden rounded-xl'>
+     <img
+      src='/img/profile/ceo.webp'
+      alt='CEO Profile Image'
+      className='h-full w-full rounded-xl object-cover'
+     />
+     <h2 className='mt-2 mb-5 text-lg font-bold text-gray-900'>
       대표이사 <span className='text-primary'>차무현</span>
      </h2>
     </div>
    </GridArticle>
    {/* CEO 소개 */}
-   {/*<GridArticle colStart={2} colEnd={6}>
+   {/*<GridArticle colStart={2} colEnd={6} className='max-w-md'>
     <div className='max-w-md'>
      <h3 className='mt-2 text-xl font-semibold text-gray-700 md:text-2xl'>
       폐수 없는 잉크, 지속 가능한 선택
@@ -82,13 +93,12 @@ const CEO = () => {
     <p className='mt-6 text-left text-gray-700'>
      비전라이프는 친환경 기술과 산업 발전이 공존할 수 있다고 믿습니다. 우리는
      환경을 보호하는 것이 경제적 성장을 저해하는 요소가 아니라, 미래 산업을
-     선도하는 혁신적인 기회가 될 수 있다고 확신합니다. 지속 가능한 선택이
-     단순한 트렌드가 아닌, 우리 모두의 필수적인 책임이 되어야 합니다. 이에
-     비전라이프는 무폐수 염색 기술, 친환경 소재 연구, 저탄소 제조 공정을 통해
-     환경에 미치는 영향을 최소화하면서도 산업이 지속 성장할 수 있는 현실적인
-     대안을 제시합니다. 우리는 기술 혁신을 통해 보다 깨끗한 지구, 보다 지속
-     가능한 사회를 만들어 나가고자 합니다. 미래를 위한 변화, 비전라이프와
-     함께하세요.
+     선도하는 혁신적인 기회가 될 수 있다고 확신합니다. 지속 가능한 선택이 단순한
+     트렌드가 아닌, 우리 모두의 필수적인 책임이 되어야 합니다. 이에 비전라이프는
+     무폐수 염색 기술, 친환경 소재 연구, 저탄소 제조 공정을 통해 환경에 미치는
+     영향을 최소화하면서도 산업이 지속 성장할 수 있는 현실적인 대안을
+     제시합니다. 우리는 기술 혁신을 통해 보다 깨끗한 지구, 보다 지속 가능한
+     사회를 만들어 나가고자 합니다. 미래를 위한 변화, 비전라이프와 함께하세요.
     </p>
    </GridArticle>
    <GridArticle colStart={2} colEnd={12}>
@@ -120,9 +130,9 @@ const CEO = () => {
       <h3 className='text-xl font-bold'>Responsibility</h3>
       <p className='mt-2'>
        우리는 기업으로서 환경과 사회에 대한 책임을 다해야 합니다. 비전라이프는
-       친환경 정책을 준수하고, 탄소 배출을 줄이며, 지속 가능한 솔루션을
-       개발하는 데 앞장서고 있습니다. 환경 보호는 우리의 책임이며, 함께 실천할
-       때 더 큰 변화를 만들 수 있습니다.
+       친환경 정책을 준수하고, 탄소 배출을 줄이며, 지속 가능한 솔루션을 개발하는
+       데 앞장서고 있습니다. 환경 보호는 우리의 책임이며, 함께 실천할 때 더 큰
+       변화를 만들 수 있습니다.
       </p>
      </div>
     </div>
