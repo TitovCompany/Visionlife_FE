@@ -2,6 +2,7 @@ import {useEffect, useRef, useState} from 'react';
 import gsap from 'gsap';
 import {useGSAP} from '@gsap/react';
 import GridArticle from '../../../layout/Grid/GridArticle.tsx';
+import ProgressBar from '../../../components/ProgressBar.tsx';
 
 const carouselItems = [
  {title: 'Title 01', src: '/img/home/p1.webp'},
@@ -143,9 +144,7 @@ const HeroV2 = () => {
     </nav>
 
     {/* 프로그래스 바 */}
-    <div className='w-full bg-gray-200'>
-     <div ref={slideTimeRef} className='bg-primary h-3'></div>
-    </div>
+    <ProgressBar ref={slideTimeRef}/>
    </div>
   </GridArticle>
  );
