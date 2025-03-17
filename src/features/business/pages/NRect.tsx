@@ -3,7 +3,7 @@ import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 
 const NRect = () => {
  return (
-  <GridLayout>
+  <GridLayout className='pb-32'>
    <GridArticle className="relative">
     <video
      src='/video/ink.mp4'

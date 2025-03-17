@@ -8,7 +8,7 @@ import overview from '../../../data/business/utex_overview.json';
 const ProUtex = () => {
  return (
   <GridLayout>
-   <GridArticle>
+   <GridArticle className='relative'>
     <video
      src='/video/print.mp4'
      controls={false}
@@ -18,7 +18,7 @@ const ProUtex = () => {
      muted
      playsInline
     />
-    <h2 className='w-full max-w-xl pb-4 text-left text-2xl leading-12 font-extrabold md:pb-8 md:text-4xl'>
+    <h2 className='w-full max-w-xl pb-4 text-center text-2xl leading-12 font-extrabold md:pb-8 md:text-4xl absolute top-1/2 -translate-1/2 left-1/2 text-white'>
      비전라이프의 <span className='text-primary'>PROUTEX</span>
      <br />
      친환경 섬유 염색 솔루션
