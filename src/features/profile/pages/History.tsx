@@ -32,45 +32,46 @@ const History = () => {
      </h3>
     </div>
    </GridArticle>
+
    {/* History */}
-   <GridArticle>
-    <aside></aside>
-    {history.map((item, index) => (
-     <article
-      key={item.id}
-      className={clsx(
-       'px-20 py-10',
-       'flex flex-col items-center justify-start',
-       index % 2 === 0 && 'bg-primary text-color w-3/4'
-      )}>
-      {/* History - header */}
-      <div className='w-full text-left font-bold'>
-       <h2 className='text-xl md:text-2xl'>
-        {item.year.includes('~')
-         ? `${item.year.split('~')[0]}년 ~ ${item.year.split('~')[1]}년`
-         : `${item.year}년`}
-       </h2>
-       <h3 className='text-lg leading-10 md:text-3xl'>{item.title}</h3>
-      </div>
-      {/* History - Contents */}
-      <div className='mt-5 w-full text-left text-base'>
-       <p className='mb-2 md:text-xl'>
-        {Array.isArray(item.event) ? (
-         <>
-          {item.event.map((subEvent, index) => (
-           <p key={index} className='list-disc'>
-            {subEvent}
-           </p>
-          ))}
-         </>
-        ) : (
-         <p>{item.event}</p>
-        )}
-       </p>
-       <p>{item.description}</p>
-      </div>
-     </article>
-    ))}
+   <GridArticle colStart={2} colEnd={12}>
+    <ul className={clsx('relative', '')}>
+     {history.map((item) => (
+      <li key={item.id} className={clsx('relative',)}>
+       {/* dot */}
+       <div className='bg-primary rounded-full m-5 outline-primary-5 w-10 h-10'></div>
+       {/* History */}
+       <div className='rounded-lg bg-white p-6 shadow-lg'>
+        {/* History - header */}
+        <div className='w-full text-left font-bold'>
+         <h2 className='inline-block bg-primary px-4 py-1 text-lg font-semibold text-color mb-5'>
+          {item.year.includes('~')
+           ? `${item.year.split('~')[0]}년 ~ ${item.year.split('~')[1]}년`
+           : `${item.year}년`}
+         </h2>
+         <h3 className='text-lg leading-10 md:text-3xl'>{item.title}</h3>
+        </div>
+        {/* History - Contents */}
+        <div className='mt-5 w-full text-left text-base'>
+         <p className='mb-2 md:text-xl'>
+          {Array.isArray(item.event) ? (
+           <>
+            {item.event.map((subEvent, index) => (
+             <p key={index} className='list-disc'>
+              {subEvent}
+             </p>
+            ))}
+           </>
+          ) : (
+           <p>{item.event}</p>
+          )}
+         </p>
+         <p>{item.description}</p>
+        </div>
+       </div>
+      </li>
+     ))}
+    </ul>
    </GridArticle>
   </GridLayout>
  );
