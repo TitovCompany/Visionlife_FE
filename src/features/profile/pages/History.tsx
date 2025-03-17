@@ -9,7 +9,7 @@ const History = () => {
  // const sectionRef = useRef(null);
  // useScrollAnimation('.history_item', 'top 80%');
  return (
-  <GridLayout>
+  <GridLayout className='gap-y-0'>
    {/* Hero */}
    <GridArticle>
     <video
@@ -34,6 +34,7 @@ const History = () => {
    </GridArticle>
    {/* History */}
    <GridArticle>
+    <aside></aside>
     {history.map((item, index) => (
      <article
       key={item.id}
