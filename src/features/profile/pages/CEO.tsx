@@ -6,8 +6,8 @@ const CEO = () => {
  return (
   <GridLayout className='py-32 text-primary'>
    <GridArticle
-    colStart={2}
-    colEnd={12}
+    colStart={1}
+    colEnd={10}
     className='grid grid-cols-3 grid-rows-2'>
     {/* Intro */}
     <div className='w-fit relative col-span-2 self-center'>
@@ -45,7 +45,7 @@ const CEO = () => {
    </GridArticle>
 
    {/* CEO 철학 */}
-   <GridArticle colStart={2} colEnd={7} className='text-left text-xl text-primary leading-8'>
+   <GridArticle colStart={1} colEnd={6} className='text-left text-xl text-primary leading-8'>
     <h2 className='mt-20 text-left text-4xl font-bold'>
      CEO의 철학
     </h2>
@@ -65,7 +65,7 @@ const CEO = () => {
      우리는 기술 혁신을 통해 보다 깨끗한 지구, 보다 지속 가능한 사회를 만들어 나가고자 합니다. 미래를 위한 변화, 비전라이프와 함께하세요.
     </p>
    </GridArticle>
-   <GridArticle colStart={8} colEnd={12}>
+   <GridArticle colStart={7} colEnd={10}>
     <div className='mt-20 flex flex-col gap-10'>
      {/* 지속 가능성 (Sustainability) */}
      <div className='bg-primary rounded-lg p-6 text-white shadow-md'>

@@ -42,7 +42,7 @@ const ContactUs = () => {
  return (
   <GridLayout rows={2} className='py-32'>
    {/* 연락처 정보 */}
-   <GridArticle colStart={2} colEnd={12}>
+   <GridArticle colStart={2} colEnd={10}>
     <div className='text-primary text-xl leading-8'>
      <h2 className='text-3xl font-bold mb-10'>Contact</h2>
      <p>
@@ -66,7 +66,7 @@ const ContactUs = () => {
     </ul>
    </GridArticle>
    {/* 지도 영역 */}
-   <GridArticle colStart={2} colEnd={11} className='mt-20'>
+   <GridArticle colStart={2} colEnd={10} className='mt-20'>
     <h2 className='text-3xl font-bold mb-10'>Location</h2>
     <div
      id='map'
