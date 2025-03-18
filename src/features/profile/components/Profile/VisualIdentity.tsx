@@ -21,55 +21,52 @@ const VisualIdentity = () => {
  const imgRef = useRef<HTMLImageElement | null>(null);
  const subContentRef = useRef<(HTMLParagraphElement | null)[]>([]);
 
+ // 공통 애니메이션 적용 함수
+ const animateWithTimeline = (
+  timeline: gsap.core.Timeline,
+  elements: (HTMLElement | null)[],
+  fromVars: gsap.TweenVars,
+  toVars: gsap.TweenVars
+ ) => {
+  timeline.fromTo(elements.filter(Boolean), fromVars, toVars);
+ };
+
  useGSAP(() => {
   const tl = gsap.timeline({
    scrollTrigger: {
     trigger: containerRef.current,
-    start: 'top 85%',
-    end: 'top 30%',
+    start: "top 85%",
+    end: "top 30%",
     scrub: 1,
-    // pin: true,
-    markers: true,
+    markers: true, // 디버깅용
    }
   });
 
-  tl.fromTo(titleRef.current, { y: 200, opacity: 0 }, {
-    y: 0,
-    opacity: 1,
-    duration: 2,
-    stagger: 0.2,
-   });
+  // 일반 요소 (Y축 애니메이션)
+  const animateElements = [titleRef.current, contentRef.current, subTitleRef.current];
+  animateWithTimeline(
+   tl,
+   animateElements,
+   { y: 200, opacity: 0 },
+   { y: 0, opacity: 1, duration: 1.5, stagger: 0.3 }
+  );
 
-   tl.fromTo(contentRef.current, { y: 200, opacity: 0, }, {
-    y: 0,
-    opacity: 1,
-    duration: 2,
-    stagger: 0.2,
-   });
+  // 이미지 (X축 애니메이션)
+  animateWithTimeline(
+   tl,
+   [imgRef.current],
+   { x: -200, opacity: 0 },
+   { x: 0, opacity: 1, duration: 1.5 }
+  );
 
-  tl.fromTo(imgRef.current, { x: -200, opacity: 0 }, {
-   x: 0,
-   opacity: 1,
-   duration: 2,
-   stagger: 0.2,
-  });
+  // 하위 문장 (Y축 stagger 적용)
+  animateWithTimeline(
+   tl,
+   subContentRef.current,
+   { y: 200, opacity: 0 },
+   { y: 0, opacity: 1, duration: 1.5, stagger: 0.2 }
+  );
 
-   tl.fromTo(subTitleRef.current, { y: 200, opacity: 0 }, {
-    y: 0,
-    opacity: 1,
-    duration: 2,
-    stagger: 0.2,
-   });
-
-  console.log(subContentRef);
-  subContentRef.current.forEach((item) => {
-   tl.fromTo(item, { y: 200, opacity: 0 }, {
-    y: 0,
-    opacity: 1,
-    duration: 2,
-    stagger: 0.2,
-   });
-  })
  }, []);
 
  return (
