@@ -9,7 +9,7 @@ import Slider from '../components/Slider.tsx';
 const carouselItems = [
  {title: 'Title 01', src: '/img/home/p1.webp'},
  {title: 'Title 02', src: '/img/home/p2.webp'},
- {title: 'Title 03', src: '/img/home/p3.webp'},
+ {title: 'Title 03', src: '/img/home/p1.webp'},
 ];
 
 const Hero = () => {

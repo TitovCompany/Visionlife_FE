@@ -17,7 +17,7 @@ const solutions = [
  },
  {
   id: 3,
-  image: '/img/home/solutions/p3.webp',
+  image: '/img/home/solutions/p1.webp',
   title: '탁월한 견뢰도와 품질',
   description:
    '비전라이프는 신뢰와 품질을 최우선 가치로 삼고 있습니다. 우리는 색상의 선명도와 내구성을 극대화하여, 고객이 기대하는 그 이상의 결과를 제공합니다. 친환경 염색 기술의 새로운 기준을 경험해 보세요.',

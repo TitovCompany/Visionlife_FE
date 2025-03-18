@@ -1,5 +1,4 @@
 import AnimatedHeading from './AnimatedHeading.tsx';
-import clsx from 'clsx';
 import React from 'react';
 
 /**
@@ -12,7 +11,6 @@ import React from 'react';
  * @property {string} src - 이미지 URL
  * @property {string} alt - 이미지 대체 텍스트
  * @property {string} [wrapperClass] - 카드 래퍼의 추가 클래스
- * @property {string} [imageClass] - 이미지의 추가 클래스
  * @property {string} [descriptionClass] - 설명의 추가 클래스
  */
 interface ImageCardProps {
@@ -24,7 +22,6 @@ interface ImageCardProps {
   alt: string;
   isFlex?: boolean;
   wrapperClass?: string;
-  imageClass?: string;
   descriptionClass?: string;
 }
 
@@ -42,7 +39,6 @@ interface ImageCardProps {
  *   src="/images/sample.jpg"
  *   alt="Sample Image"
  *   wrapperClass="p-4 bg-gray-100 rounded-lg"
- *   imageClass="w-32 h-32 rounded-full"
  *   descriptionClass="text-sm text-gray-600"
  * />
  * ```
@@ -60,19 +56,12 @@ const ImageCard: React.FC<ImageCardProps> = (props) => {
     src,
     alt,
     wrapperClass,
-    imageClass,
     descriptionClass,
   } = props;
 
-  const imgClasses = clsx(
-    imageClass
-      ? imageClass
-      : 'w-[120px] md:w-[140px] h-[120px] md:h-[140px] object-cover'
-  );
-
   return (
     <Component className={wrapperClass}>
-      <img className={imgClasses} src={src} alt={alt} />
+      <img className='h-full w-full object-cover' src={src} alt={alt} />
 
       {isFlex ? (
         <div className='flex flex-col'>

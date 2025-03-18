@@ -73,7 +73,7 @@ const Overview = () => {
      <img src='/img/business/p1.jpg' alt='' className={clsx('h-96 w-full object-cover md:h-[700px]', 'col-start-8 col-end-13')}/>
     </GridLayout>
     {/* 해결하는 문제 */}
-    <GridLayout className='pb-32 h-96'>
+    <GridLayout className='py-32 h-96'>
      <img src="/img/business/p1.webp" alt="비전라이프가 해결하는 문제" className={clsx('col-start-2 col-end-6 h-[600px] -translate-y-60')}/>
      <GridArticle colStart={7} colEnd={12}>
       <h3 className='text-3xl font-bold text-primary mb-4'>
@@ -88,7 +88,7 @@ const Overview = () => {
      </GridArticle>
     </GridLayout>
     {/* 기술 차별점 및 효과 */}
-    <GridLayout className='py-32 text-xl leading-8 h-[500px]'>
+    <GridLayout className='pt-32 text-xl leading-8 h-[500px]'>
      <GridArticle colStart={2} colEnd={10}>
       <h2 className='mt-10 text-2xl font-bold md:text-3xl lg:text-4xl text-primary'>
        기술 차별점 및 효과
