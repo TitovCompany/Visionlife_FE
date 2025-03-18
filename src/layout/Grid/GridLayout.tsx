@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import {FC, ReactNode, RefObject} from 'react';
 
 const GRID_COLS: Record<number, string> = {
  1: 'grid-cols-1',
@@ -53,24 +54,27 @@ const ALIGN_CLASSES: Record<string, string> = {
 };
 
 interface GridLayoutProps {
- children: React.ReactNode;
+ children: ReactNode;
  cols?: number;
  rows?: number | 'auto';
  gap?: number;
  align?: 'start' | 'center' | 'end' | 'stretch';
+ ref?: RefObject<HTMLElement>;
  className?: string;
 }
 
-const GridLayout: React.FC<GridLayoutProps> = ({
+const GridLayout: FC<GridLayoutProps> = ({
  children,
  cols = 12,
  rows = 1,
  gap = 4,
  align = 'stretch',
  className,
+ ref,
 }) => {
  return (
   <section
+   ref={ref}
    className={clsx(
     'grid',
     GRID_COLS[cols] || 'grid-cols-12',

@@ -4,6 +4,7 @@ import {useRef} from 'react';
 import {useGSAP} from '@gsap/react';
 import SplitType from 'split-type';
 import clsx from 'clsx';
+import GridLayout from '../../../../layout/Grid/GridLayout.tsx';
 
 const paragraphs = [
  '비전라이프는 지속 가능한 미래를 꿈꾸며, 친환경 기술을 통해 산업과 자연이 조화를 이루는 혁신을 실현합니다. 우리는 단순한 제품을 만드는 것이 아니라, 환경 보호와 산업 발전을 동시에 이끄는 솔루션을 창조합니다.',
@@ -12,38 +13,48 @@ const paragraphs = [
 ];
 
 gsap.registerPlugin(ScrollTrigger);
-const AboutUs = ({
- imageRef,
-}: {
- imageRef: React.RefObject<HTMLImageElement | null>;
-}) => {
+const AboutUs = () => {
  const aboutImageRef = useRef<HTMLElement | null>(null);
  const inkRef = useRef(null);
+ const imageRef = useRef<HTMLImageElement | null>(null);
  const textRefs = useRef<(HTMLElement | null)[]>([]);
 
  useGSAP(() => {
   const tl = gsap.timeline();
   tl.to(inkRef.current, {
-   y: 100,
-   duration: 1.2,
+   y: 350,
+   duration: 1.5,
    scrollTrigger: {
     trigger: aboutImageRef.current,
-    start: 'top top',
-    end: '+=200px',
+    start: '-=200px',
+    end: '+=500px',
     scrub: 1,
     pin: false,
-    markers: true,
    },
   });
+
+  tl.fromTo(imageRef.current, {
+   y: '100%',
+  }, {
+   duration: 1.5,
+   y: 0,
+   scrollTrigger: {
+    trigger: aboutImageRef.current,
+    start: '-=100px',
+    end: '+=500px',
+    scrub: 1,
+    pin: false,
+   }
+  })
+  
+  // 텍스트 이벤트
   textRefs.current.forEach((el, index) => {
    if (!el) return;
-   const splitText = new SplitType(el, {types: 'chars'}); // 텍스트를 문자 단위로 분리
-
+   // 텍스트를 문자 단위로 분리
+   const splitText = new SplitType(el, {types: 'chars'});
    gsap.fromTo(
-    splitText.chars,
-    {color: '#bbb'}, // 시작 색상 (연한 회색)
-    {
-     color: '#000', // 끝 색상 (검정)
+    splitText.chars, {color: '#bbb',}, {
+     color: '#000',
      duration: 1.5,
      stagger: 0.05,
      scrollTrigger: {
@@ -51,17 +62,14 @@ const AboutUs = ({
       start: `top ${90 - index * 10}%`,
       end: `top ${40 - index * 5}%`,
       scrub: 1,
-      markers: true,
-     },
-    }
-   );
+     },});
   });
  }, []);
 
  return (
-  <section className={clsx('min-h-screen', 'grid grid-cols-12')}>
+  <GridLayout rows={3} className={clsx('min-h-screen')}>
    {/* About Ink Image */}
-   <article ref={aboutImageRef} className='col-span-12 lg:col-span-10 lg:col-start-3'>
+   <article ref={aboutImageRef} className='col-start-3'>
     <div ref={inkRef} className='mb-32 h-[512px] w-[401px]'>
      <h2 className='border-b-primary mb-5 w-fit border-b px-2 pb-2 text-lg font-bold'>
       Ink - NRECT
@@ -70,17 +78,10 @@ const AboutUs = ({
     </div>
    </article>
    {/* 섬유 이미지 */}
-   <article className='col-span-12 lg:col-span-10 lg:col-start-7'>
-    <img
-     ref={imageRef}
-     src='/img/product/features/p4.png'
-     alt=''
-     className='max-h-[814px] max-w-[550px]'
-    />
-   </article>
+   <img ref={imageRef} src='/img/product/features/p4.png' alt='섬유 이미지' className={clsx('max-h-[814px] max-w-[550px]', 'col-start-7 col-end-12 row-start-2 content-end')}/>
    {/* About Description */}
    <article className='col-span-12 py-20 lg:col-span-10 lg:col-start-2'>
-    <h2 className='border-b-primary w-fit border-b px-2 text-2xl font-bold'>
+    <h2 className='border-b-primary w-fit border-b-2 px-2 pb-2 text-2xl font-bold'>
      About Us
     </h2>
     {paragraphs.map((text, index) => (
@@ -94,8 +95,39 @@ const AboutUs = ({
      </p>
     ))}
    </article>
-  </section>
+  </GridLayout>
  );
 };
 
 export default AboutUs;
+
+/*
+<section className={clsx('min-h-screen', 'grid grid-cols-12')}>
+ {/!* About Ink Image *!/}
+ <article ref={aboutImageRef} className='col-span-12 lg:col-span-10 lg:col-start-3'>
+  <div ref={inkRef} className='mb-32 h-[512px] w-[401px]'>
+   <h2 className='border-b-primary mb-5 w-fit border-b px-2 pb-2 text-lg font-bold'>
+    Ink - NRECT
+   </h2>
+   <img src='/img/business/p1.jpg' alt='' className='h-full w-full' />
+  </div>
+ </article>
+ {/!* 섬유 이미지 *!/}
+ <img ref={imageRef} src='/img/product/features/p4.png' alt='섬유 이미지' className={clsx('max-h-[814px] max-w-[550px]', 'col-span-12 lg:col-span-10 lg:col-start-7')} />
+ {/!* About Description *!/}
+ <article className='col-span-12 py-20 lg:col-span-10 lg:col-start-2'>
+  <h2 className='border-b-primary w-fit border-b px-2 text-2xl font-bold'>
+   About Us
+  </h2>
+  {paragraphs.map((text, index) => (
+   <p
+    key={index}
+    ref={(el) => {
+     if (el) textRefs.current[index] = el;
+    }} // 개별 참조 저장
+    className='mt-10 text-2xl leading-relaxed text-gray-400'>
+    {text}
+   </p>
+  ))}
+ </article>
+</section>*/

@@ -131,7 +131,7 @@ const PLACE_SELF_OPTIONS: Record<string, string> = {
 
 interface GridArticleProps {
  children: ReactNode;
- ref?: RefObject<HTMLElement | null>;
+ ref?: RefObject<HTMLElement | null> | RefObject<(HTMLElement | null)[]>;
  colSpan?: number;
  rowSpan?: number;
  colStart?: number;
@@ -160,7 +160,15 @@ const GridArticle: FC<GridArticleProps> = ({
 }) => {
  return (
   <article
-   ref={ref}
+   ref={(el) => {
+    if (ref && 'current' in ref && !Array.isArray(ref.current)) {
+     ref.current = el;
+    }
+
+    if ((ref && 'current' in ref && Array.isArray(ref.current) && el)) {
+     ref.current.push(el);
+    }
+   }}
    className={clsx(
     COL_SPANS[colSpan] || 'col-span-12',
     ROW_SPANS[rowSpan] || 'row-span-1',
