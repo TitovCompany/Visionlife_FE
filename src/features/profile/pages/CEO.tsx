@@ -8,9 +8,9 @@ import {useGSAP} from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 const CEO = () => {
  const titleRef = useRef<HTMLDivElement>(null);
- const cardRef = useRef<HTMLDivElement>(null);
+ //const cardRef = useRef<HTMLDivElement>(null);
  const imgRef = useRef<HTMLImageElement>(null);
- const contentRef = useRef<HTMLDivElement>(null);
+ //const contentRef = useRef<HTMLDivElement>(null);
 
  useGSAP(() => {
   const tl = gsap.timeline()

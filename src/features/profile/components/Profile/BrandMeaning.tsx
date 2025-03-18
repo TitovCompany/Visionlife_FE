@@ -1,12 +1,13 @@
 import GridArticle from '../../../../layout/Grid/GridArticle.tsx';
 import clsx from 'clsx';
 import GridLayout from '../../../../layout/Grid/GridLayout.tsx';
+import ColorList from '../ColorList.tsx';
 
 const BrandMeaning = () => {
  return (
   <GridLayout>
    {/* Brand Meaning */}
-   <GridArticle className={clsx('mt-32 mb-20 ml-10 max-w-4xl text-left ', 'col-span-12 lg:col-span-10 lg:col-start-2')}>
+   <GridArticle colStart={2} colEnd={7} className={clsx('mt-32 mb-20 text-left ',)}>
     <h2 className='text-7xl font-bold'>Brand Meaning</h2>
     <p className='mt-10 text-xl leading-8'>
      Vision Life는 단순한 제품을 넘어, 지속 가능한 기술과 혁신을 바탕으로 환경과 조화를 이루는 제품을 개발하는 브랜드입니다. 우리는 친환경적인 솔루션을 통해 지속 가능한 미래를 창조하는 것을 목표로 합니다.
@@ -21,28 +22,17 @@ const BrandMeaning = () => {
    </GridArticle>
 
    {/* Color */}
-   <GridArticle colStart={2} className={clsx('mb-32 w-full flex items-center justify-center gap-10 py-10',)}>
+   <GridArticle colStart={2} colEnd={7} className={clsx('mb-32 w-full mt-10',
+    'content-center')}>
     <ul className='flex flex-col gap-10'>
-     <li className='flex justify-center items-center gap-6'>
-      <div className='bg-primary h-48 w-48'></div>
-      <div className='max-w-2xl'>
-       <h3 className="text-2xl font-bold">Primary Color - #1a3027</h3>
-       <p className="text-lg leading-relaxed mt-2">
-        깊고 차분한 그린 계열 색상으로, 지속 가능성과 신뢰성을 표현합니다.
-        자연 친화적인 브랜드 아이덴티티를 반영하며, 환경을 고려한 기술력을 강조합니다.
-       </p>
-      </div>
-     </li>
-     <li className='flex justify-center items-center gap-6'>
-      <div className='bg-secondary h-48 w-48'></div>
-      <div className='max-w-2xl'>
-       <h3 className="text-2xl font-bold">Accent Color - #dbad7e</h3>
-       <p className="text-lg leading-relaxed mt-2">
-        따뜻한 골드 브라운 컬러로, 브랜드의 프리미엄 가치를 상징합니다.
-        혁신적인 기술력과 고품질 제품을 강조하며, 세련되고 품격 있는 브랜드 이미지를 제공합니다.
-       </p>
-      </div>
-     </li>
+     <ColorList color='primary' title='Primary Color - #1a3027'>
+      깊고 차분한 그린 계열 색상으로, 지속 가능성과 신뢰성을 표현합니다.
+      자연 친화적인 브랜드 아이덴티티를 반영하며, 환경을 고려한 기술력을 강조합니다.
+     </ColorList>
+     <ColorList color='accent' title='Accent Color - #dbad7e'>
+      따뜻한 골드 브라운 컬러로, 브랜드의 프리미엄 가치를 상징합니다.
+      혁신적인 기술력과 고품질 제품을 강조하며, 세련되고 품격 있는 브랜드 이미지를 제공합니다.
+     </ColorList>
     </ul>
    </GridArticle>
   </GridLayout>

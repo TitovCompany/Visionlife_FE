@@ -35,25 +35,6 @@ const Overview = () => {
      </GridArticle>
     </GridLayout>
     {/* Vision life Overview */}
-    {/*<GridLayout className='py-32'>
-     <GridArticle colStart={2} colEnd={7} className='pt-32 flex '>
-      <div className='text-md md:text-lg'>
-       <h3 className='text-xl leading-normal font-semibold md:text-2xl'>
-        <span className='text-primary'>비전라이프</span>는 환경 보호와 지속 가능한 생산을 실현하기 위해
-        디지털 나염 기술과 친환경 솔루션을 제공합니다.
-       </h3>
-       {overview.description.map((line: string, index: number) => (
-        <p
-         ref={sectionRef}
-         key={index}
-         className='biz_item mt-3 leading-relaxed md:mt-4'>
-         {line}
-        </p>
-       ))}
-      </div>
-     </GridArticle>
-     <img src='/img/business/p1.jpg' alt='' className={clsx('h-96 w-full object-cover md:h-[500px]', 'col-start-8 col-end-11')}/>
-    </GridLayout>*/}
     <GridLayout className='py-32'>
      <GridArticle colStart={2} colEnd={7} className='pt-16'>
       <h3 className='text-3xl leading-normal font-semibold'>

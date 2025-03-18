@@ -195,13 +195,13 @@ const NRect = () => {
       <h2 className='my-4'>N-RECT은 PROUTEX 디지털 프린터와 함께 사용해야 최상의 결과를 제공합니다</h2>
       <h2 className='my-4'>지금 PROUTEX를 확인하고, 친환경 섬유 염색 솔루션을 만나보세요</h2>
      </div>*/}
-     <div className="text-3xl font-bold text-primary">
+     <div className="text-3xl font-bold text-primary text-left">
       {/*<h2 className="my-4">PROUTEX와 함께 <br /> 최적의 프린팅 솔루션을 경험하세요</h2>
       <h2 className="my-4">선명한 색상, 친환경 공정 <br /> PROUTEX에서 시작됩니다</h2>
       <h2 className="my-4">더 깨끗하게, 더 선명하게 <br /> PROUTEX가 만들어갑니다</h2>*/}
       <h2 className="my-4">N-RECT × PROUTEX <br /> 완벽한 조합으로 차원이 다른 품질</h2>
      </div>
-     <p className='mt-4 text-center text-lg leading-relaxed text-gray-700'>
+     <p className='mt-4 text-lg leading-relaxed text-gray-700'>
       N-RECT는 PROUTEX 전용으로 개발된 친환경 수성 잉크입니다. 최적의 흡수력과
       균일한 도포를 제공하여 기존 프린팅 방식보다 더 선명하고, 지속성이 뛰어난
       색상을 보장합니다.
