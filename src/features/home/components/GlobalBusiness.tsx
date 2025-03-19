@@ -17,7 +17,7 @@ const GlobalBusinessBtn = ({data}: {data: string[]}) => {
 const GlobalBusiness = () => {
  return (
   <GridArticle colStart={2} colEnd={12} className='py-20 flex flex-col '>
-   <div className='flex items-center justify-between gap-10'>
+   <div className='flex items-center justify-around gap-10 mb-10'>
     <div className='text-lg text-left'>
      <h2 className='mb-5 text-5xl font-bold text-primary'>
       Global Business

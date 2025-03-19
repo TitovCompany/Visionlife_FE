@@ -14,11 +14,11 @@ const ThreeDScene: React.FC = () => {
 
    {/* 🌍 지구본 추가 */}
    <mesh>
-    <sphereGeometry args={[2, 32, 32]} />
+    <sphereGeometry args={[3, 32, 32]} />
     <meshStandardMaterial map={texture} />
    </mesh>
 
-   <OrbitControls />
+   <OrbitControls enableZoom={false}/>
   </Canvas>
  );
 };
