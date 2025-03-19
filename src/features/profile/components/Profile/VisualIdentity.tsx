@@ -70,7 +70,12 @@ const VisualIdentity = () => {
  }, []);
 
  return (
-  <GridLayout className={clsx('relative min-h-[100vh]', 'text-color bg-primary [clip-path:polygon(0_10%,100%_0,100%_90%,0%_100%)]')}>
+  /* [clip-path:polygon(...)]을 사용하여 원하는 모양을 만든다.
+     0_10% → 왼쪽 상단을 아래로 내린다.
+     100%_0 → 오른쪽 상단을 직선으로 유지.
+     100%_100% → 오른쪽 하단은 그대로.
+     0%_100% → 왼쪽 하단도 그대로 (즉, 하단은 직선 유지).*/
+  <GridLayout className={clsx('relative min-h-[100vh]', 'text-color bg-primary [clip-path:polygon(0_10%,100%_0,100%_100%,0%_100%)]')}>
    <GridArticle ref={containerRef} colStart={2} className={clsx('mt-32 mb-20 max-w-3xl', 'text-left', 'content-center')}>
     <h2 ref={titleRef} className='text-7xl font-bold'>Visual Identity</h2>
     <p ref={contentRef} className='mt-10 text-xl leading-10'>
