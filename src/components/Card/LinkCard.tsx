@@ -10,7 +10,7 @@ interface LinkCardProps {
 const LinkCard = ({bgImage, title, description}: LinkCardProps) => {
  return (
   <Link to='/'>
-   <div className={clsx('h-full min-h-120 w-full rounded-xl border bg-cover bg-center p-6 text-white shadow-lg',
+   <div className={clsx('h-full min-h-120 w-full rounded-xl border bg-cover bg-center p-6 text-white shadow-lg flex items-end',
     bgImage)}>
     <div className='flex h-full min-h-full w-full flex-col justify-end rounded-lg p-4'>
      <h3 className='text-color mb-2 text-2xl font-bold'># {title}</h3>
