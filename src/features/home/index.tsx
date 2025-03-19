@@ -19,8 +19,8 @@ const Home = () => {
     <GridLayout>
      <Hero />
      <WhyUsSection />
-     <Media />
      <GlobalBusiness />
+     <Media />
     </GridLayout>
    </main>
   </>

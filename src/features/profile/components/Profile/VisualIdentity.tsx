@@ -70,7 +70,7 @@ const VisualIdentity = () => {
  }, []);
 
  return (
-  <GridLayout className={clsx('relative min-h-[100vh]', 'text-color bg-primary')}>
+  <GridLayout className={clsx('relative min-h-[100vh]', 'text-color bg-primary [clip-path:polygon(0_10%,100%_0,100%_90%,0%_100%)]')}>
    <GridArticle ref={containerRef} colStart={2} className={clsx('mt-32 mb-20 max-w-3xl', 'text-left', 'content-center')}>
     <h2 ref={titleRef} className='text-7xl font-bold'>Visual Identity</h2>
     <p ref={contentRef} className='mt-10 text-xl leading-10'>
