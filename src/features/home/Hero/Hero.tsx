@@ -7,9 +7,9 @@ import HeroNavbar from './HeroNavbar.tsx';
 import Slider from '../components/Slider.tsx';
 
 const carouselItems = [
- {title: 'Title 01', src: '/img/home/p1.webp'},
- {title: 'Title 02', src: '/img/home/p2.webp'},
- {title: 'Title 03', src: '/img/home/p1.webp'},
+ {title: '친환경', src: '/img/home/p1.webp'},
+ {title: '고품질', src: '/img/home/p2.webp'},
+ {title: 'B2B 맞춤 지원', src: '/img/home/p1.webp'},
 ];
 
 const Hero = () => {

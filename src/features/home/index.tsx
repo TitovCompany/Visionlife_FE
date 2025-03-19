@@ -8,7 +8,6 @@ import WhyUsSection from './WhyUsSection/WhyUsSection.tsx';
 import GlobalBusiness from './components/GlobalBusiness.tsx';
 import Media from './components/Media.tsx';
 import Hero from './Hero/Hero.tsx';
-import Solutions from './components/Solutions.tsx';
 import GridLayout from '../../layout/Grid/GridLayout.tsx';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -21,7 +20,6 @@ const Home = () => {
      <Hero />
      <WhyUsSection />
      <Media />
-     <Solutions/>
      <GlobalBusiness />
     </GridLayout>
    </main>
