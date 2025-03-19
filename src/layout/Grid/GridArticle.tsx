@@ -159,7 +159,7 @@ const GridArticle: FC<GridArticleProps> = ({
  className,
 }) => {
  return (
-  <article
+  <div
    ref={(el) => {
     if (ref && 'current' in ref && !Array.isArray(ref.current)) {
      ref.current = el;
@@ -182,7 +182,7 @@ const GridArticle: FC<GridArticleProps> = ({
     className
    )}>
    {children}
-  </article>
+  </div>
  );
 };
 

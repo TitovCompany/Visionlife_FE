@@ -85,12 +85,12 @@ const Hero = () => {
  }, [currentIndex]);
 
  return (
-  <GridArticle className='bg-primary text-color relative min-w-screen'>
+  <GridArticle className='bg-primary text-color relative min-w-screen min-h-screen'>
    {/* Slider */}
    <Slider>
     <div ref={(el) => {
       if (el) sliderRef.current[0] = el;}}
-      className='flex min-w-full flex-shrink-0 flex-col items-center justify-center pt-20 pb-40'>
+      className='flex min-w-full flex-shrink-0 flex-col items-center justify-center pt-40 pb-96 min-h-full'>
      {/* Title */}
      <img ref={imageRef} src='/img/logo.webp' alt='히어로 섹션 이미지' className='h-full w-[400px]' />
      <h2 ref={titleRef} className='mb-10 text-7xl'>PROUTEX</h2>
@@ -104,7 +104,7 @@ const Hero = () => {
 
     {carouselItems.map((item, index) => (
      <div key={index} ref={(el) => {if (el) sliderRef.current[index + 1] = el;}}
-      className='relative min-w-full h-[700px] flex-shrink-0'>
+      className='relative min-w-full min-h-full flex-shrink-0'>
       <img
        src={item.src}
        alt='히어로 섹션 이미지'

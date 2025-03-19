@@ -15,7 +15,7 @@ const Home = () => {
  return (
   <>
    <Header />
-   <main className='min-h-screen w-full text-center bg-color/20'>
+   <main className='min-h-screen w-full text-center bg-white'>
     <GridLayout>
      <Hero />
      <WhyUsSection />
