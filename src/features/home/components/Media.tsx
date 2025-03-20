@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const Media = () => {
  return (
-  <GridArticle colStart={2} colEnd={13} className='py-20 flex gap-20 overflow-x-visible'>
+  <GridArticle colStart={2} colEnd={13} className='mt-64 mb-32 flex gap-20 overflow-x-visible'>
    <div className='text-primary text-lg text-left w-fit min-w-fit'>
     <h2 className='mb-5 text-5xl font-bold '>PROUTEX NEWS</h2>
     <p>친환경 기술과 지속 가능한 변화를 만드는</p>
