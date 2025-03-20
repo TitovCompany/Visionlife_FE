@@ -40,7 +40,7 @@ const Overview = () => {
             <img src={item.src} alt='' className={clsx('w-full h-screen object-cover filter brightness-50')}/>)}
           </div>
           <div className={clsx('absolute top-1/2 -translate-1/2 left-1/2', 'text-white text-center text-xl')}>
-           <h2 className='mb-10 text-5xl font-bold'>{item.title}</h2>
+           <h2 className='mb-10 text-5xl font-bold leading-14'>{item.title}</h2>
            <p className='mb-10 whitespace-pre-line leading-8'>{item.content}</p>
            <Button className='border-3 border-white py-3 px-10 text-white' style='outlined'>
             VIEW ALL
