@@ -13,7 +13,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
  return (
   <main className={clsx(
     'w-full pt-[calc(68px)] min-h-screen',
-    'bg-color/20')}>
+    'bg-white')}>
    {/* SEO 최적화용 */}
    <h1 className='hidden'>{title}</h1>
    {children}

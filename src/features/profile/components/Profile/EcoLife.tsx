@@ -4,6 +4,7 @@ import GridArticle from '../../../../layout/Grid/GridArticle.tsx';
 // 'col-span-12 lg:col-span-10 lg:col-start-2'
 const EcoLife = () => {
  return (
+  /* Todo 상단으로 끌어 올리기 */
   <GridLayout className={clsx('relative text-center',)}>
    {/* 메인 타이틀 */}
    <GridArticle colStart={2} colEnd={7} className={clsx('text-primary mt-32',)}>
