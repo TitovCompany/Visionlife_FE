@@ -1,4 +1,4 @@
-import ListCard from '../../../components/ListCard.tsx';
+import ListCard from '../../../components/Card/ListCard.tsx';
 import {FaPhoneAlt} from 'react-icons/fa';
 import {LiaFaxSolid} from 'react-icons/lia';
 import {MdOutlineMail} from 'react-icons/md';

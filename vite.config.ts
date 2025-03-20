@@ -98,7 +98,7 @@ export default defineConfig(({mode}) => {
 
     optimizeDeps: {
       exclude: ['moment', 'lodash'], // 번들에서 제외할 패키지
-      include: ['react', 'react-dom'], // 최적화 포함 대상 지정
+      include: ['react', 'react-dom', 'japark-test'], // 최적화 포함 대상 지정
     },
 
     plugins: [react(), tailwindcss()],

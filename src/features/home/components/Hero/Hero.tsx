@@ -1,10 +1,10 @@
 import {useEffect, useRef, useState} from 'react';
 import gsap from 'gsap';
 import {useGSAP} from '@gsap/react';
-import GridArticle from '../../../layout/Grid/GridArticle.tsx';
-import ProgressBar from '../../../components/ProgressBar.tsx';
+import GridArticle from '../../../../layout/Grid/GridArticle.tsx';
+import ProgressBar from '../../../../components/ProgressBar.tsx';
 import HeroNavbar from './HeroNavbar.tsx';
-import Slider from '../components/Slider.tsx';
+import Slider from '../Slider.tsx';
 
 const carouselItems = [
  {title: '친환경', src: '/img/home/p1.webp'},
