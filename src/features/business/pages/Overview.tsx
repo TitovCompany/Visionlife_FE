@@ -31,13 +31,13 @@ const Overview = () => {
       <section className='w-full h-[calc(100vh-67.98px)] relative [clip-path:polygon(0,0,0,100%,100% 100%, 100% 0)]'>
        <ul className='w-full h-full'>
         {overview.data.map((item, index) => (
-         <li key={index} className={clsx('h-full relative top-0')} ref={(el) => {
+         <li key={index} className={clsx('h-screen relative top-0')} ref={(el) => {
           if (el) listRef.current[index] = el;}}>
           <div>
            {item.type === 'video' && (
-            <video src={item.src} controls={false} className='h-screen object-cover filter brightness-80' autoPlay loop muted playsInline/>)}
+            <video src={item.src} controls={false} className='h-screen object-cover filter brightness-70' autoPlay loop muted playsInline/>)}
            {item.type === 'image' && (
-            <img src={item.src} alt='' className={clsx('w-full h-screen object-cover filter brightness-50')}/>)}
+            <img src={item.src} alt='' className={clsx('w-full h-screen object-cover filter brightness-70')}/>)}
           </div>
           <div className={clsx('absolute top-1/2 -translate-1/2 left-1/2', 'text-white text-center text-xl')}>
            <h2 className='mb-10 text-5xl font-bold leading-14'>{item.title}</h2>
