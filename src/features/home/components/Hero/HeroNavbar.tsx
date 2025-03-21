@@ -12,10 +12,11 @@ const HeroNavbar = ({currentIndex, setCurrentIndex}: HeroNavbarProps) => {
  };
 
  return (
-  <nav className='text-color w-full pt-5'>
-   <ul className='mx-auto flex w-full max-w-xl justify-between'>
-    {['PROUTEX', 'Title 01', 'Title 02', 'Title 03'].map((item, index) => (
-     <li key={index} className={clsx('cursor-pointer px-4 py-2', currentIndex === index ? 'bg-white font-bold text-black' : '')}
+  <nav className='text-color w-full'>
+   <ul className='mx-auto flex w-full max-w-xl justify-between text-xl'>
+    {['PROUTEX', 'Sustainability', 'Growth'].map((item, index) => (
+     <li key={index} className={clsx('cursor-pointer px-4 py-2', currentIndex === index && 'font-bold -translate-y-5',
+      'hover:-translate-y-5 hover:transition hover:duration-300')}
       onClick={() => handleButtonClick(index)}>
       {item}
      </li>
