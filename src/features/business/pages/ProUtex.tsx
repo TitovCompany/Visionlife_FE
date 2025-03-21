@@ -4,6 +4,8 @@ import comparison from '../../../data/business/utex_comparison.json';
 import GridLayout from '../../../layout/Grid/GridLayout.tsx';
 import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 import {Link} from 'react-router-dom';
+import {Pagination} from 'swiper/modules';
+import {Swiper, SwiperSlide} from 'swiper/react';
 
 const ProUtex = () => {
  return (
@@ -48,20 +50,26 @@ const ProUtex = () => {
       </p>
      </div>
     </div>
-    <div className='flex'>
+    <Swiper
+     pagination={{dynamicBullets: true,}}
+     modules={[Pagination]}
+     className="mySwiper overflow-hidden">
      {features.items.map((item, index) => (
-      <ImageCard
-       key={item.id}
-       as='div'
-       title={item.title}
-       animation={true}
-       src={`/img/product/features/p${index + 1}.png`}
-       alt={item.title}
-       description={item.content}
-       wrapperClass='biz_item group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500 max-h-96 max-w-96'
-       descriptionClass='mt-2 whitespace-pre-line leading-relaxed text-sm sm:text-base'
-      />
+      <SwiperSlide key={item.id}>
+       <ImageCard
+        as='div'
+        title={item.title}
+        animation={true}
+        src={`/img/product/features/p${index + 1}.png`}
+        alt={item.title}
+        description={item.content}
+        wrapperClass='biz_item group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500 max-h-96 max-w-96'
+        descriptionClass='mt-2 whitespace-pre-line leading-relaxed text-sm sm:text-base' />
+      </SwiperSlide>
      ))}
+    </Swiper>
+    <div className='flex'>
+
     </div>
    </GridArticle>
    {/* PROUTEX Intro */}
