@@ -87,10 +87,12 @@ const AboutUs = () => {
    </div>
    <GridArticle colStart={7} colEnd={12} className={clsx('text-primary mt-32',)}>
     <div className="w-fit text-primary text-5xl font-bold leading-20 text-left">
-     <h2>비전라이프의</h2>
-     <h2>기술이 만드는</h2>
-     <h2>ECO Life</h2>
+     <h2 className='text-4xl font-bold text-primary mb-6 '>환경을 위한 기술, 기술을 위한 책임</h2>
     </div>
+    <p className='text-lg leading-relaxed text-gray-700 max-w-3xl mx-auto'>
+     비전라이프는 잉크를 넘어 지속 가능한 미래를 만듭니다.<br />
+     우리는 기술로 환경을 지키고, 브랜드의 가치를 높입니다.
+    </p>
     <p className="mt-12 mb-32 text-primary text-left text-xl max-w-2xl leading-relaxed">
      친환경적인 삶을 실천하는 것은 우리의 사명입니다.
      비전라이프는 섬유 산업의 지속 가능성을 위해 <strong>무폐수 염색 기술</strong>을 개발하여, 환경을 보호하면서도 뛰어난 품질을 유지하는 혁신을 이루고 있습니다.
