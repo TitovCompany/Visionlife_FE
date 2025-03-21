@@ -5,6 +5,7 @@ import {useGSAP} from '@gsap/react';
 import SplitType from 'split-type';
 import clsx from 'clsx';
 import GridLayout from '../../../../layout/Grid/GridLayout.tsx';
+import GridArticle from '../../../../layout/Grid/GridArticle.tsx';
 
 const paragraphs = [
  '비전라이프는 지속 가능한 미래를 꿈꾸며, 친환경 기술을 통해 산업과 자연이 조화를 이루는 혁신을 실현합니다. 우리는 단순한 제품을 만드는 것이 아니라, 환경 보호와 산업 발전을 동시에 이끄는 솔루션을 창조합니다.',
@@ -14,15 +15,15 @@ const paragraphs = [
 
 gsap.registerPlugin(ScrollTrigger);
 const AboutUs = () => {
- const aboutImageRef = useRef<HTMLElement | null>(null);
+ const aboutImageRef = useRef<HTMLDivElement | null>(null);
  const inkRef = useRef(null);
- const imageRef = useRef<HTMLImageElement | null>(null);
+ const imageRef = useRef<HTMLDivElement | null>(null);
  const textRefs = useRef<(HTMLElement | null)[]>([]);
 
  useGSAP(() => {
   const tl = gsap.timeline();
   tl.to(inkRef.current, {
-   y: 350,
+   y: 500,
    duration: 1.5,
    scrollTrigger: {
     trigger: aboutImageRef.current,
@@ -37,7 +38,7 @@ const AboutUs = () => {
    y: '100%',
   }, {
    duration: 1.5,
-   y: 0,
+   y: -150,
    scrollTrigger: {
     trigger: aboutImageRef.current,
     start: '-=100px',
@@ -69,18 +70,51 @@ const AboutUs = () => {
  return (
   <GridLayout rows={3} className={clsx('min-h-screen')}>
    {/* About Ink Image */}
-   <article ref={aboutImageRef} className='col-start-3'>
+   <div ref={aboutImageRef} className='col-start-2 col-end-6'>
     <div ref={inkRef} className='mb-32 h-[512px] w-[401px]'>
-     <h2 className='border-b-primary mb-5 w-fit border-b px-2 pb-2 text-lg font-bold'>
-      Ink - NRECT
-     </h2>
-     <img src='/img/business/p1.jpg' alt='' className='h-full w-full' />
+     <h2 className='border-b-primary mb-5 w-fit border-b px-2 pb-2 text-lg font-bold'>Ink - NRECT</h2>
+     <img src='/img/business/p1.jpg' alt='비전 라이프의 무폐수 잉크 NRECT' className='h-full w-full mb-10'/>
+     <h3 className="text-left text-2xl font-bold mb-4">
+      비전라이프, 지속 가능한<br/> 미래를 디자인하다
+     </h3>
+     <p className="text-left text-lg leading-relaxed">
+      비전라이프는 <strong>환경을 위한 기술 혁신</strong>을 통해 지속 가능한 산업 생태계를 조성하고 있습니다.
+      단순한 제품을 만드는 것을 넘어, <strong>친환경 솔루션</strong>을 통해 산업과 자연이 공존하는 미래를 만들어갑니다.
+      우리는 <strong>무폐수 염색 기술</strong>과 <strong>친환경 나염 시스템</strong>을 통해 환경 보호와 산업 혁신을 동시에 실현하며,
+      전 세계 기업과 협력하여 <strong>친환경 섬유 산업의 표준을 새롭게 정의</strong>하고 있습니다.
+     </p>
     </div>
-   </article>
-   {/* 섬유 이미지 */}
-   <img ref={imageRef} src='/img/product/features/p4.png' alt='섬유 이미지' className={clsx('max-h-[814px] max-w-[550px]', 'col-start-7 col-end-12 row-start-2 content-end')}/>
+   </div>
+   <GridArticle colStart={7} colEnd={12} className={clsx('text-primary mt-32',)}>
+    <div className="w-fit text-primary text-5xl font-bold leading-20 text-left">
+     <h2>비전라이프의</h2>
+     <h2>기술이 만드는</h2>
+     <h2>ECO Life</h2>
+    </div>
+    <p className="mt-12 mb-32 text-primary text-left text-xl max-w-2xl leading-relaxed">
+     친환경적인 삶을 실천하는 것은 우리의 사명입니다.
+     비전라이프는 섬유 산업의 지속 가능성을 위해 <strong>무폐수 염색 기술</strong>을 개발하여, 환경을 보호하면서도 뛰어난 품질을 유지하는 혁신을 이루고 있습니다.
+     작은 선택이 큰 변화를 만듭니다. <strong>ECO Life를 함께 실천하세요.</strong>
+    </p>
+   </GridArticle>
+   <GridArticle ref={imageRef} colStart={7} colEnd={12} rowStart={2} rowEnd={3}>
+    <div className='mb-10'>
+     <h3 className="text-2xl font-bold mb-4">
+      환경을 생각하는 섬유 산업,<br/>비전라이프가 앞장섭니다
+     </h3>
+     <p className="text-lg leading-relaxed">
+      비전라이프는 <strong>지속 가능한 패션과 섬유 산업</strong>을 위해 혁신적인 친환경 기술을 연구하고 개발합니다.
+      우리는 <strong>무폐수 염색 공정</strong>을 통해 <strong>에너지 절감과 탄소 배출 감소</strong>를 실현하며,
+      자연과 조화를 이루는 생산 방식을 도입하여 <strong>환경과 경제적 지속 가능성</strong>을 모두 고려합니다.
+      비전라이프는 단순한 친환경 솔루션을 넘어, <strong>산업의 새로운 표준을 제시하며</strong>,
+      기업과 소비자가 함께하는 <strong>지속 가능한 미래</strong>를 만들어가고 있습니다.
+     </p>
+    </div>
+    {/* 섬유 이미지 */}
+    <img src='/img/product/features/p4.png' alt='섬유 이미지' className={clsx('h-full max-h-[814px] max-w-[550px]', 'content-end')}/>
+   </GridArticle>
    {/* About Description */}
-   <article className='col-span-12 py-20 lg:col-span-10 lg:col-start-2'>
+   <article className='col-span-12 py-40 lg:col-span-10 lg:col-start-2'>
     <h2 className='border-b-primary w-fit border-b-2 px-2 pb-2 text-2xl font-bold'>
      About Us
     </h2>
