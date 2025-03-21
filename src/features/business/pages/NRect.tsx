@@ -28,7 +28,7 @@ const NRect = () => {
  useGSAP(() => {
   const tl = gsap.timeline();
   tl.fromTo(heroRef.current, {
-   y: window.innerHeight * 0.6,
+   y: window.innerHeight * 0.55,
    maxWidth: '95%',
    scale: 0.8
   }, {
