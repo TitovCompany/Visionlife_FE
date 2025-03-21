@@ -28,7 +28,7 @@ const NRect = () => {
  useGSAP(() => {
   const tl = gsap.timeline();
   tl.fromTo(heroRef.current, {
-   y: 950,
+   y: window.innerHeight * 0.6,
    maxWidth: '95%',
    scale: 0.8
   }, {
@@ -71,108 +71,142 @@ const NRect = () => {
    </div>
    {/* Contents */}
    <div className='relative mx-auto max-w-6xl pt-40'>
-    {/* Intro */}
-    <div className='flex gap-52'>
-     <div className='w-full flex-1 max-w-sm'>
-      <h2 className='text-4xl font-bold text-primary mb-6'>환경을 위한 기술,<br />제품으로 실현하다</h2>
-      <p className='text-lg leading-relaxed text-gray-700 max-w-xl mx-auto'>
-       비전라이프는 N-RECT를 통해 환경을 지키고 브랜드의 지속 가능성을 높이는
-       혁신적인 솔루션을 제공합니다.
-      </p>
-      <p className='w-full mt-12 text-lg leading-relaxed text-gray-700 max-w-xl mx-auto'>
-       N-RECT는 단순한 잉크를 넘어, 지속 가능성을 실현하는 혁신적인 친환경 솔루션입니다.
-       기존 프린팅 방식에서 발생하는 환경 부담을 줄이며, 원단의 품질을 더욱 높이는 무폐수 수성 잉크 기술을 제공합니다.
-      </p>
-     </div>
-     <div className='flex-1'>
-      <h2 className='text-primary hidden text-4xl font-bold'>사용 사례</h2>
-      <ExpandingCard material={material}>
-       {nrec_use.map((item) => (
-        <ExpandingCardItem key={item.id} title={item.title} href={item.href}/>
-       ))}
-      </ExpandingCard>
-     </div>
+    <div className='w-full text-center'>
+     <h2 className='text-4xl font-bold text-primary mb-6'>환경을 위한 기술,<br />제품으로 실현하다</h2>
+     <p className='text-lg leading-relaxed text-gray-700 max-w-xl mx-auto'>
+      비전라이프는 N-RECT를 통해 환경과 생산성을 동시에 고려한 혁신 솔루션을 제공합니다.
+      기존 공정에서 발생하는 폐수, 고온처리, 복잡한 후처리 문제를 줄이고, 지속 가능성을 실현합니다.
+     </p>
+     <p className='w-full mt-12 text-lg leading-relaxed text-gray-700 max-w-xl mx-auto'>
+      N-RECT는 단순한 잉크가 아닌, 공정 전체를 혁신하는 친환경 기술입니다.
+      수질 오염을 줄이고, 섬유 본연의 품질을 유지하면서도 뛰어난 출력 결과를 제공합니다.
+     </p>
     </div>
-    {/* Product */}
+    {/* 제품 차별화 */}
     <div>
      <div className='text-primary mt-32 mb-8 text-4xl leading-14 font-bold text-center'>
       <h2>기존 잉크의 한계를 넘어!</h2>
       <h2>N-RECT의 새로운 기준</h2>
      </div>
      <div className='text-lg leading-relaxed text-gray-700'>
-      <p>
-       기존의 잉크 공정은 빠른 건조를 위해 높은 온도를 사용하지만, 두꺼운 표면 코팅으로 인해 원단의 자연스러운 질감을 손상시키는 단점이 있습니다. 또한, 기존 방식은 대량의 물을 소비하고 폐수 배출이 불가피하여 환경적인 부담이 클 뿐만 아니라, 전처리 및 후처리 과정에서 추가적인 에너지와 비용이 발생하는 문제가 있습니다.
+      <p className='text-lg text-gray-700 leading-relaxed'>
+       전통적인 텍스타일 프린팅은 고온 처리, 복잡한 공정, 과도한 물 소비 등으로 인해 환경과 생산성 모두에 부담을 줍니다.
+       특히 나일론 섬유는 직접 인쇄가 어려워 별도의 염색 공정이 필수였습니다.
       </p>
-      <p className='mt-10'>
-       이러한 한계를 극복하기 위해 비전라이프홀딩스는 친환경 수성 잉크 기반의 무폐수 공정을 도입하여 N-RECT를 개발했습니다.
-       이 공정은 원단에 자연스럽게 스며들어 보다 선명한 색상과 뛰어난 내구성을 제공합니다. 또한, 기존의 복잡한 전처리 및 후처리 과정이 필요하지 않아 운영 비용 절감 및 생산 효율성 증가라는 경제적 장점까지 제공합니다.
+      <p className='mt-6 text-lg text-gray-700 leading-relaxed'>
+       N-RECT는 나일론 섬유에도 직접 인쇄가 가능한 수성 에코잉크로, 전처리·후처리 없는 무폐수 공정을 실현합니다.
+       공정 단순화를 통해 인력, 시간, 비용을 절감하고, 높은 색상 정밀도와 내구성을 제공합니다.
       </p>
      </div>
      <img src='/img/business/nrect/p1.webp' alt='비전라이프가 해결하는 문제' className={clsx('mt-12 h-96 w-full place-self-center rounded-xl')} />
     </div>
+
+    {/* 환경 + 품질 중심 정리 */}
     <div className='my-32'>
-     <h2 className='text-primary hidden text-4xl font-bold'>환경적 장점</h2>
+     <h2 className='text-4xl font-bold text-primary mb-10'>환경적 책임을 실현하는 기술</h2>
+     {/* 환경적 효과 강조 */}
      <p className='mt-4 text-lg leading-relaxed text-gray-700'>
-      기존의 잉크 공정은 막대한 물 소비와 폐수를 동반하지만, N-RECT는 무폐수
-      공정을 실현하여 기존 대비 물 사용량을 80% 절감하고, 탄소 배출량을 50% 이상
-      감소시킵니다.
+      N-RECT는 폐수를 발생시키지 않는 무폐수 공정 기반의 수성 잉크입니다.
+      기존 공정 대비 물 사용량 80% 절감, 탄소 배출 50% 이상 감소 효과를 실현하며,
+      환경 규제 대응과 지속 가능성을 동시에 만족시킵니다.
      </p>
+
+     {/* 인증 및 신뢰 요소 */}
      <p className='mt-4 text-lg leading-relaxed text-gray-700'>
-      또한, OEKO-TEX® & GOTS 친환경 인증을 획득하여 지속 가능한 섬유 생산을
-      지원하고 있습니다.
+      또한, OEKO-TEX® 및 GOTS 친환경 인증을 획득해, 지속 가능한 섬유 생산을 위한 기준을 충족했습니다.
+      글로벌 브랜드의 환경 기준에 대응할 수 있는 수준의 품질과 안정성을 보장합니다.
      </p>
-     <p className='mb-4 text-lg leading-relaxed text-gray-700'>
-      비전라이프의 N-RECT 잉크는 고급 수성 잉크로, 섬유 친화적인 화학 조성을
-      바탕으로 최적의 프린팅 품질을 보장합니다. 여러 번의 프린트 헤드 패스를
-      통해 적용될 경우, 섬유 표면에 균일하게 스며들며, 뛰어난 선명도와 내구성을
-      제공합니다. 또한, 최적의 흡수 속도를 유지함으로써 색상의 왜곡 없이
-      자연스럽고 깊이 있는 표현이 가능합니다.
+
+     {/* 품질 설명 + 기술 근거 */}
+     <p className='mt-10 text-lg leading-relaxed text-gray-700'>
+      고급 수성 포뮬러를 바탕으로 제작된 N-RECT는 섬유 표면에 균일하게 도포되며, 반복 프린팅에도 색상이 선명하고 내구성이 뛰어납니다.
+      최적의 흡수 속도를 유지해 색 왜곡 없이 자연스러운 컬러 표현이 가능하고, 번짐 현상 없이 정밀한 프린팅 결과를 제공합니다.
      </p>
-     <p className='mb-4 text-lg leading-relaxed text-gray-700'>
-      정밀한 잉크 적용 기술을 통해 최상의 결과를 제공합니다. 한 번에 너무 많은
-      잉크가 적용될 경우, 섬유 표면에서 과도한 흘림 (bleeding)이 발생할 수
-      있으며, 잉크가 완전히 건조되기 전에 확산될 위험이 있습니다. 이러한 문제를
-      방지하기 위해, N-RECT 잉크는 각 프린트 헤드 패스 간의 균형을 유지하도록
-      설계되어 있으며, 잉크가 완벽하게 침투하면서도 번짐 없이 유지될 수 있도록
-      개발되었습니다.
+
+     {/* 기술 설계 설명 */}
+     <p className='mt-4 text-lg leading-relaxed text-gray-700'>
+      과도한 잉크 사용 시 발생하는 흘림(Bleeding) 현상을 방지하기 위해,
+      프린트 헤드 간의 도포 균형이 정밀하게 제어되도록 설계되었습니다.
+      이는 생산 공정의 안정성과 재작업률 감소에 기여합니다.
      </p>
-     <p className='text-lg leading-relaxed text-gray-700'>
-      N-RECT 잉크는 나일론 섬유에 최적화되어 있으며, 일반적인 면, 폴리에스터
-      섬유에도 우수한 성능을 보입니다. 그러나 폴리우레탄 또는 특정 합성 코팅된
-      나일론 직물에서는 잉크의 흡수율이 달라질 수 있으므로, 적용 전에 충분한
-      테스트를 권장합니다.
+
+     {/* 소재별 적용 안내 */}
+     <p className='mt-4 text-lg leading-relaxed text-gray-700'>
+      N-RECT는 나일론 섬유에 최적화되어 있으며, 면 및 폴리에스터와 같은 일반 섬유에서도 탁월한 성능을 발휘합니다.
+      단, 폴리우레탄 또는 특수 코팅 섬유의 경우 사전 테스트를 권장합니다.
      </p>
     </div>
-    <div className='py-32'>
-     <div className='text-left'>
-      <h2 className='text-4xl font-bold text-primary mb-6'>친환경을 넘어서는 품질</h2>
-      <p className='text-lg leading-relaxed text-gray-700'>
-       N-RECT는 무폐수 수성 잉크 기술로<br />
-       선명한 색상과 뛰어난 내구성을 구현합니다.<br />
-       섬유 본연의 질감을 살리면서도, 지속 가능성을 실현합니다.
-      </p>
-     </div>
-     <Swiper
-      pagination={{dynamicBullets: true,}}
-      modules={[Pagination]}
-      className="mySwiper overflow-hidden">
-      <SwiperSlide>
-       <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='친환경 공정' description='기존 프린팅 공정에서는 화학 처리와 폐수가 발생하지만, N-RECT는 무폐수 염색을 실현하여 환경 부담을 최소화합니다.'/>
-      </SwiperSlide>
-      <SwiperSlide>
-       <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='뛰어난 색상 유지력' description='원단 표면에 깊숙이 스며들어 색상이 쉽게 변하지 않으며, 기존보다 더 선명한 표현과 긴 지속성을 제공합니다.'/>
-      </SwiperSlide>
-     </Swiper>
+
+    <div className='my-32'>
+     <h2 className='text-4xl font-bold text-primary mb-10'>품질과 공정 안정성을 높이는 기술력</h2>
+     <p className='mt-4 text-lg leading-relaxed text-gray-700'>
+      고급 수성 포뮬러를 기반으로, N-RECT는 섬유 표면에 균일하게 도포되며 깊숙이 침투해
+      고채도 컬러에서도 색상 왜곡 없이 정밀한 표현이 가능합니다.
+     </p>
+     <p className='mt-6 text-lg leading-relaxed text-gray-700'>
+      흘림(Bleeding) 방지를 위해 프린트 헤드 간 도포량을 정밀하게 제어하며,
+      재작업률을 낮추고 생산 라인의 효율을 극대화합니다.
+     </p>
+     <p className='mt-6 text-lg leading-relaxed text-gray-700'>
+      N-RECT는 나일론, 면, 폴리에스터 등 다양한 섬유에 최적화되어 있으며,
+      특수 코팅 섬유의 경우 사전 테스트를 권장합니다.
+     </p>
+    </div>
+
+    <div className='text-left py-32'>
+     <h2 className='text-4xl font-bold text-primary'>친환경을 넘어서는 품질</h2>
+     <p className='text-lg leading-relaxed text-gray-700'>
+      N-RECT는 수질 오염의 주범인 폐수 발생을 원천 차단합니다.
+      물 사용량을 기존 대비 80% 이상 절감하고, 탄소 배출량도 절반 수준으로 줄였습니다.
+     </p>
+     <p className='mt-6 text-lg leading-relaxed text-gray-700'>
+      OEKO-TEX® 및 GOTS 인증을 통해 친환경 기준을 충족했으며,
+      고속 출력에서도 잉크 번짐 없이 선명한 색상을 유지합니다.
+     </p>
+    </div>
+    <div className='flex-1 '>
+     <h2 className='text-primary hidden text-4xl font-bold'>사용 사례</h2>
+     <ExpandingCard material={material}>
+      {nrec_use.map((item) => (
+       <ExpandingCardItem key={item.id} title={item.title} href={item.href}/>
+      ))}
+     </ExpandingCard>
+    </div>
+
+    {/* PROUTEX */}
+    <div className='pt-32'>
      <div className="text-3xl font-bold text-primary text-left">
       <h2 className="my-4">
-       N-RECT × PROUTEX <br /> 완벽한 조합으로 차원이 다른 품질을 제공합니다!</h2>
+       PROUTEX × N-RECT, 생산성과 품질을 동시에</h2>
      </div>
-     <p className='mt-4 text-lg leading-relaxed text-gray-700'>
-      비전라이프홀딩스의 N-RECT는 PROUTEX 전용으로 개발된 친환경 수성 잉크입니다.
-      최적의 흡수력과 균일한 도포력을 제공하여 기존 프린팅 방식보다 더 선명하고, 더 뛰어난 지속성을 보장합니다.
+     <p className='text-lg leading-relaxed text-gray-700 mt-4'>
+      PROUTEX 시스템을 위한 전용 잉크로 개발된 N-RECT는
+      출력 속도, 도포 정밀도, 색상 유지력에서 탁월한 시너지를 발휘합니다.
+      전용 하드웨어와 함께 사용할 때, 최상의 품질과 공정 효율을 동시에 실현할 수 있습니다.
+     </p>
+    </div>
+    <Swiper
+     pagination={{dynamicBullets: true,}}
+     modules={[Pagination]}
+     className="mySwiper overflow-hidden">
+     <SwiperSlide>
+      <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='친환경 공정' description='기존 프린팅 공정에서는 화학 처리와 폐수가 발생하지만, N-RECT는 무폐수 염색을 실현하여 환경 부담을 최소화합니다.'/>
+     </SwiperSlide>
+     <SwiperSlide>
+      <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='뛰어난 색상 유지력' description='원단 표면에 깊숙이 스며들어 색상이 쉽게 변하지 않으며, 기존보다 더 선명한 표현과 긴 지속성을 제공합니다.'/>
+     </SwiperSlide>
+    </Swiper>
 
-      N-RECT는 기존의 프린팅 공정에서 발생하는 폐수 배출 및 환경 문제를 해결하면서도,
-      고품질의 섬유 프린팅 솔루션을 제공하여 섬유 산업의 새로운 기준을 제시합니다.
+    {/* 글로벌 확장 */}
+    <div className='py-32'>
+     <h2 className='text-4xl font-bold text-primary'>글로벌 확장을 위한 기술 기반</h2>
+     <p className='text-lg leading-relaxed text-gray-700 mt-4'>
+      비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,
+      다양한 원단에 대한 샘플링을 통해 글로벌 시장 진입을 준비하고 있습니다.
+     </p>
+     <p className='mt-6 text-lg leading-relaxed text-gray-700'>
+      N-RECT 기술은 국제 특허 출원 중이며,
+      올해 <strong>1,000톤 규모(약 600억 원)</strong> 수출을 목표로 양산 설비를 구축하고 있습니다.
      </p>
     </div>
    </div>
