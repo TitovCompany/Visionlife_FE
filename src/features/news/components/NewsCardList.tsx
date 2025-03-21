@@ -57,7 +57,7 @@ const NewsCardList: React.FC<NewsCardListProps> = (props) => {
           <Link to={`/company/news/${item.id}`} className={linkClasses}>
             <div className={clsx(imgWrapClasses, 'p-2', 'mt-4')}>
               <img
-                src={item.imageUrl || `/img/news/default-image-${item.id}.jpg`}
+                src={item.imageUrl || `/img/news/default-image-${item.id}.webp`}
                 alt={item.title}
                 className={imgClasses}
               />

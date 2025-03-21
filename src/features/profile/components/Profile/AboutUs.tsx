@@ -74,11 +74,11 @@ const AboutUs = () => {
      <h2 className='border-b-primary mb-5 w-fit border-b px-2 pb-2 text-lg font-bold'>
       Ink - NRECT
      </h2>
-     <img src='/img/business/p1.jpg' alt='' className='h-full w-full' />
+     <img src='/img/business/p3.webp' alt='' className='h-full w-full' />
     </div>
    </article>
    {/* 섬유 이미지 */}
-   <img ref={imageRef} src='/img/product/features/p4.png' alt='섬유 이미지' className={clsx('max-h-[814px] max-w-[550px]', 'col-start-7 col-end-12 row-start-2 content-end')}/>
+   <img ref={imageRef} src='/img/product/features/p4.webp' alt='섬유 이미지' className={clsx('max-h-[814px] max-w-[550px]', 'col-start-7 col-end-12 row-start-2 content-end')}/>
    {/* About Description */}
    <article className='col-span-12 py-20 lg:col-span-10 lg:col-start-2'>
     <h2 className='border-b-primary w-fit border-b-2 px-2 pb-2 text-2xl font-bold'>
@@ -109,7 +109,7 @@ export default AboutUs;
    <h2 className='border-b-primary mb-5 w-fit border-b px-2 pb-2 text-lg font-bold'>
     Ink - NRECT
    </h2>
-   <img src='/img/business/p1.jpg' alt='' className='h-full w-full' />
+   <img src='/img/business/p1.webp' alt='' className='h-full w-full' />
   </div>
  </article>
  {/!* 섬유 이미지 *!/}
