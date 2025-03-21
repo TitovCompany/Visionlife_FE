@@ -51,7 +51,7 @@ const Overview = () => {
        </p>
       ))}
      </GridArticle>
-     <img src='/img/business/p1.jpg' alt='' className={clsx('h-96 w-full object-cover md:h-[700px]', 'col-start-8 col-end-13')}/>
+     <img src='/img/business/p3.webp' alt='' className={clsx('h-96 w-full object-cover md:h-[700px]', 'col-start-8 col-end-13')}/>
     </GridLayout>
     {/* 해결하는 문제 */}
     <GridLayout className='py-32 h-96'>
