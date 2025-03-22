@@ -20,9 +20,8 @@ const nrec_use = [
 
 gsap.registerPlugin(ScrollTrigger);
 const NRect = () => {
- const [material, setMaterial] = useState<string>('적용 가능 소재');
-
  const sectionRef = useRef<HTMLDivElement | null>(null);
+ const headerRef = useRef<HTMLDivElement | null>(null);
  const heroRef = useRef<HTMLDivElement>(null);
 
  useGSAP(() => {
@@ -71,8 +70,9 @@ const NRect = () => {
    </div>
    {/* Contents */}
    <div className='relative mx-auto max-w-6xl pt-40'>
+    {/* Intro */}
     <div className='w-full text-center'>
-     <h2 className='text-4xl font-bold text-primary mb-6'>환경을 위한 기술,<br />제품으로 실현하다</h2>
+     <h2 ref={headerRef} className='text-4xl font-bold text-primary mb-6'>환경을 위한 기술,<br />제품으로 실현하다</h2>
      <p className='text-lg leading-relaxed text-gray-700 max-w-xl mx-auto'>
       비전라이프는 N-RECT를 통해 환경과 생산성을 동시에 고려한 혁신 솔루션을 제공합니다.
       기존 공정에서 발생하는 폐수, 고온처리, 복잡한 후처리 문제를 줄이고, 지속 가능성을 실현합니다.
@@ -82,6 +82,7 @@ const NRect = () => {
       수질 오염을 줄이고, 섬유 본연의 품질을 유지하면서도 뛰어난 출력 결과를 제공합니다.
      </p>
     </div>
+
     {/* 제품 차별화 */}
     <div>
      <div className='text-primary mt-32 mb-8 text-4xl leading-14 font-bold text-center'>
@@ -102,7 +103,7 @@ const NRect = () => {
     </div>
 
     {/* 환경 + 품질 중심 정리 */}
-    <div className='my-32'>
+    <div className='py-32'>
      <h2 className='text-4xl font-bold text-primary mb-10'>환경적 책임을 실현하는 기술</h2>
      {/* 환경적 효과 강조 */}
      <p className='mt-4 text-lg leading-relaxed text-gray-700'>
@@ -137,36 +138,23 @@ const NRect = () => {
      </p>
     </div>
 
-    <div className='my-32'>
-     <h2 className='text-4xl font-bold text-primary mb-10'>품질과 공정 안정성을 높이는 기술력</h2>
-     <p className='mt-4 text-lg leading-relaxed text-gray-700'>
-      고급 수성 포뮬러를 기반으로, N-RECT는 섬유 표면에 균일하게 도포되며 깊숙이 침투해
-      고채도 컬러에서도 색상 왜곡 없이 정밀한 표현이 가능합니다.
-     </p>
-     <p className='mt-6 text-lg leading-relaxed text-gray-700'>
-      흘림(Bleeding) 방지를 위해 프린트 헤드 간 도포량을 정밀하게 제어하며,
-      재작업률을 낮추고 생산 라인의 효율을 극대화합니다.
-     </p>
-     <p className='mt-6 text-lg leading-relaxed text-gray-700'>
-      N-RECT는 나일론, 면, 폴리에스터 등 다양한 섬유에 최적화되어 있으며,
-      특수 코팅 섬유의 경우 사전 테스트를 권장합니다.
-     </p>
-    </div>
+    {/* 친환경을 넘어서는 품질 */}
+    <div className='py-32'>
+     <div className='text-left'>
+      <h2 className='text-4xl font-bold text-primary mb-10'>
+       친환경을 넘어서는 품질
+      </h2>
+      <p className='text-lg leading-relaxed text-gray-700'>
+       N-RECT는 수질 오염의 주범인 폐수 발생을 원천 차단합니다.
+       물 사용량을 기존 대비 80% 이상 절감하고, 탄소 배출량도 절반 수준으로 줄였습니다.
+      </p>
+      <p className='mt-6 text-lg leading-relaxed text-gray-700'>
+       OEKO-TEX® 및 GOTS 인증을 통해 친환경 기준을 충족했으며,
+       고속 출력에서도 잉크 번짐 없이 선명한 색상을 유지합니다.
+      </p>
+     </div>
 
-    <div className='text-left py-32'>
-     <h2 className='text-4xl font-bold text-primary'>친환경을 넘어서는 품질</h2>
-     <p className='text-lg leading-relaxed text-gray-700'>
-      N-RECT는 수질 오염의 주범인 폐수 발생을 원천 차단합니다.
-      물 사용량을 기존 대비 80% 이상 절감하고, 탄소 배출량도 절반 수준으로 줄였습니다.
-     </p>
-     <p className='mt-6 text-lg leading-relaxed text-gray-700'>
-      OEKO-TEX® 및 GOTS 인증을 통해 친환경 기준을 충족했으며,
-      고속 출력에서도 잉크 번짐 없이 선명한 색상을 유지합니다.
-     </p>
-    </div>
-    <div className='flex-1 '>
-     <h2 className='text-primary hidden text-4xl font-bold'>사용 사례</h2>
-     <ExpandingCard material={material}>
+     <ExpandingCard>
       {nrec_use.map((item) => (
        <ExpandingCardItem key={item.id} title={item.title} href={item.href}/>
       ))}
@@ -174,32 +162,47 @@ const NRect = () => {
     </div>
 
     {/* PROUTEX */}
-    <div className='pt-32'>
-     <div className="text-3xl font-bold text-primary text-left">
-      <h2 className="my-4">
-       PROUTEX × N-RECT, 생산성과 품질을 동시에</h2>
+    <div id='proutex'>
+     <div className='pt-32 pb-12'>
+      <div className="text-3xl font-bold text-primary text-left">
+       <h2 className="my-4">
+        PROUTEX × N-RECT, 품질과 공정 안정성을 높이는 기술력
+       </h2>
+      </div>
+      <p className='mt-4 text-lg leading-relaxed text-gray-700'>
+       고급 수성 포뮬러를 기반으로 개발된 N-RECT는 섬유 표면에 균일하게 도포되며 깊숙이 침투하여,
+       고채도 컬러에서도 색상 왜곡 없이 정밀한 표현이 가능합니다.
+       또한, 흘림(Bleeding) 방지를 위한 정밀 도포 기술이 적용되어
+       재작업률을 낮추고 생산 라인의 효율을 극대화합니다.
+      </p>
+      <p className='mt-6 text-lg leading-relaxed text-gray-700'>
+       PROUTEX 시스템을 위한 전용 잉크로 설계된 N-RECT는
+       출력 속도, 도포 정밀도, 색상 유지력에서 탁월한 시너지를 발휘합니다.
+       전용 하드웨어와 함께 사용할 때, 최상의 품질과 공정 안정성을 동시에 실현할 수 있습니다.
+      </p>
+      <p className='mt-6 text-lg leading-relaxed text-gray-700'>
+       N-RECT는 나일론, 면, 폴리에스터 등 다양한 섬유에 최적화되어 있으며,
+       특수 코팅 섬유의 경우 사전 테스트를 권장합니다.
+      </p>
      </div>
-     <p className='text-lg leading-relaxed text-gray-700 mt-4'>
-      PROUTEX 시스템을 위한 전용 잉크로 개발된 N-RECT는
-      출력 속도, 도포 정밀도, 색상 유지력에서 탁월한 시너지를 발휘합니다.
-      전용 하드웨어와 함께 사용할 때, 최상의 품질과 공정 효율을 동시에 실현할 수 있습니다.
-     </p>
+     <Swiper
+      pagination={{dynamicBullets: true,}}
+      modules={[Pagination]}
+      className="mySwiper overflow-hidden">
+      <SwiperSlide>
+       <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='친환경 공정' description='기존 프린팅 공정에서는 화학 처리와 폐수가 발생하지만, N-RECT는 무폐수 염색을 실현하여 환경 부담을 최소화합니다.'/>
+      </SwiperSlide>
+      <SwiperSlide>
+       <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='뛰어난 색상 유지력' description='원단 표면에 깊숙이 스며들어 색상이 쉽게 변하지 않으며, 기존보다 더 선명한 표현과 긴 지속성을 제공합니다.'/>
+      </SwiperSlide>
+     </Swiper>
     </div>
-    <Swiper
-     pagination={{dynamicBullets: true,}}
-     modules={[Pagination]}
-     className="mySwiper overflow-hidden">
-     <SwiperSlide>
-      <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='친환경 공정' description='기존 프린팅 공정에서는 화학 처리와 폐수가 발생하지만, N-RECT는 무폐수 염색을 실현하여 환경 부담을 최소화합니다.'/>
-     </SwiperSlide>
-     <SwiperSlide>
-      <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='뛰어난 색상 유지력' description='원단 표면에 깊숙이 스며들어 색상이 쉽게 변하지 않으며, 기존보다 더 선명한 표현과 긴 지속성을 제공합니다.'/>
-     </SwiperSlide>
-    </Swiper>
 
     {/* 글로벌 확장 */}
     <div className='py-32'>
-     <h2 className='text-4xl font-bold text-primary'>글로벌 확장을 위한 기술 기반</h2>
+     <h2 className='text-4xl font-bold text-primary'>
+      글로벌 확장을 위한 기술 기반
+     </h2>
      <p className='text-lg leading-relaxed text-gray-700 mt-4'>
       비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,
       다양한 원단에 대한 샘플링을 통해 글로벌 시장 진입을 준비하고 있습니다.
