@@ -110,6 +110,8 @@ const NRect = () => {
   });
  }, [])
 
+ /* Todo - 엔렉, 프로유텍스 레이아웃 통일 */
+ /* Todo - 프로유텍스 워딩 개선 */
  return (
   <div ref={sectionRef}>
    {/* Hero */}
