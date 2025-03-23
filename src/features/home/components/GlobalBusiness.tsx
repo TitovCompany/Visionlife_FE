@@ -18,6 +18,19 @@ const GlobalBusiness = () => {
  return (
   <GridArticle colStart={2} colEnd={12} className='min-h-screen flex flex-col items-center justify-center'>
    <div className='text-lg text-center mb-10'>
+    <div className='py-32'>
+     <h2 ref={addToRefs} className='text-4xl font-bold text-primary'>
+      글로벌 확장을 위한 기술 기반
+     </h2>
+     <p ref={addToRefs} className='text-lg leading-relaxed text-gray-700 mt-4'>
+      비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,
+      다양한 원단에 대한 샘플링을 통해 글로벌 시장 진입을 준비하고 있습니다.
+     </p>
+     <p ref={addToRefs} className='mt-6 text-lg leading-relaxed text-gray-700'>
+      N-RECT 기술은 국제 특허 출원 중이며,
+      올해 <strong>1,000톤 규모(약 600억 원)</strong> 수출을 목표로 양산 설비를 구축하고 있습니다.
+     </p>
+    </div>
     <h2 className='mb-5 text-5xl font-bold text-primary'>
      Global Business
     </h2>

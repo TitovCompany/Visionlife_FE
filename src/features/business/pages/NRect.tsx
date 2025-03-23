@@ -156,26 +156,28 @@ const NRect = () => {
     </div>
 
     {/* 제품 차별화 */}
-    <div>
-     <div ref={addToRefs} className='text-primary mt-32 mb-8 text-4xl leading-14 font-bold text-center'>
+    <section className='text-lg text-primary'>
+     <div ref={addToRefs} className=' mt-32 mb-8 text-4xl leading-14 font-bold text-left'>
       <h2>기존 잉크의 한계를 넘어!</h2>
-      <h2>N-RECT의 새로운 기준</h2>
      </div>
-     <div className='text-lg leading-relaxed text-gray-700'>
-      <p ref={addToRefs} className='text-lg text-gray-700 leading-relaxed'>
-       전통적인 텍스타일 프린팅은 고온 처리, 복잡한 공정, 과도한 물 소비 등으로 인해 환경과 생산성 모두에 부담을 줍니다.
-       특히 나일론 섬유는 직접 인쇄가 어려워 별도의 염색 공정이 필수였습니다.
-      </p>
-      <p ref={addToRefs} className='mt-6 text-lg text-gray-700 leading-relaxed'>
-       N-RECT는 나일론 섬유에도 직접 인쇄가 가능한 수성 에코잉크로, 전처리·후처리 없는 무폐수 공정을 실현합니다.
-       공정 단순화를 통해 인력, 시간, 비용을 절감하고, 높은 색상 정밀도와 내구성을 제공합니다.
-      </p>
+     <div className='mb-32 flex gap-5'>
+      <div className='flex flex-col justify-between gap-10 leading-relaxed text-gray-700 text-lg'>
+       <p ref={addToRefs}>
+        전통적인 텍스타일 프린팅은 고온 처리, 복잡한 공정, 과도한 물 소비 등으로 인해 환경과 생산성 모두에 부담을 줍니다.
+        특히 나일론 섬유는 직접 인쇄가 어려워 별도의 염색 공정이 필수였습니다.
+       </p>
+       <p ref={addToRefs}>
+        N-RECT는 나일론 섬유에도 직접 인쇄가 가능한 수성 에코잉크로, 전처리·후처리 없는 무폐수 공정을 실현합니다.
+        공정 단순화를 통해 인력, 시간, 비용을 절감하고, 높은 색상 정밀도와 내구성을 제공합니다.
+       </p>
+       <img src='/img/business/nrect/p1.webp' alt='비전라이프가 해결하는 문제' className={clsx('h-96 w-full place-self-center rounded-xl')} />
+      </div>
+      <img src='/img/business/nrect/p1.webp' alt='비전라이프가 해결하는 문제' className={clsx('h-[700px] w-1/2 place-self-center rounded-xl')} />
      </div>
-     <img src='/img/business/nrect/p1.webp' alt='비전라이프가 해결하는 문제' className={clsx('mt-12 h-96 w-full place-self-center rounded-xl')} />
-    </div>
+    </section>
 
     {/* 환경 + 품질 중심 정리 */}
-    <div className='py-32'>
+    <section className='py-32'>
      <h2 ref={addToRefs} className='text-4xl font-bold text-primary mb-10'>환경적 책임을 실현하는 기술</h2>
      {/* 환경적 효과 강조 */}
      <p ref={addToRefs} className='mt-4 text-lg leading-relaxed text-gray-700'>
@@ -208,10 +210,10 @@ const NRect = () => {
       N-RECT는 나일론 섬유에 최적화되어 있으며, 면 및 폴리에스터와 같은 일반 섬유에서도 탁월한 성능을 발휘합니다.
       단, 폴리우레탄 또는 특수 코팅 섬유의 경우 사전 테스트를 권장합니다.
      </p>
-    </div>
+    </section>
 
     {/* 친환경을 넘어서는 품질 */}
-    <div className='py-32'>
+    <section className='py-32'>
      <div className='text-left'>
       <h2 ref={addToRefs} className='text-4xl font-bold text-primary mb-10'>
        친환경을 넘어서는 품질
@@ -231,10 +233,10 @@ const NRect = () => {
        <ExpandingCardItem key={item.id} title={item.title} href={item.href}/>
       ))}
      </ExpandingCard>
-    </div>
+    </section>
 
     {/* PROUTEX */}
-    <div id='proutex'>
+    <section id='proutex'>
      <div className='pt-32 pb-12'>
       <div className="text-3xl font-bold text-primary text-left">
        <h2 ref={addToRefs} className="my-4">
@@ -268,22 +270,7 @@ const NRect = () => {
        <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='뛰어난 색상 유지력' description='원단 표면에 깊숙이 스며들어 색상이 쉽게 변하지 않으며, 기존보다 더 선명한 표현과 긴 지속성을 제공합니다.'/>
       </SwiperSlide>
      </Swiper>
-    </div>
-
-    {/* 글로벌 확장 */}
-    <div className='py-32'>
-     <h2 ref={addToRefs} className='text-4xl font-bold text-primary'>
-      글로벌 확장을 위한 기술 기반
-     </h2>
-     <p ref={addToRefs} className='text-lg leading-relaxed text-gray-700 mt-4'>
-      비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,
-      다양한 원단에 대한 샘플링을 통해 글로벌 시장 진입을 준비하고 있습니다.
-     </p>
-     <p ref={addToRefs} className='mt-6 text-lg leading-relaxed text-gray-700'>
-      N-RECT 기술은 국제 특허 출원 중이며,
-      올해 <strong>1,000톤 규모(약 600억 원)</strong> 수출을 목표로 양산 설비를 구축하고 있습니다.
-     </p>
-    </div>
+    </section>
    </div>
   </div>
  );
