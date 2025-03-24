@@ -4,14 +4,13 @@ import {Link} from 'react-router-dom';
 
 const Media = () => {
  return (
-  <GridArticle colStart={2} colEnd={13} className='mt-64 mb-32 flex gap-20 overflow-x-visible'>
-   <div className='text-primary text-lg text-left w-fit min-w-fit'>
-    <h2 className='mb-5 text-5xl font-bold '>PROUTEX NEWS</h2>
+  <GridArticle colStart={2} colEnd={12} className='h-screen flex flex-col items-center justify-center gap-20 overflow-x-visible'>
+   <div className='text-primary text-lg text-left w-full min-w-fit'>
+    <h2 className='w-full mb-5 text-5xl font-bold '>NEWS</h2>
     <p>친환경 기술과 지속 가능한 변화를 만드는</p>
     <p>PROUTEX의 최신 소식을 만나보세요.</p>
-    <Link to='/' className='w-fit block mt-10'>VIEW ALL</Link>
    </div>
-   <div className='flex-1 flex gap-5 overflow-x-visible'>
+   <div className='flex gap-5 overflow-x-visible'>
     {/* Media Carousel */}
     <div className='min-w-[380px] relative border-color flex flex-col items-start justify-around border-2 p-8'>
      <img src='/img/logo.webp' alt='test' className='h-full w-full' />
@@ -37,6 +36,9 @@ const Media = () => {
       </h3>
      </div>
     </div>
+   </div>
+   <div className='w-full h-full mx-auto text-xl'>
+    <Link to='/' className='py-4 px-10 w-fit border'>VIEW ALL</Link>
    </div>
   </GridArticle>
  );

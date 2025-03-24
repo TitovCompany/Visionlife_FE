@@ -1,10 +1,8 @@
-import GridLayout from '../../../layout/Grid/GridLayout.tsx';
-import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 import clsx from 'clsx';
 import LinkCard from '../../../components/Card/LinkCard.tsx';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Pagination} from 'swiper/modules';
-import {useRef, useState} from 'react';
+import {useRef} from 'react';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useGSAP} from '@gsap/react';
@@ -139,7 +137,9 @@ const NRect = () => {
    <div className='relative mx-auto max-w-6xl pt-40'>
     {/* Intro */}
     <div className='w-full text-center h-screen flex flex-col items-center justify-center'>
-     <h2 ref={(el) => {if (el) headerRef.current[0] = el;}} className='text-[40px] origin-top text-primary font-bold transition-transform [will-change:transform] mb-32'
+     <h2 ref={(el) => {
+      if (el) headerRef.current[0] = el;
+     }} className='text-[40px] origin-top text-primary font-bold transition-transform [will-change:transform] mb-32'
      >환경을 위한 기술,<br />제품으로 실현하다</h2>
      <p ref={(el) => {
       if (el) headerRef.current[1] = el;
@@ -170,9 +170,11 @@ const NRect = () => {
         N-RECT는 나일론 섬유에도 직접 인쇄가 가능한 수성 에코잉크로, 전처리·후처리 없는 무폐수 공정을 실현합니다.
         공정 단순화를 통해 인력, 시간, 비용을 절감하고, 높은 색상 정밀도와 내구성을 제공합니다.
        </p>
-       <img src='/img/business/nrect/p1.webp' alt='비전라이프가 해결하는 문제' className={clsx('h-96 w-full place-self-center rounded-xl')} />
+       <img src='/img/business/nrect/p1.webp' alt='비전라이프가 해결하는 문제'
+            className={clsx('h-96 w-full place-self-center rounded-xl')} />
       </div>
-      <img src='/img/business/nrect/p1.webp' alt='비전라이프가 해결하는 문제' className={clsx('h-[700px] w-1/2 place-self-center rounded-xl')} />
+      <img src='/img/business/p1.jpg' alt='비전라이프가 해결하는 문제'
+           className={clsx('h-[700px] w-1/2 place-self-center rounded-xl')} />
      </div>
     </section>
 
@@ -230,7 +232,7 @@ const NRect = () => {
 
      <ExpandingCard>
       {nrec_use.map((item) => (
-       <ExpandingCardItem key={item.id} title={item.title} href={item.href}/>
+       <ExpandingCardItem key={item.id} title={item.title} href={item.href} />
       ))}
      </ExpandingCard>
     </section>
@@ -264,10 +266,12 @@ const NRect = () => {
       modules={[Pagination]}
       className="mySwiper overflow-hidden">
       <SwiperSlide>
-       <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='친환경 공정' description='기존 프린팅 공정에서는 화학 처리와 폐수가 발생하지만, N-RECT는 무폐수 염색을 실현하여 환경 부담을 최소화합니다.'/>
+       <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='친환경 공정'
+                 description='기존 프린팅 공정에서는 화학 처리와 폐수가 발생하지만, N-RECT는 무폐수 염색을 실현하여 환경 부담을 최소화합니다.' />
       </SwiperSlide>
       <SwiperSlide>
-       <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='뛰어난 색상 유지력' description='원단 표면에 깊숙이 스며들어 색상이 쉽게 변하지 않으며, 기존보다 더 선명한 표현과 긴 지속성을 제공합니다.'/>
+       <LinkCard bgImage='bg-[url("/img/business/nrect/p1.webp")]' title='뛰어난 색상 유지력'
+                 description='원단 표면에 깊숙이 스며들어 색상이 쉽게 변하지 않으며, 기존보다 더 선명한 표현과 긴 지속성을 제공합니다.' />
       </SwiperSlide>
      </Swiper>
     </section>

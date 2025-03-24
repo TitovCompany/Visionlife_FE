@@ -59,7 +59,7 @@ interface GridLayoutProps {
  rows?: number | 'auto';
  gap?: number;
  align?: 'start' | 'center' | 'end' | 'stretch';
- ref?: RefObject<HTMLElement>;
+ ref?: RefObject<HTMLDivElement>;
  className?: string;
 }
 
@@ -73,7 +73,7 @@ const GridLayout: FC<GridLayoutProps> = ({
  ref,
 }) => {
  return (
-  <section
+  <div
    ref={ref}
    className={clsx(
     'grid',
@@ -83,7 +83,7 @@ const GridLayout: FC<GridLayoutProps> = ({
     ALIGN_CLASSES[align] || 'place-items-stretch',
     className)}>
    {children}
-  </section>
+  </div>
  );
 };
 
