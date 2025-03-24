@@ -7,18 +7,22 @@ import { Line, Html } from '@react-three/drei';
 const MarkerWithArrow = ({ lat, lon, name }: { lat: number; lon: number; name: string }) => {
  const basePos = latLongToVector3(lat, lon, 4.01); // 마커 위치
  const verticalTop = [basePos[0], basePos[1] + 0.5, basePos[2]];
- const horizontalEnd = [basePos[0] + 1.5, basePos[1] + 0.5, basePos[2]];
+ const horizontalEnd: [number, number, number] = [basePos[0] + 1.5, basePos[1] + 0.5, basePos[2]];
 
  return (
   <>
    {/* 마커 */}
-   <mesh position={basePos as any}>
+   <mesh position={basePos as never}>
     <sphereGeometry args={[0.05, 16, 16]} />
     <meshStandardMaterial color='red' />
    </mesh>
 
    {/* ㄱ자 라인 (3D) */}
-   <Line points={[basePos, verticalTop, horizontalEnd]} color="black" lineWidth={1} />
+   <Line
+    points={[basePos, verticalTop, horizontalEnd] as [number, number, number][]}
+    color="black"
+    lineWidth={1}
+   />
 
    {/* 텍스트 */}
    <Html position={horizontalEnd} distanceFactor={10}>
@@ -38,7 +42,7 @@ const MarkerWithArrow = ({ lat, lon, name }: { lat: number; lon: number; name: s
 };
 
 
-const latLongToVector3 = (lat: number, lon: number, radius: number) => {
+const latLongToVector3 = (lat: number, lon: number, radius: number): [number, number, number] => {
  const phi = (90 - lat) * (Math.PI / 180);
  const theta = (lon + 180) * (Math.PI / 180);
  const x = -radius * Math.sin(phi) * Math.cos(theta);
@@ -47,7 +51,7 @@ const latLongToVector3 = (lat: number, lon: number, radius: number) => {
  return [x, y, z];
 };
 
-const Marker = ({ lat, lon, name }: { lat: number; lon: number; name: string }) => {
+/*const Marker = ({ lat, lon, name }: { lat: number; lon: number; name: string }) => {
  const [hovered, setHovered] = React.useState(false);
  const pos = latLongToVector3(lat, lon, 4.01);
  return (
@@ -68,7 +72,7 @@ const Marker = ({ lat, lon, name }: { lat: number; lon: number; name: string }) 
    )}
   </group>
  );
-};
+};*/
 
 
 const markerData = [

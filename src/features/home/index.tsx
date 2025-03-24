@@ -15,6 +15,7 @@ import ThreeDScene from '../../components/ThreeDScene.tsx';
 import TextLink from '../../components/TextLink.tsx';
 import LinkList from '../../components/LinkList.tsx';
 import SectionHeader from '../../components/SectionHeader.tsx';
+import clsx from 'clsx';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const carouselItems = [
@@ -322,18 +323,12 @@ const Home = () => {
       <div className='h-[800px] min-w-[600px]'>
        <ThreeDScene />
       </div>
-      <div>
-       <p>
-        비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,
-       </p>
-       <p className='mt-2'>
-        다양한 원단에 대한 샘플링을 통해 글로벌 시장 진입을 준비하고 있습니다.
-       </p>
-       <p className='mt-2'>
-        N-RECT 기술은 국제 특허 출원 중이며, 올해{' '}
-        <strong>1,000톤 규모(약 600억 원)</strong>
-       </p>
-       <p className='mt-2'>수출을 목표로 양산 설비를 구축하고 있습니다.</p>
+      <div className='text-lg'>
+       {['비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,', '다양한 원단에 대한 샘플링을 통해 글로벌 시장 진입을 준비하고 있습니다.', 'N-RECT 기술은 국제 특허 출원 중이며, 올해 1,000톤 규모(약 600억 원)', '수출을 목표로 양산 설비를 구축하고 있습니다.'].map((item, index) => (
+        <p key={index} className={clsx(index >= 1 && 'mt-2')}>
+         {item}
+        </p>
+       ))}
       </div>
      </GridArticle>
 
