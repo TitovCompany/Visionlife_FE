@@ -79,7 +79,7 @@ const markerData = [
 ];
 
 const ThreeDScene: React.FC = () => {
- const texture = useLoader(TextureLoader, '/textures/world.jpg'); // 지구 텍스처 경로
+ const texture = useLoader(TextureLoader, '/textures/world.webp'); // 지구 텍스처 경로
 
  return (
   <Canvas camera={{ position: [0, 2, 10] }}>
