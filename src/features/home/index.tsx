@@ -13,7 +13,6 @@ import ProgressBar from '../../components/ProgressBar.tsx';
 import news from '../../data/news.json';
 import {Link} from 'react-router-dom';
 import ThreeDScene from '../../components/ThreeDScene.tsx';
-import clsx from 'clsx';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const carouselItems = [
@@ -368,19 +367,8 @@ const Home = () => {
        </p>
        <p className='mt-2'>수출을 목표로 양산 설비를 구축하고 있습니다.</p>
       </div>
-      <div className='h-[500px] min-w-[600px]'>
+      <div className='h-[800px] min-w-[600px]'>
        <ThreeDScene />
-      </div>
-      <div className='flex h-full w-full items-center justify-between gap-5'>
-       {['중국', '유럽', '인도네시아', '방글라데시'].map((item, index) => (
-        <p
-         key={index}
-         className={clsx(
-          'bg-primary border-color text-color w-full rounded-md border px-12 py-3 text-lg'
-         )}>
-         {item}
-        </p>
-       ))}
       </div>
      </GridArticle>
 
