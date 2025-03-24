@@ -36,7 +36,7 @@ const ProUtex = () => {
    {/* PROUTEX Intro */}
    <GridLayout rows={4} className='h-screen'>
     <GridArticle rowStart={2} colStart={2} colEnd={6} className='place-content-center content-center'>
-     <img src='/img/product/p3.png' alt='기기명 Coltex' className='h-[300px] w-full object-cover md:h-[530px] lg:rounded-lg ' />
+     <img src='/img/product/p3.webp' alt='기기명 Coltex' className='h-[300px] w-full object-cover md:h-[530px] lg:rounded-lg ' />
     </GridArticle>
     <GridArticle rowSpan={2} colStart={7} colEnd={11} className='text-lg content-center'>
      <p className='biz_item mb-4 leading-8 '>
@@ -68,7 +68,7 @@ const ProUtex = () => {
        as='div'
        title={item.title}
        animation={true}
-       src={`/img/product/features/p${index + 1}.png`}
+       src={`/img/product/features/p${index + 1}.webp`}
        alt={item.title}
        description={item.content}
        wrapperClass='biz_item group flex flex-col items-center text-center transform hover:scale-105 transition-all duration-500 max-h-96 max-w-96'
@@ -145,7 +145,7 @@ const ProUtex = () => {
       <h3 className='mb-3'>PROUTEX 디지털 프린팅 공정</h3>
      </div>
      <div className='biz_item bg-primary-50 border-primary flex flex-col items-center gap-6 rounded-lg border p-6 shadow-md'>
-      <img src='/img/product/compare/p4.png' alt='출력과 동시에 염색 완료' className='rounded-lg object-cover w-full h-full'/>
+      <img src='/img/product/compare/p4.webp' alt='출력과 동시에 염색 완료' className='rounded-lg object-cover w-full h-full'/>
       <div>
        <h4 className='text-primary text-lg font-bold'>출력과 동시에 염색 완료</h4>
        <p className='text-sm text-gray-700 md:text-lg'>별도의 전처리나 후처리 없이 원단에 직접 염색이 이루어지므로 생산 속도가 빠르고, 환경 오염이 발생하지 않습니다.</p>
@@ -163,7 +163,7 @@ const ProUtex = () => {
      <div className='flex'>
       {comparison.items[0].steps.map((step, idx) => (
        <div key={step.id} className='flex flex-col items-center gap-6 rounded-lg bg-white shadow-md'>
-        <img src={`/img/product/compare/p${idx + 1}.png`} alt={step.content} className='w-full h-full object-cover rounded-lg' />
+        <img src={`/img/product/compare/p${idx + 1}.webp`} alt={step.content} className='w-full h-full object-cover rounded-lg' />
         <div>
          <h4 className='text-lg font-bold'>{step.content}</h4>
          <p className='text-sm text-gray-600 md:text-lg'>{step.description}</p>
