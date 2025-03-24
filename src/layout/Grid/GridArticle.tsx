@@ -131,7 +131,7 @@ const PLACE_SELF_OPTIONS: Record<string, string> = {
 
 interface GridArticleProps {
  children: ReactNode;
- ref?: RefObject<HTMLElement | null> | RefObject<(HTMLElement | null)[]>;
+ ref?: RefObject<HTMLElement | null> | RefObject<(HTMLElement | null)[]> | ((el: HTMLElement | null) => void);
  colSpan?: number;
  rowSpan?: number;
  colStart?: number;
