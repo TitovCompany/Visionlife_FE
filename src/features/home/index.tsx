@@ -11,9 +11,10 @@ import {FaCaretDown} from 'react-icons/fa';
 import HeroNavbar from './components/HeroNavbar.tsx';
 import ProgressBar from '../../components/ProgressBar.tsx';
 import news from '../../data/news.json';
-import {Link} from 'react-router-dom';
 import ThreeDScene from '../../components/ThreeDScene.tsx';
 import TextLink from '../../components/TextLink.tsx';
+import LinkList from '../../components/LinkList.tsx';
+import SectionHeader from '../../components/SectionHeader.tsx';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const carouselItems = [
@@ -99,10 +100,10 @@ const Home = () => {
  useGSAP(() => {
   // 초기 진입 애니메이션
   if (imageRef.current) animateFadeUp(imageRef.current);
-  if (titleRef.current) animateFadeUp(titleRef.current, 0.2);
-  contentRef.current.forEach((el, i) => {
+  // if (titleRef.current) animateFadeUp(titleRef.current, 0.2);
+  /*contentRef.current.forEach((el, i) => {
    if (el) animateFadeUp(el, i * 0.3, el); // ScrollTrigger 포함
-  });
+  });*/
 
   // 슬라이드 이동 애니메이션
   gsap.to(sliderRef.current, {
@@ -268,32 +269,11 @@ const Home = () => {
       colStart={2}
       colEnd={12}
       className='flex h-screen w-full snap-start flex-col justify-center'>
-      {/* Title */}
-      <div ref={titleRef} className='text-primary text-left'>
-       <h2 className='text-5xl font-bold'>Company</h2>
-       <p className='mt-10 text-xl text-gray-600'>
-        비전라이프홀딩스는 ‘사람과 환경이 공존하는 섬유산업’을 꿈꿉니다.
-       </p>
-      </div>
+      <SectionHeader ref={titleRef} title='Company' subTitle='비전라이프홀딩스는 ‘사람과 환경이 공존하는 섬유산업’을 꿈꿉니다.'/>
       <ul className='flex justify-between items-center gap-10 mt-32'>
-       <li className='p-8 relative h-96 w-full'>
-        <Link to='/'>
-         <img src="/img/home/Cp1.webp" alt="About Company" className='w-full h-full absolute top-0 left-0'/>
-         <p className='absolute top-3/4 left-1/2 -translate-1/2 text-2xl font-bold text-white'>About Company</p>
-        </Link>
-       </li>
-       <li className='p-8 relative h-96 w-full'>
-        <Link to='/'>
-         <img src="/img/home/Cp2.webp" alt="Business" className='w-full h-full absolute top-0 left-0'/>
-         <p className='absolute top-3/4 left-1/2 -translate-1/2 text-2xl font-bold text-white'>Business</p>
-        </Link>
-       </li>
-       <li className='p-8 relative h-96 w-full'>
-        <Link to='/'>
-         <img src="/img/home/Cp3.webp" alt="Location" className='w-full h-full absolute top-0 left-0'/>
-         <p className='absolute top-3/4 left-1/2 -translate-1/2 text-2xl font-bold text-white'>Location</p>
-        </Link>
-       </li>
+       <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='About Company'/>
+       <LinkList href='/' imgSrc='/img/home/Cp2.webp' text='Business'/>
+       <LinkList href='/' imgSrc='/img/home/Cp3.webp' text='Location'/>
       </ul>
      </GridArticle>
 
@@ -306,12 +286,7 @@ const Home = () => {
       colEnd={12}
       className='flex h-screen snap-start flex-col justify-center text-center'>
       {/* Title */}
-      <div ref={titleRef} className='text-primary text-left'>
-       <h2 className='text-5xl font-bold'>Why Choose Us?</h2>
-       <p className='mt-4 text-xl text-gray-600'>
-        지속 가능성과 품질을 동시에 제공합니다.
-       </p>
-      </div>
+      <SectionHeader ref={titleRef} title='Why Choose Us?' subTitle='지속 가능성과 품질을 동시에 제공합니다.'/>
 
       {/* Contents */}
       <ul className='mt-32 grid grid-cols-1 gap-8 md:grid-cols-3'>
@@ -338,10 +313,16 @@ const Home = () => {
       colStart={2}
       colEnd={12}
       className='flex h-screen snap-start flex-col justify-center'>
-      <div className='mb-10 items-start text-left text-lg leading-relaxed text-gray-700'>
-       <h2 className='text-primary mb-10 text-5xl font-bold'>
-        Global Business
-       </h2>
+      <SectionHeader
+       title="Global Business"
+       subTitle={[
+        '비전라이프는 글로벌 시장에서 지속 가능한 기술을 바탕으로',
+        '새로운 가치를 창출하고 있습니다.',
+       ]}/>
+      <div className='h-[800px] min-w-[600px]'>
+       <ThreeDScene />
+      </div>
+      <div>
        <p>
         비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,
        </p>
@@ -354,9 +335,6 @@ const Home = () => {
        </p>
        <p className='mt-2'>수출을 목표로 양산 설비를 구축하고 있습니다.</p>
       </div>
-      <div className='h-[800px] min-w-[600px]'>
-       <ThreeDScene />
-      </div>
      </GridArticle>
 
      {/* Media (News) */}
@@ -367,11 +345,12 @@ const Home = () => {
       colStart={2}
       colEnd={12}
       className='flex h-screen snap-start flex-col items-center justify-center gap-20'>
-      <div className='text-primary w-full min-w-fit text-left text-lg'>
-       <h2 className='mb-5 w-full text-5xl font-bold'>NEWS</h2>
-       <p>친환경 기술과 지속 가능한 변화를 만드는</p>
-       <p>PROUTEX의 최신 소식을 만나보세요.</p>
-      </div>
+      <SectionHeader
+       title="NEWS"
+       subTitle={[
+        '친환경 기술과 지속 가능한 변화를 만드는',
+        'PROUTEX의 최신 소식을 만나보세요.',
+       ]}/>
       <div className='flex gap-5 overflow-x-visible'>
        {/* Media Carousel */}
        <div className='border-color relative flex min-w-[380px] flex-col items-start justify-around border-2 p-8'>
