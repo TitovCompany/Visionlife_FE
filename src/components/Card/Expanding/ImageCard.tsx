@@ -1,4 +1,4 @@
-import AnimatedHeading from './AnimatedHeading.tsx';
+import AnimatedHeading from '../../AnimatedHeading.tsx';
 import React from 'react';
 
 /**

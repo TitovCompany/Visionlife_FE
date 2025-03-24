@@ -1,5 +1,5 @@
 import features from '../../../data/business/utex_features.json';
-import ImageCard from '../../../components/ImageCard.tsx';
+import ImageCard from '../../../components/Card/Expanding/ImageCard.tsx';
 import comparison from '../../../data/business/utex_comparison.json';
 import GridLayout from '../../../layout/Grid/GridLayout.tsx';
 import GridArticle from '../../../layout/Grid/GridArticle.tsx';

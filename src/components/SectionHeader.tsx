@@ -23,14 +23,14 @@ import {RefObject} from 'react';
 
 interface SectionHeaderProps {
  title: string;
- forwardedRef?: RefObject<HTMLDivElement> | ((el: HTMLDivElement | null) => void);
+ ref?: RefObject<HTMLDivElement> | ((el: HTMLDivElement | null) => void);
  subTitle?: string | string[];
  align?: 'left' | 'center' | 'right';
 }
 
-const SectionHeader = ({title, forwardedRef, subTitle, align = 'left'}: SectionHeaderProps) => {
+const SectionHeader = ({title, ref, subTitle, align = 'left'}: SectionHeaderProps) => {
  return (
-  <div ref={forwardedRef} className={`text-primary text-${align}`}>
+  <div ref={ref} className={`text-primary text-${align}`}>
    <h2 className="text-5xl font-bold mb-6">{title}</h2>
    {Array.isArray(subTitle)
     ? subTitle.map((text, idx) => (
