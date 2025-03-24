@@ -379,7 +379,7 @@ const Home = () => {
       }}
       colStart={2}
       colEnd={12}
-      className='flex h-screen snap-start flex-col items-center justify-center gap-20 overflow-x-visible'>
+      className='flex h-screen snap-start flex-col items-center justify-center gap-20'>
       <div className='text-primary w-full min-w-fit text-left text-lg'>
        <h2 className='mb-5 w-full text-5xl font-bold'>NEWS</h2>
        <p>친환경 기술과 지속 가능한 변화를 만드는</p>
@@ -406,7 +406,7 @@ const Home = () => {
         </div>
        </div>
       </div>
-      <div className='mx-auto h-full w-full text-xl'>
+      <div className='mx-auto w-full text-xl'>
        <Link to='/' className='w-fit border px-10 py-4'>
         VIEW ALL
        </Link>
