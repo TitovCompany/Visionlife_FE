@@ -13,6 +13,7 @@ import ProgressBar from '../../components/ProgressBar.tsx';
 import news from '../../data/news.json';
 import {Link} from 'react-router-dom';
 import ThreeDScene from '../../components/ThreeDScene.tsx';
+import TextLink from '../../components/TextLink.tsx';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const carouselItems = [
@@ -68,54 +69,40 @@ const Home = () => {
   return () => clearInterval(interval); // 컴포넌트 언마운트 시 정리
  }, []);
 
- // 스크롤 스냅
+ // 애니메이션 유틸 함수
+ const animateFadeUp = (
+  target: gsap.TweenTarget,
+  delay = 0,
+  trigger?: Element
+ ) => {
+  gsap.fromTo(
+   target,
+   { y: 100, opacity: 0 },
+   {
+    y: 0,
+    opacity: 1,
+    duration: 1.2,
+    delay,
+    ...(trigger && {
+     scrollTrigger: {
+      trigger,
+      start: 'top 80%',
+      end: 'top 60%',
+      toggleActions: 'play none none none',
+     },
+    }),
+   }
+  );
+ };
 
  // 슬라이더 애니메이션 실행 및 적용
  useGSAP(() => {
-  if (sliderRef.current.length === 0) return;
-  const tl = gsap.timeline();
-
-  // 타이틀 애니메이션
-  tl.fromTo(
-   imageRef.current,
-   {
-    y: 100,
-    opacity: 0,
-   },
-   {
-    y: 0,
-    opacity: 1,
-    duration: 1.2,
-   }
-  );
-  tl.fromTo(
-   titleRef.current,
-   {
-    y: 100,
-    opacity: 0,
-   },
-   {
-    y: 0,
-    opacity: 1,
-    duration: 1.2,
-   }
-  );
-  tl.fromTo(
-   contentRef.current,
-   {
-    y: 100,
-    opacity: 0,
-   },
-   {
-    y: 0,
-    opacity: 1,
-    duration: 1.2,
-   }
-  );
-
-  // 기존 애니메이션 정리
-  gsap.killTweensOf(sliderRef.current);
-  gsap.killTweensOf(slideTimeRef.current);
+  // 초기 진입 애니메이션
+  if (imageRef.current) animateFadeUp(imageRef.current);
+  if (titleRef.current) animateFadeUp(titleRef.current, 0.2);
+  contentRef.current.forEach((el, i) => {
+   if (el) animateFadeUp(el, i * 0.3, el); // ScrollTrigger 포함
+  });
 
   // 슬라이드 이동 애니메이션
   gsap.to(sliderRef.current, {
@@ -141,7 +128,7 @@ const Home = () => {
     y: 0,
    },
    {
-    y: 50,
+    y: 20,
     duration: 1.2,
     repeat: -1, // 무한 반복
     yoyo: true, // 왕복
@@ -289,22 +276,22 @@ const Home = () => {
        </p>
       </div>
       <ul className='flex justify-between items-center gap-10 mt-32'>
-       <li className='border p-8 relative'>
+       <li className='p-8 relative h-96 w-full'>
         <Link to='/'>
-         <img src="/img/logo.webp" alt="" />
-         <p className='absolute top-3/4 left-1/2 -translate-1/2'>About Company</p>
+         <img src="/img/home/Cp1.webp" alt="About Company" className='w-full h-full absolute top-0 left-0'/>
+         <p className='absolute top-3/4 left-1/2 -translate-1/2 text-2xl font-bold text-white'>About Company</p>
         </Link>
        </li>
-       <li className='border p-8 relative'>
+       <li className='p-8 relative h-96 w-full'>
         <Link to='/'>
-         <img src="/img/logo.webp" alt="" />
-         <p className='absolute top-3/4 left-1/2 -translate-1/2'>Business</p>
+         <img src="/img/home/Cp2.webp" alt="Business" className='w-full h-full absolute top-0 left-0'/>
+         <p className='absolute top-3/4 left-1/2 -translate-1/2 text-2xl font-bold text-white'>Business</p>
         </Link>
        </li>
-       <li className='border p-8 relative'>
+       <li className='p-8 relative h-96 w-full'>
         <Link to='/'>
-         <img src="/img/logo.webp" alt="" />
-         <p className='absolute top-3/4 left-1/2 -translate-1/2'>Location</p>
+         <img src="/img/home/Cp3.webp" alt="Location" className='w-full h-full absolute top-0 left-0'/>
+         <p className='absolute top-3/4 left-1/2 -translate-1/2 text-2xl font-bold text-white'>Location</p>
         </Link>
        </li>
       </ul>
@@ -407,9 +394,9 @@ const Home = () => {
        </div>
       </div>
       <div className='mx-auto w-full text-xl'>
-       <Link to='/' className='w-fit border px-10 py-4'>
+       <TextLink href='/' className='w-fit border-2 px-10 py-4 font-bold'>
         VIEW ALL
-       </Link>
+       </TextLink>
       </div>
      </GridArticle>
     </GridLayout>
