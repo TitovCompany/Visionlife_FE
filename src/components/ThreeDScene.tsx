@@ -2,7 +2,40 @@ import React from 'react';
 import {Canvas, useLoader} from '@react-three/fiber';
 import {TextureLoader} from 'three';
 import {OrbitControls} from '@react-three/drei';
-import { Html } from '@react-three/drei';
+import { Line, Html } from '@react-three/drei';
+
+const MarkerWithArrow = ({ lat, lon, name }: { lat: number; lon: number; name: string }) => {
+ const basePos = latLongToVector3(lat, lon, 4.01); // 마커 위치
+ const verticalTop = [basePos[0], basePos[1] + 0.5, basePos[2]];
+ const horizontalEnd = [basePos[0] + 1.5, basePos[1] + 0.5, basePos[2]];
+
+ return (
+  <>
+   {/* 마커 */}
+   <mesh position={basePos as any}>
+    <sphereGeometry args={[0.05, 16, 16]} />
+    <meshStandardMaterial color='red' />
+   </mesh>
+
+   {/* ㄱ자 라인 (3D) */}
+   <Line points={[basePos, verticalTop, horizontalEnd]} color="black" lineWidth={1} />
+
+   {/* 텍스트 */}
+   <Html position={horizontalEnd} distanceFactor={10}>
+    <div style={{
+     background: 'white',
+     padding: '4px 10px',
+     borderRadius: '6px',
+     fontSize: '0.8rem',
+     whiteSpace: 'nowrap',
+     boxShadow: '0 0 5px rgba(0,0,0,0.2)'
+    }}>
+     {name}
+    </div>
+   </Html>
+  </>
+ );
+};
 
 
 const latLongToVector3 = (lat: number, lon: number, radius: number) => {
@@ -61,7 +94,7 @@ const ThreeDScene: React.FC = () => {
    </mesh>
 
    {markerData.map((data, idx) => (
-    <Marker key={idx} {...data} />
+    <MarkerWithArrow  key={idx} {...data} />
    ))}
 
    <OrbitControls enableZoom={false}/>
