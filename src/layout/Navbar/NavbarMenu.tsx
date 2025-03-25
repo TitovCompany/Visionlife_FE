@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import clsx from 'clsx';
 import {NavLink} from 'react-router-dom';
 import {FaChevronDown, FaChevronUp} from 'react-icons/fa';
@@ -98,4 +98,4 @@ const NavbarMenu: React.FC<NavbarMenuProps> = (props) => {
  );
 };
 
-export default NavbarMenu;
+export default memo(NavbarMenu);

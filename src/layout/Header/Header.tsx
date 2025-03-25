@@ -41,15 +41,13 @@ const Header = ({
    <NavbarDesktop
     isDropdownVisible={isDropdownVisible}
     setIsDropdownVisible={setIsDropdownVisible}
-    navigation={navigation}
-   />
+    navigation={navigation}/>
    <NavbarMobile
     isMobileMenuOpen={isMobileMenuOpen}
     setIsMobileMenuOpen={setIsMobileMenuOpen}
     navigation={navigation}
     toggleSubmenu={toggleSubmenu}
-    openSubmenus={openSubmenus}
-   />
+    openSubmenus={openSubmenus}/>
   </header>
  );
 };

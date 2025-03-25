@@ -5,11 +5,6 @@ import Header from '../../layout/Header/Header.tsx';
 import GridLayout from '../../layout/Grid/GridLayout.tsx';
 import GridArticle from '../../layout/Grid/GridArticle.tsx';
 import {useEffect, useRef, useState} from 'react';
-import {useGSAP} from '@gsap/react';
-import Slider from '../../components/Slider/Slider.tsx';
-import {FaCaretDown} from 'react-icons/fa';
-import HeroNavbar from './components/HeroNavbar.tsx';
-import ProgressBar from '../../components/ProgressBar.tsx';
 import news from '../../data/news.json';
 import ThreeDScene from '../../components/ThreeDScene.tsx';
 import TextLink from '../../components/TextLink.tsx';
@@ -18,9 +13,8 @@ import SectionHeader from '../../components/SectionHeader.tsx';
 import clsx from 'clsx';
 import Card from '../../components/Card/Card.tsx';
 import useSnapScroll from '../../hooks/useSnapScroll.ts';
-import SliderIndicator from '../../components/Slider/SliderIndicator.tsx';
+import HeroSlider from './components/HeroSlider.tsx';
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const carouselItems = [
  {
   title: '지속 가능한 패션',
@@ -54,14 +48,11 @@ const features = [
  },
 ];
 
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const Home = () => {
  const [currentIndex, setCurrentIndex] = useState(0);
  const containerRef = useRef<HTMLDivElement | null>(null);
  const articleRef = useRef<HTMLElement[]>([]);
- const contentRef = useRef<(HTMLElement | null)[]>([]);
- const imageRef = useRef(null);
- const sliderRef = useRef<HTMLElement[] | []>([]);
- const slideTimeRef = useRef<HTMLDivElement | null>(null);
 
  // 스크롤 스냅
  useSnapScroll(containerRef);
@@ -71,83 +62,12 @@ const Home = () => {
    setCurrentIndex((prevIndex) =>
     prevIndex === carouselItems.length ? 0 : prevIndex + 1
    );
-  }, 111115000);
-
-  return () => clearInterval(interval); // 컴포넌트 언마운트 시 정리
+  }, 5000);
+  // 컴포넌트 언마운트 시 정리
+  return () => clearInterval(interval);
  }, []);
 
- // 애니메이션 유틸 함수
- const animateFadeUp = (
-  target: gsap.TweenTarget,
-  delay = 0,
-  trigger?: Element
- ) => {
-  gsap.fromTo(
-   target,
-   {y: 100, opacity: 0},
-   {
-    y: 0,
-    opacity: 1,
-    duration: 1.2,
-    delay,
-    ...(trigger && {
-     scrollTrigger: {
-      trigger,
-      start: 'top 80%',
-      end: 'top 60%',
-      toggleActions: 'play none none none',
-     },
-    }),
-   }
-  );
- };
-
- // 슬라이더 애니메이션 실행 및 적용
- useGSAP(() => {
-  // 초기 진입 애니메이션
-  if (imageRef.current) animateFadeUp(imageRef.current);
-
-  // 슬라이드 이동 애니메이션
-  gsap.to(sliderRef.current, {
-   xPercent: -100 * currentIndex,
-  });
-
-  // 프로그래스 바 애니메이션 (5초 동안 증가)
-  gsap.fromTo(
-   slideTimeRef.current,
-   {
-    width: '0%',
-   },
-   {
-    width: '100%',
-    duration: 5,
-    ease: 'linear',
-   }
-  );
-
-  // LI 요소 하나씩 등장하도록 설정
-  contentRef.current.forEach((el, index) => {
-   if (el) {
-    gsap.fromTo(
-     el,
-     {opacity: 0, y: 50},
-     {
-      opacity: 1,
-      y: 0,
-      duration: 0.5,
-      delay: index * 0.3, // 요소마다 순차적 등장
-      scrollTrigger: {
-       trigger: el,
-       start: 'top 80%', // 요소가 화면에 들어올 때 시작
-       end: 'top 60%', // 요소가 지나가면 끝남
-       toggleActions: 'play none none none',
-      },
-     }
-    );
-   }
-  });
- }, [currentIndex, contentRef]);
-
+ console.log('render');
  return (
   <>
    <Header />
@@ -159,45 +79,7 @@ const Home = () => {
       ref={(el) => {
        if (el) articleRef.current[0] = el;
       }}>
-      <Slider>
-       <div
-        className='text-color flex min-h-full min-w-full flex-shrink-0 flex-col items-center justify-center pt-40 pb-96'
-        ref={(el) => {
-         if (el) sliderRef.current[0] = el;
-        }}>
-        {/* Image */}
-        <img ref={imageRef} src='/img/logo.webp' alt='히어로 섹션 이미지' className='h-full w-[400px]' />
-        <div className='-translate-y-16'>
-         {['(주)비전라이프홀딩스의 나일론잉크 “N-RECT 엔렉”은', '99% 무폐수로 만들어집니다.'].map((item, index) => (
-          <p key={index} className='mb-5 text-4xl' ref={(el) => { if (el) contentRef.current[index] = el;}}>{item}</p>
-         ))}
-        </div>
-       </div>
-       {/* Video */}
-       {carouselItems.map((item, index) => (
-        <div key={index} className='relative min-h-full min-w-full flex-shrink-0' ref={(el) => { if (el) sliderRef.current[index + 1] = el;}}>
-         <video src={item.src} controls={false} className='h-[calc(100vh-68px)] w-screen object-cover brightness-70 filter' autoPlay={index === currentIndex} loop muted playsInline />
-         <div className='absolute top-[40%] left-1/2 z-[9999] -translate-x-1/2'>
-          <h3 className='mb-10 text-6xl font-bold'>{item.title}</h3>
-          <p className='mt-5 max-w-3xl text-xl leading-8 whitespace-pre-line'>
-           {item.description}
-          </p>
-         </div>
-        </div>
-       ))}
-       <SliderIndicator>
-        <FaCaretDown size={30} />
-       </SliderIndicator>
-      </Slider>
-      {/* Hero Footer */}
-      <div className='relative z-[9999]'>
-       {/* Hero 네비게이션 */}
-       <HeroNavbar
-        currentIndex={currentIndex}
-        setCurrentIndex={setCurrentIndex} />
-       {/* 프로그래스 바 */}
-       <ProgressBar ref={slideTimeRef} />
-      </div>
+      <HeroSlider data={carouselItems} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>
      </GridArticle>
 
      {/* Company */}
@@ -239,9 +121,9 @@ const Home = () => {
        {features.map((feature, index) => (
         <li
          key={index}
-         ref={(el) => {
+         /*ref={(el) => {
           if (el) contentRef.current[index] = el;
-         }}
+         }}*/
          className='flex flex-col items-center text-center'>
          <img src={feature.image} alt='' />
          <h3 className='mt-4 text-2xl font-semibold'>{feature.title}</h3>

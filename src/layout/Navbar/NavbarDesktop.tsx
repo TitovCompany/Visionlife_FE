@@ -2,8 +2,9 @@ import NavbarMenu from './NavbarMenu.tsx';
 import clsx from 'clsx';
 import {Link} from 'react-router-dom';
 import Logo from '../../components/Logo.tsx';
+import {memo, FC} from 'react';
 
-const NavbarDesktop: React.FC<DesktopNavbarProps> = ({
+const NavbarDesktop: FC<DesktopNavbarProps> = ({
  isDropdownVisible,
  setIsDropdownVisible,
  navigation,
@@ -19,8 +20,7 @@ const NavbarDesktop: React.FC<DesktopNavbarProps> = ({
      type='_nav'
      items={navigation}
      onMouseEnter={() => setIsDropdownVisible(true)}
-     onMouseLeave={() => setIsDropdownVisible(false)}
-    />
+     onMouseLeave={() => setIsDropdownVisible(false)} />
    </div>
 
     {/* 서브 메뉴 */}
@@ -33,14 +33,12 @@ const NavbarDesktop: React.FC<DesktopNavbarProps> = ({
     onMouseLeave={() => setIsDropdownVisible(false)}>
      <h2 className='hidden'>서브 메뉴</h2>
     <div className='md:max-w-5xl mx-auto flex items-center justify-between w-full xl:max-w-7xl'>
-      <Logo className='w-40 h-40'/>
-     <NavbarMenu
-      type='_sub'
-      items={navigation} />
+     <Logo className='w-40 h-40'/>
+     <NavbarMenu type='_sub' items={navigation} />
     </div>
    </div>
   </div>
  );
 };
 
-export default NavbarDesktop;
+export default memo(NavbarDesktop);
