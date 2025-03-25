@@ -33,45 +33,51 @@ const History = () => {
     </div>
    </GridArticle>
 
-   {/* History */}
-   <GridArticle colStart={2} colEnd={12}>
-    <ul className={clsx('relative', '')}>
-     {history.map((item) => (
-      <li key={item.id} className={clsx('relative',)}>
-       {/* dot */}
-       <div className='bg-primary rounded-full m-5 outline-primary-5 w-10 h-10'></div>
-       {/* History */}
-       <div className='rounded-lg bg-white p-6 shadow-lg'>
-        {/* History - header */}
-        <div className='w-full text-left font-bold'>
-         <h2 className='inline-block bg-primary px-4 py-1 text-lg font-semibold text-color mb-5'>
-          {item.year.includes('~')
-           ? `${item.year.split('~')[0]}년 ~ ${item.year.split('~')[1]}년`
-           : `${item.year}년`}
-         </h2>
-         <h3 className='text-lg leading-10 md:text-3xl'>{item.title}</h3>
-        </div>
-        {/* History - Contents */}
-        <div className='mt-5 w-full text-left text-base'>
-         <p className='mb-2 md:text-xl'>
-          {Array.isArray(item.event) ? (
-           <>
-            {item.event.map((subEvent, index) => (
-             <p key={index} className='list-disc'>
-              {subEvent}
-             </p>
-            ))}
-           </>
-          ) : (
-           <p>{item.event}</p>
+   {/* 타임라인 History */}
+   <GridArticle colStart={1} colEnd={13}>
+    <div className="relative mx-auto w-full max-w-5xl py-10 before:absolute before:inset-y-0 before:left-1/2 before:w-1 before:bg-primary before:-translate-x-1/2">
+     <ul className='relative'>
+      {history.map((item, idx) => {
+       const isLeft = idx % 2 === 0;
+       return (
+        <li
+         key={item.id}
+         className={clsx(
+          'relative mb-20 flex w-full',
+          isLeft ? 'justify-start pr-10' : 'justify-end pl-10'
+         )}
+        >
+         {/* dot */}
+         <div className='absolute left-1/2 top-[30px] z-10 w-6 h-6 -translate-x-1/2 rounded-full border-4 border-primary bg-white'></div>
+         {/* card */}
+         <div
+          className={clsx(
+           'max-w-md rounded-xl  p-6 ',
+           isLeft ? 'mr-auto text-right' : 'ml-auto text-left'
           )}
-         </p>
-         <p>{item.description}</p>
-        </div>
-       </div>
-      </li>
-     ))}
-    </ul>
+         >
+          <h2 className='mb-3 inline-block bg-primary px-4 py-1 text-lg font-semibold text-color'>
+           {item.year.includes('~')
+            ? `${item.year.split('~')[0]}년 ~ ${item.year.split('~')[1]}년`
+            : `${item.year}년`}
+          </h2>
+          <h3 className='mb-3 text-2xl font-bold'>{item.title}</h3>
+          {Array.isArray(item.event) ? (
+           <ul className='list-disc pl-5 text-base text-gray-700'>
+            {item.event.map((e, i) => (
+             <li key={i}>{e}</li>
+            ))}
+           </ul>
+          ) : (
+           <p className='text-base text-gray-700'>{item.event}</p>
+          )}
+          <p className='mt-2 text-sm text-gray-500'>{item.description}</p>
+         </div>
+        </li>
+       );
+      })}
+     </ul>
+    </div>
    </GridArticle>
   </GridLayout>
  );
