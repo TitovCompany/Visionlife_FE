@@ -32,8 +32,7 @@ const Header = ({
    ref={ref}
    className={clsx(
     className,
-    //'bg-primary text-color',
-    'bg-primary text-color',
+    'border-b-2 border-b-primary/20',
     'fixed top-0 left-0 z-50 w-full',
     'transition-transform duration-300',
     isVisible ? 'translate-y-0' : '-translate-y-full'

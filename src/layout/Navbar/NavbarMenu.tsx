@@ -13,37 +13,33 @@ const NavbarMenu: React.FC<NavbarMenuProps> = (props) => {
   onMouseEnter,
   onMouseLeave,
  } = props;
- const componentClasses = clsx(
-  type !== '_mobile' && 'max-w-3xl',
-  type === '_mobile' && 'px-4 py-2'
- );
-
- const listClasses = clsx(
-  type === '_nav' && 'text-lg font-medium',
-  type === '_sub' && 'text-base fonts-normal gap-7',
-  type !== '_mobile' && 'flex gap-5 text-center',
-  type === '_mobile' && 'space-y-2'
- );
-
- const itemClasses = clsx(
-  type === '_nav' && 'hover:border-b-4 border-primary',
-  type === '_sub' && 'space-y-4 py-5'
- );
 
  const linkClasses = clsx(
-  type === '_nav' && 'py-5 hover:fonts-semibold',
-  type === '_sub' && 'py-2 hover:border-b-2 hover:border-color',
+  type === '_nav' && 'py-5',
+  type === '_sub' && 'py-2 border-b-2 border-transparent hover:border-black',
   `block`
  );
 
  return (
   <nav
-   className={componentClasses}
+   className={clsx(
+    type !== '_mobile' && 'w-full max-w-2xl',
+    type === '_mobile' && 'px-4 py-2'
+   )}
    onMouseEnter={onMouseEnter}
    onMouseLeave={onMouseLeave}>
-   <ul className={listClasses}>
+   <ul className={clsx(
+    'test',
+    type === '_nav' && 'flex-1 text-xl font-normal',
+    type === '_sub' && 'flex-1 text-lg font-normal',
+    type !== '_mobile' && 'flex justify-between text-center font-normal',
+    type === '_mobile' && 'space-y-2'
+   )}>
     {items.map((item, index) => (
-     <li key={index} className={itemClasses}>
+     <li key={index} className={clsx(
+      type === '_nav' && 'hover:border-b-2 w-32',
+      type === '_sub' && 'space-y-4 py-5 w-32'
+     )}>
       {type === '_nav' && (
        <NavLink to={item.href} className={linkClasses}>
         {item.label}

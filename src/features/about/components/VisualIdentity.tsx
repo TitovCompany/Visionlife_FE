@@ -86,7 +86,7 @@ const VisualIdentity = () => {
    </GridArticle>
    {/* Logo */}
    <GridArticle colStart={2} colEnd={13} className={clsx('w-full', 'mb-32', 'flex')}>
-    <img ref={imgRef} src="/img/logo.webp" alt="Vision Life Logo" />
+    <img ref={imgRef} src="/logo.webp" alt="Vision Life Logo" />
     <div className='w-full h-full p-6'>
      <h2 ref={subTitleRef} className="text-4xl font-bold mb-10">Proutex 브랜드 아이덴티티</h2>
      {textContents.map((text, index) => (

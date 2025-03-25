@@ -183,7 +183,7 @@ const Home = () => {
        {/* Media Carousel */}
        {news.items.slice(0, 3).map((item, index) => (
         <Card key={index} className='border-color relative flex flex-1 flex-col items-start justify-around border-2 p-8'>
-         <img src='/img/logo.webp' alt='test' className='h-full w-full'/>
+         <img src='/logo.webp' alt='test' className='h-full w-full'/>
          <div className='border-color mt-10 mr-10 w-full text-left'>
           <h3 className='mb-5 text-xl'>{item.title}</h3>
          </div>

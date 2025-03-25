@@ -52,7 +52,7 @@ const HeroSlider = memo(({
       if (el) sliderRef.current[0] = el;
      }}>
      {/* Image */}
-     <img ref={imageRef} src='/img/logo.webp' alt='히어로 섹션 이미지' className='h-full w-[400px]' />
+     <img ref={imageRef} src='/logo.webp' alt='히어로 섹션 이미지' className='h-full w-[400px]' />
      <div className='-translate-y-16'>
       {['(주)비전라이프홀딩스의 나일론잉크 “N-RECT 엔렉”은', '99% 무폐수로 만들어집니다.'].map((item, index) => (
        <p key={index} className='mb-5 text-4xl' ref={(el) => { if (el) contentRef.current[index] = el;}}>{item}</p>
