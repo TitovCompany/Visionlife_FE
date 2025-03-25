@@ -27,6 +27,7 @@ const NavbarDesktop: FC<DesktopNavbarProps> = ({
    {/* 서브 메뉴 */}
    <div
     className={clsx(
+     'bg-white text-primary',
      'absolute inset-x-0 top-full',
      'border-primary/20 border-t border-b-2',
      'transition-all duration-300 ease-in-out',
