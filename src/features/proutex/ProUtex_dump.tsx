@@ -1,6 +1,6 @@
-import features from '../../../data/business/utex_features.json';
-import ImageCard from '../../../components/Card/Expanding/ImageCard.tsx';
-import comparison from '../../../data/business/utex_comparison.json';
+import features from '../../data/business/utex_features.json';
+import ImageCard from '../../components/Card/Expanding/ImageCard.tsx';
+import comparison from '../../data/business/utex_comparison.json';
 import {Link} from 'react-router-dom';
 import {Pagination} from 'swiper/modules';
 import {Swiper, SwiperSlide} from 'swiper/react';

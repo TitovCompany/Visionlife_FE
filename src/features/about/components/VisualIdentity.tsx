@@ -3,8 +3,8 @@ import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useGSAP} from '@gsap/react';
 import clsx from 'clsx';
-import GridLayout from '../../../../layout/Grid/GridLayout.tsx';
-import GridArticle from '../../../../layout/Grid/GridArticle.tsx';
+import GridLayout from '../../../layout/Grid/GridLayout.tsx';
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 
 const textContents = [
  "Proutex의 로고는 Vision Life(VL)의 첫 글자를 형상화하여 브랜드의 정체성을 시각적으로 표현합니다. ‘V’와 ‘L’의 조합을 통해 기업의 핵심 가치를 담아내며, 두꺼운 서체와 기울어진 디자인으로 혁신성과 역동성을 강조합니다.",

@@ -1,13 +1,13 @@
-import clsx from 'clsx';
-import LinkCard from '../../../components/Card/LinkCard.tsx';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Pagination} from 'swiper/modules';
-import {useRef} from 'react';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {useRef} from 'react';
 import {useGSAP} from '@gsap/react';
-import ExpandingCard from '../../../components/Card/Expanding/ExpandingCard.tsx';
-import ExpandingCardItem from '../../../components/Card/Expanding/ExpandingCardItem.tsx';
+import clsx from 'clsx';
+import ExpandingCard from '../../components/Card/Expanding/ExpandingCard.tsx';
+import ExpandingCardItem from '../../components/Card/Expanding/ExpandingCardItem.tsx';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Pagination} from 'swiper/modules';
+import LinkCard from '../../components/Card/LinkCard.tsx';
 
 const nrec_use = [
  {id: 1, title: '스포츠웨어 & 기능성 의류', href: '/img/business/nrect/p2.webp'},
@@ -106,10 +106,8 @@ const NRect = () => {
     }
    );
   });
- }, [])
+ }, []);
 
- /* Todo - 엔렉, 프로유텍스 레이아웃 통일 */
- /* Todo - 프로유텍스 워딩 개선 */
  return (
   <div ref={sectionRef}>
    {/* Hero */}
@@ -131,7 +129,7 @@ const NRect = () => {
         새롭게 잉크의 혁신을 만들다
        </span>
      </h2>
-   </div>
+    </div>
    </section>
    {/* Contents */}
    <div className='relative mx-auto max-w-6xl pt-40'>

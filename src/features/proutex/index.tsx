@@ -1,11 +1,11 @@
-import features from '../../../data/business/utex_features.json';
-import ImageCard from '../../../components/Card/Expanding/ImageCard.tsx';
-import comparison from '../../../data/business/utex_comparison.json';
-import GridLayout from '../../../layout/Grid/GridLayout.tsx';
-import GridArticle from '../../../layout/Grid/GridArticle.tsx';
-import {Link} from 'react-router-dom';
-import {Pagination} from 'swiper/modules';
+import GridArticle from '../../layout/Grid/GridArticle.tsx';
 import {Swiper, SwiperSlide} from 'swiper/react';
+import {Pagination} from 'swiper/modules';
+import features from '../../data/business/utex_features.json';
+import ImageCard from '../../components/Card/Expanding/ImageCard.tsx';
+import {Link} from 'react-router-dom';
+import comparison from '../../data/business/utex_comparison.json';
+import GridLayout from '../../layout/Grid/GridLayout.tsx';
 
 const ProUtex = () => {
  return (

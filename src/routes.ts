@@ -10,14 +10,15 @@ import RootLayout from './layout/RootLayout.tsx';
 import Home from './features/home/index';
 
 // 🏢 회사 정보
-import Profile from './features/profile/pages/Profile.tsx';
+import About from './features/about';
+import CEO from './features/ceo';
 import History from './features/profile/pages/History.tsx';
-import ContactUs from './features/profile/pages/ContactUs.tsx';
+import ContactUs from './features/contact';
 
-// 📈 비즈니스 개요
-import Business from './features/business/index.tsx';
-import Overview from './features/business/pages/Overview.tsx';
-import ProUtex from './features/business/pages/ProUtex.tsx';
+// 📈 비즈니스
+import Business from './features/business';
+import NRect from './features/nrect';
+import ProUtex from './features/proutex';
 
 // 📰 뉴스
 import NewsLayout from './features/news/index';
@@ -33,8 +34,6 @@ import EmailNoCollection from './pages/EmailNoCollection.tsx';
 import TermsOfService from './pages/TermsOfService.tsx';
 import ProfileLayout from './features/profile';
 import ScrollSnap from './features/test/pages/ScrollSnap.tsx';
-import CEO from './features/profile/pages/CEO.tsx';
-import NRect from './features/business/pages/NRect.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -52,7 +51,7 @@ export const router = createBrowserRouter([
         path: '/company/profile',
         Component: ProfileLayout,
         children: [
-          {index: true, Component: Profile},
+          {index: true, Component: About},
           {path: 'history', Component: History},
           {path: 'ceo', Component: CEO},
           {path: 'contact', Component: ContactUs},
@@ -62,9 +61,8 @@ export const router = createBrowserRouter([
       // 비즈니스 페이지 (사업 개요 및 아이템)
       {
         path: '/business',
-        Component: Business,
         children: [
-          {path: 'overview/introduction', Component: Overview},
+          {path: 'overview/introduction', Component: Business},
           {path: 'n-rect/introduction', Component: NRect},
           {path: 'utex/introduction', Component: ProUtex},
         ],

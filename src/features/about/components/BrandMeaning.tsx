@@ -1,7 +1,7 @@
-import GridArticle from '../../../../layout/Grid/GridArticle.tsx';
 import clsx from 'clsx';
-import GridLayout from '../../../../layout/Grid/GridLayout.tsx';
-import ColorList from '../ColorList.tsx';
+import GridLayout from '../../../layout/Grid/GridLayout.tsx';
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
+import ColorList from './ColorList.tsx';
 
 const BrandMeaning = () => {
  return (
