@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const Test = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionsRef = useRef<HTMLDivElement[]>([]);
   const [currentSection, setCurrentSection] = useState(0);
 
   useGSAP(() => {
@@ -43,22 +43,22 @@ const Test = () => {
     <div ref={containerRef} className='h-full'>
       <div
         className='bg-primary flex h-screen items-center justify-center text-4xl text-white'
-        ref={(el) => el && (sectionsRef.current[0] = el)}>
+        ref={(el) => {if (el) sectionsRef.current[0] = el}}>
         섹션 1
       </div>
       <div
         className='flex h-screen items-center justify-center bg-amber-300 text-4xl text-black'
-        ref={(el) => el && (sectionsRef.current[1] = el)}>
+        ref={(el) => {if (el) sectionsRef.current[1] = el}}>
         섹션 2
       </div>
       <div
         className='flex h-screen items-center justify-center bg-black text-4xl text-white'
-        ref={(el) => el && (sectionsRef.current[2] = el)}>
+        ref={(el) => {if (el) sectionsRef.current[2] = el}}>
         섹션 3
       </div>
       <div
         className='flex h-screen items-center justify-center bg-green-600 text-4xl text-white'
-        ref={(el) => el && (sectionsRef.current[3] = el)}>
+        ref={(el) => {if (el) sectionsRef.current[3] = el}}>
         섹션 4
       </div>
     </div>

@@ -59,7 +59,7 @@ interface GridLayoutProps {
  rows?: number | 'auto';
  gap?: number;
  align?: 'start' | 'center' | 'end' | 'stretch';
- ref?: RefObject<HTMLDivElement>;
+ ref?: RefObject<HTMLDivElement | null>;
  className?: string;
 }
 

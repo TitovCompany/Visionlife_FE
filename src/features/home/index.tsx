@@ -17,6 +17,7 @@ import LinkList from '../../components/LinkList.tsx';
 import SectionHeader from '../../components/SectionHeader.tsx';
 import clsx from 'clsx';
 import Card from '../../components/Card/Card.tsx';
+import {useSnapScroll} from '../../hooks/useSnapScroll.ts';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const carouselItems = [
@@ -54,6 +55,7 @@ const features = [
 
 const Home = () => {
  const [currentIndex, setCurrentIndex] = useState(0);
+ const containerRef = useRef<HTMLDivElement | null>(null);
  const articleRef = useRef<HTMLElement[]>([]);
  const titleRef = useRef<HTMLDivElement[]>([]);
  const contentRef = useRef<(HTMLElement | null)[]>([]);
@@ -61,6 +63,9 @@ const Home = () => {
  const sliderRef = useRef<HTMLElement[] | []>([]);
  const slideTimeRef = useRef<HTMLDivElement | null>(null);
  const bounceRef = useRef<HTMLDivElement | null>(null);
+
+ // 스크롤 스냅
+ useSnapScroll(containerRef);
 
  useEffect(() => {
   const interval = setInterval(() => {
@@ -183,7 +188,7 @@ const Home = () => {
   <>
    <Header />
    <main className='min-h-screen w-full bg-white text-center'>
-    <GridLayout className='snap-y snap-mandatory gap-y-0 scroll-smooth'>
+    <GridLayout className='snap-y snap-mandatory gap-y-0 scroll-smooth' ref={containerRef}>
      {/* Hero */}
      <GridArticle
       ref={(el) => {

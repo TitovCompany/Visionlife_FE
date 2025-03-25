@@ -34,6 +34,7 @@ import EmailNoCollection from './pages/EmailNoCollection.tsx';
 import TermsOfService from './pages/TermsOfService.tsx';
 import ProfileLayout from './features/profile';
 import ScrollSnap from './features/test/pages/ScrollSnap.tsx';
+import Snap from './features/test/pages/Snap.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -96,14 +97,9 @@ export const router = createBrowserRouter([
       },
 
       // 테스트 페이지
-      {
-        path: '/test',
-        Component: Test,
-      },
-      {
-        path: '/test/scroll',
-        Component: ScrollSnap,
-      },
+      {path: '/test', Component: Test,},
+      {path: '/test/scroll', Component: ScrollSnap,},
+      {path: '/test/snap', Component: Snap,},
     ],
   },
 ]);
