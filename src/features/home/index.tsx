@@ -255,6 +255,7 @@ const Home = () => {
         className='absolute bottom-64 left-1/2 z-[8888] -translate-x-1/2'>
         <FaCaretDown size={30} />
        </div>
+       <p className='absolute bottom-52 left-1/2 z-[8888] -translate-x-1/2 text-xl'>Scroll Down</p>
       </Slider>
       {/* Hero Footer */}
       <div className='relative z-[9999]'>
