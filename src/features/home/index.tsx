@@ -6,7 +6,7 @@ import GridLayout from '../../layout/Grid/GridLayout.tsx';
 import GridArticle from '../../layout/Grid/GridArticle.tsx';
 import {useEffect, useRef, useState} from 'react';
 import {useGSAP} from '@gsap/react';
-import Slider from './components/Slider.tsx';
+import Slider from '../../components/Slider/Slider.tsx';
 import {FaCaretDown} from 'react-icons/fa';
 import HeroNavbar from './components/HeroNavbar.tsx';
 import ProgressBar from '../../components/ProgressBar.tsx';
@@ -18,6 +18,7 @@ import SectionHeader from '../../components/SectionHeader.tsx';
 import clsx from 'clsx';
 import Card from '../../components/Card/Card.tsx';
 import {useSnapScroll} from '../../hooks/useSnapScroll.ts';
+import SliderIndicator from '../../components/Slider/SliderIndicator.tsx';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const carouselItems = [
@@ -57,12 +58,10 @@ const Home = () => {
  const [currentIndex, setCurrentIndex] = useState(0);
  const containerRef = useRef<HTMLDivElement | null>(null);
  const articleRef = useRef<HTMLElement[]>([]);
- const titleRef = useRef<HTMLDivElement[]>([]);
  const contentRef = useRef<(HTMLElement | null)[]>([]);
  const imageRef = useRef(null);
  const sliderRef = useRef<HTMLElement[] | []>([]);
  const slideTimeRef = useRef<HTMLDivElement | null>(null);
- const bounceRef = useRef<HTMLDivElement | null>(null);
 
  // 스크롤 스냅
  useSnapScroll(containerRef);
@@ -72,7 +71,7 @@ const Home = () => {
    setCurrentIndex((prevIndex) =>
     prevIndex === carouselItems.length ? 0 : prevIndex + 1
    );
-  }, 5000);
+  }, 111115000);
 
   return () => clearInterval(interval); // 컴포넌트 언마운트 시 정리
  }, []);
@@ -107,10 +106,6 @@ const Home = () => {
  useGSAP(() => {
   // 초기 진입 애니메이션
   if (imageRef.current) animateFadeUp(imageRef.current);
-  // if (titleRef.current) animateFadeUp(titleRef.current, 0.2);
-  /*contentRef.current.forEach((el, i) => {
-   if (el) animateFadeUp(el, i * 0.3, el); // ScrollTrigger 포함
-  });*/
 
   // 슬라이드 이동 애니메이션
   gsap.to(sliderRef.current, {
@@ -127,37 +122,6 @@ const Home = () => {
     width: '100%',
     duration: 5,
     ease: 'linear',
-   }
-  );
-
-  gsap.fromTo(
-   bounceRef.current,
-   {
-    y: 0,
-   },
-   {
-    y: 20,
-    duration: 1.2,
-    repeat: -1, // 무한 반복
-    yoyo: true, // 왕복
-    ease: 'power1.inOut', // 부드러운 움직임
-   }
-  );
-
-  gsap.fromTo(
-   titleRef.current,
-   {
-    y: 100,
-    opacity: 0,
-   },
-   {
-    y: 0,
-    opacity: 1,
-    scrollTrigger: {
-     trigger: titleRef.current,
-     start: 'top 80%',
-     end: 'top 60%',
-    },
    }
   );
 
@@ -188,60 +152,31 @@ const Home = () => {
   <>
    <Header />
    <main className='min-h-screen w-full bg-white text-center'>
-    <GridLayout className='snap-y snap-mandatory gap-y-0 scroll-smooth' ref={containerRef}>
+    <GridLayout ref={containerRef}>
      {/* Hero */}
      <GridArticle
+      className='bg-primary relative flex h-screen min-w-screen flex-col text-white'
       ref={(el) => {
        if (el) articleRef.current[0] = el;
-      }}
-      className='bg-primary relative flex h-screen min-w-screen snap-start flex-col text-white'>
-      {/* Slider */}
+      }}>
       <Slider>
        <div
+        className='text-color flex min-h-full min-w-full flex-shrink-0 flex-col items-center justify-center pt-40 pb-96'
         ref={(el) => {
          if (el) sliderRef.current[0] = el;
-        }}
-        className='text-color flex min-h-full min-w-full flex-shrink-0 flex-col items-center justify-center pt-40 pb-96'>
-        {/* Title */}
-        <img
-         ref={imageRef}
-         src='/img/logo.webp'
-         alt='히어로 섹션 이미지'
-         className='h-full w-[400px]'
-        />
-        <div className='-translate-y-32'>
-         <p
-          ref={(el) => {
-           if (el) contentRef.current[0] = el;
-          }}
-          className='mb-5 text-4xl'>
-          (주)비전라이프홀딩스의 나일론잉크 “N-RECT 엔렉”은
-         </p>
-         <p
-          ref={(el) => {
-           if (el) contentRef.current[1] = el;
-          }}
-          className='text-3xl'>
-          99% 무폐수로 만들어집니다.
-         </p>
+        }}>
+        {/* Image */}
+        <img ref={imageRef} src='/img/logo.webp' alt='히어로 섹션 이미지' className='h-full w-[400px]' />
+        <div className='-translate-y-16'>
+         {['(주)비전라이프홀딩스의 나일론잉크 “N-RECT 엔렉”은', '99% 무폐수로 만들어집니다.'].map((item, index) => (
+          <p key={index} className='mb-5 text-4xl' ref={(el) => { if (el) contentRef.current[index] = el;}}>{item}</p>
+         ))}
         </div>
        </div>
+       {/* Video */}
        {carouselItems.map((item, index) => (
-        <div
-         key={index}
-         ref={(el) => {
-          if (el) sliderRef.current[index + 1] = el;
-         }}
-         className='relative min-h-full min-w-full flex-shrink-0'>
-         <video
-          src={item.src}
-          controls={false}
-          className='h-[calc(100vh-68px)] w-screen object-cover brightness-70 filter'
-          autoPlay
-          loop
-          muted
-          playsInline
-         />
+        <div key={index} className='relative min-h-full min-w-full flex-shrink-0' ref={(el) => { if (el) sliderRef.current[index + 1] = el;}}>
+         <video src={item.src} controls={false} className='h-[calc(100vh-68px)] w-screen object-cover brightness-70 filter' autoPlay={index === currentIndex} loop muted playsInline />
          <div className='absolute top-[40%] left-1/2 z-[9999] -translate-x-1/2'>
           <h3 className='mb-10 text-6xl font-bold'>{item.title}</h3>
           <p className='mt-5 max-w-3xl text-xl leading-8 whitespace-pre-line'>
@@ -250,20 +185,16 @@ const Home = () => {
          </div>
         </div>
        ))}
-       <div
-        ref={bounceRef}
-        className='absolute bottom-64 left-1/2 z-[8888] -translate-x-1/2'>
+       <SliderIndicator>
         <FaCaretDown size={30} />
-       </div>
-       <p className='absolute bottom-52 left-1/2 z-[8888] -translate-x-1/2 text-xl'>Scroll Down</p>
+       </SliderIndicator>
       </Slider>
       {/* Hero Footer */}
       <div className='relative z-[9999]'>
        {/* Hero 네비게이션 */}
        <HeroNavbar
         currentIndex={currentIndex}
-        setCurrentIndex={setCurrentIndex}
-       />
+        setCurrentIndex={setCurrentIndex} />
        {/* 프로그래스 바 */}
        <ProgressBar ref={slideTimeRef} />
       </div>
@@ -271,19 +202,17 @@ const Home = () => {
 
      {/* Company */}
      <GridArticle
-      ref={(el) => {
-       if (el) articleRef.current[1] = el;
-      }}
       colStart={2}
       colEnd={12}
-      className='flex h-screen w-full snap-start flex-col justify-center'>
+      className='flex h-screen w-full flex-col justify-center'
+      ref={(el) => {
+       if (el) articleRef.current[1] = el;
+      }}>
       <SectionHeader
-       ref={(el) => {
-        if (el) titleRef.current[0] = el;
-       }}
+       id='company'
        title='Company'
        subTitle='비전라이프홀딩스는 ‘사람과 환경이 공존하는 섬유산업’을 꿈꿉니다.'
-      />
+       />
       <ul className='mt-32 flex items-center justify-between gap-10'>
        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='About Company' />
        <LinkList href='/' imgSrc='/img/home/Cp2.webp' text='Business' />
@@ -293,21 +222,18 @@ const Home = () => {
 
      {/* WhyUsSection */}
      <GridArticle
-      ref={(el) => {
-       if (el) articleRef.current[2] = el;
-      }}
       colStart={2}
       colEnd={12}
-      className='flex h-screen snap-start flex-col justify-center text-center'>
-      {/* Title */}
+      labelledById="why-choose-us"
+      className='flex h-screen flex-col justify-center text-center'
+      ref={(el) => {
+       if (el) articleRef.current[2] = el;
+      }}>
       <SectionHeader
-       ref={(el) => {
-        if (el) titleRef.current[1] = el;
-       }}
+       id="why-choose-us"
        title='Why Choose Us?'
        subTitle='지속 가능성과 품질을 동시에 제공합니다.'
-      />
-
+       />
       {/* Contents */}
       <ul className='mt-32 grid grid-cols-1 gap-8 md:grid-cols-3'>
        {features.map((feature, index) => (
@@ -327,19 +253,18 @@ const Home = () => {
 
      {/* GlobalBusiness */}
      <GridArticle
-      ref={(el) => {
-       if (el) articleRef.current[3] = el;
-      }}
       colStart={2}
       colEnd={12}
-      className='flex h-screen snap-start flex-col justify-center'>
+      className='flex h-screen snap-start flex-col justify-center'
+      ref={(el) => {
+       if (el) articleRef.current[3] = el;
+      }}>
       <SectionHeader
        title='Global Business'
        subTitle={[
         '비전라이프는 글로벌 시장에서 지속 가능한 기술을 바탕으로',
         '새로운 가치를 창출하고 있습니다.',
-       ]}
-      />
+       ]}/>
       <div className='h-[800px] min-w-[600px]'>
        <ThreeDScene />
       </div>
@@ -359,26 +284,23 @@ const Home = () => {
 
      {/* Media (News) */}
      <GridArticle
-      ref={(el) => {
-       if (el) articleRef.current[4] = el;
-      }}
       colStart={2}
       colEnd={12}
-      className='flex h-screen snap-start flex-col items-start justify-center gap-20'>
+      className='flex h-screen flex-col items-start justify-center gap-20'
+      ref={(el) => {
+       if (el) articleRef.current[4] = el;
+      }}>
       <SectionHeader
        title='NEWS'
        subTitle={[
         '친환경 기술과 지속 가능한 변화를 만드는',
         'PROUTEX의 최신 소식을 만나보세요.',
-       ]}
-      />
+       ]}/>
       <div className='flex gap-5 overflow-x-visible'>
        {/* Media Carousel */}
        {news.items.slice(0, 3).map((item, index) => (
-        <Card
-         key={index}
-         className='border-color relative flex flex-1 flex-col items-start justify-around border-2 p-8'>
-         <img src='/img/logo.webp' alt='test' className='h-full w-full' />
+        <Card key={index} className='border-color relative flex flex-1 flex-col items-start justify-around border-2 p-8'>
+         <img src='/img/logo.webp' alt='test' className='h-full w-full'/>
          <div className='border-color mt-10 mr-10 w-full text-left'>
           <h3 className='mb-5 text-xl'>{item.title}</h3>
          </div>

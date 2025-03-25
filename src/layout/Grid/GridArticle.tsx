@@ -142,6 +142,8 @@ interface GridArticleProps {
  order?: number;
  placeSelf?: keyof typeof PLACE_SELF_OPTIONS;
  className?: string;
+ labelledById?: string;
+ role?: string; // 선택적으로 role override 가능하게
 }
 
 const GridArticle: FC<GridArticleProps> = ({
@@ -157,9 +159,13 @@ const GridArticle: FC<GridArticleProps> = ({
  order,
  placeSelf,
  className,
+ labelledById,
+ role,
 }) => {
  return (
   <section
+   role={role ?? 'region'}
+   aria-labelledby={labelledById}
    ref={(el) => {
     if (ref && 'current' in ref && !Array.isArray(ref.current)) {
      ref.current = el;
