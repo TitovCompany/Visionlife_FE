@@ -1,6 +1,6 @@
 import React from 'react';
-import PrivacyData from '../data/policies/emailNoCollection.json';
-import PageLayout from '../layout/PageLayout.tsx';
+import PrivacyData from '../../data/policies/emailNoCollection.json';
+import PageLayout from '../../layout/PageLayout.tsx';
 
 const EmailNoCollection: React.FC = () => {
   const {emailNoCollectionPolicy} = PrivacyData;

@@ -1,6 +1,6 @@
 import React from 'react';
-import PrivacyPolicyData from '../data/policies/privacyPolicy.json';
-import PageLayout from '../layout/PageLayout';
+import PrivacyPolicyData from '../../data/policies/privacyPolicy.json';
+import PageLayout from '../../layout/PageLayout.tsx';
 
 const ContentRenderer: React.FC<{content: string | string[]}> = ({content}) => {
   if (Array.isArray(content)) {

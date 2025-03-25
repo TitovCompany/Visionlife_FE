@@ -29,12 +29,11 @@ import NewsDetail from './features/news/pages/NewsDetail.tsx';
 import Catalog from './features/catalog';
 
 // 📄 정책 및 약관
-import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
-import EmailNoCollection from './pages/EmailNoCollection.tsx';
-import TermsOfService from './pages/TermsOfService.tsx';
+import PrivacyPolicy from './features/policies/PrivacyPolicy.tsx';
+import EmailNoCollection from './features/policies/EmailNoCollection.tsx';
+import TermsOfService from './features/policies/TermsOfService.tsx';
 import ProfileLayout from './features/profile';
 import ScrollSnap from './features/test/pages/ScrollSnap.tsx';
-import Snap from './features/test/pages/Snap.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -99,7 +98,6 @@ export const router = createBrowserRouter([
       // 테스트 페이지
       {path: '/test', Component: Test,},
       {path: '/test/scroll', Component: ScrollSnap,},
-      {path: '/test/snap', Component: Snap,},
     ],
   },
 ]);

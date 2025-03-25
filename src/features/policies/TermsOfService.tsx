@@ -1,6 +1,6 @@
 import React from 'react';
-import TermOfService from '../data/policies/termsOfService.json';
-import PageLayout from '../layout/PageLayout.tsx';
+import TermOfService from '../../data/policies/termsOfService.json';
+import PageLayout from '../../layout/PageLayout.tsx';
 
 const TermsOfService: React.FC = () => {
   const {termsOfService} = TermOfService;
