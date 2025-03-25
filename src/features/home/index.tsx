@@ -97,6 +97,7 @@ const Home = () => {
        />
       <ul className='mt-32 flex items-center justify-between gap-10'>
        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='About Company' />
+       <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='History' />
        <LinkList href='/' imgSrc='/img/home/Cp2.webp' text='Business' />
        <LinkList href='/' imgSrc='/img/home/Cp3.webp' text='Location' />
       </ul>
