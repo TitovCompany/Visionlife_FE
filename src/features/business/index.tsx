@@ -30,56 +30,43 @@ const Business = () => {
   <>
    <Header />
    <PageLayout title='사업개요 페이지 본문'>
-    <div className='relative z-1'>
-     <section className='[clip-path:polygon(0,0,0,100%,100% 100%, 100% 0)] relative min-h-[calc(100vh-67.98px)] w-full'>
-      <ul className='h-full w-full'>
-       {overview.data.map((item, index) => (
-        <li
-         key={index}
-         className={clsx('relative top-0 h-screen')}
-         ref={(el) => {
-          if (el) listRef.current[index] = el;
-         }}>
-         <div>
-          {item.type === 'video' && (
-           <video
-            src={item.src}
-            controls={false}
-            className='h-screen object-cover brightness-70 filter'
-            autoPlay
-            loop
-            muted
-            playsInline
-           />
-          )}
-          {item.type === 'image' && (
-           <img
-            src={item.src}
-            alt=''
-            className={clsx(
-             'h-screen w-full object-cover brightness-70 filter'
-            )}
-           />
-          )}
-         </div>
-         <div
-          className={clsx(
-           'absolute top-1/2 left-1/2 -translate-1/2',
-           'text-center text-xl text-white'
-          )}>
-          <h2 className='mb-10 text-5xl leading-14 font-bold'>{item.title}</h2>
-          <p className='mb-10 leading-8 whitespace-pre-line'>{item.content}</p>
-          <Button
-           className='border-3 border-white px-10 py-3 text-white'
-           style='outlined'>
-           VIEW ALL
-          </Button>
-         </div>
-        </li>
-       ))}
-      </ul>
-     </section>
-    </div>
+    <section className='z-1 [clip-path:polygon(0,0,0,100%,100% 100%, 100% 0)] relative min-h-[calc(100vh-67.98px)] w-full'>
+     <ul className='h-full w-full'>
+      {overview.data.map((item, index) => (
+       <li
+        key={index}
+        className={clsx('relative top-0 h-screen')}
+        ref={(el) => {
+         if (el) listRef.current[index] = el;
+        }}>
+        {item.type === 'video' && (
+         <video
+          src={item.src}
+          controls={false}
+          className='h-screen object-cover brightness-70 filter'
+          autoPlay
+          loop
+          muted
+          playsInline
+         />
+        )}
+        <div
+         className={clsx(
+          'absolute top-1/2 left-1/2 -translate-1/2',
+          'text-center text-xl text-white'
+         )}>
+         <h2 className='mb-10 text-5xl leading-14 font-bold'>{item.title}</h2>
+         <p className='mb-10 leading-8 whitespace-pre-line'>{item.content}</p>
+         <Button
+          className='border-3 border-white px-10 py-3 text-white'
+          style='outlined'>
+          VIEW ALL
+         </Button>
+        </div>
+       </li>
+      ))}
+     </ul>
+    </section>
     <div className={clsx('hidden')}>
      <ul>
       <li>
