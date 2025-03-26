@@ -12,7 +12,7 @@ import Home from './features/home/index';
 // 🏢 회사 정보
 import About from './features/about';
 import CEO from './features/ceo';
-import History from './features/profile/pages/History.tsx';
+import History from './features/history';
 import ContactUs from './features/contact';
 
 // 📈 비즈니스
