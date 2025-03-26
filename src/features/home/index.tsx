@@ -7,13 +7,13 @@ import GridArticle from '../../layout/Grid/GridArticle.tsx';
 import {useEffect, useRef, useState} from 'react';
 import news from '../../data/news.json';
 import ThreeDScene from '../../components/ThreeDScene.tsx';
-import TextLink from '../../components/TextLink.tsx';
 import LinkList from '../../components/LinkList.tsx';
 import SectionHeader from '../../components/SectionHeader.tsx';
 import clsx from 'clsx';
 import Card from '../../components/Card/Card.tsx';
 import HeroSlider from './components/HeroSlider.tsx';
-import useSnapScroll from '../../hooks/useSnapScroll.ts';
+import {Link} from 'react-router-dom';
+import SnapScroll from '../../components/SnapScroll.tsx';
 
 const carouselItems = [
  {
@@ -32,17 +32,17 @@ const carouselItems = [
 
 const features = [
  {
-  image: '/img/logo.webp',
+  image: '/logo.webp',
   title: '간소화한 공정단계',
   description: '잉크부터 디자이너, A/S까지 한 번에 – 올인원 토탈 솔루션',
  },
  {
-  image: '/img/logo.webp',
+  image: '/logo.webp',
   title: '물 한 방울 없이, 더 깨끗하게',
   description: '폐수 ZERO, 탄소 ZERO – 친환경 그 자체인 수성 잉크',
  },
  {
-  image: '/img/logo.webp',
+  image: '/logo.webp',
   title: '최상의 견뢰도 컨디션',
   description: '어떤 소재든 선명하게, 견뢰도 최상급 구현',
  },
@@ -51,11 +51,8 @@ const features = [
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const Home = () => {
  const [currentIndex, setCurrentIndex] = useState(0);
- const containerRef = useRef<HTMLDivElement | null>(null);
+ // const containerRef = useRef<HTMLDivElement | null>(null);
  const articleRef = useRef<HTMLElement[]>([]);
-
- // 스크롤 스냅
- useSnapScroll(containerRef);
 
  useEffect(() => {
   const interval = setInterval(() => {
@@ -70,9 +67,14 @@ const Home = () => {
  console.log('render');
  return (
   <>
+   <SnapScroll className="scrollbar-hide">
+    <section style={{ background: 'black', color: 'white'}} className='h-screen flex items-center justify-center'>Section 1</section>
+    <section style={{ background: 'beige', color:'red'}} className='h-screen flex items-center justify-center'>Section 2</section>
+    <section style={{ background: 'red', color: 'beige'}} className='h-screen flex items-center justify-center'>Section 3</section>
+   </SnapScroll>
    <Header />
    <main className='min-h-screen w-full bg-white text-center'>
-    <GridLayout ref={containerRef}>
+    <GridLayout  className='mb-52'>
      {/* Hero */}
      <GridArticle
       className='bg-primary relative flex h-screen min-w-screen flex-col text-white'
@@ -94,7 +96,7 @@ const Home = () => {
        id='company'
        title='Company'
        subTitle='비전라이프홀딩스는 ‘사람과 환경이 공존하는 섬유산업’을 꿈꿉니다.'
-       />
+      />
       <ul className='mt-32 flex items-center justify-between gap-10'>
        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='About Company' />
        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='History' />
@@ -116,8 +118,8 @@ const Home = () => {
        id="why-choose-us"
        title='Why Choose Us?'
        subTitle='지속 가능성과 품질을 동시에 제공합니다.'
-       />
-      {/* Contents */}
+      />
+      Contents
       <ul className='mt-32 grid grid-cols-1 gap-8 md:grid-cols-3'>
        {features.map((feature, index) => (
         <li
@@ -126,7 +128,7 @@ const Home = () => {
           if (el) contentRef.current[index] = el;
          }}*/
          className='flex flex-col items-center text-center'>
-         <img src={feature.image} alt='' />
+         <img src={feature.image} alt='' width={300} height={300}/>
          <h3 className='mt-4 text-2xl font-semibold'>{feature.title}</h3>
          <p className='mt-2 text-gray-600'>{feature.description}</p>
         </li>
@@ -180,20 +182,20 @@ const Home = () => {
         'PROUTEX의 최신 소식을 만나보세요.',
        ]}/>
       <div className='flex gap-5 overflow-x-visible'>
-       {/* Media Carousel */}
+       Media Carousel
        {news.items.slice(0, 3).map((item, index) => (
         <Card key={index} className='border-color relative flex flex-1 flex-col items-start justify-around border-2 p-8'>
-         <img src='/logo.webp' alt='test' className='h-full w-full'/>
+         <img src='/logo.webp' alt='test' className='object-contain' width={300} height={300}/>
          <div className='border-color mt-10 mr-10 w-full text-left'>
           <h3 className='mb-5 text-xl'>{item.title}</h3>
          </div>
         </Card>
        ))}
       </div>
-      <div className='mx-auto w-full text-xl'>
-       <TextLink href='/' className='w-fit border-2 px-10 py-4 font-bold'>
+      <div className='mx-auto w-full flex justify-center items-center text-xl'>
+       <Link to='/' className='border-2 px-10 py-4 font-bold'>
         VIEW ALL
-       </TextLink>
+       </Link>
       </div>
      </GridArticle>
     </GridLayout>

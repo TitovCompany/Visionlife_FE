@@ -72,7 +72,7 @@ const SectionHeader = ({
 
  return (
   <div ref={containerRef} className={clsx('w-full text-primary', TEXT_ALIGN[align])}>
-   <h2 ref={titleRef} id={id} className='mb-6 text-5xl font-bold'>
+   <h2 ref={titleRef} id={id} className='mb-6 text-7xl font-bold'>
     {title}
    </h2>
    {Array.isArray(subTitle)
