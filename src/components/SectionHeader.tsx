@@ -2,6 +2,7 @@ import {memo, useRef} from 'react';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useGSAP} from '@gsap/react';
+import clsx from 'clsx';
 
 interface SectionHeaderProps {
  id?: string;
@@ -10,13 +11,19 @@ interface SectionHeaderProps {
  align?: 'left' | 'center' | 'right';
 }
 
+const TEXT_ALIGN = {
+ left: 'text-left',
+ center: 'text-center',
+ right: 'text-right',
+}
+
 // ScrollTrigger 플러그인 등록
 gsap.registerPlugin(ScrollTrigger);
 const SectionHeader = ({
  title,
  subTitle,
- align = 'left',
  id,
+ align = 'left',
 }: SectionHeaderProps) => {
  // 전체 컨테이너를 참조할 ref (ScrollTrigger 기준 대상)
  const containerRef = useRef<HTMLDivElement | null>(null);
@@ -64,7 +71,7 @@ const SectionHeader = ({
  }, []);
 
  return (
-  <div ref={containerRef} className={`text-primary text-${align}`}>
+  <div ref={containerRef} className={clsx('w-full text-primary', TEXT_ALIGN[align])}>
    <h2 ref={titleRef} id={id} className='mb-6 text-5xl font-bold'>
     {title}
    </h2>

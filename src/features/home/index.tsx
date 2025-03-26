@@ -12,8 +12,8 @@ import LinkList from '../../components/LinkList.tsx';
 import SectionHeader from '../../components/SectionHeader.tsx';
 import clsx from 'clsx';
 import Card from '../../components/Card/Card.tsx';
-import useSnapScroll from '../../hooks/useSnapScroll.ts';
 import HeroSlider from './components/HeroSlider.tsx';
+import useSnapScroll from '../../hooks/useSnapScroll.ts';
 
 const carouselItems = [
  {
