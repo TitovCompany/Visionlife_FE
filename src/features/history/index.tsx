@@ -1,7 +1,7 @@
 import GridLayout from '../../layout/Grid/GridLayout.tsx';
 import GridArticle from '../../layout/Grid/GridArticle.tsx';
 import history from '../../data/profile/history.json';
-import clsx from 'clsx';
+//import clsx from 'clsx';
 
 const History = () => {
  return (
@@ -33,33 +33,27 @@ const History = () => {
    <GridArticle colStart={1} colEnd={13}>
     <div className="relative mx-auto w-full max-w-5xl py-10 before:absolute before:inset-y-0 before:left-1/2 before:w-1 before:bg-primary before:-translate-x-1/2">
      <ul className='relative'>
-      {history.map((item, idx) => {
-       const isLeft = idx % 2 === 0;
+      {history.map((item) => {
        return (
         <li
          key={item.id}
-         className={clsx(
-          'relative mb-20 flex w-full',
-          isLeft ? 'justify-start pr-10' : 'justify-end pl-10'
-         )}
+         className='relative mb-20 flex w-full justify-end pl-10'
         >
          {/* dot */}
          <div className='absolute left-1/2 top-[30px] z-10 w-6 h-6 -translate-x-1/2 rounded-full border-4 border-primary bg-white'></div>
-         {/* card */}
-         <div
-          className={clsx(
-           'max-w-md rounded-xl  p-6 ',
-           isLeft ? 'mr-auto text-right' : 'ml-auto text-left'
-          )}
-         >
-          <h2 className='mb-3 inline-block bg-primary px-4 py-1 text-lg font-semibold text-color'>
-           {item.year.includes('~')
+         <div className="max-w-md rounded-xl p-6 ml-auto text-left mt-1">
+         <h2 className='inline-block py-1 text-5xl font-semibold text-primary'>
+          {item.year.includes('~')
             ? `${item.year.split('~')[0]}년 ~ ${item.year.split('~')[1]}년`
             : `${item.year}년`}
-          </h2>
+         </h2>
+         </div>
+         {/* card */}
+         <div className="max-w-md rounded-xl p-6 ml-auto text-left mt-1">
+
           <h3 className='mb-3 text-2xl font-bold'>{item.title}</h3>
           {Array.isArray(item.event) ? (
-           <ul className='list-disc pl-5 text-base text-gray-700'>
+            <ul className="text-base text-gray-700">
             {item.event.map((e, i) => (
              <li key={i}>{e}</li>
             ))}
