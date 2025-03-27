@@ -73,7 +73,7 @@ const AboutUs = () => {
    <div ref={aboutImageRef} className='col-start-2 col-end-6'>
     <div ref={inkRef} className='mb-32 h-[512px] w-[401px]'>
      <h2 className='border-b-primary mb-5 w-fit border-b px-2 pb-2 text-lg font-bold'>Ink - NRECT</h2>
-     <img src='/img/business/p1.jpg' alt='비전 라이프의 무폐수 잉크 NRECT' className='h-full w-full mb-10'/>
+     <img src='/img/business/p1.webp' alt='비전 라이프의 무폐수 잉크 NRECT' className='h-full w-full mb-10'/>
      <h3 className="text-left text-2xl font-bold mb-4">
       비전라이프, 지속 가능한<br/> 미래를 디자인하다
      </h3>
@@ -113,7 +113,7 @@ const AboutUs = () => {
      </p>
     </div>
     {/* 섬유 이미지 */}
-    <img src='/img/product/features/p4.png' alt='섬유 이미지' className={clsx('h-full max-h-[814px] max-w-[550px]', 'content-end')}/>
+    <img src='/img/product/features/p4.webp' alt='섬유 이미지' className={clsx('h-full max-h-[814px] max-w-[550px]', 'content-end')}/>
    </GridArticle>
    {/* About Description */}
    <article className='col-span-12 py-40 lg:col-span-10 lg:col-start-2'>
