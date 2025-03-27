@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
 import Header from '../../layout/Header/Header.tsx';
+import GridLayout from '../../layout/Grid/GridLayout.tsx';
 import GridArticle from '../../layout/Grid/GridArticle.tsx';
 import {useEffect, useState} from 'react';
 import news from '../../data/news.json';
@@ -12,6 +13,7 @@ import clsx from 'clsx';
 import Card from '../../components/Card/Card.tsx';
 import HeroSlider from './components/HeroSlider.tsx';
 import {Link} from 'react-router-dom';
+import SnapScroll from '../../components/SnapScroll.tsx';
 import useSnapScroll from '../../hooks/useSnapScroll.ts';
 
 const carouselItems = [
@@ -68,17 +70,20 @@ const Home = () => {
  console.log('render');
  return (
   <>
+   {/*<SnapScroll className="scrollbar-hide">
+    <section style={{ background: 'black', color: 'white'}} className='h-screen flex items-center justify-center'>Section 1</section>
+    <section style={{ background: 'beige', color:'red'}} className='h-screen flex items-center justify-center'>Section 2</section>
+    <section style={{ background: 'red', color: 'beige'}} className='h-screen flex items-center justify-center'>Section 3</section>
+   </SnapScroll>*/}
    <Header />
    <main className='min-h-screen w-full bg-white text-center'>
-    <div ref={containerRef} className={clsx('scrollbar-hide w-full h-screen overflow-y-auto')}>
-     <GridArticle className='bg-primary relative flex h-screen min-w-screen flex-col text-white'>
-      <HeroSlider
-       data={carouselItems}
-       currentIndex={currentIndex}
-       setCurrentIndex={setCurrentIndex}
-      />
+    <SnapScroll className="scrollbar-hide">
+     <GridArticle
+      className='bg-primary relative flex h-screen min-w-screen flex-col text-white'>
+      <HeroSlider data={carouselItems} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>
      </GridArticle>
-     <GridArticle className='flex h-screen w-full flex-col justify-center'>
+     <GridArticle
+      className='flex h-screen w-full flex-col justify-center'>
       <SectionHeader
        id='company'
        title='Company'
@@ -94,10 +99,10 @@ const Home = () => {
 
      {/* WhyUsSection */}
      <GridArticle
-      labelledById='why-choose-us'
+      labelledById="why-choose-us"
       className='flex h-screen flex-col justify-center text-center'>
       <SectionHeader
-       id='why-choose-us'
+       id="why-choose-us"
        title='Why Choose Us?'
        subTitle='지속 가능성과 품질을 동시에 제공합니다.'
       />
@@ -110,7 +115,7 @@ const Home = () => {
           if (el) contentRef.current[index] = el;
          }}*/
          className='flex flex-col items-center text-center'>
-         <img src={feature.image} alt='' width={300} height={300} />
+         <img src={feature.image} alt='' width={300} height={300}/>
          <h3 className='mt-4 text-2xl font-semibold'>{feature.title}</h3>
          <p className='mt-2 text-gray-600'>{feature.description}</p>
         </li>
@@ -119,14 +124,14 @@ const Home = () => {
      </GridArticle>
 
      {/* GlobalBusiness */}
-     <GridArticle className='flex h-screen snap-start flex-col justify-center'>
+     <GridArticle
+      className='flex h-screen snap-start flex-col justify-center'>
       <SectionHeader
        title='Global Business'
        subTitle={[
         '비전라이프는 글로벌 시장에서 지속 가능한 기술을 바탕으로',
         '새로운 가치를 창출하고 있습니다.',
-       ]}
-      />
+       ]}/>
       <div className='h-[800px] min-w-[600px]'>
        <ThreeDScene />
       </div>
@@ -145,40 +150,142 @@ const Home = () => {
      </GridArticle>
 
      {/* Media (News) */}
-     <GridArticle className='flex h-screen flex-col items-start justify-center gap-20'>
+     <GridArticle
+      className='flex h-screen flex-col items-start justify-center gap-20'>
       <SectionHeader
        title='NEWS'
        subTitle={[
         '친환경 기술과 지속 가능한 변화를 만드는',
         'PROUTEX의 최신 소식을 만나보세요.',
-       ]}
-      />
+       ]}/>
       <div className='flex gap-5 overflow-x-visible'>
        {/* Media Carousel */}
        {news.items.slice(0, 3).map((item, index) => (
-        <Card
-         key={index}
-         className='border-color relative flex flex-1 flex-col items-start justify-around border-2 p-8'>
-         <img
-          src='/logo.webp'
-          alt='test'
-          className='object-contain'
-          width={300}
-          height={300}
-         />
+        <Card key={index} className='border-color relative flex flex-1 flex-col items-start justify-around border-2 p-8'>
+         <img src='/logo.webp' alt='test' className='object-contain' width={300} height={300}/>
          <div className='border-color mt-10 mr-10 w-full text-left'>
           <h3 className='mb-5 text-xl'>{item.title}</h3>
          </div>
         </Card>
        ))}
       </div>
-      <div className='mx-auto flex w-full items-center justify-center text-xl'>
+      <div className='mx-auto w-full flex justify-center items-center text-xl'>
        <Link to='/' className='border-2 px-10 py-4 font-bold'>
         VIEW ALL
        </Link>
       </div>
      </GridArticle>
-    </div>
+    </SnapScroll>
+    <GridLayout  className='scrollbar-hide mb-52' ref={containerRef} >
+     {/* Hero */}
+     <GridArticle
+      className='bg-primary relative flex h-screen min-w-screen flex-col text-white'>
+      <HeroSlider data={carouselItems} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>
+     </GridArticle>
+
+     {/* Company */}
+     <GridArticle
+      colStart={2}
+      colEnd={12}
+      className='flex h-screen w-full flex-col justify-center'>
+      <SectionHeader
+       id='company'
+       title='Company'
+       subTitle='비전라이프홀딩스는 ‘사람과 환경이 공존하는 섬유산업’을 꿈꿉니다.'
+      />
+      <ul className='mt-32 flex items-center justify-between gap-10'>
+       <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='About Company' />
+       <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='History' />
+       <LinkList href='/' imgSrc='/img/home/Cp2.webp' text='Business' />
+       <LinkList href='/' imgSrc='/img/home/Cp3.webp' text='Location' />
+      </ul>
+     </GridArticle>
+
+     {/* WhyUsSection */}
+     <GridArticle
+      colStart={2}
+      colEnd={12}
+      labelledById="why-choose-us"
+      className='flex h-screen flex-col justify-center text-center'>
+      <SectionHeader
+       id="why-choose-us"
+       title='Why Choose Us?'
+       subTitle='지속 가능성과 품질을 동시에 제공합니다.'
+      />
+      {/* Contents */}
+      <ul className='mt-32 grid grid-cols-1 gap-8 md:grid-cols-3'>
+       {features.map((feature, index) => (
+        <li
+         key={index}
+         /*ref={(el) => {
+          if (el) contentRef.current[index] = el;
+         }}*/
+         className='flex flex-col items-center text-center'>
+         <img src={feature.image} alt='' width={300} height={300}/>
+         <h3 className='mt-4 text-2xl font-semibold'>{feature.title}</h3>
+         <p className='mt-2 text-gray-600'>{feature.description}</p>
+        </li>
+       ))}
+      </ul>
+     </GridArticle>
+
+     {/* GlobalBusiness */}
+     <GridArticle
+      colStart={2}
+      colEnd={12}
+      className='flex h-screen snap-start flex-col justify-center'>
+      <SectionHeader
+       title='Global Business'
+       subTitle={[
+        '비전라이프는 글로벌 시장에서 지속 가능한 기술을 바탕으로',
+        '새로운 가치를 창출하고 있습니다.',
+       ]}/>
+      <div className='h-[800px] min-w-[600px]'>
+       <ThreeDScene />
+      </div>
+      <div className='text-lg'>
+       {[
+        '비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,',
+        '다양한 원단에 대한 샘플링을 통해 글로벌 시장 진입을 준비하고 있습니다.',
+        'N-RECT 기술은 국제 특허 출원 중이며, 올해 1,000톤 규모(약 600억 원)',
+        '수출을 목표로 양산 설비를 구축하고 있습니다.',
+       ].map((item, index) => (
+        <p key={index} className={clsx(index >= 1 && 'mt-2')}>
+         {item}
+        </p>
+       ))}
+      </div>
+     </GridArticle>
+
+     {/* Media (News) */}
+     <GridArticle
+      colStart={2}
+      colEnd={12}
+      className='flex h-screen flex-col items-start justify-center gap-20'>
+      <SectionHeader
+       title='NEWS'
+       subTitle={[
+        '친환경 기술과 지속 가능한 변화를 만드는',
+        'PROUTEX의 최신 소식을 만나보세요.',
+       ]}/>
+      <div className='flex gap-5 overflow-x-visible'>
+       {/* Media Carousel */}
+       {news.items.slice(0, 3).map((item, index) => (
+        <Card key={index} className='border-color relative flex flex-1 flex-col items-start justify-around border-2 p-8'>
+         <img src='/logo.webp' alt='test' className='object-contain' width={300} height={300}/>
+         <div className='border-color mt-10 mr-10 w-full text-left'>
+          <h3 className='mb-5 text-xl'>{item.title}</h3>
+         </div>
+        </Card>
+       ))}
+      </div>
+      <div className='mx-auto w-full flex justify-center items-center text-xl'>
+       <Link to='/' className='border-2 px-10 py-4 font-bold'>
+        VIEW ALL
+       </Link>
+      </div>
+     </GridArticle>
+    </GridLayout>
    </main>
   </>
  );

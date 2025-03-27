@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import {FC, ReactNode, RefObject} from 'react';
+import {FC, ReactNode} from 'react';
 
 const COL_SPANS: Record<number, string> = {
  1: 'col-span-1',
@@ -131,7 +131,6 @@ const PLACE_SELF_OPTIONS: Record<string, string> = {
 
 interface GridArticleProps {
  children: ReactNode;
- ref?: RefObject<HTMLElement | null> | RefObject<(HTMLElement | null)[]> | ((el: HTMLElement | null) => void);
  colSpan?: number;
  rowSpan?: number;
  colStart?: number;
@@ -148,7 +147,6 @@ interface GridArticleProps {
 
 const GridArticle: FC<GridArticleProps> = ({
  children,
- ref,
  colSpan = 12,
  rowSpan = 1,
  colStart,
@@ -166,15 +164,6 @@ const GridArticle: FC<GridArticleProps> = ({
   <section
    role={role ?? 'region'}
    aria-labelledby={labelledById}
-   ref={(el) => {
-    if (ref && 'current' in ref && !Array.isArray(ref.current)) {
-     ref.current = el;
-    }
-
-    if ((ref && 'current' in ref && Array.isArray(ref.current) && el)) {
-     ref.current.push(el);
-    }
-   }}
    className={clsx(
     COL_SPANS[colSpan] || 'col-span-12',
     ROW_SPANS[rowSpan] || 'row-span-1',
