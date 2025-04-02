@@ -11,7 +11,7 @@ const SubMenu = () => {
  if (!currentMenu?.sub) return null;
 
  return (
-  <nav className="bg-gray-100 p-2 rounded-md">
+  <nav className=" p-2 rounded-md">
    <ul className="flex space-x-4">
     {currentMenu.sub.map((subItem, index) => (
      <li key={index}>
@@ -19,7 +19,7 @@ const SubMenu = () => {
        to={subItem.href}
        className={clsx(
         "px-4 py-2 rounded-md transition-all",
-        path === subItem.href ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-gray-300"
+        path === subItem.href ? "bg-primary text-white" : "text-gray-700 hover:bg-gray0-300"
        )}
       >
        {subItem.label}

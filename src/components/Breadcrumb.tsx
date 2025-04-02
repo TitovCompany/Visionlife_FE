@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import menuData from "../data/navigation.json";
 
 interface BreadcrumbItem {
@@ -8,39 +9,46 @@ interface BreadcrumbItem {
 
 const Breadcrumb = () => {
  const location = useLocation();
- const path = location.pathname;
- const breadcrumbs: BreadcrumbItem[] = [];
+ const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbItem[] | null>(null);
 
- if (path === "/") return null; // ✅ 홈페이지에서는 경로 숨기기
+ useEffect(() => {
+  const path = location.pathname;
 
- const findBreadcrumbs = (menu: typeof menuData) => {
-  for (const item of menu) {
-   if (path.startsWith(item.href)) {
-    breadcrumbs.push({ label: item.label, href: item.href });
-
-    // ✅ 현재 경로가 sub에 속해 있으면 부모 메뉴까지 추가
-    if (item.sub) {
-     const subMenu = item.sub.find((sub) => path.startsWith(sub.href));
-     if (subMenu) {
-      breadcrumbs.push({ label: subMenu.label, href: subMenu.href });
-     }
-    }
-    return;
-   }
-
-   // ✅ 서브 메뉴에서 찾을 경우 부모도 추가
-   if (item.sub) {
-    const subMenu = item.sub.find((sub) => path.startsWith(sub.href));
-    if (subMenu) {
-     breadcrumbs.push({ label: item.label, href: item.href }); // 부모 메뉴 추가
-     breadcrumbs.push({ label: subMenu.label, href: subMenu.href });
-     return;
-    }
-   }
+  if (path === "/") {
+   setBreadcrumbs(null); //홈페이지에서는 Breadcrumb 숨기기
+   return;
   }
- };
 
- findBreadcrumbs(menuData);
+  const newBreadcrumbs: BreadcrumbItem[] = [];
+
+  const findBreadcrumbs = (menu: typeof menuData) => {
+   for (const item of menu) {
+    if (path === item.href || path.startsWith(item.href + "/")) {
+     newBreadcrumbs.push({ label: item.label, href: item.href });
+
+     if (item.sub) {
+      let foundSubItem = null;
+
+      for (const subItem of item.sub) {
+       if (path === subItem.href || path.startsWith(subItem.href + "/")) {
+        foundSubItem = subItem; // 현재 선택된 서브메뉴 찾기
+       }
+      }
+
+      if (foundSubItem) {
+       newBreadcrumbs.push({ label: foundSubItem.label, href: foundSubItem.href });
+      }
+     }
+     break;
+    }
+   }
+  };
+
+  findBreadcrumbs(menuData);
+  setBreadcrumbs(newBreadcrumbs);
+ }, [location]);
+
+ if (!breadcrumbs) return null; // 홈페이지에서는 렌더링하지 않음
 
  return (
   <nav className="text-gray-500 text-sm mb-4">
