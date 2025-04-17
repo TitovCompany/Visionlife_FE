@@ -61,29 +61,28 @@ const Home = () => {
   return () => clearInterval(interval);
  }, []);
 
- console.log('render');
  return (
   <>
    <Header />
    <main className='min-h-screen w-full bg-white text-center'>
-    <GridLayout  className='scrollbar-hide mb-52' >
+    <GridLayout className='scrollbar-hide mb-20 md:mb-52 overflow-x-hidden'>
      {/* Hero */}
      <GridArticle
-      className='bg-primary relative flex h-screen min-w-screen flex-col text-white'>
+      className='bg-primary relative flex h-[90vh] md:h-screen min-w-screen flex-col text-white'>
       <HeroSlider data={carouselItems} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>
      </GridArticle>
 
      {/* Company */}
      <GridArticle
-      colStart={2}
-      colEnd={12}
-      className='flex h-screen w-full flex-col justify-center'>
+      colStart={1}
+      colEnd={13}
+      className='flex min-h-screen w-full flex-col justify-center py-16 md:py-0 px-6 md:px-0 md:col-start-2 md:col-end-12'>
       <SectionHeader
        id='company'
        title='Company'
-       subTitle='비전라이프홀딩스는 ‘사람과 환경이 공존하는 섬유산업’을 꿈꿉니다.'
+       subTitle='비전라이프홀딩스는 사람과 환경이 공존하는 섬유산업을 꿈꿉니다.'
       />
-      <ul className='mt-32 flex items-center justify-between gap-10'>
+      <ul className='mt-12 md:mt-32 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-10'>
        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='About Company' />
        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='History' />
        <LinkList href='/' imgSrc='/img/home/Cp2.webp' text='Business' />
@@ -93,27 +92,24 @@ const Home = () => {
 
      {/* WhyUsSection */}
      <GridArticle
-      colStart={2}
-      colEnd={12}
+      colStart={1}
+      colEnd={13}
       labelledById="why-choose-us"
-      className='flex h-screen flex-col justify-center text-center'>
+      className='flex min-h-screen flex-col justify-center text-center py-16 md:py-0 px-6 md:px-0 md:col-start-2 md:col-end-12'>
       <SectionHeader
        id="why-choose-us"
        title='Why Choose Us?'
        subTitle='지속 가능성과 품질을 동시에 제공합니다.'
       />
       {/* Contents */}
-      <ul className='mt-32 grid grid-cols-1 gap-8 md:grid-cols-3'>
+      <ul className='mt-12 md:mt-32 grid grid-cols-1 gap-10 md:gap-8 md:grid-cols-3'>
        {features.map((feature, index) => (
         <li
          key={index}
-         /*ref={(el) => {
-          if (el) contentRef.current[index] = el;
-         }}*/
          className='flex flex-col items-center text-center'>
-         <img src={feature.image} alt='' width={300} height={300}/>
-         <h3 className='mt-4 text-2xl font-semibold'>{feature.title}</h3>
-         <p className='mt-2 text-gray-600'>{feature.description}</p>
+         <img src={feature.image} alt='' className='w-36 md:w-48 lg:w-[300px] h-36 md:h-48 lg:h-[300px] object-contain'/>
+         <h3 className='mt-4 text-lg md:text-xl lg:text-2xl font-semibold'>{feature.title}</h3>
+         <p className='mt-2 text-sm md:text-base text-gray-600 max-w-xs mx-auto'>{feature.description}</p>
         </li>
        ))}
       </ul>
@@ -121,26 +117,26 @@ const Home = () => {
 
      {/* GlobalBusiness */}
      <GridArticle
-      colStart={2}
-      colEnd={12}
-      className='flex h-screen snap-start flex-col justify-center'>
+      colStart={1}
+      colEnd={13}
+      className='flex min-h-screen snap-start flex-col justify-center py-16 md:py-0 px-6 md:px-0 md:col-start-2 md:col-end-12'>
       <SectionHeader
        title='Global Business'
        subTitle={[
         '비전라이프는 글로벌 시장에서 지속 가능한 기술을 바탕으로',
         '새로운 가치를 창출하고 있습니다.',
        ]}/>
-      <div className='h-[800px] min-w-[600px]'>
+      <div className='h-[300px] md:h-[400px] lg:h-[800px] w-full min-w-full md:min-w-[600px] mx-auto my-8 md:my-0'>
        <ThreeDScene />
       </div>
-      <div className='text-lg'>
+      <div className='text-sm md:text-base lg:text-lg max-w-2xl mx-auto'>
        {[
         '비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,',
         '다양한 원단에 대한 샘플링을 통해 글로벌 시장 진입을 준비하고 있습니다.',
         'N-RECT 기술은 국제 특허 출원 중이며, 올해 1,000톤 규모(약 600억 원)',
         '수출을 목표로 양산 설비를 구축하고 있습니다.',
        ].map((item, index) => (
-        <p key={index} className={clsx(index >= 1 && 'mt-2')}>
+        <p key={index} className={clsx(index >= 1 && 'mt-1 md:mt-2')}>
          {item}
         </p>
        ))}
@@ -149,28 +145,28 @@ const Home = () => {
 
      {/* Media (News) */}
      <GridArticle
-      colStart={2}
-      colEnd={12}
-      className='flex h-screen flex-col items-start justify-center gap-20'>
+      colStart={1}
+      colEnd={13}
+      className='flex min-h-screen flex-col items-start justify-center gap-10 md:gap-20 py-16 md:py-0 px-6 md:px-0 md:col-start-2 md:col-end-12'>
       <SectionHeader
        title='NEWS'
        subTitle={[
         '친환경 기술과 지속 가능한 변화를 만드는',
         'PROUTEX의 최신 소식을 만나보세요.',
        ]}/>
-      <div className='flex gap-5 overflow-x-visible'>
+      <div className='flex flex-col md:flex-row gap-8 md:gap-5 w-full overflow-x-visible'>
        {/* Media Carousel */}
        {news.items.slice(0, 3).map((item, index) => (
-        <Card key={index} className='border-color relative flex flex-1 flex-col items-start justify-around border-2 p-8'>
-         <img src='/logo.webp' alt='test' className='object-contain' width={300} height={300}/>
-         <div className='border-color mt-10 mr-10 w-full text-left'>
-          <h3 className='mb-5 text-xl'>{item.title}</h3>
+        <Card key={index} className='border-color relative flex flex-1 flex-col items-start justify-around border-2 p-6 md:p-8'>
+         <img src='/logo.webp' alt='test' className='w-full h-auto object-contain' width={300} height={300}/>
+         <div className='border-color mt-6 md:mt-10 w-full text-left'>
+          <h3 className='mb-3 md:mb-5 text-base md:text-lg lg:text-xl'>{item.title}</h3>
          </div>
         </Card>
        ))}
       </div>
-      <div className='mx-auto w-full flex justify-center items-center text-xl'>
-       <Link to='/' className='border-2 px-10 py-4 font-bold'>
+      <div className='mx-auto w-full flex justify-center items-center text-base md:text-lg lg:text-xl mt-4 md:mt-0'>
+       <Link to='/' className='border-2 px-6 md:px-10 py-2 md:py-4 font-bold'>
         VIEW ALL
        </Link>
       </div>
