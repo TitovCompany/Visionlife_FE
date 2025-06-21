@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import GridLayout from '../../../../layout/Grid/GridLayout.tsx';
-import GridArticle from '../../../../layout/Grid/GridArticle.tsx';
+import GridLayout from '../../../layout/Grid/GridLayout.tsx';
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 // 'col-span-12 lg:col-span-10 lg:col-start-2'
 const EcoLife = () => {
  return (

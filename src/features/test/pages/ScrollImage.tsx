@@ -25,7 +25,7 @@ const ScrollImage: React.FC = () => {
   const polygonFrom = "polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%)";
   const polygonTo = "polygon(0% -100%, 100% -100%, 100% 0%, 0% 0%)";
 
-  sectionsRef.current.forEach((section, i) => {
+  sectionsRef.current.forEach((section) => {
    if (!section) return;
    const title = section.querySelector(".title") as HTMLElement;
    const graphic = section.querySelector(".graphic") as HTMLElement;
@@ -70,7 +70,9 @@ const ScrollImage: React.FC = () => {
      <div
       key={index}
       className="relative w-full h-screen bg-cover bg-center"
-      ref={(el) => (sectionsRef.current[index] = el!)}
+      ref={(el) => {
+       if (el) sectionsRef.current[index] = el;
+      }}
      >
       <h1 className="title fixed bottom-24 left-12 z-10 text-white font-semibold text-5xl">
        {content.title}
