@@ -74,7 +74,7 @@ const ProUtex = () => {
          key={step.id}
          className='flex flex-col items-center gap-6 rounded-lg bg-white shadow-md'>
          <img
-          src={`/img/product/compare/p${idx + 1}.png`}
+          src={`/img/product/compare/p${idx + 1}.webp`}
           alt={step.content}
           className='h-full w-full rounded-lg object-cover'
          />

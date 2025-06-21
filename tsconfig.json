@@ -6,7 +6,6 @@
   ],
   "compilerOptions": {
     "moduleResolution": "node",
-    "typeRoots": ["./src"],  // 'types.d.ts'를 자동으로 포함
-    "include": ["src/types.d.ts"]
+    "typeRoots": ["./src"]
   }
 }

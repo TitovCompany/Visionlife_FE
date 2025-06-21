@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import {FC, ReactNode} from 'react';
+import {ReactNode, forwardRef} from 'react';
 
 const COL_SPANS: Record<number, string> = {
  1: 'col-span-1',
@@ -145,7 +145,7 @@ interface GridArticleProps {
  role?: string; // 선택적으로 role override 가능하게
 }
 
-const GridArticle: FC<GridArticleProps> = ({
+const GridArticle = forwardRef<HTMLElement, GridArticleProps>(({
  children,
  colSpan = 12,
  rowSpan = 1,
@@ -159,9 +159,10 @@ const GridArticle: FC<GridArticleProps> = ({
  className,
  labelledById,
  role,
-}) => {
+}, ref) => {
  return (
   <section
+   ref={ref}
    role={role ?? 'region'}
    aria-labelledby={labelledById}
    className={clsx(
@@ -179,6 +180,8 @@ const GridArticle: FC<GridArticleProps> = ({
    {children}
   </section>
  );
-};
+});
+
+GridArticle.displayName = 'GridArticle';
 
 export default GridArticle;
