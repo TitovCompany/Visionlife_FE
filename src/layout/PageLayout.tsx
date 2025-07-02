@@ -16,8 +16,11 @@ const PageLayout: React.FC<PageLayoutProps> = ({
 }) => {
  return (
   <main ref={ref} className={clsx(
-    'w-full pt-[calc(102px)] min-h-screen',
-    'bg-white', className)}>
+    'w-full min-h-screen',
+    'bg-white',           
+    'lg:pt-[calc(102px)]', // lg 이상에서만 패딩
+    className
+  )}>
    {/* SEO 최적화용 */}
    <h1 className='hidden'>{title}</h1>
    {children}
