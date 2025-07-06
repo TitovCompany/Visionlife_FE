@@ -1,6 +1,7 @@
 import GridLayout from '../../layout/Grid/GridLayout.tsx';
 import GridArticle from '../../layout/Grid/GridArticle.tsx';
 import history from '../../data/profile/history.json';
+import HistoryTimeline from './HistoryTimeline.tsx';
 //import clsx from 'clsx';
 
 const History = () => {
@@ -33,55 +34,16 @@ const History = () => {
       <GridArticle colStart={1} colEnd={13}>
      <div className="relative mx-auto w-full max-w-full py-10 before:absolute before:inset-y-0 before:left-1/2 before:w-1 before:bg-primary before:-translate-x-1/2 before:hidden lg:before:block">
       <ul className='relative'>
-            {history.map((item) => {
-              const isRange = item.year.includes('~');
-              const [startYear, endYear] = isRange ? item.year.split('~') : [item.year, null];
-
-              return (
-                <li
-                  key={item.id}
-                  className="history-timeline-item relative mb-20 flex flex-col md:flex-row w-full justify-between items-start text-left"
-                >
-                  {/* dot */}
-                  <div className="absolute left-1/2 lg:left-1/2 top-[30px] lg:top-[48px] z-10 w-6 h-6 -translate-x-1/2 rounded-full border-4 border-primary bg-white hidden lg:block"></div>
-
-                  {/* 연도 */}
-                  <div className="max-w-md  p-6 mt-1 text-left">
-                    <h2 className="inline-block py-1 text-3xl md:text-5xl font-semibold text-primary">
-                      <span className="flex md:hidden">
-                        {isRange ? `${startYear}년 ~ ${endYear}년` : `${item.year}년`}
-                      </span>
-                      <span className="hidden md:flex flex-col items-center">
-                        {isRange ? (
-                          <>
-                            <span>{startYear}년</span>
-                            <span className="text-xl md:text-3xl">~</span>
-                            <span>{endYear}년</span>
-                          </>
-                        ) : (
-                          <span>{item.year}년</span>
-                        )}
-                      </span>
-                    </h2>
-                  </div>
-
-                  {/* 카드 */}
-                  <div className="max-w-md p-6 mt-5 text-left">
-                    <h3 className="mb-3 text-lg md:text-2xl font-bold">{item.title}</h3>
-                    {Array.isArray(item.event) ? (
-                      <ul className="text-base text-gray-700">
-                        {item.event.map((e, i) => (
-                          <li key={i}>{e}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="text-base text-gray-700">{item.event}</p>
-                    )}
-                    <p className="mt-2 text-sm text-gray-500">{item.description}</p>
-                  </div>
-                </li>
-              );
-            })}
+            {history.map((item) => (
+              <HistoryTimeline
+                key={String(item.id)}
+                id={String(item.id)}
+                year={item.year}
+                title={item.title}
+                event={item.event}
+                description={item.description}
+              />
+            ))}
           </ul>
         </div>
       </GridArticle>
