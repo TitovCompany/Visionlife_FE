@@ -76,23 +76,32 @@ const VisualIdentity = () => {
      100%_100% → 오른쪽 하단은 그대로.
      0%_100% → 왼쪽 하단도 그대로 (즉, 하단은 직선 유지).*/
   <GridLayout className={clsx('relative min-h-[100vh]', 'text-color bg-primary [clip-path:polygon(0_10%,100%_0,100%_100%,0%_100%)]')}>
-   <GridArticle ref={containerRef} colStart={2} className={clsx('mt-32 mb-20 max-w-3xl', 'text-left', 'content-center')}>
-    <h2 ref={titleRef} className='text-7xl font-bold'>Visual Identity</h2>
-    <p ref={contentRef} className='mt-10 text-xl leading-10'>
+   <GridArticle ref={containerRef} colStart={1} colEnd={13} className={clsx('mt-10 md:mt-32 mb-10 md:mb-20 max-w-full md:max-w-3xl', 'text-left', 'content-center', 'px-4 md:px-0 md:col-start-2')}>
+    <h2 ref={titleRef} className='mt-30 text-3xl md:text-7xl font-bold'>Visual Identity</h2>
+    <p ref={contentRef} className='mt-6 md:mt-10 text-base md:text-xl leading-7 md:leading-10'>
      우리의 브랜드 아이덴티티는 지속 가능성과 혁신을 반영합니다.
      우리는 친환경 소재와 디자인을 결합하여 더욱 지속 가능한 미래를 만들어갑니다.
      모든 브랜드 요소는 환경과 조화를 이루며, 사용자와 소통하는 경험을 제공합니다.
     </p>
    </GridArticle>
    {/* Logo */}
-   <GridArticle colStart={2} colEnd={13} className={clsx('w-full', 'mb-32', 'flex')}>
-    <img ref={imgRef} src="/logo.webp" alt="Vision Life Logo" />
-    <div className='w-full h-full p-6'>
-     <h2 ref={subTitleRef} className="text-4xl font-bold mb-10">Proutex 브랜드 아이덴티티</h2>
+   <GridArticle colStart={1} colEnd={13} className={clsx('w-full', 'mb-16 md:mb-32', 'flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-0', 'px-4 md:px-0 md:col-start-2 md:col-end-13')}>
+    <img
+      ref={imgRef}
+      src="/logo.webp"
+      alt="Vision Life Logo"
+      className={clsx(
+        "object-contain",
+        "w-64 h-64",         // 모바일(기본)과 태블릿(sm)에서 동일(224px)
+        "md:w-100 md:h-100"    // 데스크탑(320px)
+      )}
+    />
+    <div className='w-full h-full p-0 md:p-6'>
+     <h2 ref={subTitleRef} className="text-2xl md:text-4xl font-bold mb-6 md:mb-10">Proutex 브랜드 아이덴티티</h2>
      {textContents.map((text, index) => (
       <p ref={(el) => {
        if (el) subContentRef.current[index] = el;
-      }} key={index} className={`text-xl leading-relaxed ${index !== 0 ? "mt-6" : ""}`}>{text}</p>
+      }} key={index} className={`text-base md:text-xl leading-relaxed ${index !== 0 ? "mt-4 md:mt-6" : ""}`}>{text}</p>
      ))}
     </div>
    </GridArticle>
