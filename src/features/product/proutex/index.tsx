@@ -1,9 +1,9 @@
-import GridArticle from '../../layout/Grid/GridArticle.tsx';
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
 import {Link} from 'react-router-dom';
-import comparison from '../../data/business/utex_comparison.json';
-import GridLayout from '../../layout/Grid/GridLayout.tsx';
-import Header from '../../layout/Header/Header.tsx';
-import PageLayout from '../../layout/PageLayout.tsx';
+import comparison from '../../../data/business/utex_comparison.json';
+import GridLayout from '../../../layout/Grid/GridLayout.tsx';
+import Header from '../../../layout/Header/Header.tsx';
+import PageLayout from '../../../layout/PageLayout.tsx';
 
 const ProUtex = () => {
  return (

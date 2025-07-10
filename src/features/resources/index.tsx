@@ -39,7 +39,7 @@ const Catalog = () => {
  return (
   <>
    <Header />
-   <PageLayout title='카탈로그'>
+   <PageLayout title='리소스(자료실) 페이지 본문'>
     <div ref={sectionRef} className='grid grid-cols-12'>
      <section className='min-h-[calc(100vh-67.98px)] col-span-12 grid grid-cols-1 items-center justify-items-center'>
       <video

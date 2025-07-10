@@ -1,7 +1,7 @@
 import React from 'react';
-import Year from './Year';
-import Dot from './Dot';
-import Card from './Card';
+import Year from './Year.tsx';
+import Dot from './Dot.tsx';
+import Card from './Card.tsx';
 
 interface HistoryTimelineItemProps {
   id: string;

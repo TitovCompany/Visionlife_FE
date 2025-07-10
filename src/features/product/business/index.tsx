@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import PageLayout from '../../layout/PageLayout.tsx';
-import Header from '../../layout/Header/Header.tsx';
+import PageLayout from '../../../layout/PageLayout.tsx';
+import Header from '../../../layout/Header/Header.tsx';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {useRef, useState} from 'react';
 import { useGSAP } from '@gsap/react';
-import overview from '../../data/business/overview.json';
+import overview from '../../../data/business/overview.json';
 import clsx from 'clsx';
 import { Button } from 'japark-react-components';
 
