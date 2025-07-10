@@ -2,13 +2,13 @@ import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useRef} from 'react';
 import {useGSAP} from '@gsap/react';
-import ExpandingCard from '../../components/Card/Expanding/ExpandingCard.tsx';
-import ExpandingCardItem from '../../components/Card/Expanding/ExpandingCardItem.tsx';
+import ExpandingCard from '../../../components/Card/Expanding/ExpandingCard.tsx';
+import ExpandingCardItem from '../../../components/Card/Expanding/ExpandingCardItem.tsx';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Pagination} from 'swiper/modules';
-import LinkCard from '../../components/Card/LinkCard.tsx';
-import Header from '../../layout/Header/Header.tsx';
-import PageLayout from '../../layout/PageLayout.tsx';
+import LinkCard from '../../../components/Card/LinkCard.tsx';
+import Header from '../../../layout/Header/Header.tsx';
+import PageLayout from '../../../layout/PageLayout.tsx';
 
 const nrec_use = [
  {id: 1, title: '스포츠웨어 & 기능성 의류', href: '/img/business/nrect/p2.webp'},

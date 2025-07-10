@@ -11,22 +11,22 @@ import Home from './features/home/index';
 
 // 🏢 회사 정보
 import About from './features/about';
-import CEO from './features/ceo';
-import History from './features/history';
-import ContactUs from './features/contact';
+import CEO from './features/about/ceo';
+import History from './features/about/history';
+import ContactUs from './features/resources';
 
 // 📈 비즈니스
-import Business from './features/business';
-import NRect from './features/nrect';
-import ProUtex from './features/proutex';
+import Business from './features/product/business';
+import NRect from './features/product/nrect';
+import ProUtex from './features/product/proutex';
 
 // 📰 뉴스
-import NewsLayout from './features/news/index';
-import News from './features/news/pages/News.tsx';
-import NewsDetail from './features/news/pages/NewsDetail.tsx';
+import NewsLayout from './features/media';
+import News from './features/media/pages/News.tsx';
+import NewsDetail from './features/media/pages/NewsDetail.tsx';
 
 // 📦 제품 카탈로그
-import Catalog from './features/catalog';
+import Catalog from './features/resources';
 
 // 📄 정책 및 약관
 import PrivacyPolicy from './features/policies/PrivacyPolicy.tsx';

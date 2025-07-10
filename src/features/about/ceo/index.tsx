@@ -1,11 +1,11 @@
-import Header from '../../layout/Header/Header.tsx';
-import PageLayout from '../../layout/PageLayout.tsx';
+import Header from '../../../layout/Header/Header.tsx';
+import PageLayout from '../../../layout/PageLayout.tsx';
 import {useRef} from 'react';
 import {useGSAP} from '@gsap/react';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import GridArticle from '../../layout/Grid/GridArticle.tsx';
-import GridLayout from '../../layout/Grid/GridLayout.tsx';
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
+import GridLayout from '../../../layout/Grid/GridLayout.tsx';
 
 gsap.registerPlugin(ScrollTrigger);
 const CEO = () => {

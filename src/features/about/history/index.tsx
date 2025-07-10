@@ -1,6 +1,6 @@
-import GridLayout from '../../layout/Grid/GridLayout.tsx';
-import GridArticle from '../../layout/Grid/GridArticle.tsx';
-import history from '../../data/profile/history.json';
+import GridLayout from '../../../layout/Grid/GridLayout.tsx';
+import GridArticle from '../../../layout/Grid/GridArticle.tsx';
+import history from '../../../data/profile/history.json';
 import HistoryTimeline from './HistoryTimeline.tsx';
 //import clsx from 'clsx';
 
@@ -52,5 +52,3 @@ const History = () => {
 };
 
 export default History;
-
-	
