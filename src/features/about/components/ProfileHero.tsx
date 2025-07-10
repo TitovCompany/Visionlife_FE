@@ -44,13 +44,13 @@ const ProfileHero = () => {
  }, []);
 
  return (
-  <section className='min-h-screen grid items-center'>
-   <article className='flex items-center justify-center'>
+  <section className='min-h-screen grid items-center px-4 md:px-0'>
+   <article className='flex flex-col md:flex-row items-center justify-center gap-8 md:gap-20 w-full'>
     <div className='space-y-6 text-right'>
-     <h1 ref={titleRef} className='text-primary text-7xl font-bold'>Vision Life</h1>
-     <h2 ref={sinceRef} className='text-primary text-3xl font-bold'>Since. 2000</h2>
+    <h1 ref={titleRef} className='text-primary text-5xl md:text-7xl font-bold'>Vision Life</h1>
+    <h2 ref={sinceRef} className='text-primary text-2xl md:text-3xl font-bold'>Since. 2000</h2>
     </div>
-    <img ref={logoRef} src='/logo.webp' alt='(주)비전 라이프 로고' />
+    <img ref={logoRef} src='/logo.webp' alt='(주)비전 라이프 로고' className="max-md:w-[300px] max-md:h-[300px] object-contain"/>
    </article>
   </section>
  );
