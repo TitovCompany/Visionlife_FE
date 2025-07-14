@@ -75,6 +75,7 @@ const Home = () => {
 
      {/* Company */}
      <GridArticle
+
       className='md:col-start-2 md:col-end-12 flex min-h-[60vh] md:h-screen w-full flex-col justify-center'
      >
       <div className='px-4 md:px-0'>
