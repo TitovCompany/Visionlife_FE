@@ -75,21 +75,24 @@ const Home = () => {
 
      {/* Company */}
      <GridArticle
-      colStart={2}
-      colEnd={12}
-      className='flex min-h-[60vh] md:h-screen w-full flex-col justify-center'>
-      <SectionHeader
-       id='company'
-       title='Company'
-       subTitle="비전라이프홀딩스는 '사람과 환경이 공존하는 섬유산업'을 꿈꿉니다."
-      />
-      <ul className='mt-10 md:mt-32 flex flex-col md:flex-row items-center md:items-center justify-between gap-4 md:gap-10'>
-       <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='About Company' />
-       <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='History' />
-       <LinkList href='/' imgSrc='/img/home/Cp2.webp' text='Business' />
-       <LinkList href='/' imgSrc='/img/home/Cp3.webp' text='Location' />
+
+      className='md:col-start-2 md:col-end-12 flex min-h-[60vh] md:h-screen w-full flex-col justify-center'
+     >
+      <div className='px-4 md:px-0'>
+        <SectionHeader
+          id='company'
+          title='Company'
+          subTitle="비전라이프홀딩스는 '사람과 환경이 공존하는 섬유산업'을 꿈꿉니다."
+        />
+      </div>
+      <ul className='mt-10 md:mt-32 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-10 w-full'>
+        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='About Company' />
+        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='History' />
+        <LinkList href='/' imgSrc='/img/home/Cp2.webp' text='Business' />
+        <LinkList href='/' imgSrc='/img/home/Cp3.webp' text='Location' />
       </ul>
      </GridArticle>
+
 
      {/* WhyUsSection */}
      <GridArticle
