@@ -68,55 +68,63 @@ const Home = () => {
    <main className='min-h-screen w-full bg-white text-center'>
     <GridLayout className='scrollbar-hide mb-20 md:mb-52'>
      {/* Hero */}
-     <GridArticle
-      className='bg-primary relative flex min-h-[60vh] md:h-screen min-w-screen flex-col text-white'>
-      <HeroSlider data={carouselItems} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>
+     <GridArticle className='bg-primary relative flex min-h-[60vh] flex-col text-white md:h-screen my-32'>
+      <HeroSlider
+       data={carouselItems}
+       currentIndex={currentIndex}
+       setCurrentIndex={setCurrentIndex}
+      />
      </GridArticle>
 
      {/* Company */}
-     <GridArticle
-
-      className='md:col-start-2 md:col-end-12 flex min-h-[60vh] md:h-screen w-full flex-col justify-center'
-     >
+     <GridArticle className='flex min-h-[60vh] w-full flex-col justify-center lg:col-start-2 lg:col-end-12 my-32'>
       <div className='px-4 md:px-0'>
-        <SectionHeader
-          id='company'
-          title='Company'
-          subTitle="비전라이프홀딩스는 '사람과 환경이 공존하는 섬유산업'을 꿈꿉니다."
-        />
+       <SectionHeader
+        id='company'
+        title='Company'
+        subTitle="비전라이프홀딩스는 '사람과 환경이 공존하는 섬유산업'을 꿈꿉니다."
+       />
       </div>
-      <ul className='mt-10 md:mt-32 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-10 w-full'>
-        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='About Company' />
-        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='History' />
-        <LinkList href='/' imgSrc='/img/home/Cp2.webp' text='Business' />
-        <LinkList href='/' imgSrc='/img/home/Cp3.webp' text='Location' />
+      <ul className='mt-10 flex w-full flex-col items-center justify-between gap-4 md:mt-32 md:flex-row md:gap-10'>
+       <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='About Company' />
+       <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='History' />
+       <LinkList href='/' imgSrc='/img/home/Cp2.webp' text='Business' />
+       <LinkList href='/' imgSrc='/img/home/Cp3.webp' text='Location' />
       </ul>
      </GridArticle>
-
 
      {/* WhyUsSection */}
      <GridArticle
       colStart={2}
       colEnd={12}
-      labelledById="why-choose-us"
-      className='flex min-h-[60vh] md:h-screen flex-col justify-center text-center'>
+      labelledById='why-choose-us'
+      className='flex min-h-[60vh] flex-col justify-center text-center md:h-screen my-32'>
       <SectionHeader
-       id="why-choose-us"
+       id='why-choose-us'
        title='Why Choose Us?'
        subTitle='지속 가능성과 품질을 동시에 제공합니다.'
+       titleClassName='mt-32'
       />
       {/* Contents */}
-      <ul className='mt-10 md:mt-32 grid grid-cols-1 gap-8 md:grid-cols-3'>
+      <ul className='mt-10 grid grid-cols-1 gap-8 md:mt-32 md:grid-cols-3'>
        {features.map((feature, index) => (
         <li
          key={index}
-        /*ref={(el) => {
-          if (el) contentRef.current[index] = el;
-         }}*/
+         /*ref={(el) => {
+           if (el) contentRef.current[index] = el;
+          }}*/
          className='flex flex-col items-center text-center'>
-         <img src={feature.image} alt='' className="w-32 h-32 md:w-[180px] md:h-[180px] lg:w-[300px] lg:h-[300px] object-contain"/>
-         <h3 className='mt-4 text-lg md:text-2xl font-semibold'>{feature.title}</h3>
-         <p className='mt-2 text-gray-600 text-sm md:text-base'>{feature.description}</p>
+         <img
+          src={feature.image}
+          alt=''
+          className='h-32 w-32 object-contain md:h-[180px] md:w-[180px] lg:h-[300px] lg:w-[300px]'
+         />
+         <h3 className='mt-4 text-lg font-semibold md:text-2xl'>
+          {feature.title}
+         </h3>
+         <p className='mt-2 text-sm text-gray-600 md:text-base'>
+          {feature.description}
+         </p>
         </li>
        ))}
       </ul>
@@ -126,17 +134,18 @@ const Home = () => {
      <GridArticle
       colStart={2}
       colEnd={12}
-      className='flex min-h-[60vh] md:h-screen snap-start flex-col justify-center'>
+      className='flex min-h-[60vh] snap-start flex-col justify-center my-32'>
       <SectionHeader
        title='Global Business'
        subTitle={[
         '비전라이프는 글로벌 시장에서 지속 가능한 기술을 바탕으로',
         '새로운 가치를 창출하고 있습니다.',
-       ]}/>
-      <div className='w-full h-[300px] md:h-[800px] min-w-0 md:min-w-[600px] flex justify-center items-center'>
+       ]}
+      />
+      <div className='flex h-[300px] w-full min-w-0 items-center justify-center md:h-[800px] md:min-w-[600px]'>
        <ThreeDScene />
       </div>
-      <div className='text-base md:text-lg mt-4 md:mt-0 px-2 md:px-0 text-left md:text-center'>
+      <div className='mt-4 px-2 text-left text-base md:mt-0 md:px-0 md:text-center md:text-lg'>
        {[
         '비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,',
         '다양한 원단에 대한 샘플링을 통해 글로벌 시장 진입을 준비하고 있습니다.',
@@ -154,26 +163,33 @@ const Home = () => {
      <GridArticle
       colStart={2}
       colEnd={12}
-      className='flex min-h-[60vh] md:h-screen flex-col items-start justify-center gap-10 md:gap-20'>
+      className='flex min-h-[60vh] flex-col items-start justify-center gap-10 md:h-screen md:gap-20'>
       <SectionHeader
        title='NEWS'
        subTitle={[
         '친환경 기술과 지속 가능한 변화를 만드는',
         'PROUTEX의 최신 소식을 만나보세요.',
-       ]}/>
-      <div className='flex flex-col md:flex-row gap-4 md:gap-5 w-full overflow-x-visible'>
+       ]}
+      />
+      <div className='flex w-full flex-col gap-4 overflow-x-visible md:flex-row md:gap-5'>
        {/* Media Carousel */}
        {news.items.slice(0, 3).map((item, index) => (
-        <Card key={index} className='border-color relative flex flex-row items-center md:flex-col flex-1 border-2 p-4 md:p-8'>
-         <img src='/logo.webp' alt='test' className='object-contain w-24 h-24 md:w-[180px] md:h-[180px] lg:w-[300px] lg:h-[300px]'/>
-         <div className='border-color ml-4 md:ml-0 mt-0 md:mt-10 mr-0 md:mr-10 w-full text-left'>
-          <h3 className='mb-2 md:mb-5 text-base md:text-xl'>{item.title}</h3>
+        <Card
+         key={index}
+         className='border-color relative flex flex-1 flex-row items-center border-2 p-4 md:flex-col md:p-8'>
+         <img
+          src='/logo.webp'
+          alt='test'
+          className='h-24 w-24 object-contain md:h-[180px] md:w-[180px] lg:h-[300px] lg:w-[300px]'
+         />
+         <div className='border-color mt-0 mr-0 ml-4 w-full text-left md:mt-10 md:mr-10 md:ml-0'>
+          <h3 className='mb-2 text-base md:mb-5 md:text-xl'>{item.title}</h3>
          </div>
         </Card>
        ))}
       </div>
-      <div className='mx-auto w-full flex justify-center items-center text-base md:text-xl'>
-       <Link to='/' className='border-2 px-6 py-2 md:px-10 md:py-4 font-bold'>
+      <div className='mx-auto flex w-full items-center justify-center text-base md:text-xl'>
+       <Link to='/' className='border-2 px-6 py-2 font-bold md:px-10 md:py-4'>
         VIEW ALL
        </Link>
       </div>

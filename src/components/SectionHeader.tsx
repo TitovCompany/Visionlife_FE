@@ -9,6 +9,8 @@ interface SectionHeaderProps {
  title: string;
  subTitle?: string | string[];
  align?: 'left' | 'center' | 'right';
+ titleClassName?: string;
+ subTitleClassName?: string;
 }
 
 const TEXT_ALIGN = {
@@ -24,6 +26,8 @@ const SectionHeader = ({
  subTitle,
  id,
  align = 'left',
+ titleClassName,
+ subTitleClassName
 }: SectionHeaderProps) => {
  // 전체 컨테이너를 참조할 ref (ScrollTrigger 기준 대상)
  const containerRef = useRef<HTMLDivElement | null>(null);
@@ -71,15 +75,20 @@ const SectionHeader = ({
  }, []);
 
  return (
-  <div ref={containerRef} className={clsx('w-full text-primary', TEXT_ALIGN[align])}>
-   <h2 ref={titleRef} id={id} className='mb-6 text-7xl font-bold'>
+  <div
+   ref={containerRef}
+   className={clsx('text-primary w-full', TEXT_ALIGN[align])}>
+   <h2
+    ref={titleRef}
+    id={id}
+    className={`mb-6 text-7xl font-bold ${titleClassName}`}>
     {title}
    </h2>
    {Array.isArray(subTitle)
     ? subTitle.map((text, idx) => (
        <p
         key={idx}
-        className='text-xl leading-relaxed text-gray-600'
+        className={`text-xl leading-relaxed text-gray-600 ${subTitleClassName}`}
         ref={(el) => {
          if (el) {
           subtitleRefs.current[idx] = el;
@@ -90,7 +99,7 @@ const SectionHeader = ({
       ))
     : subTitle && (
        <p
-        className='text-xl leading-relaxed text-gray-600'
+        className={`text-xl leading-relaxed text-gray-600 ${subTitleClassName}`}
         ref={(el) => {
          if (el) {
           subtitleRefs.current[0] = el;

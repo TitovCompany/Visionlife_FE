@@ -67,7 +67,7 @@ const GridLayout: FC<GridLayoutProps> = ({
  children,
  cols = 12,
  rows = 1,
- gap = 4,
+ gap = 0,
  align = 'stretch',
  className,
  ref,
