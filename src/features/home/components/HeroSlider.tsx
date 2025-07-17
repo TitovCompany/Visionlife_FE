@@ -72,6 +72,7 @@ const HeroSlider = memo(({
       </div>
      </div>
     ))}
+    {/* ScrollDown Indicator */}
     <SliderIndicator>
      <FaCaretDown size={30} />
     </SliderIndicator>

@@ -33,10 +33,10 @@ const SliderIndicator = ({
   <>
    <div
     ref={bounceRef}
-    className={clsx('absolute bottom-64 left-1/2 z-[8888] -translate-x-1/2', className)}>
+    className={clsx('absolute bottom-20 md:bottom-64 left-1/2 z-[8888] -translate-x-1/2', className)}>
     {children}
    </div>
-   <p className='absolute bottom-52 left-1/2 z-[8888] -translate-x-1/2 text-xl'>{text}</p>
+   <p className='absolute bottom-28 md:bottom-52 left-1/2 z-[8888] -translate-x-1/2 text-xl'>{text}</p>
   </>
  );
 };
