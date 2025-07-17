@@ -24,7 +24,7 @@ const Home = () => {
    setCurrentIndex((prevIndex) =>
     prevIndex === carouselItems.length ? 0 : prevIndex + 1
    );
-  }, 5000);
+  }, 500000);
   // 컴포넌트 언마운트 시 정리
   return () => clearInterval(interval);
  }, []);
@@ -39,12 +39,11 @@ const Home = () => {
       <HeroSlider
        data={carouselItems}
        currentIndex={currentIndex}
-       setCurrentIndex={setCurrentIndex}
-      />
+       setCurrentIndex={setCurrentIndex}/>
      </GridArticle>
 
      {/* Company */}
-     <GridArticle className='flex min-h-[60vh] h-screen w-full flex-col justify-center lg:col-start-2 lg:col-end-12 col-start-2 col-end-12'>
+     {/*<GridArticle className='flex min-h-[60vh] h-screen w-full flex-col justify-center lg:col-start-2 lg:col-end-12 col-start-2 col-end-12'>
       <div className='px-4 md:px-0'>
        <SectionHeader
         id='company'
@@ -58,7 +57,7 @@ const Home = () => {
         <LinkList href={item.href} imgSrc={item.imgSrc} text={item.title} />
        ))}
       </ul>
-     </GridArticle>
+     </GridArticle>*/}
     </GridLayout>
    </main>
   </>
