@@ -73,7 +73,7 @@ const GridLayout: FC<GridLayoutProps> = ({
  ref,
 }) => {
  return (
-  <div
+  <main
    ref={ref}
    className={clsx(
     'grid',
@@ -83,7 +83,7 @@ const GridLayout: FC<GridLayoutProps> = ({
     ALIGN_CLASSES[align] || 'place-items-stretch',
     className)}>
    {children}
-  </div>
+  </main>
  );
 };
 

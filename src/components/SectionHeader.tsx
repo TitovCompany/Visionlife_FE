@@ -81,7 +81,7 @@ const SectionHeader = ({
    <h2
     ref={titleRef}
     id={id}
-    className={`mb-6 text-7xl font-bold ${titleClassName}`}>
+    className={`mb-2 md:mb-6 font-bold ${titleClassName}`}>
     {title}
    </h2>
    {Array.isArray(subTitle)

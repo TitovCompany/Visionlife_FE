@@ -32,8 +32,8 @@ const Home = () => {
  return (
   <>
    <Header />
-   <main className='min-h-screen w-full bg-white text-center'>
-    <GridLayout className='scrollbar-hide mb-20 md:mb-52'>
+   <main>
+    <GridLayout className='min-h-screen w-full bg-white scrollbar-hide mb-20 md:mb-52 text-center'>
      {/* Hero */}
      <GridArticle className='bg-primary relative flex min-h-[60vh] flex-col text-white md:h-screen mb-32'>
       <HeroSlider
