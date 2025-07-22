@@ -74,37 +74,28 @@ const Home = () => {
      </GridArticle>
 
      {/* Company */}
-     <GridArticle
-
-      className='md:col-start-2 md:col-end-12 flex min-h-[60vh] md:h-screen w-full flex-col justify-center'
-     >
-      <div className='px-4 md:px-0'>
-        <SectionHeader
-          id='company'
-          title='Company'
-          subTitle="비전라이프홀딩스는 '사람과 환경이 공존하는 섬유산업'을 꿈꿉니다."
-        />
-      </div>
-      <ul className='mt-10 md:mt-32 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-10 w-full'>
-        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='About Company' />
-        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='History' />
-        <LinkList href='/' imgSrc='/img/home/Cp2.webp' text='Business' />
-        <LinkList href='/' imgSrc='/img/home/Cp3.webp' text='Location' />
+     <GridArticle className='mt-24 md:col-start-2 md:col-end-12 min-h-[60vh] md:h-screen w-full '>
+      <SectionHeader
+       id='company'
+       title='Company'
+       subTitle="비전라이프홀딩스는 '사람과 환경이 공존하는 섬유산업'을 꿈꿉니다."/>
+      <ul className='mt-12 md:mt-32 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-10 w-full'>
+        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='ABOUT COMPANY' />
+        <LinkList href='/' imgSrc='/img/home/Cp1.webp' text='HISTORY' />
+        <LinkList href='/' imgSrc='/img/home/Cp2.webp' text='BUSINESS' />
+        <LinkList href='/' imgSrc='/img/home/Cp3.webp' text='LOCATION' />
       </ul>
      </GridArticle>
 
 
      {/* WhyUsSection */}
      <GridArticle
-      colStart={2}
-      colEnd={12}
       labelledById="why-choose-us"
-      className='flex min-h-[60vh] md:h-screen flex-col justify-center text-center'>
+      className='mt-24 flex min-h-[60vh] md:h-screen flex-col justify-center text-center'>
       <SectionHeader
        id="why-choose-us"
        title='Why Choose Us?'
-       subTitle='지속 가능성과 품질을 동시에 제공합니다.'
-      />
+       subTitle='지속 가능성과 품질을 동시에 제공합니다.' />
       {/* Contents */}
       <ul className='mt-10 md:mt-32 grid grid-cols-1 gap-8 md:grid-cols-3'>
        {features.map((feature, index) => (
@@ -124,9 +115,7 @@ const Home = () => {
 
      {/* GlobalBusiness */}
      <GridArticle
-      colStart={2}
-      colEnd={12}
-      className='flex min-h-[60vh] md:h-screen snap-start flex-col justify-center'>
+      className='mt-24 flex min-h-[60vh] md:h-screen snap-start flex-col justify-center'>
       <SectionHeader
        title='Global Business'
        subTitle={[
@@ -152,25 +141,32 @@ const Home = () => {
 
      {/* Media (News) */}
      <GridArticle
-      colStart={2}
-      colEnd={12}
-      className='flex min-h-[60vh] md:h-screen flex-col items-start justify-center gap-10 md:gap-20'>
+      className='mt-24 flex min-h-[60vh] md:h-screen flex-col items-start justify-center gap-10 md:gap-20'>
       <SectionHeader
        title='NEWS'
        subTitle={[
         '친환경 기술과 지속 가능한 변화를 만드는',
-        'PROUTEX의 최신 소식을 만나보세요.',
-       ]}/>
-      <div className='flex flex-col md:flex-row gap-4 md:gap-5 w-full overflow-x-visible'>
+        'PROUTEX의 최신 소식을 만나보세요.',]}/>
+      <div className='flex gap-5 overflow-x-visible'>
        {/* Media Carousel */}
-       {news.items.slice(0, 3).map((item, index) => (
-        <Card key={index} className='border-color relative flex flex-row items-center md:flex-col flex-1 border-2 p-4 md:p-8'>
-         <img src='/logo.webp' alt='test' className='object-contain w-24 h-24 md:w-[180px] md:h-[180px] lg:w-[300px] lg:h-[300px]'/>
-         <div className='border-color ml-4 md:ml-0 mt-0 md:mt-10 mr-0 md:mr-10 w-full text-left'>
-          <h3 className='mb-2 md:mb-5 text-base md:text-xl'>{item.title}</h3>
-         </div>
-        </Card>
-       ))}
+       <div className='border-color relative flex min-w-[380px] flex-col items-start justify-around border-2 p-8'>
+        <img src='/logo.webp' alt='test' className='h-full w-full' />
+        <div className='border-color mt-10 mr-10 w-full text-left'>
+         <h3 className='mb-5 text-xl'>{news.items[0].title}</h3>
+        </div>
+       </div>
+       <div className='border-color relative flex min-w-[380px] flex-col items-start justify-around border-2 p-8'>
+        <img src='/logo.webp' alt='test' className='h-full w-full' />
+        <div className='border-color mt-10 mr-10 w-full text-left'>
+         <h3 className='mb-5 text-xl'>{news.items[0].title}</h3>
+        </div>
+       </div>
+       <div className='border-color relative flex min-w-[380px] flex-col items-start justify-around border-2 p-8'>
+        <img src='/logo.webp' alt='test' className='h-full w-full' />
+        <div className='border-color mt-10 mr-10 w-full text-left'>
+         <h3 className='mb-5 text-xl'>{news.items[0].title}</h3>
+        </div>
+       </div>
       </div>
       <div className='mx-auto w-full flex justify-center items-center text-base md:text-xl'>
        <Link to='/' className='border-2 px-6 py-2 md:px-10 md:py-4 font-bold'>
