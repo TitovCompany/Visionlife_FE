@@ -10,24 +10,21 @@ const NavbarDesktop: FC<DesktopNavbarProps> = ({
 }) => {
  const maxWidth = clsx('mx-auto max-w-sm sm:max-w-4xl md:max-w-5xl lg:max-w-7xl xl:max-w-10/12');
  return (
-  <div className='relative z-[99999] hidden lg:block'>
+  <div className='relative z-[99999] hidden lg:block bg-primary text-color'>
    {/* 메인 네비게이션 */}
    <div className={clsx('flex items-center justify-between', maxWidth)}>
-    <h2>
-     <Logo />
-    </h2>
+    <h2><Logo /></h2>
     <NavbarMenu
      type='_nav'
      items={navigation}
      onMouseEnter={() => setIsDropdownVisible(true)}
-     onMouseLeave={() => setIsDropdownVisible(false)}
-    />
+     onMouseLeave={() => setIsDropdownVisible(false)} />
    </div>
 
    {/* 서브 메뉴 */}
    <div
     className={clsx(
-     'bg-white text-primary',
+     'bg-primary text-color',
      'absolute inset-x-0 top-full',
      'border-primary/20 border-t border-b-2',
      'transition-all duration-300 ease-in-out',

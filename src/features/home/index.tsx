@@ -9,7 +9,6 @@ import ThreeDScene from '../../components/ThreeDScene.tsx';
 import LinkList from '../../components/LinkList.tsx';
 import SectionHeader from '../../components/SectionHeader.tsx';
 import clsx from 'clsx';
-import Card from '../../components/Card/Card.tsx';
 import HeroSlider from './components/HeroSlider.tsx';
 import {Link} from 'react-router-dom';
 import GridLayout from '../../layout/Grid/GridLayout.tsx';
@@ -70,11 +69,11 @@ const Home = () => {
      {/* Hero */}
      <GridArticle
       className='bg-primary relative flex min-h-[60vh] md:h-screen min-w-screen flex-col text-white'>
-      <HeroSlider data={carouselItems} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>
-     </GridArticle>
+     <HeroSlider data={carouselItems} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>
+    </GridArticle>
 
-     {/* Company */}
-     <GridArticle className='mt-24 md:col-start-2 md:col-end-12 min-h-[60vh] md:h-screen w-full '>
+    {/* Company */}
+    <GridArticle className='mt-24 md:col-start-2 md:col-end-12 min-h-[60vh] md:min-h-full w-full '>
       <SectionHeader
        id='company'
        title='Company'
@@ -91,7 +90,7 @@ const Home = () => {
      {/* WhyUsSection */}
      <GridArticle
       labelledById="why-choose-us"
-      className='mt-24 flex min-h-[60vh] md:h-screen flex-col justify-center text-center'>
+      className='mt-24 min-h-[60vh] md:min-h-full flex flex-col justify-center text-center'>
       <SectionHeader
        id="why-choose-us"
        title='Why Choose Us?'
