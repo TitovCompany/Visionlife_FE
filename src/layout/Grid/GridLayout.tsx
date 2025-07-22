@@ -52,6 +52,7 @@ const ALIGN_CLASSES: Record<string, string> = {
  end: 'place-items-end',
  stretch: 'place-items-stretch',
 };
+//ㅅㄷㄴㅅ
 
 interface GridLayoutProps {
  children: ReactNode;
