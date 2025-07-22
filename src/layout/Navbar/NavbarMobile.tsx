@@ -17,7 +17,7 @@ const NavbarMobile: React.FC<MobileNavbarProps> = (props) => {
  return (
   <div className='lg:hidden'>
    {/* 로고와 햄버거 버튼 */}
-   <div className='flex items-center justify-between border-b border-gray-200 px-4 py-4'>
+   <div className='flex items-center justify-between bg-primary text-color border-b-0 border-gray-50 px-4 py-4'>
     {/*<Logo className='w-18 h-18'/>*/}
     <h2 className='flex items-center text-3xl font-bold'>PROUTEX.com</h2>
     <button
