@@ -55,7 +55,7 @@ const Home = () => {
    setCurrentIndex((prevIndex) =>
     prevIndex === carouselItems.length ? 0 : prevIndex + 1
    );
-  }, 5000);
+  }, 500000);
   // 컴포넌트 언마운트 시 정리
   return () => clearInterval(interval);
  }, []);
@@ -68,7 +68,7 @@ const Home = () => {
     <GridLayout className='scrollbar-hide mb-20 md:mb-52'>
      {/* Hero */}
      <GridArticle
-      className='bg-primary relative flex min-h-[60vh] md:h-screen min-w-screen flex-col text-white'>
+      className='bg-primary relative flex md:min-h-[60vh] h-screen min-w-screen flex-col text-white'>
      <HeroSlider data={carouselItems} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/>
     </GridArticle>
 
