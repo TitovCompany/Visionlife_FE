@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import PageLayout from '../../../layout/PageLayout.tsx';
 import Header from '../../../layout/Header/Header.tsx';
 import gsap from 'gsap';
@@ -8,7 +7,7 @@ import { useGSAP } from '@gsap/react';
 import overview from '../../../data/business/overview.json';
 import clsx from 'clsx';
 import { Button } from 'japark-react-components';
-import {contentSections, sectionLinks} from '../../../data/business/business.ts';
+import {contentSections} from '../../../data/business/business.ts';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,6 +44,7 @@ const Business = () => {
   <>
    <Header />
    <PageLayout title='사업개요 페이지 본문' className='relative overflow-x-hidden'>
+    {/* 비디오 섹션 */}
     <section className='z-1 [clip-path:polygon(0,0,0,100%,100% 100%, 100% 0)] relative min-h-[calc(100vh-67.98px)] w-full'>
      <ul className='h-full w-full'>
       {overview.data.map((item, index) => (
@@ -62,9 +62,9 @@ const Business = () => {
           autoPlay
           loop
           muted
-          playsInline
-         />
+          playsInline />
         )}
+        {/* 텍스트 및 자세히 보기 보튼 */}
         <div
          className={clsx(
           'absolute top-1/2 left-1/2 -translate-1/2',
@@ -80,18 +80,8 @@ const Business = () => {
       ))}
      </ul>
     </section>
-    {/* ??? */}
-    {/*<div className={clsx('absolute top-0 z-[999999]')}>
-     <ul>
-      {sectionLinks.map((link, idx) => (
-       <li key={idx}>
-        <Link to={link.to}>
-         <span>{link.label}</span>
-        </Link>
-       </li>
-      ))}
-     </ul>
-    </div>*/}
+
+    {/* View 시 출력하기 */}
     {activeIndex !== null && (
      <div
       ref={detailRef}
