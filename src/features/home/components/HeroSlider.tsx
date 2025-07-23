@@ -52,10 +52,10 @@ const HeroSlider = memo(({
       if (el) sliderRef.current[0] = el;
      }}>
      {/* Image */}
-     <img ref={imageRef} src='/logo.webp' alt='히어로 섹션 이미지' className='h-full w-[400px]' />
+     <img ref={imageRef} src='/logo.webp' alt='히어로 섹션 이미지' className='h-full w-96 md:w-[400px]' />
      <div className='-translate-y-16'>
       {['(주)비전라이프홀딩스의 나일론잉크 “N-RECT 엔렉”은', '99% 무폐수로 만들어집니다.'].map((item, index) => (
-       <p key={index} className='mb-5 text-4xl' ref={(el) => { if (el) contentRef.current[index] = el;}}>{item}</p>
+       <p key={index} className='mb-5 md:text-4xl' ref={(el) => { if (el) contentRef.current[index] = el;}}>{item}</p>
       ))}
      </div>
     </div>
@@ -64,8 +64,8 @@ const HeroSlider = memo(({
      <div key={index} className='relative min-h-full min-w-full flex-shrink-0' ref={(el) => { if (el) sliderRef.current[index + 1] = el;}}>
       <video src={item.src} controls={false} className='h-[calc(100vh-68px)] w-screen object-cover brightness-70 filter' autoPlay={index === currentIndex} loop muted playsInline />
       <div className='absolute top-[40%] left-1/2 z-[9999] -translate-x-1/2'>
-       <h3 className='mb-10 text-6xl font-bold'>{item.title}</h3>
-       <p className='mt-5 max-w-3xl text-xl leading-8 whitespace-pre-line'>
+       <h3 className='mb-10 md:text-6xl font-bold'>{item.title}</h3>
+       <p className='mt-5 max-w-3xl md:text-xl leading-8 whitespace-pre-line'>
         {item.description}
        </p>
       </div>

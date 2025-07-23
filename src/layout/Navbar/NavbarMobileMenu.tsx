@@ -8,7 +8,7 @@ const NavbarMobileMenu: React.FC<NavbarMobileMenuProps> = (props) => {
  const linkClasses = clsx('block hover:text-primary');
 
  return (
-  <nav className='px-4 py-2'>
+  <nav className='px-4 py-2 bg-primary text-color border-b-0 border-gray-50'>
    <ul className='space-y-2'>
     {navigation.map((item, index) => {
      const hasSubMenu = item.sub.length > 0;
@@ -18,7 +18,7 @@ const NavbarMobileMenu: React.FC<NavbarMobileMenuProps> = (props) => {
        <div className='flex items-center justify-between'>
         <NavLink
          to={item.href}
-         className={`${linkClasses} py-2 text-base text-gray-800`}
+         className={`${linkClasses} py-2 text-base `}
          onClick={closeMenu}>
          {item.label}
         </NavLink>

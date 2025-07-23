@@ -13,7 +13,7 @@ import Home from './features/home/index';
 import About from './features/about';
 import CEO from './features/about/ceo';
 import History from './features/about/history';
-import ContactUs from './features/resources';
+import ContactUs from './features/about/contact';
 
 // 📈 비즈니스
 import Business from './features/product/business';

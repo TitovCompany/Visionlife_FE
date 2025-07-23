@@ -6,7 +6,7 @@
       {"label": "Who We Are", "href": "/company/profile"},
       {"label": "CEO’s Vision", "href": "/company/profile/ceo"},
       {"label": "Our Story", "href": "/company/profile/history"},
-      {"label": "Our Location", "href": "/company/profile/contact"}
+      {"label": "Location", "href": "/company/profile/contact"}
     ]
   },
   {
