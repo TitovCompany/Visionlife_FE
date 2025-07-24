@@ -54,12 +54,11 @@ const Home = () => {
    setCurrentIndex((prevIndex) =>
     prevIndex === carouselItems.length ? 0 : prevIndex + 1
    );
-  }, 500000);
+  }, 50000000);
   // 컴포넌트 언마운트 시 정리
   return () => clearInterval(interval);
  }, []);
 
- console.log('render');
  return (
   <>
    <Header />
