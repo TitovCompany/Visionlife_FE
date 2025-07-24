@@ -2,7 +2,7 @@ import PageLayout from '../../../layout/PageLayout.tsx';
 import Header from '../../../layout/Header/Header.tsx';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import {useRef, useState} from 'react';
+import {useRef, useState, useEffect} from 'react'; // useEffect 추가
 import { useGSAP } from '@gsap/react';
 import overview from '../../../data/business/overview.json';
 import clsx from 'clsx';
@@ -14,9 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Business = () => {
  const [activeIndex, setActiveIndex] = useState<number | null>(null);
  const listRef = useRef<(HTMLLIElement | null)[]>([]);
- // detailRef는 더 이상 전역 div를 참조할 필요가 없으므로 각 아이템별로 관리
- // 또는 애니메이션을 위해 여전히 하나의 detailRef를 사용하되, 특정 li 내에 조건부 렌더링
- const currentDetailRef = useRef<HTMLDivElement | null>(null); // 현재 열린 디테일 탭을 위한 Ref
+ const currentDetailRef = useRef<HTMLDivElement | null>(null);
 
  useGSAP(() => {
   listRef.current.forEach((el) => {
@@ -31,16 +29,31 @@ const Business = () => {
   });
  }, []);
 
- // activeIndex가 변경될 때 애니메이션 처리
  useGSAP(() => {
   if (activeIndex !== null && currentDetailRef.current) {
    gsap.fromTo(
-    currentDetailRef.current, // 현재 열린 detailRef 사용
+    currentDetailRef.current,
     { x: '100%', autoAlpha: 0 },
     { x: 0, autoAlpha: 1, duration: 0.6, ease: 'power3.out' }
    );
   }
  }, [activeIndex]);
+
+ // 🎉 추가된 useEffect 훅: body 스크롤 제어
+ useEffect(() => {
+  if (activeIndex !== null) {
+   // 팝업이 열렸을 때
+   document.body.classList.add('no-scroll');
+  } else {
+   // 팝업이 닫혔을 때
+   document.body.classList.remove('no-scroll');
+  }
+
+  // 컴포넌트 언마운트 시 또는 activeIndex가 null이 될 때 클래스 제거
+  return () => {
+   document.body.classList.remove('no-scroll');
+  };
+ }, [activeIndex]); // activeIndex가 변경될 때마다 이 효과 실행
 
 
  return (
@@ -54,8 +67,8 @@ const Business = () => {
        <li
         key={index}
         className={clsx(
-         'relative top-0 h-screen', // li는 여전히 h-screen
-         'group' // 상세 정보 탭의 부모가 되기 위해 relative 속성 필요
+         'relative top-0 h-screen',
+         'group'
         )}
         ref={(el) => {
          if (el) listRef.current[index] = el;
@@ -64,16 +77,16 @@ const Business = () => {
          <video
           src={item.src}
           controls={false}
-          className='h-screen w-full object-cover brightness-70 filter' // w-full 추가
+          className='h-screen w-full object-cover brightness-70 filter'
           autoPlay
           loop
           muted
           playsInline />
         )}
-        {/* 텍스트 및 자세히 보기 버튼 */}
+        {/* 텍스트 및 자세히 보기 보튼 */}
         <div
          className={clsx(
-          'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2', // -translate-1/2를 -translate-x-1/2 -translate-y-1/2로 분리
+          'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
           'text-center text-xl text-white'
          )}>
          <h2 className='mb-10 text-5xl leading-14 font-bold'>{item.title}</h2>
@@ -84,13 +97,13 @@ const Business = () => {
         </div>
 
         {/* View 시 출력하는 상세 정보 탭 - 해당 li 내부에 조건부 렌더링 */}
-        {activeIndex === index && ( // 현재 li의 index와 activeIndex가 같을 때만 렌더링
+        {activeIndex === index && (
          <div
-          ref={currentDetailRef} // 각 렌더링 시 currentDetailRef가 업데이트됨
-          className='absolute top-0 right-0 z-[999999] lg:w-[800px] h-full bg-white p-6 overflow-y-auto shadow-xl opacity-0'
+          ref={currentDetailRef}
+          className='absolute top-0 right-0 z-[999999] lg:w-[800px] h-full bg-white py-32 px-6 overflow-y-auto shadow-xl opacity-0'
          >
           <ul>
-           {contentSections[index].map((contentItem, j) => ( // contentSections[index]로 해당 섹션 데이터 사용
+           {contentSections[index].map((contentItem, j) => (
             <li key={j} className='mb-6'>
              <span className='text-primary text-3xl font-bold'>{contentItem.number}</span>
              <h3 className='mt-2 text-2xl font-bold text-gray-800'>{contentItem.title}</h3>
@@ -101,7 +114,7 @@ const Business = () => {
            ))}
           </ul>
           <Button onClick={() => {
-           gsap.to(currentDetailRef.current, { // 현재 열린 detailRef 사용
+           gsap.to(currentDetailRef.current, {
             x: '100%',
             autoAlpha: 0,
             duration: 0.4,
