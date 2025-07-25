@@ -39,6 +39,12 @@ body {
   font-family: 'NotoSansKR', sans-serif;
 }
 
+/* 팝업이 열렸을 때 body에 적용될 클래스 */
+body.no-scroll {
+  overflow: hidden !important; /* 중요한 내용은 !important로 강제 */
+  touch-action: none; /* 모바일 터치 스크롤도 방지 */
+}
+
 html,
 body,
 #web {

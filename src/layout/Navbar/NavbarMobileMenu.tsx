@@ -37,9 +37,9 @@ const NavbarMobileMenu: React.FC<NavbarMobileMenuProps> = (props) => {
           <li key={subIdx}>
            <NavLink
             to={subItem.href}
-            className={`${linkClasses} py-1 text-sm text-gray-600`}
+            className={`${linkClasses} pl-3 py-1 text-sm text-color`}
             onClick={closeMenu}>
-            {subItem.label}
+            - {subItem.label}
            </NavLink>
           </li>
          ))}

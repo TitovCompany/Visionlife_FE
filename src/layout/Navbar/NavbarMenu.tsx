@@ -16,7 +16,7 @@ const NavbarMenu: React.FC<NavbarMenuProps> = (props) => {
 
  const linkClasses = clsx(
   type === '_nav' && 'py-5',
-  type === '_sub' && 'py-2 border-b-2 border-transparent hover:border-black',
+  type === '_sub' && 'py-2 border-b-2 border-transparent hover:border-color/70',
   `block`
  );
 

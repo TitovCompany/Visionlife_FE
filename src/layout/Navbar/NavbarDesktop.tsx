@@ -26,7 +26,7 @@ const NavbarDesktop: FC<DesktopNavbarProps> = ({
     className={clsx(
      'bg-primary text-color',
      'absolute inset-x-0 top-full',
-     'border-primary/20 border-t border-b-2',
+     'border-color/50 border-t border-b-2',
      'transition-all duration-300 ease-in-out',
      isDropdownVisible
       ? 'visible translate-y-0 opacity-100'
