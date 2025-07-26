@@ -74,7 +74,7 @@ const Home = () => {
      </GridArticle>
 
      {/* Company */}
-     <GridArticle className='min-h-[60vh] w-full px-6 py-24 md:col-start-2 md:col-end-12 md:min-h-full md:px-0'>
+     <GridArticle className='min-h-[60vh] w-full px-6 py-36 md:col-start-2 md:col-end-12 md:min-h-full md:px-0'>
       <SectionHeader
        id='company'
        title='Company'
@@ -107,7 +107,7 @@ const Home = () => {
      {/* WhyUsSection */}
      <GridArticle
       labelledById='why-choose-us'
-      className='flex min-h-[60vh] flex-col justify-center px-6 py-24 text-center md:col-start-2 md:col-end-12 md:min-h-full md:px-0'>
+      className='flex flex-col justify-center px-6 py-36 text-center md:col-start-2 md:col-end-12 md:min-h-full md:px-0'>
       <SectionHeader
        id='why-choose-us'
        title='Why Choose Us?'
@@ -139,7 +139,7 @@ const Home = () => {
      </GridArticle>
 
      {/* GlobalBusiness */}
-     <GridArticle className='flex min-h-[60vh] snap-start flex-col justify-center px-6 pt-24 md:col-start-2 md:col-end-12 md:h-screen md:px-0'>
+     <GridArticle className='flex min-h-[60vh] snap-start flex-col justify-center px-6 pt-36 md:col-start-2 md:col-end-12 md:h-full md:px-0'>
       {/*<SectionHeader
        title='Global Business'
        subTitle={[
@@ -150,8 +150,7 @@ const Home = () => {
        title='Global Business'
        subTitle={
         '비전라이프는 글로벌 시장에서 지속 가능한 기술을 바탕으로 새로운 가치를 창출하고 있습니다.'
-       }
-      />
+       }/>
       <div className='mt-4 px-2 text-left text-base md:mt-6 md:mr-5 md:px-0 md:text-lg'>
        <p>
         비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,
@@ -163,18 +162,6 @@ const Home = () => {
       <div className='flex h-[300px] w-full min-w-0 items-center justify-center md:h-[800px] md:min-w-[600px]'>
        <ThreeDScene />
       </div>
-      {/*<div className='text-base md:text-lg mt-4 md:mt-0 px-2 md:px-0 text-left md:text-center'>
-       {[
-        '비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,',
-        '다양한 원단에 대한 샘플링을 통해 글로벌 시장 진입을 준비하고 있습니다.',
-        'N-RECT 기술은 국제 특허 출원 중이며, 올해 1,000톤 규모(약 600억 원)',
-        '수출을 목표로 양산 설비를 구축하고 있습니다.',
-       ].map((item, index) => (
-        <p key={index} className={clsx(index >= 1 && 'mt-2')}>
-         {item}
-        </p>
-       ))}
-      </div>*/}
      </GridArticle>
 
      {/* Media (News) */}
@@ -184,8 +171,8 @@ const Home = () => {
        subTitle={[
         '친환경 기술과 지속 가능한 변화를 만드는',
         'PROUTEX의 최신 소식을 만나보세요.',
-       ]}
-      />
+       ]}/>
+
       {/* Media Carousel */}
       <div className='flex gap-5 overflow-x-visible'>
        <HomeNews />
