@@ -20,10 +20,10 @@ const NewsCard: React.FC<NewsCardProps> = (props) => {
           src={
             isDefaultImg
               ? news.imageUrl || `/img/news/default-image-${news.id}.jpg`
-              : '/img/banner/p2.webp'
+              : '/logo.webp'
           }
           alt={news.title}
-          className='h-56 w-full rounded-t-lg object-cover md:h-64'
+          className='bg-primary h-56 w-full rounded-t-lg object-cover md:h-64'
           loading='lazy'
         />
         <div className='flex h-40 w-full flex-grow flex-col rounded-b-xl bg-[#f3f3f3] px-6 pt-6 pb-10'>

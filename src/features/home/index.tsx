@@ -11,6 +11,7 @@ import SectionHeader from '../../components/SectionHeader.tsx';
 import HeroSlider from './components/HeroSlider.tsx';
 import {Link} from 'react-router-dom';
 import GridLayout from '../../layout/Grid/GridLayout.tsx';
+import HomeNews from './components/HomeNews.tsx';
 
 const carouselItems = [
  {
@@ -154,6 +155,7 @@ const Home = () => {
         '친환경 기술과 지속 가능한 변화를 만드는',
         'PROUTEX의 최신 소식을 만나보세요.',]}/>
       <div className='flex gap-5 overflow-x-visible'>
+       <HomeNews/>
        {/* Media Carousel */}
        <div className='border-color relative flex min-w-[380px] flex-col items-start justify-around border-2 p-8'>
         <img src='/logo.webp' alt='test' className='h-full w-full' />
