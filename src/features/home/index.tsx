@@ -178,7 +178,7 @@ const Home = () => {
      </GridArticle>
 
      {/* Media (News) */}
-     <GridArticle className='flex flex-col items-start justify-center gap-10 px-6 pt-24 md:col-start-2 md:col-end-12 md:gap-20 md:px-0'>
+     <GridArticle className='flex flex-col items-start justify-center gap-10 px-6 md:col-start-2 md:col-end-12 md:gap-20 md:px-0'>
       <SectionHeader
        title='NEWS'
        subTitle={[
