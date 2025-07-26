@@ -178,7 +178,7 @@ const Home = () => {
      </GridArticle>
 
      {/* Media (News) */}
-     <GridArticle className='flex min-h-[60vh] flex-col items-start justify-center gap-10 px-6 py-24 md:col-start-2 md:col-end-12 md:h-screen md:gap-20 md:px-0'>
+     <GridArticle className='flex flex-col items-start justify-center gap-10 px-6 pt-24 md:col-start-2 md:col-end-12 md:gap-20 md:px-0'>
       <SectionHeader
        title='NEWS'
        subTitle={[
@@ -186,27 +186,9 @@ const Home = () => {
         'PROUTEX의 최신 소식을 만나보세요.',
        ]}
       />
+      {/* Media Carousel */}
       <div className='flex gap-5 overflow-x-visible'>
        <HomeNews />
-       {/* Media Carousel */}
-       {/*<div className='border-color relative flex min-w-[380px] flex-col items-start justify-around border-2 p-8'>
-        <img src='/logo.webp' alt='test' className='h-full w-full' />
-        <div className='border-color mt-10 mr-10 w-full text-left'>
-         <h3 className='mb-5 text-xl'>{news.items[0].title}</h3>
-        </div>
-       </div>
-       <div className='border-color relative flex min-w-[380px] flex-col items-start justify-around border-2 p-8'>
-        <img src='/logo.webp' alt='test' className='h-full w-full' />
-        <div className='border-color mt-10 mr-10 w-full text-left'>
-         <h3 className='mb-5 text-xl'>{news.items[0].title}</h3>
-        </div>
-       </div>
-       <div className='border-color relative flex min-w-[380px] flex-col items-start justify-around border-2 p-8'>
-        <img src='/logo.webp' alt='test' className='h-full w-full' />
-        <div className='border-color mt-10 mr-10 w-full text-left'>
-         <h3 className='mb-5 text-xl'>{news.items[0].title}</h3>
-        </div>
-       </div>*/}
       </div>
       <div className='mx-auto flex w-full items-center justify-center text-base md:text-xl'>
        <Link
