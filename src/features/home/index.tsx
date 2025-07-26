@@ -74,7 +74,7 @@ const Home = () => {
      </GridArticle>
 
      {/* Company */}
-     <GridArticle className='min-h-[60vh] w-full px-6 py-36 md:col-start-2 md:col-end-12 md:min-h-full md:px-0'>
+     <GridArticle className='container mx-auto min-h-[60vh] w-full px-6 py-36 md:col-start-2 md:col-end-12 md:min-h-full md:px-0'>
       <SectionHeader
        id='company'
        title='Company'
@@ -107,7 +107,7 @@ const Home = () => {
      {/* WhyUsSection */}
      <GridArticle
       labelledById='why-choose-us'
-      className='flex flex-col justify-center px-6 py-36 text-center md:col-start-2 md:col-end-12 md:min-h-full md:px-0'>
+      className='container mx-auto w-full flex flex-col justify-center px-6 py-36 text-center md:col-start-2 md:col-end-12 md:min-h-full md:px-0'>
       <SectionHeader
        id='why-choose-us'
        title='Why Choose Us?'
@@ -139,7 +139,7 @@ const Home = () => {
      </GridArticle>
 
      {/* GlobalBusiness */}
-     <GridArticle className='flex min-h-[60vh] snap-start flex-col justify-center px-6 pt-36 md:col-start-2 md:col-end-12 md:h-full md:px-0'>
+     <GridArticle className='container mx-auto flex min-h-[60vh] snap-start flex-col justify-center px-6 pt-36 md:col-start-2 md:col-end-12 md:h-full md:px-0'>
       {/*<SectionHeader
        title='Global Business'
        subTitle={[
@@ -165,7 +165,7 @@ const Home = () => {
      </GridArticle>
 
      {/* Media (News) */}
-     <GridArticle className='flex flex-col items-start justify-center gap-10 px-6 md:col-start-2 md:col-end-12 md:gap-20 md:px-0'>
+     <GridArticle className='container mx-auto flex flex-col items-start justify-center gap-10 px-6 md:col-start-2 md:col-end-12 md:gap-20 md:px-0'>
       <SectionHeader
        title='NEWS'
        subTitle={[
