@@ -71,7 +71,7 @@ const HeroSlider = memo(({
       </div>
      </div>
     ))}
-    <SliderIndicator>
+    <SliderIndicator className='text-color'>
      <FaCaretDown size={30} />
     </SliderIndicator>
    </Slider>
