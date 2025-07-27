@@ -12,18 +12,18 @@ interface NewsCardProps {
 const NewsCard: React.FC<NewsCardProps> = (props) => {
   const {news, isDescription = false, isDefaultImg = false} = props;
   return (
-    <li className='h-full w-full rounded-xl'>
+    <li className='h-full w-full rounded-xl border-color border-2'>
       <Link
         to={`/company/news/${news.id}`}
-        className='flex h-[300px] w-[250px] flex-col overflow-hidden rounded-xl transition duration-300 hover:opacity-80 sm:w-[350px] lg:h-[400px]'>
+        className='flex h-[300px] w-[250px] flex-col overflow-hidden rounded-xl transition duration-300 hover:opacity-80 sm:w-[350px] lg:h-[500px]'>
         <img
           src={
             isDefaultImg
               ? news.imageUrl || `/img/news/default-image-${news.id}.jpg`
-              : '/img/banner/p2.webp'
+              : '/logo.webp'
           }
           alt={news.title}
-          className='h-56 w-full rounded-t-lg object-cover md:h-64'
+          className='bg-primary h-56 w-full rounded-t-lg object-cover md:h-64 lg:h-96'
           loading='lazy'
         />
         <div className='flex h-40 w-full flex-grow flex-col rounded-b-xl bg-[#f3f3f3] px-6 pt-6 pb-10'>
