@@ -100,11 +100,23 @@ const Business = () => {
         {activeIndex === index && (
          <div
           ref={currentDetailRef}
-          className='absolute top-0 right-0 z-[999999] lg:w-[800px] h-full bg-white py-32 px-6 overflow-y-auto shadow-xl opacity-0'
+          className='absolute top-0 right-0 z-[999999] lg:w-[800px] h-full bg-white p-32 overflow-y-auto shadow-xl opacity-0'
          >
-          <ul>
+          <div className='w-full text-right'>
+           <Button onClick={() => {
+            gsap.to(currentDetailRef.current, {
+             x: '100%',
+             autoAlpha: 0,
+             duration: 0.4,
+             onComplete: () => setActiveIndex(null),
+            });
+           }}>
+            닫기
+           </Button>
+          </div>
+          <ul className='pt-14'>
            {contentSections[index].map((contentItem, j) => (
-            <li key={j} className='mb-6'>
+            <li key={j} className='mt-32'>
              <span className='text-primary text-3xl font-bold'>{contentItem.number}</span>
              <h3 className='mt-2 text-2xl font-bold text-gray-800'>{contentItem.title}</h3>
              <p className='mt-2 text-lg leading-relaxed text-gray-700 whitespace-pre-line'>
@@ -113,16 +125,7 @@ const Business = () => {
             </li>
            ))}
           </ul>
-          <Button onClick={() => {
-           gsap.to(currentDetailRef.current, {
-            x: '100%',
-            autoAlpha: 0,
-            duration: 0.4,
-            onComplete: () => setActiveIndex(null),
-           });
-          }} className='mt-6'>
-           닫기
-          </Button>
+
          </div>
         )}
        </li>
