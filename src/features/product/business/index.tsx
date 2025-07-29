@@ -102,7 +102,7 @@ const Business = () => {
           ref={currentDetailRef}
           className='absolute top-0 right-0 z-[999999] lg:w-[800px] h-full bg-white p-32 overflow-y-auto shadow-xl opacity-0'
          >
-          <div className='w-full'>
+          <div className='w-full text-right'>
            <Button onClick={() => {
             gsap.to(currentDetailRef.current, {
              x: '100%',
@@ -110,7 +110,7 @@ const Business = () => {
              duration: 0.4,
              onComplete: () => setActiveIndex(null),
             });
-           }} className='mr-auto'>
+           }}>
             닫기
            </Button>
           </div>
