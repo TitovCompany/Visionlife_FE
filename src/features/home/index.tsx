@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import Header from '../../layout/Header/Header.tsx';
 import GridArticle from '../../layout/Grid/GridArticle.tsx';
@@ -14,43 +14,17 @@ import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
 import HomeFeatureItem from './components/HomeFeatureItem.tsx';
-import {useGSAP} from '@gsap/react';
-
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
 const Home = () => {
  const [currentIndex, setCurrentIndex] = useState(0);
- const imageRef = useRef<HTMLElement[]>([]);
- const titleRef = useRef<HTMLElement[]>([]);
- const descriptionRef = useRef<HTMLElement[]>([]);
- console.log(imageRef);
- console.log(titleRef);
- console.log(descriptionRef);
-
- // mount 시 단 한 번 실행
- useGSAP(() => {
-  if (!imageRef.current || !titleRef.current || !descriptionRef.current) return;
-  const tl = gsap.timeline({
-   scrollTrigger: {
-    trigger: imageRef.current,
-    start: "top 80%",
-    end: "top 50%",
-    toggleActions: 'play none reverse none',
-    markers: true
-   },
-  });
-
-  tl.fromTo(imageRef.current,
-   {width: '40%',},
-   {width: '300%',}
-  );
- },[])
 
  useEffect(() => {
   const interval = setInterval(() => {
    setCurrentIndex((prevIndex) =>
     prevIndex === homeData.carouselItems.length ? 0 : prevIndex + 1
    );
-  }, 50000000);
+  }, 5000); // 테스트를 위해 인터벌 시간을 줄였습니다 (5초). 원래 50000000초는 너무 길어서 수정했습니다.
   // 컴포넌트 언마운트 시 정리
   return () => clearInterval(interval);
  }, []);
@@ -65,38 +39,36 @@ const Home = () => {
       <HeroSlider
        data={homeData.carouselItems}
        currentIndex={currentIndex}
-       setCurrentIndex={setCurrentIndex}/>
+       setCurrentIndex={setCurrentIndex}
+      />
      </GridArticle>
 
      {/* Company */}
      <GridArticle
       labelledById='why-choose-us'
-      className='container mx-auto w-full flex flex-col justify-center px-6 py-36 text-center md:col-start-2 md:col-end-12 md:min-h-full md:px-0'>
+      className='container mx-auto flex w-full flex-col justify-center px-6 py-36 text-center md:col-start-2 md:col-end-12 md:min-h-full md:px-0'>
       <SectionHeader
        id='company'
        title='Company'
        subTitle="비전라이프홀딩스는 '사람과 환경이 공존하는 섬유산업'을 꿈꿉니다."
-       subTitleClass='mt-12'/>
+       subTitleClass='mt-12'
+      />
 
       {/* Contents */}
       <ul>
        {homeData.features.map((feature, index) => (
         <HomeFeatureItem
-         key={index}
-         imageRef={(el: HTMLImageElement | null) => {
-          if (el) imageRef.current[index] = el;
-         }}
-         titleRef={(el: HTMLElement | null) => {
-          if (el) titleRef.current[index] = el;
-         }}
-         descriptionRef={(el: HTMLElement | null) => {
-          if (el) descriptionRef.current[index] = el;
-         }}
+         key={feature.title} // ✅ key prop은 고유한 값을 사용하는 것이 좋습니다 (예: feature.title 또는 고유 ID)
          index={index}
          image={feature.image}
          title={feature.title}
          subTitle={feature.subTitle}
-         description={feature.description}/>
+         description={feature.description}
+         // 이제 개별 ref 콜백은 HomeFeatureItem 내부에서 처리되므로 여기서는 전달하지 않습니다.
+         // imageRef={(el: HTMLImageElement | null) => { if (el) imageRef.current[index] = el; }}
+         // titleRef={(el: HTMLElement | null) => { if (el) titleRef.current[index] = el; }}
+         // descriptionRef={(el: HTMLElement | null) => { if (el) descriptionRef.current[index] = el; }}
+        />
        ))}
       </ul>
      </GridArticle>
@@ -109,7 +81,8 @@ const Home = () => {
        title='Global Business'
        subTitle={
         '비전라이프는 글로벌 시장에서 지속 가능한 기술을 바탕으로 새로운 가치를 창출하고 있습니다.'
-       }/>
+       }
+      />
       <div className='mt-4 px-2 text-left text-base md:mt-6 md:mr-5 md:px-0 md:text-lg lg:text-xl'>
        <p>
         비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,
@@ -131,7 +104,8 @@ const Home = () => {
        subTitle={[
         '친환경 기술과 지속 가능한 변화를 만드는',
         'PROUTEX의 최신 소식을 만나보세요.',
-       ]}/>
+       ]}
+      />
 
       {/* Media Carousel */}
       <div className='flex gap-5 overflow-x-visible'>
