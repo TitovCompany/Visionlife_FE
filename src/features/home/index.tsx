@@ -13,6 +13,7 @@ import homeData from '../../data/home/home.json';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
+import HomeFeatureItem from './components/HomeFeatureItem.tsx';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const Home = () => {
@@ -52,26 +53,13 @@ const Home = () => {
       {/* Contents */}
       <ul>
        {homeData.features.map((feature, index) => (
-        <li
+        <HomeFeatureItem
          key={index}
-         /*ref={(el) => {
-           if (el) contentRef.current[index] = el;
-          }}*/
-         className={`mt-56 flex items-center text-center gap-10 ${index === 1 && "flex-row-reverse"}`}>
-         <img
-          src={feature.image}
-          alt=''
-          className='h-32 w-32 object-contain md:h-[180px] md:w-[180px] lg:h-[300px] lg:w-[300px]' />
-         <div className='text-left'>
-          <h3 className='text-lg font-semibold md:text-2xl lg:text-4xl'>
-           {feature.title}
-          </h3>
-          <h4 className='text-xl mt-3'>{feature.subTitle}</h4>
-          <p className='mt-5 text-sm text-gray-600 md:text-base lg:text-lg'>
-           {feature.description}
-          </p>
-         </div>
-        </li>
+         index={index}
+         image={feature.image}
+         title={feature.title}
+         subTitle={feature.subTitle}
+         description={feature.description}/>
        ))}
       </ul>
      </GridArticle>
