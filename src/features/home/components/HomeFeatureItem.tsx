@@ -30,7 +30,7 @@ const HomeFeatureItem = ({
     className='h-32 w-32 object-contain md:h-[180px] md:w-[180px] lg:h-[300px] lg:w-[300px]' />
    <div className='text-left'>
     {/* 제목 */}
-    <div className='home-title' ref={titleRef}>
+    <div id={'title-wrap#' + index} className='title-wrap' ref={titleRef}>
      <h3 className='text-lg font-semibold md:text-2xl lg:text-4xl'>{title}</h3>
      <h4 className='text-xl mt-3'>{subTitle}</h4>
     </div>
