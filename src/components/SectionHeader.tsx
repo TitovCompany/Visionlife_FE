@@ -53,6 +53,7 @@ const SectionHeader = ({
     // 위아래 방향 모두 진입 시 play
     // 스크롤을 올릴경우 반대로 애니메이션 실행
     toggleActions: 'play none reverse none',
+    // markers: true, // 디버그 마커 활성화
    },
   });
 

@@ -19,7 +19,6 @@ const HomeFeatureItem = ({
  subTitle,
  description
 }: FeatureItem) => {
-
  return (
   <li
    className={`mt-56 flex items-center text-center gap-10 ${index === 1 && "flex-row-reverse"}`}>

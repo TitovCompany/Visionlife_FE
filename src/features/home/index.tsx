@@ -14,16 +14,36 @@ import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
 import HomeFeatureItem from './components/HomeFeatureItem.tsx';
+import {useGSAP} from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const Home = () => {
  const [currentIndex, setCurrentIndex] = useState(0);
- const contentRef = useRef<HTMLElement[]>([]);
+ const imageRef = useRef<HTMLElement[]>([]);
  const titleRef = useRef<HTMLElement[]>([]);
  const descriptionRef = useRef<HTMLElement[]>([]);
- console.log(contentRef);
+ console.log(imageRef);
  console.log(titleRef);
  console.log(descriptionRef);
+
+ // mount 시 단 한 번 실행
+ useGSAP(() => {
+  if (!imageRef.current || !titleRef.current || !descriptionRef.current) return;
+  const tl = gsap.timeline({
+   scrollTrigger: {
+    trigger: imageRef.current,
+    start: "top 80%",
+    end: "top 50%",
+    toggleActions: 'play none reverse none',
+    markers: true
+   },
+  });
+
+  tl.fromTo(imageRef.current,
+   {width: '40%',},
+   {width: '300%',}
+  );
+ },[])
 
  useEffect(() => {
   const interval = setInterval(() => {
@@ -64,7 +84,7 @@ const Home = () => {
         <HomeFeatureItem
          key={index}
          imageRef={(el: HTMLImageElement | null) => {
-          if (el) contentRef.current[index] = el;
+          if (el) imageRef.current[index] = el;
          }}
          titleRef={(el: HTMLElement | null) => {
           if (el) titleRef.current[index] = el;
