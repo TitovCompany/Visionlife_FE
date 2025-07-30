@@ -48,10 +48,11 @@ const SectionHeader = ({
     // 섹션이 화면에 들어올 때 감지할 요소
     trigger: containerRef.current,
     // 섹션의 top이 뷰포트 80% 지점에 닿으면 시작
-    start: 'top 80%',
-    end: 'top 60%',
+    start: 'top 60%',
+    end: 'top 40%',
     // 위아래 방향 모두 진입 시 play
-    toggleActions: 'play none play none',
+    // 스크롤을 올릴경우 반대로 애니메이션 실행
+    toggleActions: 'play none reverse none',
    },
   });
 
