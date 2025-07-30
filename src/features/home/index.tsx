@@ -55,7 +55,8 @@ const Home = () => {
       <SectionHeader
        id='company'
        title='Company'
-       subTitle="비전라이프홀딩스는 '사람과 환경이 공존하는 섬유산업'을 꿈꿉니다."/>
+       subTitle="비전라이프홀딩스는 '사람과 환경이 공존하는 섬유산업'을 꿈꿉니다."
+       subTitleClass='mt-12'/>
 
       {/* Contents */}
       <ul>

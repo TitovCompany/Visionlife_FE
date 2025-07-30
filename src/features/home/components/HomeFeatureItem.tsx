@@ -27,7 +27,7 @@ const HomeFeatureItem = ({
     src={image}
     ref={imageRef}
     alt={title + ' 이미지'}
-    className='h-32 w-32 object-contain md:h-[180px] md:w-[180px] lg:h-[300px] lg:w-[300px]' />
+    className='h-32 w-32 object-contain md:h-[180px] md:w-[180px] lg:h-[600px] lg:w-[300px] border-primary border-2 rounded-2xl'/>
    <div className='text-left'>
     {/* 제목 */}
     <div id={'title-wrap#' + index} className='title-wrap' ref={titleRef}>
