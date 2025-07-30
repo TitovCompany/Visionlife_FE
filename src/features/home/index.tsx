@@ -19,7 +19,11 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const Home = () => {
  const [currentIndex, setCurrentIndex] = useState(0);
  const contentRef = useRef<HTMLElement[]>([]);
+ const titleRef = useRef<HTMLElement[]>([]);
+ const descriptionRef = useRef<HTMLElement[]>([]);
  console.log(contentRef);
+ console.log(titleRef);
+ console.log(descriptionRef);
 
  useEffect(() => {
   const interval = setInterval(() => {
@@ -58,8 +62,14 @@ const Home = () => {
        {homeData.features.map((feature, index) => (
         <HomeFeatureItem
          key={index}
-         itemRef={(el: HTMLLIElement | null) => {
+         imageRef={(el: HTMLImageElement | null) => {
           if (el) contentRef.current[index] = el;
+         }}
+         titleRef={(el: HTMLElement | null) => {
+          if (el) titleRef.current[index] = el;
+         }}
+         descriptionRef={(el: HTMLElement | null) => {
+          if (el) descriptionRef.current[index] = el;
          }}
          index={index}
          image={feature.image}
