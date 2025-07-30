@@ -50,24 +50,24 @@ const Home = () => {
        title='Company'
        subTitle="비전라이프홀딩스는 '사람과 환경이 공존하는 섬유산업'을 꿈꿉니다."/>
       {/* Contents */}
-      <ul className='mt-10'>
+      <ul>
        {homeData.features.map((feature, index) => (
         <li
          key={index}
          /*ref={(el) => {
            if (el) contentRef.current[index] = el;
           }}*/
-         className={`flex items-center text-center gap-10 ${index === 1 && "flex-row-reverse"}`}>
+         className={`mt-56 flex items-center text-center gap-10 ${index === 1 && "flex-row-reverse"}`}>
          <img
           src={feature.image}
           alt=''
-          className='h-32 w-32 object-contain md:h-[180px] md:w-[180px] lg:h-[300px] lg:w-[300px]'
-         />
+          className='h-32 w-32 object-contain md:h-[180px] md:w-[180px] lg:h-[300px] lg:w-[300px]' />
          <div className='text-left'>
-          <h3 className='text-lg font-semibold md:text-2xl'>
+          <h3 className='text-lg font-semibold md:text-2xl lg:text-4xl'>
            {feature.title}
           </h3>
-          <p className='mt-2 text-sm text-gray-600 md:text-base'>
+          <h4 className='text-xl mt-3'>{feature.subTitle}</h4>
+          <p className='mt-5 text-sm text-gray-600 md:text-base lg:text-lg'>
            {feature.description}
           </p>
          </div>
@@ -78,18 +78,13 @@ const Home = () => {
 
      {/* GlobalBusiness */}
      <GridArticle className='container mx-auto flex min-h-[60vh] snap-start flex-col justify-center px-6 pt-36 md:col-start-2 md:col-end-12 md:h-full md:px-0'>
-      {/*<SectionHeader
-       title='Global Business'
-       subTitle={[
-        '비전라이프는 글로벌 시장에서 지속 가능한 기술을 바탕으로',
-        '새로운 가치를 창출하고 있습니다.',
-       ]}/>*/}
       <SectionHeader
+       subTitleClass='text-3xl'
        title='Global Business'
        subTitle={
         '비전라이프는 글로벌 시장에서 지속 가능한 기술을 바탕으로 새로운 가치를 창출하고 있습니다.'
        }/>
-      <div className='mt-4 px-2 text-left text-base md:mt-6 md:mr-5 md:px-0 md:text-lg'>
+      <div className='mt-4 px-2 text-left text-base md:mt-6 md:mr-5 md:px-0 md:text-lg lg:text-xl'>
        <p>
         비전라이프는 중국 DTP 기계 제조업체와 협력하여 전시장을 운영 중이며,
         다양한 원단에 대한 샘플링을 통해 글로벌 시장 진입을 준비하고 있습니다.
