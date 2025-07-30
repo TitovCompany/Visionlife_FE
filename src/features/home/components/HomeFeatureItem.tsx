@@ -1,5 +1,6 @@
 interface FeatureItem {
  index: number;
+ itemRef: (element: HTMLLIElement | null) => void;
  image: string;
  title: string;
  subTitle: string;
@@ -8,16 +9,16 @@ interface FeatureItem {
 
 const HomeFeatureItem = ({
  index,
+ itemRef,
  image,
  title,
  subTitle,
  description
 }: FeatureItem) => {
+
  return (
   <li
-   /*ref={(el) => {
-     if (el) contentRef.current[index] = el;
-    }}*/
+   ref={itemRef}
    className={`mt-56 flex items-center text-center gap-10 ${index === 1 && "flex-row-reverse"}`}>
    <img
     src={image}

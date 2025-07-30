@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {Link} from 'react-router-dom';
 import Header from '../../layout/Header/Header.tsx';
 import GridArticle from '../../layout/Grid/GridArticle.tsx';
@@ -18,6 +18,8 @@ import HomeFeatureItem from './components/HomeFeatureItem.tsx';
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const Home = () => {
  const [currentIndex, setCurrentIndex] = useState(0);
+ const contentRef = useRef<HTMLElement[]>([]);
+ console.log(contentRef);
 
  useEffect(() => {
   const interval = setInterval(() => {
@@ -50,11 +52,15 @@ const Home = () => {
        id='company'
        title='Company'
        subTitle="비전라이프홀딩스는 '사람과 환경이 공존하는 섬유산업'을 꿈꿉니다."/>
+
       {/* Contents */}
       <ul>
        {homeData.features.map((feature, index) => (
         <HomeFeatureItem
          key={index}
+         itemRef={(el: HTMLLIElement | null) => {
+          if (el) contentRef.current[index] = el;
+         }}
          index={index}
          image={feature.image}
          title={feature.title}
@@ -67,6 +73,7 @@ const Home = () => {
      {/* GlobalBusiness */}
      <GridArticle className='container mx-auto flex min-h-[60vh] snap-start flex-col justify-center px-6 pt-36 md:col-start-2 md:col-end-12 md:h-full md:px-0'>
       <SectionHeader
+       id='global-business'
        subTitleClass='text-3xl'
        title='Global Business'
        subTitle={
@@ -88,6 +95,7 @@ const Home = () => {
      {/* Media (News) */}
      <GridArticle className='container mx-auto flex flex-col items-start justify-center gap-10 px-6 md:col-start-2 md:col-end-12 md:gap-20 md:px-0'>
       <SectionHeader
+       id='media'
        title='NEWS'
        subTitle={[
         '친환경 기술과 지속 가능한 변화를 만드는',
