@@ -64,10 +64,6 @@ const Home = () => {
          title={feature.title}
          subTitle={feature.subTitle}
          description={feature.description}
-         // 이제 개별 ref 콜백은 HomeFeatureItem 내부에서 처리되므로 여기서는 전달하지 않습니다.
-         // imageRef={(el: HTMLImageElement | null) => { if (el) imageRef.current[index] = el; }}
-         // titleRef={(el: HTMLElement | null) => { if (el) titleRef.current[index] = el; }}
-         // descriptionRef={(el: HTMLElement | null) => { if (el) descriptionRef.current[index] = el; }}
         />
        ))}
       </ul>
