@@ -107,6 +107,7 @@ const NRect = () => {
     }
    );
   });
+  ScrollTrigger.refresh();
  }, [location.pathname]);
 
  return (

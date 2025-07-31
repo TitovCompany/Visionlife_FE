@@ -72,6 +72,7 @@ const AboutUs = () => {
         }
       );
     });
+  ScrollTrigger.refresh();
   }, [location.pathname]);
 
  return (

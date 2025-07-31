@@ -36,6 +36,7 @@ const Catalog = () => {
     },
    }
   );
+  ScrollTrigger.refresh();
  }, [location.pathname]);
  // min-h-[calc(100vh-67.98px)]
  return (

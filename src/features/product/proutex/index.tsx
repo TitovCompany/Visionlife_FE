@@ -115,6 +115,7 @@ const ProUtex = () => {
     }
    );
   });
+  ScrollTrigger.refresh();
  }, [location.pathname]);
 
  return (
