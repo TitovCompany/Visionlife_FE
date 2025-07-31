@@ -17,7 +17,7 @@ export default defineConfig(({mode}) => {
 
   return {
     // 커스텀 도메인사용시 base 빈값으로 설정
-    base: '',
+    base: '/',
 
     // 전역 상수로 대체되는 값을 정의
     define: {},
