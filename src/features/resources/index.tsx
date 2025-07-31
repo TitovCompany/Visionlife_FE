@@ -7,9 +7,11 @@ import {useRef} from 'react';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useGSAP} from '@gsap/react';
+import {useLocation} from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 const Catalog = () => {
+ const location = useLocation();
  const sectionRef = useRef(null);
  const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -34,7 +36,7 @@ const Catalog = () => {
     },
    }
   );
- }, []);
+ }, [location.pathname]);
  // min-h-[calc(100vh-67.98px)]
  return (
   <>

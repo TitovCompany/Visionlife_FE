@@ -8,10 +8,12 @@ import overview from '../../../data/business/overview.json';
 import clsx from 'clsx';
 import { Button } from 'japark-react-components';
 import {contentSections} from '../../../data/business/business.ts';
+import {useLocation} from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Business = () => {
+ const location = useLocation();
  const [activeIndex, setActiveIndex] = useState<number | null>(null);
  const listRef = useRef<(HTMLLIElement | null)[]>([]);
  const currentDetailRef = useRef<HTMLDivElement | null>(null);
@@ -27,7 +29,7 @@ const Business = () => {
     });
    }
   });
- }, []);
+ }, [location.pathname]);
 
  useGSAP(() => {
   if (activeIndex !== null && currentDetailRef.current) {
