@@ -6,7 +6,6 @@ import SplitType from 'split-type';
 import clsx from 'clsx';
 import GridLayout from '../../../layout/Grid/GridLayout.tsx';
 import GridArticle from '../../../layout/Grid/GridArticle.tsx';
-import {useLocation} from 'react-router-dom';
 
 const paragraphs = [
  '비전라이프는 지속 가능한 미래를 꿈꾸며, 친환경 기술을 통해 산업과 자연이 조화를 이루는 혁신을 실현합니다. 우리는 단순한 제품을 만드는 것이 아니라, 환경 보호와 산업 발전을 동시에 이끄는 솔루션을 창조합니다.',
@@ -16,7 +15,6 @@ const paragraphs = [
 
 gsap.registerPlugin(ScrollTrigger);
 const AboutUs = () => {
- const location = useLocation();
  const aboutImageRef = useRef<HTMLDivElement | null>(null);
  const inkRef = useRef(null);
  const imageRef = useRef<HTMLDivElement | null>(null);
@@ -72,8 +70,7 @@ const AboutUs = () => {
         }
       );
     });
-  ScrollTrigger.refresh();
-  }, [location.pathname]);
+  }, []);
 
  return (
    <GridLayout rows={3} className={clsx('min-h-screen')}>

@@ -7,11 +7,9 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Pagination} from 'swiper/modules';
 import LinkCard from '../../../components/Card/LinkCard.tsx';
-import {useLocation} from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 const ProUtex = () => {
- const location = useLocation();
  const sectionRef = useRef<HTMLDivElement | null>(null);
  const heroRef = useRef<HTMLDivElement>(null);
  const headerRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -115,8 +113,7 @@ const ProUtex = () => {
     }
    );
   });
-  ScrollTrigger.refresh();
- }, [location.pathname]);
+ }, []);
 
  return (
   <>
