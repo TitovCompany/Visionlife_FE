@@ -15,7 +15,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
  ref,
 }) => {
  return (
-  <main ref={ref} className={clsx(
+  <main ref={ref} id='main' className={clsx(
     'w-full min-h-screen',
     'bg-white',           
     'lg:pt-[calc(102px)]', // lg 이상에서만 패딩
