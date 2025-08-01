@@ -1,7 +1,7 @@
-import {useRef} from 'react';
+import {useEffect, useRef} from 'react';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import {useGSAP} from '@gsap/react';
+// import {useGSAP} from '@gsap/react';
 import clsx from 'clsx';
 import GridLayout from '../../../layout/Grid/GridLayout.tsx';
 import GridArticle from '../../../layout/Grid/GridArticle.tsx';
@@ -12,7 +12,7 @@ const textContents = [
  "컬러 아이덴티티는 브랜드 철학을 반영하여 골드는 프리미엄과 신뢰성을, 레드와 블루 조합은 에너제틱하면서도 전문적인 느낌을 부여합니다. 이를 통해 Proutex는 차별화된 기술력과 지속 가능한 미래를 위한 혁신을 실현하는 브랜드임을 나타냅니다."
 ];
 
-gsap.registerPlugin(ScrollTrigger);
+
 const VisualIdentity = () => {
  const containerRef = useRef<HTMLElement | null>(null);
  const titleRef = useRef<HTMLHeadingElement | null>(null);
@@ -31,42 +31,44 @@ const VisualIdentity = () => {
   timeline.fromTo(elements.filter(Boolean), fromVars, toVars);
  };
 
- useGSAP(() => {
-  const tl = gsap.timeline({
-   scrollTrigger: {
-    trigger: containerRef.current,
-    start: "top 85%",
-    end: "top 30%",
-    scrub: 1,
-    markers: true, // 디버깅용
-   }
+ useEffect(() => {
+  import('gsap/ScrollTrigger').then(() => {
+   gsap.registerPlugin(ScrollTrigger);
+   const tl = gsap.timeline({
+    scrollTrigger: {
+     trigger: containerRef.current,
+     start: "top 85%",
+     end: "top 30%",
+     scrub: 1,
+     markers: true, // 디버깅용
+    }
   });
 
-  // 일반 요소 (Y축 애니메이션)
-  const animateElements = [titleRef.current, contentRef.current, subTitleRef.current];
-  animateWithTimeline(
-   tl,
-   animateElements,
-   { y: 200, opacity: 0 },
-   { y: 0, opacity: 1, duration: 1.5, stagger: 0.3 }
-  );
+   // 일반 요소 (Y축 애니메이션)
+   const animateElements = [titleRef.current, contentRef.current, subTitleRef.current];
+   animateWithTimeline(
+    tl,
+    animateElements,
+    { y: 200, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1.5, stagger: 0.3 }
+   );
 
-  // 이미지 (X축 애니메이션)
-  animateWithTimeline(
-   tl,
-   [imgRef.current],
-   { x: -200, opacity: 0 },
-   { x: 0, opacity: 1, duration: 1.5 }
-  );
+   // 이미지 (X축 애니메이션)
+   animateWithTimeline(
+    tl,
+    [imgRef.current],
+    { x: -200, opacity: 0 },
+    { x: 0, opacity: 1, duration: 1.5 }
+   );
 
-  // 하위 문장 (Y축 stagger 적용)
-  animateWithTimeline(
-   tl,
-   subContentRef.current,
-   { y: 200, opacity: 0 },
-   { y: 0, opacity: 1, duration: 1.5, stagger: 0.2 }
-  );
-
+   // 하위 문장 (Y축 stagger 적용)
+   animateWithTimeline(
+    tl,
+    subContentRef.current,
+    { y: 200, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1.5, stagger: 0.2 }
+   );
+  });
  }, []);
 
  return (

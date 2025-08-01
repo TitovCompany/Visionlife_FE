@@ -51,6 +51,7 @@ const AboutUs = () => {
      }
     });
    }
+
    // 텍스트 이벤트
    textRefs.current.forEach((el, index) => {
     if (!el) return;
