@@ -5,15 +5,16 @@ import path from 'path';
 import fs from 'fs';
 
 // test page 폴더를 제외
-const excludeTestPage = () => {
+const _excludeTestPage  = () => {
   const testPagePath = path.resolve(__dirname, 'src/test');
   return fs.existsSync(testPagePath) ? {test_page: testPagePath} : {};
 };
 
 // https://vite.dev/config/
 export default defineConfig(({mode}) => {
+// export default defineConfig(() => {
   // 배포 여부 확인
-  const isProduction = mode === 'production';
+  const _isProduction  = mode === 'production';
 
   return {
     // 커스텀 도메인사용시 base 빈값으로 설정
