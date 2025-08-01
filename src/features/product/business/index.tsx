@@ -1,7 +1,6 @@
 import PageLayout from '../../../layout/PageLayout.tsx';
 import Header from '../../../layout/Header/Header.tsx';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {useRef, useState, useEffect} from 'react'; // useEffect 추가
 import { useGSAP } from '@gsap/react';
 import overview from '../../../data/business/overview.json';
@@ -9,25 +8,41 @@ import clsx from 'clsx';
 import { Button } from 'japark-react-components';
 import {contentSections} from '../../../data/business/business.ts';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const Business = () => {
  const [activeIndex, setActiveIndex] = useState<number | null>(null);
  const listRef = useRef<(HTMLLIElement | null)[]>([]);
  const currentDetailRef = useRef<HTMLDivElement | null>(null);
-
- useGSAP(() => {
-  listRef.current.forEach((el) => {
-   if (el) {
-    ScrollTrigger.create({
-     trigger: el,
-     start: 'top top',
-     pin: true,
-     pinSpacing: false
-    });
-   }
-  });
+ 
+ useEffect(() => {
+  import('gsap/ScrollTrigger').then(({ScrollTrigger}) => {
+   gsap.registerPlugin(ScrollTrigger);
+   listRef.current.forEach((el) => {
+    if (el) {
+     ScrollTrigger.create({
+      trigger: el,
+      start: 'top top',
+      pin: true,
+      pinSpacing: false
+     });
+    }
+   });
+  })
  }, []);
+ /*useGSAP(() => {
+  import('gsap/ScrollTrigger').then(({ScrollTrigger}) => {
+   gsap.registerPlugin(ScrollTrigger);
+   listRef.current.forEach((el) => {
+    if (el) {
+     ScrollTrigger.create({
+      trigger: el,
+      start: 'top top',
+      pin: true,
+      pinSpacing: false
+     });
+    }
+   });
+  })
+ }, []);*/
 
  useGSAP(() => {
   if (activeIndex !== null && currentDetailRef.current) {

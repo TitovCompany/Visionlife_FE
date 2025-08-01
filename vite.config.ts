@@ -17,25 +17,14 @@ export default defineConfig(({mode}) => {
 
   return {
     // 커스텀 도메인사용시 base 빈값으로 설정
-    base: '',
+    base: '/',
 
     // 전역 상수로 대체되는 값을 정의
     define: {},
-
-    // @를 src 디렉토리로 매핑
+    
     resolve: {
       alias: {
-        '@': '/src',
-        '@components': '/src/components',
-        '@hooks': '/src/hooks',
-        '@pages': '/src/pages',
-        '@layout': '/src/layout',
-        '@service': '/src/service',
-        '@hone': '/src/features/hone',
-        '@business': '/src/features/business-overview',
-        '@catalog': '/src/features/catalog',
-        '@news': '/src/features/news',
-        '@profile': '/src/features/profile',
+        '@': path.resolve(__dirname, './src'),
       },
     },
 
@@ -50,12 +39,6 @@ export default defineConfig(({mode}) => {
         'X-Frame-Options': 'DENY', // Clickjacking 방지
         'X-Content-Type-Options': 'nosniff', // MIME 타입 스니핑 방지
         'Referrer-Policy': 'strict-origin-when-cross-origin', // Referrer 정보 최소화
-      },
-    },
-
-    css: {
-      modules: {
-        generateScopedName: '[hash:base64:6]', // 클래스명 난독화
       },
     },
 
@@ -86,10 +69,10 @@ export default defineConfig(({mode}) => {
 
       input: {
         // 메인 엔트리 파일
-        main: path.resolve(__dirname, 'index.html'),
+        // main: path.resolve(__dirname, 'index.html'),
 
         // test page 폴더를 배포에서 제외
-        ...(isProduction && excludeTestPage() ? {} : {test: excludeTestPage()}),
+        // ...(isProduction && excludeTestPage() ? {} : {test: excludeTestPage()}),
       },
 
       // 브라우저 지원 대상
