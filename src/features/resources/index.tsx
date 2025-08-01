@@ -3,41 +3,63 @@ import catalogData from '../../data/catalogData.json';
 import {CatalogItem} from '../../types/catalog';
 import DownloadItem from './components/DownloadItem.tsx';
 import Header from '../../layout/Header/Header.tsx';
-import {useRef} from 'react';
+import {useEffect, useRef} from 'react';
 import gsap from 'gsap';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useGSAP} from '@gsap/react';
-import {useLocation} from 'react-router-dom';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
 const Catalog = () => {
- const location = useLocation();
  const sectionRef = useRef(null);
  const videoRef = useRef<HTMLVideoElement>(null);
-
- useGSAP(() => {
+ useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+  
   gsap.fromTo(
    videoRef.current,
    { width: '400px', height: '400px' },
    {
     width: '100%',
     height: '100%',
-    duration: 1.2,
-    ease: 'power3.out',
+    ease: 'none', // scrub 사용 시 ease는 'none'이 일반적입니다.
     scrollTrigger: {
      trigger: sectionRef.current,
-     start: '+=10 top', // 현재 위치에서 (n)px 아래에서 시작
-     // end: '+=18',       // (n)px 구간 동안 애니메이션 진행
-     scrub: true, // 부드러운 애니메이션 적용
-     // 되돌아가는 애니메이션 설정
+     
+     // 트리거의 상단이 뷰포트 상단에 닿을 때 시작
+     start: 'top top',
+     end: '+=100%',
+     
+     scrub: true,
      pin: true,
-     toggleActions: 'play reverse play reverse',
-     markers: true,
+     markers: true, // 디버깅 시 유용
     },
    }
   );
- }, [location]);
- // min-h-[calc(100vh-67.98px)]
+ }, []);
+ /*useGSAP(() => {
+  gsap.registerPlugin(ScrollTrigger);
+  
+  gsap.fromTo(
+   videoRef.current,
+   { width: '400px', height: '400px' },
+   {
+    width: '100%',
+    height: '100%',
+    ease: 'none', // scrub 사용 시 ease는 'none'이 일반적입니다.
+    scrollTrigger: {
+     trigger: sectionRef.current,
+     
+     // 트리거의 상단이 뷰포트 상단에 닿을 때 시작
+     start: 'top top',
+     end: '+=100%',
+     
+     scrub: true,
+     pin: true,
+     markers: true, // 디버깅 시 유용
+    },
+   }
+  );
+ }, []);*/
+ 
  return (
   <>
    <Header />

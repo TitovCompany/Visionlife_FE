@@ -1,12 +1,10 @@
 import gsap from 'gsap';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import {useRef} from 'react';
+import {useEffect, useRef} from 'react';
 import {useGSAP} from '@gsap/react';
 import SplitType from 'split-type';
 import clsx from 'clsx';
 import GridLayout from '../../../layout/Grid/GridLayout.tsx';
 import GridArticle from '../../../layout/Grid/GridArticle.tsx';
-import {useLocation} from 'react-router-dom';
 
 const paragraphs = [
  '비전라이프는 지속 가능한 미래를 꿈꾸며, 친환경 기술을 통해 산업과 자연이 조화를 이루는 혁신을 실현합니다. 우리는 단순한 제품을 만드는 것이 아니라, 환경 보호와 산업 발전을 동시에 이끄는 솔루션을 창조합니다.',
@@ -14,65 +12,121 @@ const paragraphs = [
  '단순한 잉크를 넘어, 지속 가능한 가치를 창출합니다. Vision Life는 환경을 생각하는 창작자, 브랜드, 그리고 기업과 함께합니다. 우리의 여정에 동참하고, 지속 가능한 미래를 위한 혁신에 함께하세요.',
 ];
 
-gsap.registerPlugin(ScrollTrigger);
 const AboutUs = () => {
- const location = useLocation();
  const aboutImageRef = useRef<HTMLDivElement | null>(null);
  const inkRef = useRef(null);
  const imageRef = useRef<HTMLDivElement | null>(null);
  const textRefs = useRef<(HTMLElement | null)[]>([]);
-
- useGSAP(() => {
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-// 모바일 조건문 추가 모바일이 아닐때만 실행 
-    if (!isMobile) {
-      const tl = gsap.timeline();
-      tl.to(inkRef.current, {
-        y: 500,
-        duration: 1.5,
-        scrollTrigger: {
-          trigger: aboutImageRef.current,
-          start: '-=200px',
-          end: '+=500px',
-          scrub: 1,
-          pin: false,
-        },
-      });
-
-      tl.fromTo(imageRef.current, {
-        y: '100%',
-      }, {
-        duration: 1.5,
-        y: -150,
-        scrollTrigger: {
-          trigger: aboutImageRef.current,
-          start: '-=100px',
-          end: '+=500px',
-          scrub: 1,
-          pin: false,
-        }
-      });   
-   }
-  // 텍스트 이벤트
-    textRefs.current.forEach((el, index) => {
-      if (!el) return;
-   // 텍스트를 문자 단위로 분리
-   const splitText = new SplitType(el, {types: 'chars'});
-      gsap.fromTo(
-    splitText.chars, {color: '#bbb',}, {
-          color: '#000',
-          duration: 1.5,
-          stagger: 0.05,
-          scrollTrigger: {
-            trigger: el,
-            start: `top ${90 - index * 10}%`,
-            end: `top ${40 - index * 5}%`,
-            scrub: 1,
-          },
-        }
-      );
+ 
+ useEffect(() => {
+  import('gsap/ScrollTrigger').then(({ScrollTrigger}) => {
+   gsap.registerPlugin(ScrollTrigger);
+   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+   // 모바일 조건문 추가 모바일이 아닐때만 실행
+   if (!isMobile) {
+    const tl = gsap.timeline();
+    tl.to(inkRef.current, {
+     y: 500,
+     duration: 1.5,
+     scrollTrigger: {
+      trigger: aboutImageRef.current,
+      start: '-=200px',
+      end: '+=500px',
+      scrub: 1,
+      pin: false,
+     },
     });
-  }, [location]);
+    
+    tl.fromTo(imageRef.current, {
+     y: '100%',
+    }, {
+     duration: 1.5,
+     y: -150,
+     scrollTrigger: {
+      trigger: aboutImageRef.current,
+      start: '-=100px',
+      end: '+=500px',
+      scrub: 1,
+      pin: false,
+     }
+    });
+   }
+   // 텍스트 이벤트
+   textRefs.current.forEach((el, index) => {
+    if (!el) return;
+    // 텍스트를 문자 단위로 분리
+    const splitText = new SplitType(el, {types: 'chars'});
+    gsap.fromTo(
+     splitText.chars, {color: '#bbb',}, {
+      color: '#000',
+      duration: 1.5,
+      stagger: 0.05,
+      scrollTrigger: {
+       trigger: el,
+       start: `top ${90 - index * 10}%`,
+       end: `top ${40 - index * 5}%`,
+       scrub: 1,
+      },
+     }
+    );
+   });
+  });
+ }, []);
+ 
+ /*useGSAP(() => {
+  import('gsap/ScrollTrigger').then(({ScrollTrigger}) => {
+   gsap.registerPlugin(ScrollTrigger);
+   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+   // 모바일 조건문 추가 모바일이 아닐때만 실행
+   if (!isMobile) {
+    const tl = gsap.timeline();
+    tl.to(inkRef.current, {
+     y: 500,
+     duration: 1.5,
+     scrollTrigger: {
+      trigger: aboutImageRef.current,
+      start: '-=200px',
+      end: '+=500px',
+      scrub: 1,
+      pin: false,
+     },
+    });
+    
+    tl.fromTo(imageRef.current, {
+     y: '100%',
+    }, {
+     duration: 1.5,
+     y: -150,
+     scrollTrigger: {
+      trigger: aboutImageRef.current,
+      start: '-=100px',
+      end: '+=500px',
+      scrub: 1,
+      pin: false,
+     }
+    });
+   }
+   // 텍스트 이벤트
+   textRefs.current.forEach((el, index) => {
+    if (!el) return;
+    // 텍스트를 문자 단위로 분리
+    const splitText = new SplitType(el, {types: 'chars'});
+    gsap.fromTo(
+     splitText.chars, {color: '#bbb',}, {
+      color: '#000',
+      duration: 1.5,
+      stagger: 0.05,
+      scrollTrigger: {
+       trigger: el,
+       start: `top ${90 - index * 10}%`,
+       end: `top ${40 - index * 5}%`,
+       scrub: 1,
+      },
+     }
+    );
+   });
+  });
+  }, []);*/
 
  return (
    <GridLayout rows={3} className={clsx('min-h-screen')}>
