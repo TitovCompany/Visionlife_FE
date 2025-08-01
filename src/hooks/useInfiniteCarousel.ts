@@ -22,7 +22,6 @@ const useInfiniteCarousel = (): React.RefObject<HTMLUListElement | null> => {
       // or if the ref hasn't been attached yet.
       return;
     }
-    
     // 초기 위치 설정
     gsap.set(slider, {xPercent: 0});
     
@@ -36,7 +35,6 @@ const useInfiniteCarousel = (): React.RefObject<HTMLUListElement | null> => {
       },
     });
   }, []); // Empty dependency array means this runs once after initial render
-  
   return sliderRef;
 };
 
