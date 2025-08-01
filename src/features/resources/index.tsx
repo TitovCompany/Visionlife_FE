@@ -5,7 +5,7 @@ import DownloadItem from './components/DownloadItem.tsx';
 import Header from '../../layout/Header/Header.tsx';
 import {useEffect, useRef} from 'react';
 import gsap from 'gsap';
-import {useGSAP} from '@gsap/react';
+// import {useGSAP} from '@gsap/react';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 const Catalog = () => {

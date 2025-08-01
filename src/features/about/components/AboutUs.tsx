@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import {useEffect, useRef} from 'react';
-import {useGSAP} from '@gsap/react';
+// import {useGSAP} from '@gsap/react';
 import SplitType from 'split-type';
 import clsx from 'clsx';
 import GridLayout from '../../../layout/Grid/GridLayout.tsx';

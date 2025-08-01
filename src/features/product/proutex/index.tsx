@@ -21,80 +21,75 @@ const ProUtex = () => {
   import('gsap/ScrollTrigger').then(({ScrollTrigger}) => {
    gsap.registerPlugin(ScrollTrigger);
    const tl = gsap.timeline();
-   tl
-    .fromTo(
-     heroRef.current,
-     {
-      y: window.innerHeight * 0.55,
-      maxWidth: '95%',
-      scale: 0.8,
+   tl.fromTo(
+    heroRef.current,
+    {
+     y: window.innerHeight * 0.55,
+     maxWidth: '95%',
+     scale: 0.8,
+    },
+    {
+     y: 0,
+     //maxWidth: '100%',
+     scale: 1,
+     ease: 'power2.out',
+     scrollTrigger: {
+      trigger: heroRef.current,
+      start: 'top bottom',
+      end: 'top center',
+      scrub: true,
+      markers: true,
      },
-     {
-      y: 0,
-      //maxWidth: '100%',
-      scale: 1,
-      ease: 'power2.out',
-      scrollTrigger: {
-       trigger: heroRef.current,
-       start: 'top bottom',
-       end: 'top center',
-       scrub: true,
-       markers: true,
-      },
-     }
-    )
-    .fromTo(
-     headerRef.current[0],
-     {
-      scale: 7.5, // 300px ≒ 40px * 7.5
+    }
+   ).fromTo(
+    headerRef.current[0],
+    {
+     scale: 7.5, // 300px ≒ 40px * 7.5
+    },
+    {
+     scale: 1,
+     duration: 1.2,
+     ease: 'none',
+     scrollTrigger: {
+      trigger: headerRef.current[0],
+      start: 'top bottom',
+      end: 'top center',
+      scrub: true,
+      // markers: true,
      },
-     {
-      scale: 1,
-      duration: 1.2,
-      ease: 'none',
-      scrollTrigger: {
-       trigger: headerRef.current[0],
-       start: 'top bottom',
-       end: 'top center',
-       scrub: true,
-       // markers: true,
-      },
-     }
-    )
-    .fromTo(
-     headerRef.current[1],
-     {
-      y: 200,
-      opacity: 0,
+    }
+   ).fromTo(
+    headerRef.current[1],
+    {
+     y: 200,
+     opacity: 0,
+    },
+    {
+     y: 0,
+     opacity: 1,
+     duration: 1.2,
+     scrollTrigger: {
+      trigger: headerRef.current[1],
+      start: 'top bottom',
+      end: 'top center',
+      scrub: true,
      },
-     {
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
-      scrollTrigger: {
-       trigger: headerRef.current[1],
-       start: 'top bottom',
-       end: 'top center',
-       scrub: true,
-      },
-     }
-    )
-    .fromTo(
-     headerRef.current[2],
-     {
-      y: 200,
+    }
+   ).fromTo(
+    headerRef.current[2],
+    {
+     y: 200,
+    },
+    {
+     y: 0,
+     duration: 1.2,
+     scrollTrigger: {
+      trigger: headerRef.current[2],
+      start: 'top bottom',
+      end: 'top center',
+      scrub: true,
      },
-     {
-      y: 0,
-      duration: 1.2,
-      scrollTrigger: {
-       trigger: headerRef.current[2],
-       start: 'top bottom',
-       end: 'top center',
-       scrub: true,
-      },
-  })
- }, []);
+    })
 
   revealRefs.current.forEach((el) => {
    gsap.fromTo(
@@ -112,7 +107,7 @@ const ProUtex = () => {
      },
     }
    );
-  });
+  })});
  }, []);
 
  return (
