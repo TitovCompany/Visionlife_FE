@@ -56,7 +56,7 @@ function NaverMap({
     // 스크립트 로딩 확인
     if (typeof naver === 'undefined') {
       loadScript(
-        `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${import.meta.env.VITE_MAP_API_KEY}`,
+        `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${import.meta.env.VITE_MAP_API_KEY}`,
         initMap
       );
     } else {
